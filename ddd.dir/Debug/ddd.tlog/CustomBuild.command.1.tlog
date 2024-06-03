@@ -1,0 +1,10 @@
+^C:\USERS\SHRIN\DOCUMENTS\PLAYDATE PROJECTS\DDD\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/shrin/Documents/Playdate Projects/ddd" "-BC:/Users/shrin/Documents/Playdate Projects/ddd" --check-stamp-file "C:/Users/shrin/Documents/Playdate Projects/ddd/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

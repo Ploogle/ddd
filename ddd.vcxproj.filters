@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\shrin\Documents\Playdate Projects\ddd\src\main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\3dmath.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\render.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Downloads\fast_triangle_rasteriser.c" />
+    <ClCompile Include="ddd\camera.c" />
+    <ClCompile Include="ddd\symbols.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\3dmath.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\ddd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\render.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ddd\bluenoise.h" />
+    <ClInclude Include="ddd\gradient.h" />
+    <ClInclude Include="ddd\symbols.h" />
+    <ClInclude Include="ddd\camera.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\shrin\Documents\Playdate Projects\ddd\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Source\Assets\playdate-fish.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{509B5562-64B9-38D4-87E5-021C62C3442E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{1111DA55-461E-32EB-9EB8-97B3C0A4D8A4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{5C426909-A7AB-3EA2-81C3-DA60B6A38112}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

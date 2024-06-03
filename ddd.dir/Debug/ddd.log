@@ -1,0 +1,9 @@
+﻿  Microsoft (R) C/C++ Optimizing Compiler Version 19.33.31630 for x64
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  cl /c /IC:\Users\shrin\Documents\PlaydateSDK\C_API /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _WINDLL /D _MBCS /D WIN32 /D _WINDOWS /D TARGET_SIMULATOR=1 /D _WINDLL=1 /D TARGET_EXTENSION=1 /D "CMAKE_INTDIR=\"Debug\"" /D ddd_EXPORTS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"ddd.dir\Debug\\" /Fd"ddd.dir\Debug\vc143.pdb" /external:W3 /Gd /TC /errorReport:prompt "C:\Users\shrin\Documents\Playdate Projects\ddd\src\main.c"
+  main.c
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\main.c(202,33): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\main.c(204,33): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\main.c(205,33): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\main.c(185,7): warning C4101: 'frame_text': unreferenced local variable
+  ddd.vcxproj -> C:\Users\shrin\Documents\Playdate Projects\ddd\Debug\ddd.dll
