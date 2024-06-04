@@ -22,8 +22,6 @@ struct Matrix4x4 Camera_getProjectionMatrix(struct Camera* camera)  {
 	return projection;
 }
 
-
-
 /// <summary>
 /// This returns a new Vector3, transformed from a world position to screen position for the given
 /// Camera object.
@@ -34,7 +32,7 @@ struct Vector3 Camera_worldToScreenPos(struct Camera* camera, struct Vector3* wo
 {
 	// TODO: Support perspective _and_ orthographic projection?
 	// (Maybe also the cool blend tween that Unity's editor does.)
-	struct Vector3 p = Matrix4_multiply(worldPos, &camera->projection);
+	struct Vector3 p = Matrix4_apply(&camera->projection, worldPos);
 	
 	p.x += 1.0f;
 	p.y += 1.0f;

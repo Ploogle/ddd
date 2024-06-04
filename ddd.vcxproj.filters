@@ -13,6 +13,7 @@
     <ClCompile Include="..\..\..\Downloads\fast_triangle_rasteriser.c" />
     <ClCompile Include="ddd\camera.c" />
     <ClCompile Include="ddd\symbols.c" />
+    <ClCompile Include="ddd\gameobject.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\3dmath.h">
@@ -28,6 +29,7 @@
     <ClInclude Include="ddd\gradient.h" />
     <ClInclude Include="ddd\symbols.h" />
     <ClInclude Include="ddd\camera.h" />
+    <ClInclude Include="ddd\gameobject.h" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\shrin\Documents\Playdate Projects\ddd\CMakeLists.txt" />

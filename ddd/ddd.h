@@ -5,6 +5,7 @@
 #include "3dmath.h"
 #include "render.h"
 #include "camera.h"
+#include "GameObject.h"
 
 #include <stdio.h>
 #include <stdint.h>

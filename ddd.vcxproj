@@ -233,6 +233,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="C:\Users\shrin\Documents\Playdate Projects\ddd\src\main.c" />
     <ClCompile Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\3dmath.c" />
     <ClCompile Include="ddd\camera.c" />
+    <ClCompile Include="ddd\gameobject.c" />
     <ClCompile Include="ddd\symbols.c" />
     <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\3dmath.h" />
     <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\ddd.h" />
@@ -240,6 +241,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\render.h" />
     <ClInclude Include="ddd\bluenoise.h" />
     <ClInclude Include="ddd\camera.h" />
+    <ClInclude Include="ddd\gameobject.h" />
     <ClInclude Include="ddd\gradient.h" />
     <ClInclude Include="ddd\symbols.h" />
     <Image Include="Source\Assets\playdate-fish.png" />

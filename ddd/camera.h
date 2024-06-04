@@ -3,6 +3,13 @@
 
 #include "symbols.h"
 
+typedef enum {
+	RENDER_WIREFRAME,
+	RENDER_FILL, 
+	RENDER_WPF, // Wireframe + fill (thicker wireframe
+	RENDER_SDKFILL,
+} RENDER_MODE;
+
 struct Camera
 {
 	struct Vector3 position; // Position in space the camera is looking from
@@ -11,6 +18,7 @@ struct Camera
 	float fov; // Field of View
 	float near; // Near clipping plane
 	float far; // Far clipping plane
+	RENDER_MODE render_mode;
 };
 
 struct Matrix4x4 Camera_getProjectionMatrix(struct Camera* camera);

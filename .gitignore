@@ -4,3 +4,6 @@ build-dev
 Source
 *.pdx
 .sentry-native
+.vs
+ddd.dir
+Debug
