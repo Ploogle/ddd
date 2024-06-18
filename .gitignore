@@ -7,3 +7,5 @@ Source
 .vs
 ddd.dir
 Debug
+Release
+x64

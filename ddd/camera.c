@@ -40,4 +40,32 @@ struct Vector3 Camera_worldToScreenPos(struct Camera* camera, struct Vector3* wo
 	p.y *= 0.5f * SCREEN_HEIGHT_F;
 
 	return p;
-} 
+}
+void PTR_Camera_worldToScreenPos(struct Camera* camera, struct Vector3* worldPos)
+{
+	// TODO: Support perspective _and_ orthographic projection?
+	// (Maybe also the cool blend tween that Unity's editor does.)
+	PTR_Matrix4_apply(&camera->projection, worldPos);
+
+	worldPos->x += 1.0f;
+	worldPos->y += 1.0f;
+	worldPos->x *= 0.5f * SCREEN_WIDTH_F;
+	worldPos->y *= 0.5f * SCREEN_HEIGHT_F;
+}
+
+void Camera_setRotation(struct Camera* camera, float xTheta, float yTheta, float zTheta)
+{
+	camera->rotationX = Matrix3_getRotationX(xTheta);
+	camera->rotationY = Matrix3_getRotationY(yTheta);
+	camera->rotationZ = Matrix3_getRotationZ(zTheta);
+}
+
+// TODO: Deprecate
+struct Vector3 Camera_worldPosition(struct Camera* camera)
+{
+	return (struct Vector3) {
+		.x = camera->position.x,
+			.y = camera->position.y,
+			.z = camera->position.z
+	};
+}

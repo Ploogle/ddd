@@ -52,34 +52,6 @@ struct Mesh
 	struct Vector3 origin;
 };
 
-struct GameObject
-{
-	char name[32];
-	
-	// One mesh per object, if we want more we can add them as children.
-	struct Mesh* mesh; 
-
-	// TODO: Move these to a GameObject / Sprite3D or whatever,
-	// with proper translation + rotations etc.
-	struct Matrix3x3 rotationX; // temporary rotation, for an example.
-	struct Matrix3x3 rotationY; // temporary rotation, for an example.
-	struct Matrix3x3 rotationZ; // temporary rotation, for an example.
-
-	struct Matrix4x4 transform;
-
-	struct Vector3 rotation; // euler
-	struct Vector3 position;
-	struct Vector3 scale;
-
-	int num_children;
-	struct GameObject** children;
-	struct GameObject* parent;
-
-	/* TODO:
-	 - Probably needs some lifecycle function pointers incl. update
-	 */
-};
-
 
 /*
 	I envision Scenes as large related groups of related UI and game objects.

@@ -26,6 +26,7 @@
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset>v143</PlatformToolset>
+    <EnableASAN>false</EnableASAN>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
@@ -231,18 +232,20 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   <ItemGroup>
     <ClCompile Include="..\..\..\Downloads\fast_triangle_rasteriser.c" />
     <ClCompile Include="C:\Users\shrin\Documents\Playdate Projects\ddd\src\main.c" />
-    <ClCompile Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\3dmath.c" />
+    <ClCompile Include="ddd\3dmath.c" />
     <ClCompile Include="ddd\camera.c" />
     <ClCompile Include="ddd\gameobject.c" />
+    <ClCompile Include="ddd\quaternion.c" />
     <ClCompile Include="ddd\symbols.c" />
-    <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\3dmath.h" />
     <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\ddd.h" />
     <ClCompile Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\render.c" />
     <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\render.h" />
+    <ClInclude Include="ddd\3dmath.h" />
     <ClInclude Include="ddd\bluenoise.h" />
     <ClInclude Include="ddd\camera.h" />
     <ClInclude Include="ddd\gameobject.h" />
     <ClInclude Include="ddd\gradient.h" />
+    <ClInclude Include="ddd\quaternion.h" />
     <ClInclude Include="ddd\symbols.h" />
     <Image Include="Source\Assets\playdate-fish.png" />
   </ItemGroup>

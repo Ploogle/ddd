@@ -4,9 +4,6 @@
     <ClCompile Include="C:\Users\shrin\Documents\Playdate Projects\ddd\src\main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\3dmath.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\render.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -14,11 +11,10 @@
     <ClCompile Include="ddd\camera.c" />
     <ClCompile Include="ddd\symbols.c" />
     <ClCompile Include="ddd\gameobject.c" />
+    <ClCompile Include="ddd\quaternion.c" />
+    <ClCompile Include="ddd\3dmath.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\3dmath.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\ddd.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -30,6 +26,8 @@
     <ClInclude Include="ddd\symbols.h" />
     <ClInclude Include="ddd\camera.h" />
     <ClInclude Include="ddd\gameobject.h" />
+    <ClInclude Include="ddd\quaternion.h" />
+    <ClInclude Include="ddd\3dmath.h" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\shrin\Documents\Playdate Projects\ddd\CMakeLists.txt" />

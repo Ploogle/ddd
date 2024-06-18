@@ -1,6 +1,6 @@
-^C:\USERS\SHRIN\DOCUMENTS\PLAYDATE PROJECTS\3DATE\CMAKEFILES\C74EB3A09370E791073CCE1975C21908\GENERATE.STAMP.RULE
+^C:\USERS\SHRIN\DOCUMENTS\PLAYDATE PROJECTS\DDD\CMAKEFILES\F969BBA14FDF466F989AB9BBB2EBAE13\GENERATE.STAMP.RULE
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/shrin/Documents/Playdate Projects/3date" "-BC:/Users/shrin/Documents/Playdate Projects/3date" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "C:/Users/shrin/Documents/Playdate Projects/3date/3date.sln"
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/shrin/Documents/Playdate Projects/ddd" "-BC:/Users/shrin/Documents/Playdate Projects/ddd" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "C:/Users/shrin/Documents/Playdate Projects/ddd/ddd.sln"
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

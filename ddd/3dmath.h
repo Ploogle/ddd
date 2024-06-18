@@ -9,7 +9,6 @@
 
 // -- Vector -- 
 
-
 static inline int Vector3_equals(struct Vector3 a, struct Vector3 b);
 
 static inline struct Vector3 Vector3_cross(struct Vector3 a, struct Vector3 b);
@@ -18,16 +17,19 @@ float Vector3_dot(struct Vector3 a, struct Vector3 b);
 
 struct Vector3 pnormal(struct Vector3* p1, struct Vector3* p2, struct Vector3* p3);
 
-static inline float Vector3_lengthSquared(struct Vector3* v);
+float Vector3_lengthSquared(struct Vector3* v);
 
-static inline float Vector3_length(struct Vector3* v);
+float Vector3_length(struct Vector3* v);
 
 struct Vector3 Vector3_add(struct Vector3* a, struct Vector3* b);
 struct Vector3 Vector3_subtract(struct Vector3* a, struct Vector3* b);
 struct Vector3 Vector3_multiply(struct Vector3* a, struct Vector3* b);
-
+struct Vector3 Vector3_multiplyScalar(struct Vector3* a, float scalar);
 
 struct Vector3 Vector3_normalize(struct Vector3 v);
+
+struct Vector3 Vector3_getForward(struct Vector3* rotation);
+
 
 // -- Matrix --
 
@@ -40,13 +42,25 @@ struct Matrix3x3 Matrix3_makeTranslate(float dx, float dy, float dz);
 struct Matrix3x3 Matrix3_multiply(struct Matrix3x3 l, struct Matrix3x3 r);
 
 struct Vector3 Matrix3_apply(struct Matrix3x3* m, struct Vector3* p);
+void PTR_Matrix3_apply(struct Matrix3x3* m, struct Vector3* p);
 
 float Matrix3_getDeterminant(struct Matrix3x3* m);
 
 struct Vector3 Matrix4_apply(struct Matrix4x4* m, struct Vector3* v);
+void PTR_Matrix4_apply(struct Matrix4x4* m, struct Vector3* v);
 
 struct Matrix3x3 Matrix3_getRotationX(float theta);
 struct Matrix3x3 Matrix3_getRotationY(float theta);
 struct Matrix3x3 Matrix3_getRotationZ(float theta);
+
+struct Matrix4x4 Matrix4_getRotationX(float theta);
+struct Matrix4x4 Matrix4_getRotationY(float theta);
+struct Matrix4x4 Matrix4_getRotationZ(float theta);
+
+
+struct Matrix4x4 Matrix4_getTransform(
+	float xTheta, float yTheta, float zTheta,
+	float xPos, float yPos, float zPos,
+	float xScale, float yScale, float zScale);
 
 #endif
