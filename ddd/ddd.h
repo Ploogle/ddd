@@ -6,6 +6,7 @@
 #include "render.h"
 #include "camera.h"
 #include "gameobject.h"
+#include "scene.h"
 
 #include <stdio.h>
 #include <stdint.h>

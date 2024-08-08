@@ -2,6 +2,7 @@
 #define __GameObject__
 
 #include "symbols.h"
+#include <pd_api.h>
 
 struct GameObject
 {
@@ -23,9 +24,13 @@ struct GameObject
 	struct GameObject** children;
 	struct GameObject* parent;
 
+	struct Scene* scene;
+	int scene_index;
+
 	/* TODO:
 	 - Probably needs some lifecycle function pointers incl. update
 	 */
+	void (*update)(PlaydateAPI* pd);
 };
 
 /** Set rotation with theta for x */

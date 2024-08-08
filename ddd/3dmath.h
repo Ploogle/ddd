@@ -34,6 +34,7 @@ struct Vector3 Vector3_getForward(struct Vector3* rotation);
 // -- Matrix --
 
 static struct Matrix3x3 identityMatrix = { .isIdentity = 1, .inverting = 0, .m = {{1, 0, 0}, {0, 1, 0}, {0, 0, 1}}, .x = 0, .y = 0, .z = 0 };
+static const struct Matrix3x3 MATRIX_ZERO = { 0,0,0 };
 
 struct Matrix3x3 Matrix3_make(float m11, float m12, float m13, float m21, float m22, float m23, float m31, float m32, float m33, int inverting);
 

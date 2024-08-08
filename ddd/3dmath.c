@@ -66,7 +66,8 @@ struct Vector3 Vector3_normalize(struct Vector3 v)
 
 struct Vector3 pnormal(struct Vector3* p1, struct Vector3* p2, struct Vector3* p3)
 {
-	struct Vector3 v = Vector3_cross(Vector3_make(p2->x - p1->x, p2->y - p1->y, p2->z - p1->z),
+	struct Vector3 v = Vector3_cross(
+		Vector3_make(p2->x - p1->x, p2->y - p1->y, p2->z - p1->z),
 		Vector3_make(p3->x - p1->x, p3->y - p1->y, p3->z - p1->z));
 
 	return Vector3_normalize(v);
@@ -79,12 +80,11 @@ struct Vector3 Vector3_getForward(struct Vector3* rotation)
 	//forward.z = cos(pitch) * cos(yaw);
 
 	return (struct Vector3) {
-		.x = cosf(rotation->x) * sinf(rotation->y),
-			.y = -sin(rotation->x),
-			.z = cosf(rotation->x) * cosf(rotation->y)
+		.x = cosf(rotation->x) * sinf(-rotation->y),
+		.y = -sinf(rotation->x),
+		.z = cosf(rotation->x) * cosf(-rotation->y)
 	};
 }
-
 
 // -- Matrix --
 
@@ -102,7 +102,7 @@ struct Matrix3x3 Matrix3_multiply(struct Matrix3x3 l, struct Matrix3x3 r)
 {
 	struct Matrix3x3 m = { .isIdentity = 0, .inverting = l.inverting ^ r.inverting };
 	
-	if ( l.isIdentity )
+	/*if ( l.isIdentity )
 	{
 		if ( r.isIdentity )
 			m = identityMatrix;
@@ -116,7 +116,7 @@ struct Matrix3x3 Matrix3_multiply(struct Matrix3x3 l, struct Matrix3x3 r)
 	else
 	{
 		if ( !r.isIdentity )
-		{
+		{*/
 			m.m[0][0] = l.m[0][0] * r.m[0][0] + l.m[1][0] * r.m[0][1] + l.m[2][0] * r.m[0][2];
 			m.m[1][0] = l.m[0][0] * r.m[1][0] + l.m[1][0] * r.m[1][1] + l.m[2][0] * r.m[1][2];
 			m.m[2][0] = l.m[0][0] * r.m[2][0] + l.m[1][0] * r.m[2][1] + l.m[2][0] * r.m[2][2];
@@ -128,22 +128,22 @@ struct Matrix3x3 Matrix3_multiply(struct Matrix3x3 l, struct Matrix3x3 r)
 			m.m[0][2] = l.m[0][2] * r.m[0][0] + l.m[1][2] * r.m[0][1] + l.m[2][2] * r.m[0][2];
 			m.m[1][2] = l.m[0][2] * r.m[1][0] + l.m[1][2] * r.m[1][1] + l.m[2][2] * r.m[1][2];
 			m.m[2][2] = l.m[0][2] * r.m[2][0] + l.m[1][2] * r.m[2][1] + l.m[2][2] * r.m[2][2];
-		}
-		else
-			memcpy(&m.m, &l.m, sizeof(l.m));
+		//}
+		//else
+		//	memcpy(&m.m, &l.m, sizeof(l.m));
 
 		m.x = l.x * r.m[0][0] + l.y * r.m[0][1] + l.z * r.m[0][2] + r.x;
 		m.y = l.x * r.m[1][0] + l.y * r.m[1][1] + l.z * r.m[1][2] + r.y;
 		m.z = l.x * r.m[2][0] + l.y * r.m[2][1] + l.z * r.m[2][2] + r.z;
-	}
+	//}
 	
 	return m;
 }
 
 struct Vector3 Matrix3_apply(struct Matrix3x3* m, struct Vector3* p)
 {
-	if ( m->isIdentity )
-		return (struct Vector3) { p->x + m->x, p->y + m->y, p->z + m->z };
+	/*if ( m->isIdentity )
+		return (struct Vector3) { p->x + m->x, p->y + m->y, p->z + m->z };*/
 
 	struct Vector3 out;
 
@@ -268,13 +268,14 @@ struct Matrix4x4 Matrix4_getTransform(
 	float sx = sinf(xR);
 	float cy = cosf(yR);
 	float sy = sinf(yR);
+
 	return (struct Matrix4x4) {
 		.m = {
 			{ xS * (cy * cz),	xS * (sx * sy * cz - cx * sz),	xS * (cx * sy * cz + sx * sz),	0},
 			{ yS * (cy * sz),	yS * (sx * sy * sz + cx * cz),	yS * (cx * sy * sz - sx * cz),	0},
 			{ zS * -sy,			zS * (sx * cy),					zS * (cx * cy),					0},
-			{ xP,				yP,							zP,								1}
-		} // -yP
+			{ xP,				yP,								zP,								1}
+		}
 	};
 }
 
@@ -287,12 +288,13 @@ struct Vector3 Matrix4_apply(struct Matrix4x4* m, struct Vector3* v)
 	out.z = v->x * m->m[0][2] + v->y * m->m[1][2] + v->z * m->m[2][2] + m->m[3][2];
 	float w = v->x * m->m[0][3] + v->y * m->m[1][3] + v->z * m->m[2][3] + m->m[3][3];
 
-	if (w != 0.0f)
-	{
+	/*if (w != 0.0f)
+	{*/
+		w += 0.001f;
 		out.x /= w;
 		out.y /= w;
 		out.z /= w;
-	}
+	//}
 
 	return out;
 }
@@ -305,12 +307,13 @@ void PTR_Matrix4_apply(struct Matrix4x4* m, struct Vector3* v)
 	float z = v->x * m->m[0][2] + v->y * m->m[1][2] + v->z * m->m[2][2] + m->m[3][2];
 	float w = v->x * m->m[0][3] + v->y * m->m[1][3] + v->z * m->m[2][3] + m->m[3][3];
 
-	if (w != 0.0f)
-	{
+	/*if (w != 0.0f)
+	{*/
+		w += 0.001f;
 		x /= w;
 		y /= w;
 		z /= w;
-	}
+	//}
 
 	v->x = x;
 	v->y = y;

@@ -13,6 +13,7 @@
     <ClCompile Include="ddd\gameobject.c" />
     <ClCompile Include="ddd\quaternion.c" />
     <ClCompile Include="ddd\3dmath.c" />
+    <ClCompile Include="ddd\scene.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\ddd.h">
@@ -28,6 +29,14 @@
     <ClInclude Include="ddd\gameobject.h" />
     <ClInclude Include="ddd\quaternion.h" />
     <ClInclude Include="ddd\3dmath.h" />
+    <ClInclude Include="ddd\scene.h" />
+    <ClInclude Include="src\cube.h" />
+    <ClInclude Include="src\toa-head.h" />
+    <ClInclude Include="src\scenes\TestScene.h" />
+    <ClInclude Include="src\cube2.h" />
+    <ClInclude Include="src\fish.h" />
+    <ClInclude Include="src\fish2.h" />
+    <ClInclude Include="src\toa_head.h" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\shrin\Documents\Playdate Projects\ddd\CMakeLists.txt" />

@@ -39,37 +39,16 @@ struct Matrix4x4
 struct Mesh
 {
 	char name[32];
-	// TODO: rename these to under_score syntax
 	uint32_t numVertices;
 	uint32_t numIndices;
-	uint32_t numNormals;
-	struct Vector3* boundingBox;
+	//uint32_t numNormals;
+	//struct Vector3* boundingBox;
 	struct Vector3* vertices;
-	struct Vector3* normals;
-	struct Vector2* tex_coords; // UV coords, per vert
-	uint16_t* indices; // TODO: Move to faces system if there becomes a need.
-	uint8_t* colors;
+	//struct Vector3* normals;
+	//struct Vector2* tex_coords; // UV coords, per vert
+	uint16_t* indices;
+	//uint8_t* colors;
 	struct Vector3 origin;
-};
-
-
-/*
-	I envision Scenes as large related groups of related UI and game objects.
-	Multiple scenes can be activated at once through a parent-child hierarchy and visibility.
-*/
-struct Scene
-{
-	char name[32];
-	bool visible; // Flag to render
-	bool active; // Flag to process (paused if inactive)
-
-	int num_scenes;
-	struct Scene** sub_scenes;
-
-	/*
-		TODO:
-		- 
-	*/
 };
 
 #endif

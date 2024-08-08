@@ -41,6 +41,7 @@ void GameObject_drawMesh(PlaydateAPI* pd, uint8_t* bitmap, struct GameObject* go
 void GameObject_render(PlaydateAPI* pd, uint8_t* bitmap, struct GameObject* go, struct Camera* camera);
 
 void Grid_render(PlaydateAPI* pd, uint8_t* bitmap, struct Camera* camera);
+void YPlane_render(PlaydateAPI* pd, uint8_t* bitmap, struct Camera* camera, float y_plane);
 //
 //void Ray_renderTest(PlaydateAPI* pd, uint8_t* bitmap, struct Camera* camera, float lightStrength);
 //

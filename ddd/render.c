@@ -1,5 +1,8 @@
 #include <stdint.h>
 
+#include <time.h>
+#include <stdlib.h>
+
 #include "gameobject.h"
 #include "3dmath.h"
 #include "render.h"
@@ -50,59 +53,65 @@ void Line_draw(uint8_t* bitmap, struct Vector3* p1, struct Vector3* p2, int thic
 
 void Triangle_draw(PlaydateAPI* pd, uint8_t* bitmap, struct Vector3* a, struct Vector3* b, struct Vector3* c, RENDER_MODE mode, LCDSolidColor color, int line_width, float face_color)
 {
-	switch (mode)
+	pd->graphics->fillTriangle(a->x, a->y, b->x, b->y, c->x, c->y, kColorWhite);
+
+	/*switch (mode)
 	{
-	case RENDER_WIREFRAME:
-		pd->graphics->drawLine(a->x, a->y, b->x, b->y, line_width > 0 ? line_width : 1, color);
-		pd->graphics->drawLine(b->x, b->y, c->x, c->y, line_width > 0 ? line_width : 1, color);
-		pd->graphics->drawLine(c->x, c->y, a->x, a->y, line_width > 0 ? line_width : 1, color);
-		break;
+	case RENDER_WIREFRAME:*/
 
-	case RENDER_SDKFILL:
-		pd->graphics->fillTriangle(a->x, a->y, b->x, b->y, c->x, c->y, kColorBlack);
+		/*pd->graphics->drawLine(a->x, a->y, b->x, b->y, line_width, kColorWhite);
+		pd->graphics->drawLine(b->x, b->y, c->x, c->y, line_width, kColorWhite);
+		pd->graphics->drawLine(c->x, c->y, a->x, a->y, line_width, kColorWhite);*/
+		/*pd->graphics->setPixel(a->x, a->y, color);
+		pd->graphics->setPixel(b->x, b->y, color);
+		pd->graphics->setPixel(c->x, c->y, color);*/
+	//	break;
 
-	case RENDER_FILL:
-		struct Vector3* top = a;
-		struct Vector3* bottom = b;
-		//struct Vector3* middle = c; // vertical middle
-		struct Vector3* left;
-		struct Vector3* right;
+	//case RENDER_SDKFILL:
+	//	pd->graphics->fillTriangle(a->x, a->y, b->x, b->y, c->x, c->y, kColorBlack);
 
-		if (a->y >= b->y && a->y >= c->y) bottom = a;
-		else if (b->y > a->y && b->y > c->y) bottom = b;
-		else bottom = c;
+	//case RENDER_FILL: {
+		//struct Vector3* top = a;
+		//struct Vector3* bottom = b;
+		////struct Vector3* middle = c; // vertical middle
+		//struct Vector3* left;
+		//struct Vector3* right;
 
-		if (a->y <= b->y && a->y <= c->y) top = a;
-		else if (b->y < a->y && b->y < c->y) top = b;
-		else top = c;
+		//if (a->y >= b->y && a->y >= c->y) bottom = a;
+		//else if (b->y > a->y && b->y > c->y) bottom = b;
+		//else bottom = c;
 
-		if (a->x >= b->x && a->x >= c->x) right = a;
-		else if (b->x > a->x && b->x > c->x) right = b;
-		else right = c;
+		//if (a->y <= b->y && a->y <= c->y) top = a;
+		//else if (b->y < a->y && b->y < c->y) top = b;
+		//else top = c;
 
-		if (a->x <= b->x && a->x <= c->x) left = a;
-		else if (b->x < a->x && b->x < c->x) left = b;
-		else left = c;
+		//if (a->x >= b->x && a->x >= c->x) right = a;
+		//else if (b->x > a->x && b->x > c->x) right = b;
+		//else right = c;
 
-		// Edge Function Method
-		for (float x = MAX(left->x, 0); x < abs(right->x) && x < LCD_COLUMNS; x++) 
-		{
-			for (float y = MAX(top->y, 0); y < abs(bottom->y) && y < LCD_ROWS; y++) {
-				//for (float y = 0; y < LCD_ROWS; y++) {
+		//if (a->x <= b->x && a->x <= c->x) left = a;
+		//else if (b->x < a->x && b->x < c->x) left = b;
+		//else left = c;
 
-				float PAB = _edge(*a, *b, x, y);
-				float PBC = _edge(*b, *c, x, y);
-				float PCA = _edge(*c, *a, x, y);
-				if (PAB < 0) break; // back face cull
-		
-				if (PAB >= 0 && PBC >= 0 && PCA >= 0)
-				{
-					//uint8_t blue = samplebluenoise((uint8_t)x, (uint8_t)y);
-					//if (blue > face_color)
-						setpixel(bitmap, (int)x, (int)y, LCD_ROWSIZE);
-				}
-			}
-		}
+		//// Edge Function Method
+		//for (float x = MAX(left->x, 0); x < abs(right->x) && x < LCD_COLUMNS; x++)
+		//{
+		//	for (float y = MAX(top->y, 0); y < abs(bottom->y) && y < LCD_ROWS; y++) {
+		//		//for (float y = 0; y < LCD_ROWS; y++) {
+
+		//		float PAB = _edge(*a, *b, x, y);
+		//		float PBC = _edge(*b, *c, x, y);
+		//		float PCA = _edge(*c, *a, x, y);
+		//		//if (PAB < 0) break; // back face cull
+
+		//		if (PAB >= 0 && PBC >= 0 && PCA >= 0)
+		//		{
+		//			uint8_t blue = samplebluenoise((uint8_t)x, (uint8_t)y);
+		//			if (blue > face_color)
+		//			setpixel(bitmap, (int)x, (int)y, LCD_ROWSIZE);
+		//		}
+		//	}
+		//}
 
 		// Debug visualization, keep around for now
 		/*struct Vector3 center = {
@@ -119,14 +128,61 @@ void Triangle_draw(PlaydateAPI* pd, uint8_t* bitmap, struct Vector3* a, struct V
 		/*pd->graphics->drawLine(center.x, center.y, top->x, top->y, 3, kColorBlack);
 		pd->graphics->drawLine(center.x, center.y, bottom->x, bottom->y, 1, kColorBlack);*/
 
+	//}
+	//	break;
 
-		break;
+	//case RENDER_SPLAT: {
+		//struct Vector3* top = a;
+		//struct Vector3* bottom = b;
+		////struct Vector3* middle = c; // vertical middle
+		//struct Vector3* left;
+		//struct Vector3* right;
 
-	case RENDER_WPF: // Wireframe + Fill
-		Triangle_draw(pd, bitmap, a, b, c, RENDER_SDKFILL, kColorBlack, 1, face_color);
-		Triangle_draw(pd, bitmap, a, b, c, RENDER_WIREFRAME, kColorWhite, 1, face_color);
-		break;
-	}
+		//if (a->y >= b->y && a->y >= c->y) bottom = a;
+		//else if (b->y > a->y && b->y > c->y) bottom = b;
+		//else bottom = c;
+
+		//if (a->y <= b->y && a->y <= c->y) top = a;
+		//else if (b->y < a->y && b->y < c->y) top = b;
+		//else top = c;
+
+		//if (a->x >= b->x && a->x >= c->x) right = a;
+		//else if (b->x > a->x && b->x > c->x) right = b;
+		//else right = c;
+
+		//if (a->x <= b->x && a->x <= c->x) left = a;
+		//else if (b->x < a->x && b->x < c->x) left = b;
+		//else left = c;
+
+		//// Edge Function Method
+		//for (float x = MAX(left->x, 0); x < abs(right->x) && x < LCD_COLUMNS; x += 5)
+		//{
+		//	for (float y = MAX(top->y, 0); y < abs(bottom->y) && y < LCD_ROWS; y += 5) {
+		//		//for (float y = 0; y < LCD_ROWS; y++) {
+
+		//		float PAB = _edge(*a, *b, x, y);
+		//		float PBC = _edge(*b, *c, x, y);
+		//		float PCA = _edge(*c, *a, x, y);
+		//		if (PAB < 0) break; // back face cull
+
+		//		if (PAB >= 0 && PBC >= 0 && PCA >= 0)
+		//		{
+		//			//uint8_t blue = samplebluenoise((uint8_t)x, (uint8_t)y);
+		//			//if (blue > face_color)
+		//			pd->graphics->drawText(".", 1, kASCIIEncoding, (int)x, (int)y);
+		//			//setpixel(bitmap, (int)x, (int)y, LCD_ROWSIZE);
+		//		}
+		//	}
+		//}
+
+	//}
+//		break;
+
+	//case RENDER_WPF: // Wireframe + Fill
+	//	Triangle_draw(pd, bitmap, a, b, c, RENDER_SDKFILL, kColorBlack, 1, face_color);
+	//	Triangle_draw(pd, bitmap, a, b, c, RENDER_WIREFRAME, kColorWhite, 1, face_color);
+	//	break;
+	//}
 }
 
 float _edge(struct Vector3 a, struct Vector3 b, float px, float py)
@@ -144,11 +200,17 @@ void GameObject_render(PlaydateAPI* pd, uint8_t* bitmap, struct GameObject* go, 
 	// Draw us
 	GameObject_drawMesh(pd, bitmap, go, camera);
 
+	
+	/*struct Vector3* projected_vertices = NULL;
+	pd->system->realloc(projected_vertices, sizeof(struct Vector3) * go->mesh->numVertices);*/
+
+
 	// Draw our children
 	for (int i = 0; i < go->num_children; i++)
 	{
 		//GameObject_render(pd, bitmap, &go->children[i], camera);
 	}
+
 }
 
 // TODO: https://webglfundamentals.org/webgl/lessons/webgl-3d-orthographic.html
@@ -165,6 +227,11 @@ void GameObject_drawMesh(PlaydateAPI* pd, uint8_t* bitmap, struct GameObject* go
 		GameObject's transforms on another GameObject. */
 	struct Vector3 agg_pos = { 0, 0, 0 };
 
+	
+	struct Vector3* projected_vertices = NULL;
+	pd->system->realloc(projected_vertices, sizeof(struct Vector3) * go->mesh->numVertices);
+	
+
 	struct GameObject* parent = go->parent;
 	while (parent != NULL)
 	{
@@ -173,14 +240,43 @@ void GameObject_drawMesh(PlaydateAPI* pd, uint8_t* bitmap, struct GameObject* go
 		parent = parent->parent;
 	}
 
-	for (int i = 0; i < m->numIndices; i += 3)
+	uint16_t index[3] = {0,0,0};
+	struct Vector3 point[3] = { {0,0,0}, {0,0,0}, {0,0,0} };
+	int i = 0, p = 0;
+
+	struct Matrix4x4 camera_rotate_transform = Matrix4_getTransform(
+		camera->rotation.x, camera->rotation.y, camera->rotation.z,
+		0, 0, 0,
+		//camera->position.x, -camera->position.y, camera->position.z,
+		1.0f, 1.0f, 1.0f
+	);
+
+	for (i = 0; i < m->numIndices; i += 3)
 	{
-		uint16_t index[] = { m->indices[i], m->indices[i + 1], m->indices[i + 2] };
-		struct Vector3 point[] = {
+		index[0] = m->indices[i];
+		index[1] = m->indices[i + 1];
+		index[2] = m->indices[i + 2];
+
+		point[0] = m->vertices[index[0]];
+		point[1] = m->vertices[index[1]];
+		point[2] = m->vertices[index[2]];
+
+		// Jitter
+		/*static float jitter_size = .25f;
+		for (int iii = 0; iii < 3; iii++)
+		{
+			point[iii].x += ((float)rand() / RAND_MAX) * jitter_size - (jitter_size / 2);
+			point[iii].y += ((float)rand() / RAND_MAX) * jitter_size - (jitter_size / 2);
+			point[iii].z += ((float)rand() / RAND_MAX) * jitter_size - (jitter_size / 2);
+		}*/
+
+		//index = { m->indices[i], m->indices[i + 1], m->indices[i + 2] };
+		/*struct Vector3 point[] = {
 			m->vertices[index[0]],
 			m->vertices[index[1]],
 			m->vertices[index[2]]
-		}; /* Converting to array of non-pointers so we can mutate the values without
+		};*/
+		/* Converting to array of non-pointers so we can mutate the values without
 				modifying the originals*/
 
 		//if (point[0].z < camera->near &&
@@ -190,14 +286,10 @@ void GameObject_drawMesh(PlaydateAPI* pd, uint8_t* bitmap, struct GameObject* go
 
 		// Note: Do any world-space offsets here before projecting with a camera.
 		//point->z += 3;
-		struct Matrix4x4 transform = Matrix4_getTransform(
-			go->rotation.x, go->rotation.y, go->rotation.z,
-			go->position.x, go->position.y, go->position.z,
-			go->scale.x, go->scale.y, go->scale.z
-		);
-		for (int p = 0; p < 3; p++)
-		{
 
+		// TODO: Maybe just duplicate x3 instead of loop? Unsure of perf hit
+		for (p = 0; p < 3; p++)
+		{
 			/* OBJECT TRANSFORMS
 			   ------ ----------
 			   */
@@ -206,7 +298,7 @@ void GameObject_drawMesh(PlaydateAPI* pd, uint8_t* bitmap, struct GameObject* go
 			point[p] = Vector3_subtract(&point[p], &m->origin);
 
 			// BUG: It's not rotating around parent offset.
-			point[p] = Matrix4_apply(&transform, &point[p]); // translate -> scale -> rotate
+			point[p] = Matrix4_apply(&go->transform, &point[p]); // translate -> scale -> rotate
 
 			// Parent Aggregate Translation
 			// TODO: This needs to be expanded
@@ -215,14 +307,6 @@ void GameObject_drawMesh(PlaydateAPI* pd, uint8_t* bitmap, struct GameObject* go
 			//point[p].y *= -1;
 		}
 
-
-
-		struct Matrix4x4 camera_rotate_transform = Matrix4_getTransform(
-			camera->rotation.x, camera->rotation.y, camera->rotation.z,
-			0,0,0,
-			//camera->position.x, -camera->position.y, camera->position.z,
-			1.0f, 1.0f, 1.0f
-		);
 		struct Vector3 center_raw = {
 			.x = (point[0].x + point[1].x + point[2].x) / 3.0f,
 			.y = (point[0].y + point[1].y + point[2].y) / 3.0f,
@@ -253,21 +337,21 @@ void GameObject_drawMesh(PlaydateAPI* pd, uint8_t* bitmap, struct GameObject* go
 			.y = (point[0].y + point[1].y + point[2].y) / 3.0f,
 			.z = (point[0].z + point[1].z + point[2].z) / 3.0f,
 		};
-		struct Vector3 zero = { 0,0,0 };
-		struct Vector3 fake_camera = { 0, 1.0f, 2.5f };
-		struct Vector3 corrected_camera = Camera_worldPosition(camera);
+		//struct Vector3 zero = { 0,0,0 };
+		//struct Vector3 fake_camera = { 0, 1.0f, 2.5f };
+		//struct Vector3 corrected_camera = Camera_worldPosition(camera);
 		//corrected_camera.y *= -1;
 		struct Vector3 scaled_normal = Vector3_multiplyScalar(&normal, 0.5f); 
-		struct Vector3 normal_end = Vector3_add(&center, &scaled_normal);
+		//struct Vector3 normal_end = Vector3_add(&center, &scaled_normal);
 		//struct Vector3 line_to_camera = Vector3_subtract(&fake_camera, &center);
 		struct Vector3 line_to_camera = Vector3_subtract(&camera->position, &center);
 		struct Vector3 line_to_camera_n = Vector3_normalize(line_to_camera);
-		struct Vector3 line_to_camera_scaled = Vector3_multiplyScalar(&line_to_camera_n, 0.5f);
-		struct Vector3 line_to_fake_camera = Vector3_subtract(&zero, &fake_camera);
-		struct Vector3 camera_line_end = Vector3_add(&center, &line_to_camera);
+		//struct Vector3 line_to_camera_scaled = Vector3_multiplyScalar(&line_to_camera_n, 0.5f);
+		//struct Vector3 line_to_fake_camera = Vector3_subtract(&zero, &fake_camera);
+		//struct Vector3 camera_line_end = Vector3_add(&center, &line_to_camera);
 
-		struct Vector3 camera_ground = Vector3_multiplyScalar(&camera->position, 0.5f);
-		camera_ground.y = 0;
+		/*struct Vector3 camera_ground = Vector3_multiplyScalar(&camera->position, 0.5f);
+		camera_ground.y = 0;*/
 		struct Vector3 forward = Vector3_getForward(&camera->rotation);
 		
 		// line to camera
@@ -282,12 +366,32 @@ void GameObject_drawMesh(PlaydateAPI* pd, uint8_t* bitmap, struct GameObject* go
 
 		// DRAW TRIANGLE (DEBUG)
 		float backface = Vector3_dot(normal, line_to_camera_n);
-		if (backface > 0) {
-			Line_worldDraw(pd, point[0], point[1], 1, camera);
-			Line_worldDraw(pd, point[1], point[2], 1, camera);
-			Line_worldDraw(pd, point[2], point[0], 1, camera);
+		if (backface < 0) continue; // SKIP RENDER IF BACK FACING AWAY
+
+		//if (backface > 0) {
+		/*Line_worldDraw(pd, point[0], point[1], 1, camera);
+		Line_worldDraw(pd, point[1], point[2], 1, camera);
+		Line_worldDraw(pd, point[2], point[0], 1, camera);*/
+
+		// TODO: Maybe duplicate x3? Unsure of perf hit with loop
+		for (int i = 0; i < 3; i++)
+		{
+			point[i] = Vector3_subtract(&point[i], &camera->position);
+
+			point[i] = Matrix3_apply(&camera->rotationX, &point[i]);
+			point[i] = Matrix3_apply(&camera->rotationY, &point[i]);
+			point[i] = Matrix3_apply(&camera->rotationZ, &point[i]);
+
+			PTR_Camera_worldToScreenPos(camera, &point[i]);
 		}
+
+		Triangle_draw(pd, bitmap, &point[0], &point[1], &point[2], RENDER_WIREFRAME, kColorBlack, 1, 128);
+		//}
 	}
+
+	// Free the vertex projection memory
+	pd->system->realloc(projected_vertices, 0);
+	projected_vertices = NULL;
 }
 
 struct Vector3 grid_points[] = {
@@ -347,9 +451,51 @@ void Grid_render(PlaydateAPI* pd, uint8_t* bitmap, struct Camera* camera)
 			dot = Camera_worldToScreenPos(camera, &dot);
 			//PTR_Camera_worldToScreenPos(camera, &dot);
 
+			pd->graphics->setPixel(dot.x, dot.y, kColorWhite);
+		}
+	}
+}
 
-			//pd->graphics->drawLine(dot.x, dot.y, dot.x, dot.y, 1.0f, kColorBlack);
-			pd->graphics->setPixel(dot.x, dot.y, kColorBlack);
+void YPlane_render(PlaydateAPI* pd, uint8_t* bitmap, struct Camera* camera, float y_plane)
+{
+
+	for (int i = 0; i < 6; i += 2)
+	{
+		Line_worldDraw(pd, grid_points[i], grid_points[i + 1], 1, camera);
+	}
+
+	// Plane lines
+	float gridSize = 5.0f;
+	float cellSize = 1.5f;
+	struct Vector3 dot = { 0,0,0 };
+	for (float x = -gridSize; x < gridSize - 1; x += cellSize)
+	{
+		for (float z = -gridSize; z < gridSize - 1; z += cellSize)
+		{
+			// TODO: Add "behind camera" check.
+			// TODO: Could add that to the Line_worldDraw function directly
+			//dot.x = x;
+			//dot.z = z;
+			//Line_worldDraw(pd, dot, dot, 1, camera);
+			//dot = (struct Vector3){ x, 0, z };
+			dot.x = x; dot.y = y_plane; dot.z = z;
+			//dot = Matrix4_apply(&transform, &dot);
+
+			dot = Vector3_subtract(&dot, &camera->position);
+
+			//// Rotation
+			//// TODO: replace this with a combined transform
+			/*dot = Matrix3_apply(&camera->rotationX, &dot);
+			dot = Matrix3_apply(&camera->rotationY, &dot);
+			dot = Matrix3_apply(&camera->rotationZ, &dot);*/
+			PTR_Matrix3_apply(&camera->rotationX, &dot);
+			PTR_Matrix3_apply(&camera->rotationY, &dot);
+			PTR_Matrix3_apply(&camera->rotationZ, &dot);
+
+			dot = Camera_worldToScreenPos(camera, &dot);
+			//PTR_Camera_worldToScreenPos(camera, &dot);
+
+			pd->graphics->setPixel(dot.x, dot.y, kColorWhite);
 		}
 	}
 }
@@ -359,7 +505,7 @@ void Line_worldDraw(PlaydateAPI* pd, struct Vector3 p1, struct Vector3 p2, float
 	struct Vector3 a = p1;
 	struct Vector3 b = p2;
 
-
+	// TODO: Precalculate this
 	struct Matrix4x4 transform = Matrix4_getTransform(
 		camera->rotation.x, camera->rotation.y, camera->rotation.z,
 		0,0,0,
@@ -387,8 +533,15 @@ void Line_worldDraw(PlaydateAPI* pd, struct Vector3 p1, struct Vector3 p2, float
 	PTR_Camera_worldToScreenPos(camera, &a);
 	PTR_Camera_worldToScreenPos(camera, &b);
 
+	// Dots
+	/*pd->graphics->setPixel(a.x, a.y, kColorBlack);
+	pd->graphics->setPixel(b.x, b.y, kColorBlack);*/
 
-	pd->graphics->drawLine(a.x, a.y, b.x + size, b.y + size, size, kColorBlack);
+	// Line
+	if (pd != NULL)
+	{
+		pd->graphics->drawLine(a.x, a.y, b.x + size - 1, b.y + size - 1, size, kColorWhite);
+	}
 }
 
 //

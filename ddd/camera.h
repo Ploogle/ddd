@@ -8,6 +8,7 @@ typedef enum {
 	RENDER_FILL, 
 	RENDER_WPF, // Wireframe + fill (thicker wireframe
 	RENDER_SDKFILL,
+	RENDER_SPLAT,
 } RENDER_MODE;
 
 struct Camera
