@@ -94,7 +94,7 @@ int eventHandler(PlaydateAPI* _pd, PDSystemEvent event, uint32_t arg)
 		//srand(time(NULL));
 
 		pd->system->setUpdateCallback(update, pd);
-		pd->display->setRefreshRate(30);
+		pd->display->setRefreshRate(0);
 		pd->system->setAutoLockDisabled(true);
 
 		loadScene(DefaultScene);
@@ -243,6 +243,11 @@ void camera_update()
 	}
 
 	// Update camera velocity / decel
+
+	struct Vector3 forward = Vector3_getForward(&camera_default.rotation);
+	struct Vector3 dir = Vector3_multiplyScalar(&forward, camera_velocity.z);
+
+	//camera_default.position = Vector3_add(&camera_default.position, &dir);
 	camera_default.position = Vector3_add(&camera_default.position, &camera_velocity);
 	camera_velocity = Vector3_multiplyScalar(&camera_velocity, 0.5f);
 
@@ -267,7 +272,8 @@ static int update(void* userdata)
 
 	for (int i = 0; i < ActiveScene->numGameObjects; i++)
 	{
-		GameObject_render(pd, frame, ActiveScene->gameObjects[i], &camera_default);
+		//GameObject_render(pd, frame, ActiveScene->gameObjects[i], &camera_default);
+		GameObject_drawMesh(pd, frame, ActiveScene->gameObjects[i], &camera_default);
 	}
 
 	//Grid_render(pd, frame, &camera_default);

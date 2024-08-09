@@ -6,6 +6,7 @@
  #include "../fish2.h"
 #include "../salmon.h"
 #include "../blahaj_tri.h"
+#include "../terrain1.h"
 
 struct Scene TestScene;
 
@@ -36,6 +37,14 @@ struct GameObject object_test = {
 	.scale = { 1, 1, 1 }
 };
 
+struct GameObject object_terrain = {
+	.name = "Terrain",
+	.mesh = &terrain1,
+	.position = { 0, 0, 0 },
+	.rotation = { 0, 0, 0 },
+	.scale = { 1, 1, 1 }
+};
+
 
 /*
 	Cameras
@@ -46,7 +55,7 @@ struct Camera camera_default = {
 	.far = 1000.0f,
 	.fov = 60.0f,
 	.look_target = { 0, 0, 0 },
-	.position = { 0, 1.0f, 2.5f },
+	.position = { 0, 2.0f, 5.0f },
 	//.rotationX = { 0, 0, 0 },
 	.rotation = {0,0,0},
 	.render_mode = RENDER_WIREFRAME,
@@ -78,6 +87,11 @@ void test_update(PlaydateAPI* pd)
 
 }
 
+void terrain_update(PlaydateAPI* pd)
+{
+
+}
+
 
 void test_scene_init(PlaydateAPI* pd)
 {
@@ -87,10 +101,12 @@ void test_scene_init(PlaydateAPI* pd)
 	object_cube.update = &cube_update;
 	object_cube2.update = &cube2_update;
 	object_test.update = &test_update;
+	object_terrain.update = &terrain_update;
 
 	/*Scene_addGameObject(pd, &TestScene, &object_cube);
 	Scene_addGameObject(pd, &TestScene, &object_cube2);*/
 	Scene_addGameObject(pd, &TestScene, &object_test);
+	Scene_addGameObject(pd, &TestScene, &object_terrain);
 }
 
 void test_scene_update(PlaydateAPI* pd)

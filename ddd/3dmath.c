@@ -67,8 +67,12 @@ struct Vector3 Vector3_normalize(struct Vector3 v)
 struct Vector3 pnormal(struct Vector3* p1, struct Vector3* p2, struct Vector3* p3)
 {
 	struct Vector3 v = Vector3_cross(
-		Vector3_make(p2->x - p1->x, p2->y - p1->y, p2->z - p1->z),
-		Vector3_make(p3->x - p1->x, p3->y - p1->y, p3->z - p1->z));
+		(struct Vector3) {
+				p2->x - p1->x, p2->y - p1->y, p2->z - p1->z
+		},
+	(struct Vector3){
+		p3->x - p1->x, p3->y - p1->y, p3->z - p1->z
+	});
 
 	return Vector3_normalize(v);
 }

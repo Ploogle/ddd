@@ -63,7 +63,7 @@ void Triangle_draw(PlaydateAPI* pd, uint8_t* bitmap, struct Vector3* a, struct V
 		pd->graphics->drawLine(b->x, b->y, c->x, c->y, line_width, kColorWhite);
 		pd->graphics->drawLine(c->x, c->y, a->x, a->y, line_width, kColorWhite);*/
 		/*pd->graphics->setPixel(a->x, a->y, color);
-		pd->graphics->setPixel(b->x, b->y, color);
+		pd->graphics->setPixel(b->x, b->y, color);kj
 		pd->graphics->setPixel(c->x, c->y, color);*/
 	//	break;
 
@@ -225,111 +225,65 @@ void GameObject_drawMesh(PlaydateAPI* pd, uint8_t* bitmap, struct GameObject* go
 	// Aggregate the translation of all our parents.
 	/* TODO: Break all positional offsets off into a function that applies one
 		GameObject's transforms on another GameObject. */
-	struct Vector3 agg_pos = { 0, 0, 0 };
+	//struct Vector3 agg_pos = { 0, 0, 0 };
 
 	
 	struct Vector3* projected_vertices = NULL;
-	pd->system->realloc(projected_vertices, sizeof(struct Vector3) * go->mesh->numVertices);
-	
+	struct Vector3* screen_vertices = NULL;
+	projected_vertices = pd->system->realloc(projected_vertices, sizeof(struct Vector3) * go->mesh->numVertices);
+	screen_vertices = pd->system->realloc(screen_vertices, sizeof(struct Vector3) * go->mesh->numVertices);
 
-	struct GameObject* parent = go->parent;
-	while (parent != NULL)
+	for (int i = 0; i < go->mesh->numVertices; i++)
 	{
-		agg_pos = Vector3_add(&agg_pos, &parent->position);
+		projected_vertices[i] = go->mesh->vertices[i];
 
-		parent = parent->parent;
+		// Origin Translate
+		projected_vertices[i] = Vector3_subtract(&projected_vertices[i], &m->origin);
+
+		// translate -> scale -> rotate
+		projected_vertices[i] = Matrix4_apply(&go->transform, &projected_vertices[i]); 
+
+		// Parent Aggregate Translation
+		// TODO: This needs to be expanded
+		//projected_vertices[i] = Vector3_add(&projected_vertices[i], &agg_pos);
+
+		// Jitter
+		/*static float jitter_size = .1f;
+		projected_vertices[i].x += ((float)rand() / RAND_MAX) * jitter_size - (jitter_size / 2);
+		projected_vertices[i].y += ((float)rand() / RAND_MAX) * jitter_size - (jitter_size / 2);
+		projected_vertices[i].z += ((float)rand() / RAND_MAX) * jitter_size - (jitter_size / 2);*/
+
+
+		screen_vertices[i] = projected_vertices[i];
+		screen_vertices[i] = Vector3_subtract(&screen_vertices[i], &camera->position);
+		screen_vertices[i] = Matrix3_apply(&camera->rotationX, &screen_vertices[i]);
+		screen_vertices[i] = Matrix3_apply(&camera->rotationY, &screen_vertices[i]);
+		screen_vertices[i] = Matrix3_apply(&camera->rotationZ, &screen_vertices[i]);
+		PTR_Camera_worldToScreenPos(camera, &screen_vertices[i]);
 	}
 
-	uint16_t index[3] = {0,0,0};
+	//struct GameObject* parent = go->parent;
+	//while (parent != NULL)
+	//{
+	//	agg_pos = Vector3_add(&agg_pos, &parent->position);
+
+	//	parent = parent->parent;
+	//}
+
+	//uint16_t index[3] = {0,0,0};
 	struct Vector3 point[3] = { {0,0,0}, {0,0,0}, {0,0,0} };
 	int i = 0, p = 0;
 
-	struct Matrix4x4 camera_rotate_transform = Matrix4_getTransform(
-		camera->rotation.x, camera->rotation.y, camera->rotation.z,
-		0, 0, 0,
-		//camera->position.x, -camera->position.y, camera->position.z,
-		1.0f, 1.0f, 1.0f
-	);
+	//struct Matrix4x4 camera_rotate_transform = Matrix4_getTransform(
+	//	camera->rotation.x, camera->rotation.y, camera->rotation.z,
+	//	0, 0, 0,
+	//	//camera->position.x, -camera->position.y, camera->position.z,
+	//	1.0f, 1.0f, 1.0f
+	//);
 
 	for (i = 0; i < m->numIndices; i += 3)
 	{
-		index[0] = m->indices[i];
-		index[1] = m->indices[i + 1];
-		index[2] = m->indices[i + 2];
-
-		point[0] = m->vertices[index[0]];
-		point[1] = m->vertices[index[1]];
-		point[2] = m->vertices[index[2]];
-
-		// Jitter
-		/*static float jitter_size = .25f;
-		for (int iii = 0; iii < 3; iii++)
-		{
-			point[iii].x += ((float)rand() / RAND_MAX) * jitter_size - (jitter_size / 2);
-			point[iii].y += ((float)rand() / RAND_MAX) * jitter_size - (jitter_size / 2);
-			point[iii].z += ((float)rand() / RAND_MAX) * jitter_size - (jitter_size / 2);
-		}*/
-
-		//index = { m->indices[i], m->indices[i + 1], m->indices[i + 2] };
-		/*struct Vector3 point[] = {
-			m->vertices[index[0]],
-			m->vertices[index[1]],
-			m->vertices[index[2]]
-		};*/
-		/* Converting to array of non-pointers so we can mutate the values without
-				modifying the originals*/
-
-		//if (point[0].z < camera->near &&
-		//	point[1].z < camera->near &&
-		//	point[2].z < camera->near)
-		//	continue;
-
-		// Note: Do any world-space offsets here before projecting with a camera.
-		//point->z += 3;
-
-		// TODO: Maybe just duplicate x3 instead of loop? Unsure of perf hit
-		for (p = 0; p < 3; p++)
-		{
-			/* OBJECT TRANSFORMS
-			   ------ ----------
-			   */
-
-			// Origin Translate
-			point[p] = Vector3_subtract(&point[p], &m->origin);
-
-			// BUG: It's not rotating around parent offset.
-			point[p] = Matrix4_apply(&go->transform, &point[p]); // translate -> scale -> rotate
-
-			// Parent Aggregate Translation
-			// TODO: This needs to be expanded
-			point[p] = Vector3_add(&point[p], &agg_pos);
-
-			//point[p].y *= -1;
-		}
-
-		struct Vector3 center_raw = {
-			.x = (point[0].x + point[1].x + point[2].x) / 3.0f,
-			.y = (point[0].y + point[1].y + point[2].y) / 3.0f,
-			.z = (point[0].z + point[1].z + point[2].z) / 3.0f,
-		};
-
-		struct Vector3 cpos = camera->position;
-		cpos.y *= -1;
-		//for (int p = 0; p < 3; p++)
-		//{
-		//	/* CAMERA TRANSFORMS
-		//	   ------ ---------- */
-		//	   //point[p] = Vector3_add(&point[p], &camera->position);
-		//	point[p] = Vector3_subtract(&point[p], &cpos);
-		//	point[p] = Matrix4_apply(&camera_rotate_transform, &point[p]);
-
-		//	//   // Translation
-
-		//	//// Rotation
-		//	//point[p] = Matrix3_apply(&camera->rotationX, &point[p]);
-		//	//point[p] = Matrix3_apply(&camera->rotationY, &point[p]);
-		//	//point[p] = Matrix3_apply(&camera->rotationZ, &point[p]);
-		//}
+		for (int ii = 0; ii < 3; ii++) point[ii] = projected_vertices[m->indices[i + ii]];
 
 		struct Vector3 normal = pnormal(&point[0], &point[1], &point[2]);
 		struct Vector3 center = {
@@ -337,61 +291,37 @@ void GameObject_drawMesh(PlaydateAPI* pd, uint8_t* bitmap, struct GameObject* go
 			.y = (point[0].y + point[1].y + point[2].y) / 3.0f,
 			.z = (point[0].z + point[1].z + point[2].z) / 3.0f,
 		};
-		//struct Vector3 zero = { 0,0,0 };
-		//struct Vector3 fake_camera = { 0, 1.0f, 2.5f };
-		//struct Vector3 corrected_camera = Camera_worldPosition(camera);
-		//corrected_camera.y *= -1;
-		struct Vector3 scaled_normal = Vector3_multiplyScalar(&normal, 0.5f); 
-		//struct Vector3 normal_end = Vector3_add(&center, &scaled_normal);
-		//struct Vector3 line_to_camera = Vector3_subtract(&fake_camera, &center);
+
 		struct Vector3 line_to_camera = Vector3_subtract(&camera->position, &center);
 		struct Vector3 line_to_camera_n = Vector3_normalize(line_to_camera);
-		//struct Vector3 line_to_camera_scaled = Vector3_multiplyScalar(&line_to_camera_n, 0.5f);
-		//struct Vector3 line_to_fake_camera = Vector3_subtract(&zero, &fake_camera);
-		//struct Vector3 camera_line_end = Vector3_add(&center, &line_to_camera);
 
-		/*struct Vector3 camera_ground = Vector3_multiplyScalar(&camera->position, 0.5f);
-		camera_ground.y = 0;*/
 		struct Vector3 forward = Vector3_getForward(&camera->rotation);
 		
-		// line to camera
-		//Line_worldDraw(pd, center, camera_line_end, 1, camera);
-
-		// normals
-		//Line_worldDraw(pd, center, normal_end, 2, camera);
-
-		// center dot
-		//Line_worldDraw(pd, center_raw, center_raw, 5, camera);
-
 
 		// DRAW TRIANGLE (DEBUG)
 		float backface = Vector3_dot(normal, line_to_camera_n);
 		if (backface < 0) continue; // SKIP RENDER IF BACK FACING AWAY
+		if (point[0].z > camera->position.z) continue;
+		
 
-		//if (backface > 0) {
-		/*Line_worldDraw(pd, point[0], point[1], 1, camera);
-		Line_worldDraw(pd, point[1], point[2], 1, camera);
-		Line_worldDraw(pd, point[2], point[0], 1, camera);*/
+		for (int ii = 0; ii < 3; ii++) point[ii] = screen_vertices[m->indices[i + ii]];
 
-		// TODO: Maybe duplicate x3? Unsure of perf hit with loop
-		for (int i = 0; i < 3; i++)
-		{
-			point[i] = Vector3_subtract(&point[i], &camera->position);
+		//Triangle_draw(pd, bitmap, &point[0], &point[1], &point[2], RENDER_WIREFRAME, kColorBlack, 1, 128);
+		
+		//pd->graphics->fillTriangle(point[0].x, point[0].y, point[1].x, point[1].y, point[2].x, point[2].y, kColorWhite);
 
-			point[i] = Matrix3_apply(&camera->rotationX, &point[i]);
-			point[i] = Matrix3_apply(&camera->rotationY, &point[i]);
-			point[i] = Matrix3_apply(&camera->rotationZ, &point[i]);
-
-			PTR_Camera_worldToScreenPos(camera, &point[i]);
-		}
-
-		Triangle_draw(pd, bitmap, &point[0], &point[1], &point[2], RENDER_WIREFRAME, kColorBlack, 1, 128);
+		pd->graphics->drawLine(point[0].x, point[0].y, point[1].x, point[1].y, 1, kColorWhite);
+		pd->graphics->drawLine(point[1].x, point[1].y, point[2].x, point[2].y, 1, kColorWhite);
+		pd->graphics->drawLine(point[2].x, point[2].y, point[0].x, point[0].y, 1, kColorWhite);
 		//}
 	}
 
 	// Free the vertex projection memory
 	pd->system->realloc(projected_vertices, 0);
 	projected_vertices = NULL;
+
+	pd->system->realloc(screen_vertices, 0);
+	screen_vertices = NULL;
 }
 
 struct Vector3 grid_points[] = {

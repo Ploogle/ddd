@@ -16,6 +16,7 @@ struct Camera
 	struct Vector3 position; // Position in space the camera is looking from
 	struct Vector3 rotation;
 	// TODO: Replace this with a properly-combined matrix or Quaternion or something
+	struct Matrix3x3 rotate_transform;
 	struct Matrix3x3 rotationX; // temporary rotation, for an example.
 	struct Matrix3x3 rotationY; // temporary rotation, for an example.
 	struct Matrix3x3 rotationZ; // temporary rotation, for an example.

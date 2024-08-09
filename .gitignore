@@ -1,7 +1,4 @@
 build
-build-sim
-build-dev
-Source
 *.pdx
 .sentry-native
 .vs

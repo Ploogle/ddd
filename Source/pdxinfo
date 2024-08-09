@@ -1,0 +1,5 @@
+name=DDD Engine
+author=Jordan Carroll
+description=A lightweight 3D engine for the Playdate.
+bundleID=com.unhenge.ddd
+imagePath=

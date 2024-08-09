@@ -1,0 +1,3 @@
+C:/Users/shrin/Documents/Playdate Projects/ddd/build-dev/CMakeFiles/ddd.dir
+C:/Users/shrin/Documents/Playdate Projects/ddd/build-dev/CMakeFiles/edit_cache.dir
+C:/Users/shrin/Documents/Playdate Projects/ddd/build-dev/CMakeFiles/rebuild_cache.dir
