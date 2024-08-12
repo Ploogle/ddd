@@ -37,6 +37,7 @@
     <ClInclude Include="src\fish.h" />
     <ClInclude Include="src\fish2.h" />
     <ClInclude Include="src\toa_head.h" />
+    <ClInclude Include="ddd\cvector.h" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\shrin\Documents\Playdate Projects\ddd\CMakeLists.txt" />

@@ -246,6 +246,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="ddd\camera.h" />
     <ClInclude Include="ddd\gameobject.h" />
     <ClInclude Include="ddd\gradient.h" />
+    <ClInclude Include="ddd\cvector.h" />
     <ClInclude Include="ddd\quaternion.h" />
     <ClInclude Include="ddd\scene.h" />
     <ClInclude Include="ddd\symbols.h" />

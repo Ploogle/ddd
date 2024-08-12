@@ -18,6 +18,7 @@
 //#include "fish.h"
 #include "../ddd/ddd.h"
 #include "scenes\TestScene.h"
+#include "../ddd/gradient.h"
 
 
 /* 
@@ -99,6 +100,7 @@ int eventHandler(PlaydateAPI* _pd, PDSystemEvent event, uint32_t arg)
 
 		loadScene(DefaultScene);
 
+		Gradient_init();
 	}
 	else if (event == kEventKeyPressed)
 	{
@@ -256,6 +258,8 @@ void camera_update()
 
 static int update(void* userdata)
 {
+	Gradient_tick(5);
+
 	// TODO: Pass deltaTime into update functions
 	float deltaTime = pd->system->getElapsedTime();
 	
@@ -270,16 +274,17 @@ static int update(void* userdata)
 
 	camera_update();
 
+	//Grid_render(pd, frame, &camera_default);
+	YPlane_render(pd, frame, &camera_default, 0);
+
 	for (int i = 0; i < ActiveScene->numGameObjects; i++)
 	{
 		//GameObject_render(pd, frame, ActiveScene->gameObjects[i], &camera_default);
 		GameObject_drawMesh(pd, frame, ActiveScene->gameObjects[i], &camera_default);
 	}
 
-	//Grid_render(pd, frame, &camera_default);
-	YPlane_render(pd, frame, &camera_default, 0);
 
-	pd->system->drawFPS(LCD_COLUMNS - 20, LCD_ROWS - 15);
+	//pd->system->drawFPS(LCD_COLUMNS - 20, LCD_ROWS - 15);
 	pd->system->resetElapsedTime();
 
 	return 1;

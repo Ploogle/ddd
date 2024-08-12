@@ -27,10 +27,15 @@ struct GameObject
 	struct Scene* scene;
 	int scene_index;
 
-	/* TODO:
-	 - Probably needs some lifecycle function pointers incl. update
-	 */
+	/// <summary>
+	/// A function that's called every frame.
+	/// </summary>
 	void (*update)(PlaydateAPI* pd);
+
+	/// <summary>
+	/// Transforms a list of vertices (v_out) in gameplay space
+	/// </summary>
+	void (*vertShader)(PlaydateAPI* pd, struct GameObject* go, int time, struct Vector3* v_out);
 };
 
 /** Set rotation with theta for x */

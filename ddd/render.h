@@ -47,4 +47,14 @@ void YPlane_render(PlaydateAPI* pd, uint8_t* bitmap, struct Camera* camera, floa
 //
 //float sdSphere(struct Vector3 p, float s);
 
+// == "Borrowed" from SDK 3D Project ==
+void sortTri(struct Vector3** p1, struct Vector3** p2, struct Vector3** p3);
+void api_fillTriangle(uint8_t* bitmap, int rowstride, struct Vector3* p1, struct Vector3* p2, struct Vector3* p3, uint8_t pattern[8]);
+void api_fillRange(uint8_t* bitmap, int rowstride, int y, int endy, int32_t* x1p, int32_t dx1, int32_t* x2p, int32_t dx2, uint8_t pattern[8]);
+void api_drawMaskPattern(uint32_t* p, uint32_t mask, uint32_t color);
+int32_t api_slope(float x1, float y1, float x2, float y2);
+void api_drawFragment(uint32_t* row, int x1, int x2, uint32_t color);
+uint32_t api_swap(uint32_t n);
+
+
 #endif 

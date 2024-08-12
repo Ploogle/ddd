@@ -42,7 +42,8 @@ struct Mesh
 	uint32_t numVertices;
 	uint32_t numIndices;
 	//uint32_t numNormals;
-	//struct Vector3* boundingBox;
+	struct Vector3 min_bounds;
+	struct Vector3 max_bounds;
 	struct Vector3* vertices;
 	//struct Vector3* normals;
 	//struct Vector2* tex_coords; // UV coords, per vert

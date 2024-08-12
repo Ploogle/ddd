@@ -31,6 +31,8 @@ def main(argv):
     if (filename):
         vertices = []
         indices = []
+        bounds_min = [0, 0, 0]
+        bounds_max = [0, 0, 0]
         name = filename.split(".")[0].split("/")[-1]
         print (name)
         with open(filename, "r") as objfile:
@@ -43,17 +45,14 @@ def main(argv):
                         z = parts[3]
                         vertices.append([x, y, z])
 
-                        # vertexIdx = vertices.index([x, y, z])
-                        # indices.append(vertexIdx)
+                        if (float(x) < bounds_min[0]): bounds_min[0] = float(x)
+                        if (float(y) < bounds_min[1]): bounds_min[1] = float(y)
+                        if (float(z) < bounds_min[2]): bounds_min[2] = float(z)
 
-                        # if not [x, y, z] in vertices:
-                        #     #print ('added new' + str([x, y, z]))
-                        #     vertices.append([x, y, z])
-                        #     indices.append(len(vertices) - 2)
-                        # else:
-                        #     vertexIdx = vertices.index([x, y, z])
-                        #     indices.append(vertexIdx)
-                            #print ('already in vertices' + str(vertexIdx))
+                        if (float(x) > bounds_max[0]): bounds_max[0] = float(x)
+                        if (float(y) > bounds_max[1]): bounds_max[1] = float(y)
+                        if (float(z) > bounds_max[2]): bounds_max[2] = float(z)
+                        
                     case "f": # face
                         if len(parts) == 4: # 3 vertices, triangle
                             idx1 = int(parts[1].split('/')[0]) - 1
@@ -76,15 +75,6 @@ def main(argv):
             nv = nv.replace("Z", vertex[2])
             verticesOut.append(nv)
 
-        indicesOut = []
-        # for i in range(1, len(indices) - 3, 3):
-        #     ni = str(indices[i]) + ', ' +\
-        #         str(indices[i + 1]) + ', ' +\
-        #         str(indices[i + 2])
-        #     indicesOut.append('\t\t' + ni)
-        
-        #print (len(indices))
-
         output = '#include "../ddd/symbols.h"\n' \
         '\n' \
         'struct Mesh ' + name + ' = {\n'\
@@ -94,6 +84,8 @@ def main(argv):
         '\t.vertices = (struct Vector3[]) {\n'+\
         ',\n'.join(verticesOut)+'\n'\
         '\t},\n' \
+        '\t.min_bounds = {'+','.join(map(str, bounds_min))+"},\n"\
+        '\t.max_bounds = {'+','.join(map(str, bounds_max))+"},\n"\
         '\t.indices = (uint16_t[]) {\n'+\
         ',\n'.join(indices)+'\n'\
         '\t}\n' \

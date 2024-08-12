@@ -26,6 +26,8 @@ struct Camera
 	float near; // Near clipping plane
 	float far; // Far clipping plane
 	RENDER_MODE render_mode;
+
+	struct Vector3 light_dir; // "Global" (to camera) light direction
 };
 
 struct Matrix4x4 Camera_getProjectionMatrix(struct Camera* camera);

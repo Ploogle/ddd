@@ -1,10 +1,9 @@
 #include "../ddd/symbols.h"
 
 struct Mesh blahaj_tri = {
-	.name = "blahaj_tri",
+	.name="blahaj_tri",
 	.numVertices = 208,
 	.numIndices = 1236,
-	.origin = {2, 0, 0},
 	.vertices = (struct Vector3[]) {
 		{.x = -0.140027, .y = -0.381083, .z = -0.247490 },
 		{.x = -0.071539, .y = 0.503551, .z = -0.051058 },
