@@ -51,6 +51,12 @@ static Pattern patterns[] =
 	{ 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff }
 };
 
+int compare_zdepth(struct Triangle* a, struct Triangle* b)
+{
+	return b->center.z - a->center.z;
+} 
+
+
 
 // void Line_draw(uint8_t* bitmap, struct Vector3* p1, struct Vector3* p2, int thick)
 // {
@@ -137,13 +143,18 @@ void GameObject_drawMesh(PlaydateAPI* pd, uint8_t* bitmap, struct GameObject* go
 	//struct Vector3 agg_pos = { 0, 0, 0 };
 
 	
-	static struct Vector3* projected_vertices = NULL;
-	static struct Vector3* screen_vertices = NULL;
+	struct Vector3* projected_vertices = NULL;
+	struct Vector3* screen_vertices = NULL;
 	if (projected_vertices == NULL) {
 		projected_vertices = pd->system->realloc(projected_vertices, sizeof(struct Vector3) * go->mesh->numVertices);
 	}
 	if (screen_vertices == NULL) {
 		screen_vertices = pd->system->realloc(screen_vertices, sizeof(struct Vector3) * go->mesh->numVertices);
+	}
+	struct Triangle* tris = NULL;
+	if (tris == NULL)
+	{
+		tris = pd->system->realloc(tris, sizeof(struct Triangle) * go->mesh->numIndices / 3);
 	}
 
 	int time_ms = pd->system->getCurrentTimeMilliseconds();
@@ -185,8 +196,8 @@ void GameObject_drawMesh(PlaydateAPI* pd, uint8_t* bitmap, struct GameObject* go
 
 	struct Vector3 point[3] = { {0,0,0}, {0,0,0}, {0,0,0} };
 	int i = 0, p = 0;
-
-	for (i = 0; i < m->numIndices; i += 3)
+	int t_idx = 0;
+	for (i = 0; i < m->numIndices; i += 3, t_idx++)
 	{
 		for (int ii = 0; ii < 3; ii++) point[ii] = projected_vertices[m->indices[i + ii]];
 
@@ -205,17 +216,32 @@ void GameObject_drawMesh(PlaydateAPI* pd, uint8_t* bitmap, struct GameObject* go
 
 		// DRAW TRIANGLE (DEBUG)
 		float backface = Vector3_dot(normal, line_to_camera);
-		if (backface < 0) continue; // SKIP RENDER IF BACK FACING AWAY
-		if (point[0].z > camera->position.z) continue;
+		//if (backface < 0) continue; // SKIP RENDER IF BACK FACING AWAY
+		//if (point[0].z > camera->position.z) continue;
 		
-		for (int ii = 0; ii < 3; ii++) point[ii] = screen_vertices[m->indices[i + ii]];
+		//for (int ii = 0; ii < 3; ii++) point[ii] = screen_vertices[m->indices[i + ii]];
 
 		//Triangle_draw(pd, bitmap, &point[0], &point[1], &point[2], RENDER_WIREFRAME, kColorBlack, 1, 128);
 		
 		float NdotL = Vector3_dot(normal, camera->light_dir);
 		int pattern_idx = MAX(MIN(NdotL * 32, 32), 0); // clamp to 0-32
 
-		api_fillTriangle(bitmap, LCD_ROWSIZE, &point[0], &point[1], &point[2], &patterns[pattern_idx]);
+		//PTR_Camera_worldToScreenPos(camera, &center);
+
+		tris[t_idx] = (struct Triangle){
+			.indices = {
+				m->indices[i],
+				m->indices[i + 1],
+				m->indices[i + 2]
+			},
+			.center = center, // screenspace center
+			.shade = pattern_idx,
+			.visible = backface > 0 &&
+				point[0].z < (camera->position.z - camera->near) &&
+				point[0].z > (camera->position.z - camera->far),
+		};
+
+		 //api_fillTriangle(bitmap, LCD_ROWSIZE, &point[0], &point[1], &point[2], &patterns[pattern_idx]);
 
 		//pd->graphics->fillTriangle(point[0].x, point[0].y, point[1].x, point[1].y, point[2].x, point[2].y, kColorWhite);
 
@@ -225,12 +251,30 @@ void GameObject_drawMesh(PlaydateAPI* pd, uint8_t* bitmap, struct GameObject* go
 		//}
 	}
 
-	// Free the vertex projection memory
-	/*pd->system->realloc(projected_vertices, 0);
-	projected_vertices = NULL;*/
+	qsort(tris, m->numIndices / 3, sizeof(struct Triangle), compare_zdepth);
 
-	/*pd->system->realloc(screen_vertices, 0);
-	screen_vertices = NULL;*/
+	for (int i = 0; i < m->numIndices / 3; i++)
+	{
+		struct Triangle* tri = &tris[i];
+		if (!tri->visible) continue;
+
+		for (int ii = 0; ii < 3; ii++)
+		{
+			point[ii] = screen_vertices[tri->indices[ii]];
+		}
+
+		api_fillTriangle(bitmap, LCD_ROWSIZE, &point[0], &point[1], &point[2], &patterns[tri->shade]);
+	}
+
+	// Free the vertex projection memory
+	pd->system->realloc(projected_vertices, 0);
+	projected_vertices = NULL;
+
+	pd->system->realloc(screen_vertices, 0);
+	screen_vertices = NULL;
+
+	pd->system->realloc(tris, 0);
+	tris = NULL;
 }
 
 struct Vector3 grid_points[] = {
@@ -311,9 +355,6 @@ void YPlane_render(PlaydateAPI* pd, uint8_t* bitmap, struct Camera* camera, floa
 	{
 		for (float z = -gridSizeZ; z < gridSizeZ; z += cellSize)
 		{
-			// Quick and dirty near plane culling, use forward vector in the future.
-			if (z > camera->position.z) continue;
-
 			// TODO: Add "behind camera" check.
 			// TODO: Could add that to the Line_worldDraw function directly
 			//dot.x = x;
@@ -336,6 +377,7 @@ void YPlane_render(PlaydateAPI* pd, uint8_t* bitmap, struct Camera* camera, floa
 
 			dot = Camera_worldToScreenPos(camera, &dot);
 			//PTR_Camera_worldToScreenPos(camera, &dot);
+			if (dot.z < 0) continue;
 
 			pd->graphics->setPixel(dot.x, dot.y, kColorWhite);
 		}

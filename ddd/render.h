@@ -56,5 +56,6 @@ int32_t api_slope(float x1, float y1, float x2, float y2);
 void api_drawFragment(uint32_t* row, int x1, int x2, uint32_t color);
 uint32_t api_swap(uint32_t n);
 
+int compare_zdepth(struct Triangle* a, struct Triangle* b);
 
 #endif 

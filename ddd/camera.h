@@ -3,6 +3,10 @@
 
 #include "symbols.h"
 
+#define CAMERA_FAR 100.0f
+#define CAMERA_NEAR 0.1f
+#define CAMERA_SCALE 40.0f
+
 typedef enum {
 	RENDER_WIREFRAME,
 	RENDER_FILL, 
@@ -10,6 +14,7 @@ typedef enum {
 	RENDER_SDKFILL,
 	RENDER_SPLAT,
 } RENDER_MODE;
+
 
 struct Camera
 {
@@ -25,6 +30,9 @@ struct Camera
 	float fov; // Field of View
 	float near; // Near clipping plane
 	float far; // Far clipping plane
+
+	float far_fog; // If greater than -1, fades out geo from far_fog up to far clip.
+	float near_fog; // If greater than -1, fades out geo from 0 to near_fog.
 	RENDER_MODE render_mode;
 
 	struct Vector3 light_dir; // "Global" (to camera) light direction
@@ -34,7 +42,6 @@ struct Matrix4x4 Camera_getProjectionMatrix(struct Camera* camera);
 struct Vector3 Camera_worldToScreenPos(struct Camera* camera, struct Vector3* worldPos);
 void PTR_Camera_worldToScreenPos(struct Camera* camera, struct Vector3* worldPos);
 void Camera_setRotation(struct Camera* camera, float xTheta, float yTheta, float zTheta);
-struct Vector3 Camera_worldPosition(struct Camera* camera);
 
 
 #endif

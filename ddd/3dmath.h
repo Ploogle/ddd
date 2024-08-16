@@ -29,6 +29,8 @@ struct Vector3 Vector3_multiplyScalar(struct Vector3* a, float scalar);
 struct Vector3 Vector3_normalize(struct Vector3 v);
 
 struct Vector3 Vector3_getForward(struct Vector3* rotation);
+struct Vector3 Vector3_getUp(struct Vector3* rotation);
+struct Vector3 Vector3_getLeft(struct Vector3* rotation);
 
 
 // -- Matrix --

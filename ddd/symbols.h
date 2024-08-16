@@ -52,4 +52,12 @@ struct Mesh
 	struct Vector3 origin;
 };
 
+struct Triangle
+{
+	int indices[3];
+	struct Vector3 center;
+	int shade;
+	bool visible;
+};
+
 #endif

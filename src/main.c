@@ -175,17 +175,21 @@ void handleButtons(PlaydateAPI* pd)
 	float rotSpeed = 0.1f;
 
 	if (pushed & kButtonUp) {
-		camera_default.position.z -= moveSpeed;
+		//camera_default.position.z -= moveSpeed;
+		camera_velocity.z -= moveSpeed;
 	}
 	else if (pushed & kButtonDown) {
-		camera_default.position.z += moveSpeed;
+		//camera_default.position.z += moveSpeed;
+		camera_velocity.z += moveSpeed;
 	}
 	
 	if (pushed & kButtonLeft) {
-		camera_default.position.x += moveSpeed;
+		//camera_default.position.x += moveSpeed;
+		camera_velocity.x += moveSpeed;
 	}
 	else if (pushed & kButtonRight) {
-		camera_default.position.x -= moveSpeed;
+		//camera_default.position.x -= moveSpeed;
+		camera_velocity.x -= moveSpeed;
 	}
 
 	float crankDelta = pd->system->getCrankChange();
@@ -246,11 +250,15 @@ void camera_update()
 
 	// Update camera velocity / decel
 
-	struct Vector3 forward = Vector3_getForward(&camera_default.rotation);
-	struct Vector3 dir = Vector3_multiplyScalar(&forward, camera_velocity.z);
+	struct Vector3 c_forward = Vector3_getForward(&camera_default.rotation);
+	struct Vector3 c_left = Vector3_getLeft(&camera_default.rotation);
+	struct Vector3 forward = Vector3_multiplyScalar(&c_forward, camera_velocity.z);
+	struct Vector3 left = Vector3_multiplyScalar(&c_left, -camera_velocity.x);
+	struct Vector3 dir = Vector3_add(&forward, &left);
+	//struct Vector3 adj_dir = Vector3_multiplyScalar(&dir, camera_velocity.z);
 
-	//camera_default.position = Vector3_add(&camera_default.position, &dir);
-	camera_default.position = Vector3_add(&camera_default.position, &camera_velocity);
+	camera_default.position = Vector3_add(&camera_default.position, &dir);
+	//camera_default.position = Vector3_add(&camera_default.position, &camera_velocity);
 	camera_velocity = Vector3_multiplyScalar(&camera_velocity, 0.5f);
 
 	Camera_setRotation(&camera_default, camera_default.rotation.x, camera_default.rotation.y, camera_default.rotation.z);
@@ -284,7 +292,7 @@ static int update(void* userdata)
 	}
 
 
-	//pd->system->drawFPS(LCD_COLUMNS - 20, LCD_ROWS - 15);
+	pd->system->drawFPS(LCD_COLUMNS - 20, LCD_ROWS - 15);
 	pd->system->resetElapsedTime();
 
 	return 1;

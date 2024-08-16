@@ -16,6 +16,8 @@ struct Mesh mesh_cube = {
 		{.x = 0, .y = CUBE_SIZE, .z = CUBE_SIZE },
 		{.x = 0, .y = 0, .z = CUBE_SIZE },
 	},
+	.min_bounds = {0,0,0},
+	.max_bounds = {CUBE_SIZE,CUBE_SIZE,CUBE_SIZE},
 	.indices = (uint16_t[]){
 		0, 1, 2, // south
 		3, 2, 5, // east

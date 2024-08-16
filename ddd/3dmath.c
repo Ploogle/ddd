@@ -79,14 +79,28 @@ struct Vector3 pnormal(struct Vector3* p1, struct Vector3* p2, struct Vector3* p
 
 struct Vector3 Vector3_getForward(struct Vector3* rotation)
 {
-	//forward.x = cos(pitch) * sin(yaw);
-	//forward.y = -sin(pitch);
-	//forward.z = cos(pitch) * cos(yaw);
-
 	return (struct Vector3) {
 		.x = cosf(rotation->x) * sinf(-rotation->y),
 		.y = -sinf(rotation->x),
 		.z = cosf(rotation->x) * cosf(-rotation->y)
+	};
+}
+
+struct Vector3 Vector3_getUp(struct Vector3* rotation)
+{
+	return (struct Vector3) {
+		.x = sinf(rotation->x) * sinf(-rotation->y),
+		.y = -cosf(rotation->x),
+		.z = sinf(rotation->x) * cosf(-rotation->y)
+	};
+}
+
+struct Vector3 Vector3_getLeft(struct Vector3* rotation)
+{
+	return (struct Vector3) {
+		.x = -cosf(rotation->y),
+		.y = 0,
+		.z = -sinf(rotation->y)
 	};
 }
 

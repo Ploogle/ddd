@@ -34,15 +34,29 @@ struct GameObject object_cube = {
 struct GameObject object_test = {
 	.name = "Test",
 	.mesh = &blahaj_tri,
-	.position = { 0, 1, 0 },
+	.position = { 0, 2, 0 },
 	.rotation = { 0, -1, 0 },
 	.scale = { 1, 1, 1 }
+};
+struct GameObject object_test2 = {
+	.name = "Test",
+	.mesh = &blahaj_tri,
+	.position = { -1, 3, -1 },
+	.rotation = { 0, -1, 0 },
+	.scale = { .5, .5, .5 }
+};
+struct GameObject object_test3 = {
+	.name = "Test",
+	.mesh = &blahaj_tri,
+	.position = { 1, 3, 1 },
+	.rotation = { 0, 1, 0 },
+	.scale = { .5, .5, .5 }
 };
 
 struct GameObject object_terrain = {
 	.name = "Terrain",
 	.mesh = &terrain1,
-	.position = { 0, 0, 0 },
+	.position = { 0, .5, 0 },
 	.rotation = { 0, 0, 0 },
 	.scale = { 1, 1, 1 }
 };
@@ -53,13 +67,13 @@ struct GameObject object_terrain = {
 */
 
 struct Camera camera_default = {
-	.near = 0.1f,
-	.far = 1000.0f,
+	.near = 1.0f,//0.1f,
+	.far = 20.0f,
 	.fov = 60.0f,
 	.look_target = { 0, 0, 0 },
-	.position = { 0, .25f, 5.0f },
+	.position = { 0, 2.5, 2.0f },
 	//.rotationX = { 0, 0, 0 },
-	.rotation = {-.1f,0,0},
+	.rotation = {0,0,0},
 	.render_mode = RENDER_WIREFRAME,
 	.light_dir = { .5f,.5f,.5f },
 };
@@ -90,14 +104,18 @@ void test_update(PlaydateAPI* pd)
 
 }
 
-float quicksin(float t)
+void test2_update(PlaydateAPI* pd)
 {
-	return (t * (180 - t)) / 8100.0f;
+	object_test2.rotation.y += 0.05f;
+}
+
+void test3_update(PlaydateAPI* pd)
+{
+	object_test3.rotation.y += 0.06f;
 }
 
 void test_vertShader (PlaydateAPI* pd, struct GameObject* go, int time, struct Vector3* v_out)
 {
-	//v_out->x += sinf(v_out->z - time / 100.0f) / 2.5f;
 	float z_extent = go->mesh->max_bounds.z - go->mesh->min_bounds.z;
 	float p = (v_out->z - go->mesh->min_bounds.z) / z_extent;
 	v_out->x += Gradient_sample(1.0f - p) / 5;
@@ -117,22 +135,36 @@ void test_scene_init(PlaydateAPI* pd)
 	object_cube.update = &cube_update;
 	object_cube2.update = &cube2_update;
 	object_test.update = &test_update;
+	object_test2.update = &test2_update;
+	object_test3.update = &test3_update;
 	object_terrain.update = &terrain_update;
 
 	object_test.vertShader = &test_vertShader;
 
 	/*Scene_addGameObject(pd, &TestScene, &object_cube);
 	Scene_addGameObject(pd, &TestScene, &object_cube2);*/
-	Scene_addGameObject(pd, &TestScene, &object_test);
 	//Scene_addGameObject(pd, &TestScene, &object_terrain);
+	Scene_addGameObject(pd, &TestScene, &object_test);
+	//Scene_addGameObject(pd, &TestScene, &object_test2);
+	//Scene_addGameObject(pd, &TestScene, &object_test3);
 }
 
 void test_scene_update(PlaydateAPI* pd)
 {
-	struct Vector3 object_forward = Vector3_getForward(&object_test.rotation);
-	object_forward = Vector3_multiplyScalar(&object_forward, 5);
-	struct Vector3 object_forward_pos = Vector3_subtract(&object_test.position, &object_forward);
-	//Line_worldDraw(pd, object_test.position, object_forward_pos, 1, &camera_default);
+	//struct Vector3 forward = Vector3_getForward(&object_test.rotation);
+	/*struct Vector3 left = Vector3_getLeft(&object_test.rotation);
+	struct Vector3 up = Vector3_getUp(&object_test.rotation);*/
+
+	//forward = Vector3_multiplyScalar(&forward, 3);
+	/*left = Vector3_multiplyScalar(&left, 5);
+	up = Vector3_multiplyScalar(&up, 5);*/
+
+	/*struct Vector3 origin = Vector3_add(&object_test.position, &object_test.mesh->origin);
+	struct Vector3 object_forward_pos = Vector3_subtract(&origin, &forward);*/
+	/*struct Vector3 object_right_pos = Vector3_subtract(&origin, &left);
+	struct Vector3 object_up_pos = Vector3_subtract(&origin, &up);*/
+
+	//Line_worldDraw(pd, origin, object_forward_pos, 1, &camera_default);
 }
 
 
@@ -141,8 +173,6 @@ void test_scene_update(PlaydateAPI* pd)
 */
 struct Scene TestScene = {
 	.name = "Test",
-	/*.numGameObjects = 2,
-	.gameObjects = (struct GameObject* []){ &object_cube, &object_cube2 },*/
 	.numCameras = 1,
 	.cameras = (struct Camera* []){ &camera_default },
 	.init = &test_scene_init,

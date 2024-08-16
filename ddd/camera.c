@@ -14,8 +14,11 @@ struct Matrix4x4 Camera_getProjectionMatrix(struct Camera* camera)  {
 
 	projection.m[0][0] = fAspectRatio * fFovRad;
 	projection.m[1][1] = fFovRad;
-	projection.m[2][2] = camera->far / (camera->far - camera->near);
-	projection.m[3][2] = (-camera->far * camera->near) / (camera->far - camera->near);
+	/*projection.m[2][2] = -(CAMERA_FAR / (CAMERA_FAR - CAMERA_NEAR));
+	projection.m[3][2] = -((CAMERA_FAR * CAMERA_NEAR) / (CAMERA_FAR - CAMERA_NEAR));
+	projection.m[2][3] = -1.0f;*/
+	projection.m[2][2] = CAMERA_FAR / (CAMERA_FAR - CAMERA_NEAR);
+	projection.m[3][2] = (-CAMERA_FAR * CAMERA_NEAR) / (CAMERA_FAR - CAMERA_NEAR);
 	projection.m[2][3] = 1.0f;
 	projection.m[3][3] = 0.0f;
 
@@ -51,6 +54,11 @@ void PTR_Camera_worldToScreenPos(struct Camera* camera, struct Vector3* worldPos
 	worldPos->y += 1.0f;
 	worldPos->x *= 0.5f * SCREEN_WIDTH_F;
 	worldPos->y *= 0.5f * SCREEN_HEIGHT_F;
+	worldPos->z = 1.0f - worldPos->z;
+	//worldPos->z = CAMERA_SCALE - (worldPos->z * CAMERA_SCALE);
+	//worldPos->z = (worldPos->z - 1) * CAMERA_FAR;
+	/*worldPos->z -= 1.0f;
+	worldPos->z = CAMERA_FAR - (worldPos->z * CAMERA_FAR);*/
 }
 
 void Camera_setRotation(struct Camera* camera, float xTheta, float yTheta, float zTheta)
@@ -58,14 +66,4 @@ void Camera_setRotation(struct Camera* camera, float xTheta, float yTheta, float
 	camera->rotationX = Matrix3_getRotationX(xTheta);
 	camera->rotationY = Matrix3_getRotationY(yTheta);
 	camera->rotationZ = Matrix3_getRotationZ(zTheta);
-}
-
-// TODO: Deprecate
-struct Vector3 Camera_worldPosition(struct Camera* camera)
-{
-	return (struct Vector3) {
-		.x = camera->position.x,
-			.y = camera->position.y,
-			.z = camera->position.z
-	};
 }
