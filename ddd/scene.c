@@ -1,7 +1,7 @@
 #include "scene.h"
 #include "pd_api.h"
 
-int Scene_addGameObject(PlaydateAPI* pd, struct Scene* scene, struct GameObject* obj)
+int Scene_addGameObject(struct Scene* scene, struct GameObject* obj)
 {
 	/*scene->numGameObjects++;
 	
@@ -31,7 +31,7 @@ int Scene_addGameObject(PlaydateAPI* pd, struct Scene* scene, struct GameObject*
 	return -1;
 }
 
-bool Scene_removeGameObject(PlaydateAPI* pd, struct Scene* scene, struct GameObject* obj)
+bool Scene_removeGameObject(struct Scene* scene, struct GameObject* obj)
 {
 	if (obj->scene != NULL)
 	{
@@ -42,12 +42,12 @@ bool Scene_removeGameObject(PlaydateAPI* pd, struct Scene* scene, struct GameObj
 	}
 }
 
-void Scene_update(struct PlaydateAPI* pd, struct Scene* scene)
+void Scene_update(struct Scene* scene)
 {
 	// First update all our game objects
 	for (int i = 0; i < scene->numGameObjects; i++)
 	{
-		scene->gameObjects[i]->update(pd);
+		scene->gameObjects[i]->update();
 
 		GameObject_updateTransform(scene->gameObjects[i]);
 	}
@@ -60,6 +60,6 @@ void Scene_update(struct PlaydateAPI* pd, struct Scene* scene)
 	// Now call the custom update logic, if defined
 	if (scene->update!= NULL)
 	{
-		scene->update(pd);
+		scene->update();
 	}
 }

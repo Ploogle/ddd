@@ -1,5 +1,5 @@
-name=DDD Engine
+name=Starfish Engine
 author=Jordan Carroll
-description=A lightweight 3D engine for the Playdate.
-bundleID=com.unhenge.ddd
-imagePath=
+description=A robust 3D engine for Playdate.
+bundleID=com.jordancarroll.fish-heaven
+imagePath=Assets/launcher/

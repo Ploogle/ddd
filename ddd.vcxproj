@@ -235,7 +235,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="ddd\3dmath.c" />
     <ClCompile Include="ddd\camera.c" />
     <ClCompile Include="ddd\gameobject.c" />
-    <ClCompile Include="ddd\quaternion.c" />
     <ClCompile Include="ddd\scene.c" />
     <ClCompile Include="ddd\symbols.c" />
     <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\ddd.h" />
@@ -245,18 +244,19 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="ddd\bluenoise.h" />
     <ClInclude Include="ddd\camera.h" />
     <ClInclude Include="ddd\gameobject.h" />
+    <ClInclude Include="ddd\globals.h" />
     <ClInclude Include="ddd\gradient.h" />
     <ClInclude Include="ddd\cvector.h" />
-    <ClInclude Include="ddd\quaternion.h" />
     <ClInclude Include="ddd\scene.h" />
     <ClInclude Include="ddd\symbols.h" />
-    <ClInclude Include="src\cube.h" />
-    <ClInclude Include="src\cube2.h" />
-    <ClInclude Include="src\fish.h" />
-    <ClInclude Include="src\fish2.h" />
+    <ClInclude Include="dev-resources\archive-models\cube.h" />
+    <ClInclude Include="dev-resources\archive-models\cube2.h" />
+    <ClInclude Include="dev-resources\archive-models\fish.h" />
+    <ClInclude Include="dev-resources\archive-models\fish2.h" />
     <ClInclude Include="src\scenes\TestScene.h" />
     <ClInclude Include="src\toa-head.h" />
-    <ClInclude Include="src\toa_head.h" />
+    <ClInclude Include="dev-resources\archive-models\toa_head.h" />
+    <Image Include="Source\Assets\launcher\card.png" />
     <Image Include="Source\Assets\playdate-fish.png" />
   </ItemGroup>
   <ItemGroup>

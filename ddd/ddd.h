@@ -7,6 +7,7 @@
 #include "camera.h"
 #include "gameobject.h"
 #include "scene.h"
+#include "globals.h"
 
 #include <stdio.h>
 #include <stdint.h>

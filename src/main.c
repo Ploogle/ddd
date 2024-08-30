@@ -12,10 +12,6 @@
 #include <time.h>
 
 #include "pd_api.h"
-// #include "cube.h"
-//#include "cube2.h"
-//#include "toa_head.h"
-//#include "fish.h"
 #include "../ddd/ddd.h"
 #include "scenes\TestScene.h"
 #include "../ddd/gradient.h"
@@ -33,7 +29,6 @@ __declspec(dllexport)
 /*
 	Values
 */
-PlaydateAPI* pd = NULL;
 LCDFont* font = NULL;
 uint8_t* frame;
 
@@ -66,7 +61,7 @@ void loadScene(struct Scene* new_scene)
 	ActiveScene = new_scene;
 
 	if (ActiveScene->init != NULL) {
-		ActiveScene->init(pd);
+		ActiveScene->init();
 	}
 }
 
@@ -169,27 +164,36 @@ int eventHandler(PlaydateAPI* _pd, PDSystemEvent event, uint32_t arg)
 
 void handleButtons(PlaydateAPI* pd)
 {
-	PDButtons pushed;
-	pd->system->getButtonState(&pushed, NULL, NULL);
-	float moveSpeed = 0.1f;
-	float rotSpeed = 0.1f;
+	PDButtons current, pressed;
+	pd->system->getButtonState(&current, &pressed, NULL);
+	float moveSpeed = 4.0f * deltaTime;
+	float rotSpeed = deltaTime;
 
-	if (pushed & kButtonUp) {
+	if (current & kButtonUp) {
 		//camera_default.position.z -= moveSpeed;
 		camera_velocity.z -= moveSpeed;
 	}
-	else if (pushed & kButtonDown) {
+	else if (current & kButtonDown) {
 		//camera_default.position.z += moveSpeed;
 		camera_velocity.z += moveSpeed;
 	}
 	
-	if (pushed & kButtonLeft) {
+	if (current & kButtonLeft) {
 		//camera_default.position.x += moveSpeed;
 		camera_velocity.x += moveSpeed;
 	}
-	else if (pushed & kButtonRight) {
+	else if (current & kButtonRight) {
 		//camera_default.position.x -= moveSpeed;
 		camera_velocity.x -= moveSpeed;
+	}
+
+	if (pressed & kButtonA) {
+		if (camera_default.look_target == NULL) {
+			camera_default.look_target = &GLOBAL_ORIGIN;
+		}
+		else {
+			camera_default.look_target = NULL;
+		}
 	}
 
 	float crankDelta = pd->system->getCrankChange();
@@ -198,8 +202,8 @@ void handleButtons(PlaydateAPI* pd)
 
 void camera_update()
 {
-	float accelSpeed = 0.05f;
-	float maxSpeed = .5f;
+	float accelSpeed = 4.0f * deltaTime;
+	float maxSpeed = 5.0f;
 	/*struct Vector3 forward = Vector3_getForward(&camera_default.rotation);
 	forward = Vector3_multiplyScalar(&forward, accelSpeed);*/
 	if (isForward)
@@ -238,38 +242,50 @@ void camera_update()
 		if (camera_velocity.y < -maxSpeed) camera_velocity.y = -maxSpeed;
 	}
 
-
 	if (isRotateLeft)
 	{
-		camera_default.rotation.y += 0.025f;
+		camera_default.rotation.y += deltaTime;
 	}
 	else if (isRotateRight)
 	{
-		camera_default.rotation.y -= 0.025f;
+		camera_default.rotation.y -= deltaTime;
 	}
-
-	// Update camera velocity / decel
 
 	struct Vector3 c_forward = Vector3_getForward(&camera_default.rotation);
 	struct Vector3 c_left = Vector3_getLeft(&camera_default.rotation);
+	struct Vector3 c_up = Vector3_getUp(&camera_default.rotation);
 	struct Vector3 forward = Vector3_multiplyScalar(&c_forward, camera_velocity.z);
 	struct Vector3 left = Vector3_multiplyScalar(&c_left, -camera_velocity.x);
+	struct Vector3 up = Vector3_multiplyScalar(&c_up, -camera_velocity.y);
 	struct Vector3 dir = Vector3_add(&forward, &left);
-	//struct Vector3 adj_dir = Vector3_multiplyScalar(&dir, camera_velocity.z);
+	dir = Vector3_add(&dir, &up);
 
 	camera_default.position = Vector3_add(&camera_default.position, &dir);
-	//camera_default.position = Vector3_add(&camera_default.position, &camera_velocity);
 	camera_velocity = Vector3_multiplyScalar(&camera_velocity, 0.5f);
 
-	Camera_setRotation(&camera_default, camera_default.rotation.x, camera_default.rotation.y, camera_default.rotation.z);
+	if (camera_default.look_target != NULL)
+	{
+		// Manually set yaw for left/right relative camera movement around looktarget.
+		struct Vector3 target_forward = Vector3_subtract(&camera_default.position, camera_default.look_target);
+		camera_default.rotation.y = atan2f(-target_forward.x, target_forward.z);
+
+		// Compute lookat matrix
+		camera_default.rotate_transform = Matrix3_lookAt(camera_default.position, *camera_default.look_target);
+	}
+	else
+	{
+		// Compute rotation matrix for rotation thetas
+		Camera_setRotation(&camera_default, camera_default.rotation.x, camera_default.rotation.y, camera_default.rotation.z);
+	}
 }
 
 static int update(void* userdata)
 {
+	if (pd == NULL) return 1;
+
 	Gradient_tick(5);
 
-	// TODO: Pass deltaTime into update functions
-	float deltaTime = pd->system->getElapsedTime();
+	deltaTime = pd->system->getElapsedTime();
 	
 	pd->graphics->clear(kColorBlack);
 	pd->graphics->setFont(font);
@@ -278,17 +294,17 @@ static int update(void* userdata)
 
 	handleButtons(pd);
 
-	Scene_update(pd, ActiveScene);
+	Scene_update(ActiveScene);
 
 	camera_update();
 
 	//Grid_render(pd, frame, &camera_default);
-	YPlane_render(pd, frame, &camera_default, 0);
+	YPlane_render(frame, &camera_default, 0);
 
 	for (int i = 0; i < ActiveScene->numGameObjects; i++)
 	{
 		//GameObject_render(pd, frame, ActiveScene->gameObjects[i], &camera_default);
-		GameObject_drawMesh(pd, frame, ActiveScene->gameObjects[i], &camera_default);
+		GameObject_drawMesh(frame, ActiveScene->gameObjects[i], &camera_default);
 	}
 
 

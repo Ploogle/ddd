@@ -4,8 +4,6 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-// TODO: Most of these should be moved to their own files, or 3dmath.h
-
 struct Vector3
 {
 	float x, y, z;
@@ -58,6 +56,14 @@ struct Triangle
 	struct Vector3 center;
 	int shade;
 	bool visible;
+};
+
+struct Quaternion
+{
+	float w;
+	float x;
+	float y;
+	float z;
 };
 
 #endif

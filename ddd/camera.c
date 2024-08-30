@@ -54,7 +54,7 @@ void PTR_Camera_worldToScreenPos(struct Camera* camera, struct Vector3* worldPos
 	worldPos->y += 1.0f;
 	worldPos->x *= 0.5f * SCREEN_WIDTH_F;
 	worldPos->y *= 0.5f * SCREEN_HEIGHT_F;
-	worldPos->z = 1.0f - worldPos->z;
+	worldPos->z -= 1.0f;
 	//worldPos->z = CAMERA_SCALE - (worldPos->z * CAMERA_SCALE);
 	//worldPos->z = (worldPos->z - 1) * CAMERA_FAR;
 	/*worldPos->z -= 1.0f;
@@ -63,7 +63,13 @@ void PTR_Camera_worldToScreenPos(struct Camera* camera, struct Vector3* worldPos
 
 void Camera_setRotation(struct Camera* camera, float xTheta, float yTheta, float zTheta)
 {
-	camera->rotationX = Matrix3_getRotationX(xTheta);
-	camera->rotationY = Matrix3_getRotationY(yTheta);
-	camera->rotationZ = Matrix3_getRotationZ(zTheta);
+	struct Matrix3x3 out = Matrix3_multiply(
+		Matrix3_getRotationX(xTheta),
+		Matrix3_getRotationY(yTheta));
+	out = Matrix3_multiply(out, Matrix3_getRotationZ(zTheta));
+	//camera->rotationX = Matrix3_getRotationX(xTheta);
+	//camera->rotationY = Matrix3_getRotationY(yTheta);
+	//camera->rotationZ = Matrix3_getRotationZ(zTheta);
+
+	camera->rotate_transform = out;
 }

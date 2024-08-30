@@ -6,12 +6,14 @@
 #define MIN(a,b) ((((a)<(b))?(a):(b)))
 #define MAX(a,b) (((a)>(b))?(a):(b))
 
+float fast_atan2(float y, float x);
+
 
 // -- Vector -- 
 
 static inline int Vector3_equals(struct Vector3 a, struct Vector3 b);
 
-static inline struct Vector3 Vector3_cross(struct Vector3 a, struct Vector3 b);
+struct Vector3 Vector3_cross(struct Vector3 a, struct Vector3 b);
 
 float Vector3_dot(struct Vector3 a, struct Vector3 b);
 
@@ -60,10 +62,23 @@ struct Matrix4x4 Matrix4_getRotationX(float theta);
 struct Matrix4x4 Matrix4_getRotationY(float theta);
 struct Matrix4x4 Matrix4_getRotationZ(float theta);
 
+struct Matrix3x3 Matrix3_fromAngleAxis(struct Vector3 v, float angle);
+struct Matrix3x3 Matrix3_lookAt(struct Vector3 from, struct Vector3 to);
 
 struct Matrix4x4 Matrix4_getTransform(
 	float xTheta, float yTheta, float zTheta,
 	float xPos, float yPos, float zPos,
 	float xScale, float yScale, float zScale);
+
+
+struct Quaternion Quaternion_LookAt(struct Vector3 sourcePoint, struct Vector3 destPoint);
+struct Vector3 Vector3_fromQuaternion(struct Quaternion* q);
+struct Quaternion Quaternion_fromAngleAxis(struct Vector3* axis, float angle);
+struct Quaternion Quaternion_normalize(struct Quaternion q);
+struct Vector3 Vector3_applyQuaternion(struct Vector3* v, struct Quaternion* q);
+struct Quaternion Quaternion_fromVector3(struct Vector3* v);
+
+
+
 
 #endif

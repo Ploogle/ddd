@@ -11,7 +11,6 @@
     <ClCompile Include="ddd\camera.c" />
     <ClCompile Include="ddd\symbols.c" />
     <ClCompile Include="ddd\gameobject.c" />
-    <ClCompile Include="ddd\quaternion.c" />
     <ClCompile Include="ddd\3dmath.c" />
     <ClCompile Include="ddd\scene.c" />
   </ItemGroup>
@@ -27,23 +26,24 @@
     <ClInclude Include="ddd\symbols.h" />
     <ClInclude Include="ddd\camera.h" />
     <ClInclude Include="ddd\gameobject.h" />
-    <ClInclude Include="ddd\quaternion.h" />
     <ClInclude Include="ddd\3dmath.h" />
     <ClInclude Include="ddd\scene.h" />
-    <ClInclude Include="src\cube.h" />
+    <ClInclude Include="dev-resources\archive-models\cube.h" />
     <ClInclude Include="src\toa-head.h" />
     <ClInclude Include="src\scenes\TestScene.h" />
-    <ClInclude Include="src\cube2.h" />
-    <ClInclude Include="src\fish.h" />
-    <ClInclude Include="src\fish2.h" />
-    <ClInclude Include="src\toa_head.h" />
+    <ClInclude Include="dev-resources\archive-models\cube2.h" />
+    <ClInclude Include="dev-resources\archive-models\fish.h" />
+    <ClInclude Include="dev-resources\archive-models\fish2.h" />
+    <ClInclude Include="dev-resources\archive-models\toa_head.h" />
     <ClInclude Include="ddd\cvector.h" />
+    <ClInclude Include="ddd\globals.h" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\shrin\Documents\Playdate Projects\ddd\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Source\Assets\playdate-fish.png" />
+    <Image Include="Source\Assets\launcher\card.png" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">

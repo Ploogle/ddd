@@ -25,7 +25,7 @@ struct Camera
 	struct Matrix3x3 rotationX; // temporary rotation, for an example.
 	struct Matrix3x3 rotationY; // temporary rotation, for an example.
 	struct Matrix3x3 rotationZ; // temporary rotation, for an example.
-	struct Vector3 look_target; // Position in space the camera is looking at
+	struct Vector3* look_target; // Position in space the camera is looking at
 	struct Matrix4x4 projection; // Should be updated when fov, near, or far changes
 	float fov; // Field of View
 	float near; // Near clipping plane
@@ -42,6 +42,7 @@ struct Matrix4x4 Camera_getProjectionMatrix(struct Camera* camera);
 struct Vector3 Camera_worldToScreenPos(struct Camera* camera, struct Vector3* worldPos);
 void PTR_Camera_worldToScreenPos(struct Camera* camera, struct Vector3* worldPos);
 void Camera_setRotation(struct Camera* camera, float xTheta, float yTheta, float zTheta);
+void Camera_lookAt(struct Camera* camera, struct Vector3* point);
 
 
 #endif

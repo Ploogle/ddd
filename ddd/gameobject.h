@@ -4,6 +4,8 @@
 #include "symbols.h"
 #include <pd_api.h>
 
+extern PlaydateAPI* pd;
+
 struct GameObject
 {
 	char name[32];
@@ -30,12 +32,12 @@ struct GameObject
 	/// <summary>
 	/// A function that's called every frame.
 	/// </summary>
-	void (*update)(PlaydateAPI* pd);
+	void (*update)();
 
 	/// <summary>
 	/// Transforms a list of vertices (v_out) in gameplay space
 	/// </summary>
-	void (*vertShader)(PlaydateAPI* pd, struct GameObject* go, int time, struct Vector3* v_out);
+	void (*vertShader)(struct GameObject* go, int time, struct Vector3* v_out);
 };
 
 /** Set rotation with theta for x */

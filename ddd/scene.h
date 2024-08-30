@@ -4,6 +4,8 @@
 #include "gameobject.h"
 #include "pd_api.h"
 
+extern PlaydateAPI* pd;
+
 struct Scene {
 	char name[32];
 	int numGameObjects;
@@ -12,8 +14,8 @@ struct Scene {
 	struct Camera** cameras;
 
 	/** Lifecycle methods */
-	void (*init)(PlaydateAPI*);
-	void (*update)(PlaydateAPI*);
+	void (*init)();
+	void (*update)();
 	/*void (*addGameObject)(struct GameObject);
 	void (*removeGameObject)(struct GameObject);*/
 };
@@ -39,10 +41,10 @@ struct Scene {
 
 
 
-int Scene_addGameObject(PlaydateAPI* pd, struct Scene* scene, struct GameObject* obj);
+int Scene_addGameObject(struct Scene* scene, struct GameObject* obj);
 
-bool Scene_removeGameObject(PlaydateAPI* pd, struct Scene* scene, struct GameObject* obj);
+bool Scene_removeGameObject(struct Scene* scene, struct GameObject* obj);
 
-void Scene_update(PlaydateAPI* pd, struct Scene* scene);
+void Scene_update(struct Scene* scene);
 
 #endif // !_SCENE_
