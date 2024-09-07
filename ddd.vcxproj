@@ -249,7 +249,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="ddd\cvector.h" />
     <ClInclude Include="ddd\scene.h" />
     <ClInclude Include="ddd\symbols.h" />
-    <ClInclude Include="dev-resources\archive-models\cube.h" />
+    <ClInclude Include="src\cube.h" />
     <ClInclude Include="dev-resources\archive-models\cube2.h" />
     <ClInclude Include="dev-resources\archive-models\fish.h" />
     <ClInclude Include="dev-resources\archive-models\fish2.h" />

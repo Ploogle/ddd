@@ -12,10 +12,15 @@ struct GameObject
 
 	// One mesh per object, if we want more we can add them as children.
 	struct Mesh* mesh;
+	//struct Vector3* offset_vertices;
 
 	struct Vector3 rotation; // euler
 	struct Vector3 position;
 	struct Vector3 scale;
+
+	struct Vector3 forward;
+	
+	struct Vector3* look_target;
 
 	// TODO: This only needs to be calculated during render,
 	// can replace with GameObject_getTransform that returns

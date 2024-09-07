@@ -56,92 +56,13 @@ int compare_zdepth(struct Triangle* a, struct Triangle* b)
 	return a->center.z - b->center.z;
 } 
 
-
-
-// void Line_draw(uint8_t* bitmap, struct Vector3* p1, struct Vector3* p2, int thick)
-// {
-// 	// Sort the input points by x
-// 	struct Vector3* x1;
-// 	struct Vector3* y1;
-// 	struct Vector3* x2;
-// 	struct Vector3* y2;
-
-// 	if (p1->x <= p2->x) { x1 = p1; y1 = p1; x2 = p2; y2 = p2; }
-// 	else { x1 = p2; y1 = p2; x2 = p1; y2 = p1; }
-
-// 	float x = x1->x,
-// 		y = y1->y,
-// 		dx = x2->x - x1->x,
-// 		dy = y2->y - y1->y,
-// 		segs = (float)dy / (float)dx; // Divide the y axis into segments
-
-// 	if (dx < abs(dy)) {
-// 		segs = (float)dx / (float) dy;
-// 		if (p1->y < p2->y) { y2 = p2; y1 = p1; }
-// 		for (y = y1->y; y <= y2->y; y++)
-// 		{
-// 			if (x > 0 && x < LCD_COLUMNS && y > 0 && y < LCD_ROWS) {
-// 				setpixel(bitmap, (uint8_t)x, (uint8_t)y, LCD_ROWSIZE);
-// 			}
-// 			x += segs;
-// 		}
-// 	}
-// 	else {
-// 		for (; x <= x2->x; x++)
-// 		{
-// 			if (x > 0 && x < LCD_COLUMNS && y > 0 && y < LCD_ROWS) {
-// 				setpixel(bitmap, (uint8_t)x, (uint8_t)y, LCD_ROWSIZE);
-// 			}
-// 			y += segs;
-// 		}
-// 	}
-// }
-
-void Triangle_draw(uint8_t* bitmap, struct Vector3* a, struct Vector3* b, struct Vector3* c, RENDER_MODE mode, LCDSolidColor color, int line_width, float face_color)
-{
-	pd->graphics->fillTriangle(a->x, a->y, b->x, b->y, c->x, c->y, kColorWhite);
-
-	/*pd->graphics->drawLine(a->x, a->y, b->x, b->y, line_width, kColorWhite);
-	pd->graphics->drawLine(b->x, b->y, c->x, c->y, line_width, kColorWhite);
-	pd->graphics->drawLine(c->x, c->y, a->x, a->y, line_width, kColorWhite);*/
-}
-
-float _edge(struct Vector3 a, struct Vector3 b, float px, float py)
-{
-	return (b.x - a.x) * (py - a.y) - (b.y - a.y) * (px - a.x);
-}
-
-void GameObject_render(uint8_t* bitmap, struct GameObject* go, struct Camera* camera)
-{
-	/* 
-		This will technically work for wireframe, but will need to be replaced
-		with a proper z-sorted list of game objects once we're rasterizing.
-	*/
-
-	// Draw us
-	GameObject_drawMesh(bitmap, go, camera);
-
-	// Draw our children
-	for (int i = 0; i < go->num_children; i++)
-	{
-		//GameObject_render(pd, bitmap, &go->children[i], camera);
-	}
-}
-
 // TODO: https://webglfundamentals.org/webgl/lessons/webgl-3d-orthographic.html
 //       ^^ Boil all transforms down to a single Matrix4x4
 void GameObject_drawMesh(uint8_t* bitmap, struct GameObject* go, struct Camera* camera)
 {
 	if (camera == NULL) return; // Camera required
 
-	// TODO: Add rasterization mode, cull faces, etc.
 	struct Mesh* m = go->mesh;
-
-	// Aggregate the translation of all our parents.
-	/* TODO: Break all positional offsets off into a function that applies one
-		GameObject's transforms on another GameObject. */
-	//struct Vector3 agg_pos = { 0, 0, 0 };
-
 	
 	struct Vector3* projected_vertices = NULL;
 	struct Vector3* screen_vertices = NULL;
@@ -170,37 +91,22 @@ void GameObject_drawMesh(uint8_t* bitmap, struct GameObject* go, struct Camera* 
 		// Origin Translate
 		projected_vertices[i] = Vector3_subtract(&projected_vertices[i], &m->origin);
 
-		// translate -> scale -> rotate
+		// Transform (translate -> scale -> rotate)
 		projected_vertices[i] = Matrix4_apply(&go->transform, &projected_vertices[i]);
 		
 		// Z limiting
-		// TODO: Add flag to object to turn this on; should only be used on terrain.
 		/*if (projected_vertices[i].z > (camera->position.z - camera->near))
 		{
 			projected_vertices[i].z = camera->position.z - camera->near;
 			projected_vertices[i].y = 0.75f;
 		}*/
 
-		// Parent Aggregate Translation
-		// TODO: This needs to be expanded
-		//projected_vertices[i] = Vector3_add(&projected_vertices[i], &agg_pos);
-
 		screen_vertices[i] = projected_vertices[i];
 		screen_vertices[i] = Vector3_subtract(&screen_vertices[i], &camera->position);
 		screen_vertices[i] = Matrix3_apply(&camera->rotate_transform, &screen_vertices[i]);
-		/*screen_vertices[i] = Matrix3_apply(&camera->rotationX, &screen_vertices[i]);
-		screen_vertices[i] = Matrix3_apply(&camera->rotationY, &screen_vertices[i]);
-		screen_vertices[i] = Matrix3_apply(&camera->rotationZ, &screen_vertices[i]);*/
 		PTR_Camera_worldToScreenPos(camera, &screen_vertices[i]);
 	}
 
-	//struct GameObject* parent = go->parent;
-	//while (parent != NULL)
-	//{
-	//	agg_pos = Vector3_add(&agg_pos, &parent->position);
-
-	//	parent = parent->parent;
-	//}
 
 	struct Vector3 point[3] = { {0,0,0}, {0,0,0}, {0,0,0} };
 	int i = 0, p = 0;
@@ -217,48 +123,15 @@ void GameObject_drawMesh(uint8_t* bitmap, struct GameObject* go, struct Camera* 
 		};
 
 		struct Vector3 line_to_camera = Vector3_subtract(&camera->position, &center);
-		//struct Vector3 line_to_camera_n = Vector3_normalize(line_to_camera);
-
-		//struct Vector3 forward = Vector3_getForward(&camera->rotation);
-		
-
-		// DRAW TRIANGLE (DEBUG)
 		float backface = Vector3_dot(normal, line_to_camera);
-		//if (backface < 0) continue; // SKIP RENDER IF BACK FACING AWAY
-		//if (point[0].z > camera->position.z) continue;
-		
 		float worldZ0 = point[0].z;
 
-		//Triangle_draw(pd, bitmap, &point[0], &point[1], &point[2], RENDER_WIREFRAME, kColorBlack, 1, 128);
-		
 		float NdotL = Vector3_dot(normal, camera->light_dir);
 		float fog = 1;
-		//float far_thresh = camera->position.z - camera->far_fog;
-		//if (center.z < camera->position.z && center.z > far_thresh) {
-		//	fog = 1 - (far_thresh - camera->position.z) / (far_thresh - center.z);
-		//}
-		//else if (center.z < 1) {
-		//	//fog = 0.5f;
-		//}
-		
-		/*if (point[0].z < camera->position.z + camera->far_fog)
-		{
-			fog = (camera->position.z + camera->far_fog) / (camera->position.z - camera->far);
-		}*/
-		float light = NdotL * fog;// MIN(NdotL, fog);
+		float light = NdotL * fog;
 		int pattern_idx = MAX(MIN(light * 32, 32), 0); // clamp to 0-32
 
-		//PTR_Camera_worldToScreenPos(camera, &center);
-
-		//for (int ii = 0; ii < 3; ii++) {
-		//	point[ii].z = 0;
-		//	//if (point[ii].z < camera->position.z)// && point[ii].z < (camera->position.z - camera->near))
-		//	//{
-		//	//	point[ii].z = camera->near;
-		//	//}
-		//}
-
-		// == Load cached screenspace-projected points ==
+		// Load cached screenspace-projected points
 		for (int ii = 0; ii < 3; ii++) point[ii] = screen_vertices[m->indices[i + ii]];
 
 		tris[t_idx] = (struct Triangle){
@@ -270,21 +143,13 @@ void GameObject_drawMesh(uint8_t* bitmap, struct GameObject* go, struct Camera* 
 			.center = center, // screenspace center
 			.shade = pattern_idx,
 			.visible = backface > 0 &&
-				//point[0].z < (camera->position.z - camera->near) &&
+				//point[0].z < (camera->position.z - camera->near) && // near clip
 				point[0].z > 0 && point[1].z > 0 && point[2].z > 0
-				//&& worldZ0 > (camera->position.z - camera->far),
+				//&& worldZ0 > (camera->position.z - camera->far), // far clip
 		};
-
-		 //api_fillTriangle(bitmap, LCD_ROWSIZE, &point[0], &point[1], &point[2], &patterns[pattern_idx]);
-
-		//pd->graphics->fillTriangle(point[0].x, point[0].y, point[1].x, point[1].y, point[2].x, point[2].y, kColorWhite);
-
-		/*pd->graphics->drawLine(point[0].x, point[0].y, point[1].x, point[1].y, 1, kColorWhite);
-		pd->graphics->drawLine(point[1].x, point[1].y, point[2].x, point[2].y, 1, kColorWhite);
-		pd->graphics->drawLine(point[2].x, point[2].y, point[0].x, point[0].y, 1, kColorWhite);*/
-		//}
 	}
 
+	// Sort triangles by screen depth (z)
 	qsort(tris, m->numIndices / 3, sizeof(struct Triangle), compare_zdepth);
 
 	for (int i = 0; i < m->numIndices / 3; i++)
@@ -320,57 +185,6 @@ struct Vector3 grid_points[] = {
 	{ 0, 0, 1},
 };
 
-/* TODO: This isn't working because the camera is at 0,0,0
-	and the grid should be drawn at y=0. Need to wait until
-	the camera can sit at y=5 or something for this grid to be visible. */
-void Grid_render(uint8_t* bitmap, struct Camera* camera)
-{
-	for (int i = 0; i < 6; i += 2)
-	{
-		Line_worldDraw(grid_points[i], grid_points[i + 1], 1, camera);
-	}
-
-	//struct Matrix4x4 transform = Matrix4_getTransform(
-	//	camera->rotation.x, camera->rotation.y, camera->rotation.z,
-	//	//0, 0, 0,
-	//	-camera->position.x, -camera->position.y, -camera->position.z,
-	//	1.0f, 1.0f, 1.0f
-	//);
-
-	// Grid dots
-	float gridSize = 5.0f;
-	float cellSize = 0.5f;
-	struct Vector3 dot = { 0,0,0 };
-	for (float x = -gridSize; x < gridSize - 1; x += cellSize)
-	{
-		for (float z = -gridSize; z < gridSize - 1; z += cellSize)
-		{
-			// TODO: Add "behind camera" check.
-			// TODO: Could add that to the Line_worldDraw function directly
-			//dot.x = x;
-			//dot.z = z;
-			//Line_worldDraw(pd, dot, dot, 1, camera);
-			//dot = (struct Vector3){ x, 0, z };
-			dot.x = x; dot.y = 0; dot.z = z;
-			//dot = Matrix4_apply(&transform, &dot);
-
-			dot = Vector3_subtract(&dot, &camera->position);
-
-			//// Rotation
-			//// TODO: replace this with a combined transform
-			/*PTR_Matrix3_apply(&camera->rotationX, &dot);
-			PTR_Matrix3_apply(&camera->rotationY, &dot);
-			PTR_Matrix3_apply(&camera->rotationZ, &dot);*/
-			PTR_Matrix3_apply(&camera->rotate_transform, &dot);
-
-			dot = Camera_worldToScreenPos(camera, &dot);
-			//PTR_Camera_worldToScreenPos(camera, &dot);
-
-			pd->graphics->setPixel(dot.x, dot.y, kColorWhite);
-		}
-	}
-}
-
 void YPlane_render(uint8_t* bitmap, struct Camera* camera, float y_plane)
 {
 	for (int i = 0; i < 6; i += 2)
@@ -388,25 +202,14 @@ void YPlane_render(uint8_t* bitmap, struct Camera* camera, float y_plane)
 		for (float z = -gridSizeZ; z < gridSizeZ; z += cellSize)
 		{
 			// TODO: Add "behind camera" check.
-			// TODO: Could add that to the Line_worldDraw function directly
-			//dot.x = x;
-			//dot.z = z;
-			//Line_worldDraw(pd, dot, dot, 1, camera);
-			//dot = (struct Vector3){ x, 0, z };
 			dot.x = x; dot.y = y_plane; dot.z = z;
-			//dot = Matrix4_apply(&transform, &dot);
 
 			dot = Vector3_subtract(&dot, &camera->position);
 
-			//// Rotation
-			//// TODO: replace this with a combined transform
-			/*PTR_Matrix3_apply(&camera->rotationX, &dot);
-			PTR_Matrix3_apply(&camera->rotationY, &dot);
-			PTR_Matrix3_apply(&camera->rotationZ, &dot);*/
+			// Rotation
 			PTR_Matrix3_apply(&camera->rotate_transform, &dot);
 
 			dot = Camera_worldToScreenPos(camera, &dot);
-			//PTR_Camera_worldToScreenPos(camera, &dot);
 			if (dot.z < 0) continue;
 
 			pd->graphics->setPixel(dot.x, dot.y, kColorWhite);
@@ -419,78 +222,21 @@ void Line_worldDraw(struct Vector3 p1, struct Vector3 p2, float size, struct Cam
 	struct Vector3 a = p1;
 	struct Vector3 b = p2;
 
-	// TODO: Precalculate this
-	//struct Matrix4x4 transform = Matrix4_getTransform(
-	//	camera->rotation.x, camera->rotation.y, camera->rotation.z,
-	//	0,0,0,
-	//	//camera->position.x, -camera->position.y, camera->position.z,
-	//	1.0f, 1.0f, 1.0f
-	//);
-
 	a = Vector3_subtract(&a, &camera->position);
 	b = Vector3_subtract(&b, &camera->position);
 
-	//a = Matrix4_apply(&transform, &a);
-	//b = Matrix4_apply(&transform, &b);
-
-	////// Rotation
-	////// TODO: replace this with a combined transform
-	/*a = Matrix3_apply(&camera->rotationX, &a);
-	a = Matrix3_apply(&camera->rotationY, &a);
-	a = Matrix3_apply(&camera->rotationZ, &a);
-	b = Matrix3_apply(&camera->rotationX, &b);
-	b = Matrix3_apply(&camera->rotationY, &b);
-	b = Matrix3_apply(&camera->rotationZ, &b);*/
+	// Rotation
 	a = Matrix3_apply(&camera->rotate_transform, &a);
 	b = Matrix3_apply(&camera->rotate_transform, &b);
 	
-	//a = Camera_worldToScreenPos(camera, &a);
-	//b = Camera_worldToScreenPos(camera, &b);
 	PTR_Camera_worldToScreenPos(camera, &a);
 	PTR_Camera_worldToScreenPos(camera, &b);
 
-	// Dots
-	/*pd->graphics->setPixel(a.x, a.y, kColorBlack);
-	pd->graphics->setPixel(b.x, b.y, kColorBlack);*/
+	if (a.z < 0 || b.z < 0) return;
 
 	// Line
 	pd->graphics->drawLine(a.x, a.y, b.x + size - 1, b.y + size - 1, size, kColorWhite);
 }
-
-//
-//float sdSphere(struct Vector3 p, float s)
-//{
-//	float f = Vector3_length(&p) - s;
-//	return f;
-//}
-//
-//// https://iquilezles.org/articles/distfunctions/
-//void Ray_renderTest(uint8_t* bitmap, struct Camera* camera, float lightStrength)
-//{
-//	struct Vector3 light_dir = Vector3_normalize((struct Vector3) { .9f, -.9f, 0.0f });
-//	//pd->system->logToConsole("%f", light_dir.x);
-//	for (int x = 0; x < 400; x++)
-//	{
-//		for (int y = 0; y < 240; y++)
-//		{
-//			struct Vector3 pos = { x - 200, y - 140, -1.0f };
-//			float d = sdSphere(pos, lightStrength);
-//			if (d < 0)
-//			{
-//				float sdfx = sdSphere((struct Vector3) { pos.x + 0.0001f, pos.y, 0 }, 20.0f);
-//				float sdfy = sdSphere((struct Vector3) { pos.x, pos.y + 0.0001f, 0 }, 20.0f);
-//				float sdfz = sdSphere((struct Vector3) { pos.x, pos.y, 0.0001f }, 20.0f);
-//				struct Vector3 normal = Vector3_normalize((struct Vector3) { sdfx - d, sdfy - d, sdfz - d });
-//				float NdotL = Vector3_dot(normal, light_dir);
-//				//pd->system->logToConsole("%f", NdotL);
-//
-//				if (samplebluenoise(x, y) / 255.0f < abs(NdotL))
-//				//if (NdotL > )
-//					setpixel(bitmap, x, y, LCD_ROWSIZE);
-//			}
-//		}
-//	}
-//}
 
 void sortTri(struct Vector3** p1, struct Vector3** p2, struct Vector3** p3)
 {
@@ -535,17 +281,14 @@ void sortTri(struct Vector3** p1, struct Vector3** p2, struct Vector3** p3)
 }
 
 // == "Borrowed" from SDK 3D Project ==
-
 void api_fillTriangle(uint8_t* bitmap, int rowstride, struct Vector3* p1, struct Vector3* p2, struct Vector3* p3, uint8_t pattern[8])
 {
 	// sort by y coord
-	
 	sortTri(&p1, &p2, &p3);
 	
 	int endy = MIN(LCD_ROWS, p3->y);
 	
 	if ( p1->y > LCD_ROWS || endy < 0 ) return;
-	//return (LCDRowRange){ 0, 0 };
 
 	int32_t x1 = p1->x * (1<<16);
 	int32_t x2 = x1;
@@ -570,8 +313,6 @@ void api_fillTriangle(uint8_t* bitmap, int rowstride, struct Vector3* p1, struct
 		x2 = p2->x * (1<<16);
 		api_fillRange(bitmap, rowstride, p2->y, endy, &x1, dx1, &x2, dx, pattern);
 	}
-	
-	// return (LCDRowRange){ MAX(0, p1->y), endy };
 }
 
 void api_fillRange(uint8_t* bitmap, int rowstride, int y, int endy, int32_t* x1p, int32_t dx1, int32_t* x2p, int32_t dx2, uint8_t pattern[8])
@@ -608,7 +349,6 @@ void api_fillRange(uint8_t* bitmap, int rowstride, int y, int endy, int32_t* x1p
 	*x1p = x1;
 	*x2p = x2;
 }
-
 
 void api_drawFragment(uint32_t* row, int x1, int x2, uint32_t color)
 {
@@ -675,7 +415,6 @@ void api_drawMaskPattern(uint32_t* p, uint32_t mask, uint32_t color)
 	else
 		*p = (*p & ~mask) | (color & mask);
 }
-
 
 int32_t api_slope(float x1, float y1, float x2, float y2)
 {

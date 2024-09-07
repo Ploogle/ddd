@@ -47,6 +47,7 @@ void Scene_update(struct Scene* scene)
 	// First update all our game objects
 	for (int i = 0; i < scene->numGameObjects; i++)
 	{
+		// TODO: project gameobjects right before update
 		scene->gameObjects[i]->update();
 
 		GameObject_updateTransform(scene->gameObjects[i]);

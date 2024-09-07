@@ -11,27 +11,14 @@
 #define LCD_COLUMNS 400//-30
 
 extern PlaydateAPI* pd;
-extern float deltaTime;
+extern float DELTA_TIME;
 
-//LCDRowRange drawLine(uint8_t* bitmap, int rowstride, Vector3* p1, Vector3* p2, int thick);
-void Line_draw(uint8_t* bitmap, struct Vector3* p1, struct Vector3* p2, int thick);
-void Line_worldDraw(struct Vector3 p1, struct Vector3 p2, float size, struct Camera* camera);
-
-void Triangle_draw(uint8_t* bitmap, struct Vector3* a, struct Vector3* b, struct Vector3* c, RENDER_MODE mode, LCDSolidColor color, int line_width, float face_color);
-
-float _edge(struct Vector3 a, struct Vector3 b, float px, float py);
+int compare_zdepth(struct Triangle* a, struct Triangle* b);
+void sortTri(struct Vector3** p1, struct Vector3** p2, struct Vector3** p3);
 
 void GameObject_drawMesh(uint8_t* bitmap, struct GameObject* go, struct Camera* camera);
-
-
-void GameObject_render(uint8_t* bitmap, struct GameObject* go, struct Camera* camera);
-
-void Grid_render(uint8_t* bitmap, struct Camera* camera);
+void Line_worldDraw(struct Vector3 p1, struct Vector3 p2, float size, struct Camera* camera);
 void YPlane_render(uint8_t* bitmap, struct Camera* camera, float y_plane);
-//
-//void Ray_renderTest(uint8_t* bitmap, struct Camera* camera, float lightStrength);
-//
-//float sdSphere(struct Vector3 p, float s);
 
 // == "Borrowed" from SDK 3D Project ==
 void sortTri(struct Vector3** p1, struct Vector3** p2, struct Vector3** p3);

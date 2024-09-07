@@ -1,6 +1,6 @@
 #include "../../ddd/ddd.h"
 #include "../../ddd/gradient.h"
-// #include "../cube.h"
+ #include "../cube.h"
 // #include "../cube2.h"
 // #include "../toa_head.h"
 // #include "../fish.h"
@@ -13,18 +13,18 @@
 struct Scene TestScene;
 
 extern PlaydateAPI* pd;
-extern float deltaTime;
+extern float DELTA_TIME;
 
 /*
 	Game Objects
 */
-// struct GameObject object_cube2 = {
-// 	.name = "Cube 2",
-// 	.mesh = &mesh_cube,
-// 	.position = { 1, .5f, 0 },
-// 	.rotation = { 0, 0, 0 },
-// 	.scale = { .05f, .05f, .05f }
-// };
+ struct GameObject object_cube2 = {
+ 	.name = "Cube 2",
+ 	.mesh = &mesh_cube,
+ 	.position = { 3, .5f, 0 },
+ 	.rotation = { 0, 0, 0 },
+ 	.scale = { .05f, .05f, .05f }
+ };
 
 // struct GameObject object_cube = {
 // 	.name = "Cube",
@@ -34,26 +34,12 @@ extern float deltaTime;
 // 	.scale = { .1f, .1f, .1f }
 // };
 
-struct GameObject object_test = {
-	.name = "Test",
+struct GameObject object_blahaj = {
+	.name = "Blahaj",
 	.mesh = &blahaj_tri,
-	.position = { 0, 2, 0 },
-	.rotation = { 0, -1, 0 },
+	.position = { -2, 2, 0 },
+	.rotation = { 0, 0, 0 },
 	.scale = { 1, 1, 1 }
-};
-struct GameObject object_test2 = {
-	.name = "Test",
-	.mesh = &blahaj_tri,
-	.position = { -1, 3, -1 },
-	.rotation = { 0, -1, 0 },
-	.scale = { .5, .5, .5 }
-};
-struct GameObject object_test3 = {
-	.name = "Test",
-	.mesh = &blahaj_tri,
-	.position = { 1, 3, 1 },
-	.rotation = { 0, 1, 0 },
-	.scale = { .5, .5, .5 }
 };
 
 struct GameObject object_terrain = {
@@ -70,14 +56,13 @@ struct GameObject object_terrain = {
 */
 
 struct Camera camera_default = {
-	.near = 4.0f,//.5f,
-	.far = 20.0f,
+	.near = 0.0f,
+	.far = 10.0f,
 	.fov = 60.0f,
 	.far_fog = 10.0f,
 	.near_fog = 1,
 	//.look_target = &GLOBAL_ORIGIN,
 	.position = { 0, 2.5, 5.0f },
-	//.rotationX = { 0, 0, 0 },
 	.rotation = {0,0,0},
 	.render_mode = RENDER_WIREFRAME,
 	.light_dir = { .5f,.5f,.5f },
@@ -87,36 +72,27 @@ struct Camera camera_default = {
 	Methods
 */
 
-void cube_update()
+void blahaj_update()
 {
-	// Rotate cube
-	// object_cube.rotation.x += 0.01f;
-	// object_cube.rotation.y += 0.05f;
-	// object_cube.rotation.z += 0.025f;
+	//object_blahaj.rotation.y += DELTA_TIME;
+	struct Vector3 forward = object_blahaj.forward;// Vector3_getForward(&object_blahaj.rotation);
+	forward = Vector3_normalize(forward);
+	forward = Vector3_multiplyScalar(&forward, 150.0f * DELTA_TIME);
 
+	struct Vector3 move_forward = Vector3_multiplyScalar(&object_blahaj.forward, -DELTA_TIME * 1.f);
+	object_blahaj.position = Vector3_add(&object_blahaj.position, &move_forward);
+
+	struct Vector3 trace_target = Vector3_subtract(&object_blahaj.position, &forward);
+	Line_worldDraw(
+		trace_target,
+		object_blahaj.position,
+		1.0f,
+		&camera_default);
 }
 
 void cube2_update()
 {
-
-}
-
-void test_update()
-{
-	//	object_test.rotation.x += 0.01f;
-	object_test.rotation.y += deltaTime;
-	//object_test.rotation.z += 0.025f;
-
-}
-
-void test2_update()
-{
-	object_test2.rotation.y += 0.05f;
-}
-
-void test3_update()
-{
-	object_test3.rotation.y += 0.06f;
+	object_cube2.rotation.y += DELTA_TIME;
 }
 
 void test_vertShader (struct GameObject* go, int time, struct Vector3* v_out)
@@ -137,18 +113,17 @@ void test_scene_init()
 	camera_default.projection = Camera_getProjectionMatrix(&camera_default);
 
 	// object_cube.update = &cube_update;
-	// object_cube2.update = &cube2_update;
-	object_test.update = &test_update;
-	object_test2.update = &test2_update;
-	object_test3.update = &test3_update;
+	 object_cube2.update = &cube2_update;
+	object_blahaj.update = &blahaj_update;
 	object_terrain.update = &terrain_update;
 
-	object_test.vertShader = &test_vertShader;
+	object_blahaj.vertShader = &test_vertShader;
+	//object_blahaj.look_target = &camera_default.position;
 
-	/*Scene_addGameObject(&TestScene, &object_cube);
-	Scene_addGameObject(&TestScene, &object_cube2);*/
+	//Scene_addGameObject(&TestScene, &object_cube);
+	Scene_addGameObject(&TestScene, &object_cube2);
 	//Scene_addGameObject(&TestScene, &object_terrain);
-	Scene_addGameObject(&TestScene, &object_test);
+	Scene_addGameObject(&TestScene, &object_blahaj);
 	//Scene_addGameObject(&TestScene, &object_test2);
 	//Scene_addGameObject(&TestScene, &object_test3);
 }

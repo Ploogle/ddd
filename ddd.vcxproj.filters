@@ -28,7 +28,7 @@
     <ClInclude Include="ddd\gameobject.h" />
     <ClInclude Include="ddd\3dmath.h" />
     <ClInclude Include="ddd\scene.h" />
-    <ClInclude Include="dev-resources\archive-models\cube.h" />
+    <ClInclude Include="src\cube.h" />
     <ClInclude Include="src\toa-head.h" />
     <ClInclude Include="src\scenes\TestScene.h" />
     <ClInclude Include="dev-resources\archive-models\cube2.h" />
