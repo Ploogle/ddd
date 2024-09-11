@@ -1,25 +1,25 @@
 #include "scene.h"
 #include "pd_api.h"
 
-int Scene_addGameObject(struct Scene* scene, struct GameObject* obj)
+int Scene_addActor(struct Scene* scene, struct Actor* obj)
 {
-	/*scene->numGameObjects++;
+	/*scene->numActors++;
 	
-	if (scene->numGameObjects == 1) {
+	if (scene->numActors == 1) {
 		scene->gameObjects = pd->system->realloc(NULL, 8);
 		*scene->gameObjects = pd->system->realloc(NULL, 8);
 	}
 	else {
-		pd->system->realloc(scene->gameObjects, sizeof(struct GameObject*) * scene->numGameObjects);
+		pd->system->realloc(scene->gameObjects, sizeof(struct Actor*) * scene->numActors);
 	}
 
-	scene->gameObjects[scene->numGameObjects - 1] = &obj;*/
+	scene->gameObjects[scene->numActors - 1] = &obj;*/
 	for (int idx = 0; idx < 256; idx++)
 	{
-		if (scene->gameObjects[idx] == NULL)
+		if (scene->actors[idx] == NULL)
 		{
-			scene->numGameObjects++;
-			scene->gameObjects[idx] = obj;
+			scene->numActors++;
+			scene->actors[idx] = obj;
 
 			obj->scene = scene;
 			obj->scene_index = idx;
@@ -31,11 +31,11 @@ int Scene_addGameObject(struct Scene* scene, struct GameObject* obj)
 	return -1;
 }
 
-bool Scene_removeGameObject(struct Scene* scene, struct GameObject* obj)
+bool Scene_removeActor(struct Scene* scene, struct Actor* obj)
 {
 	if (obj->scene != NULL)
 	{
-		scene->gameObjects[obj->scene_index] = NULL;
+		scene->actors[obj->scene_index] = NULL;
 
 		obj->scene = NULL;
 		obj->scene_index = 0;
@@ -45,12 +45,14 @@ bool Scene_removeGameObject(struct Scene* scene, struct GameObject* obj)
 void Scene_update(struct Scene* scene)
 {
 	// First update all our game objects
-	for (int i = 0; i < scene->numGameObjects; i++)
+	for (int i = 0; i < scene->numActors; i++)
 	{
-		// TODO: project gameobjects right before update
-		scene->gameObjects[i]->update();
+		// TODO: project actors right before update
+		scene->actors[i]->update();
 
-		GameObject_updateTransform(scene->gameObjects[i]);
+		LookTarget_tick(&scene->actors[i]->look_target);
+
+		Actor_updateTransform(scene->actors[i]);
 	}
 
 	/*for (int i = 0; i < scene->numCameras; i++)

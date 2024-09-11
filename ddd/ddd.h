@@ -5,7 +5,7 @@
 #include "3dmath.h"
 #include "render.h"
 #include "camera.h"
-#include "gameobject.h"
+#include "actor.h"
 #include "scene.h"
 #include "globals.h"
 

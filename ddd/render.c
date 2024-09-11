@@ -3,7 +3,7 @@
 #include <time.h>
 #include <stdlib.h>
 
-#include "gameobject.h"
+#include "actor.h"
 #include "3dmath.h"
 #include "render.h"
 #include "pd_api.h"
@@ -58,41 +58,41 @@ int compare_zdepth(struct Triangle* a, struct Triangle* b)
 
 // TODO: https://webglfundamentals.org/webgl/lessons/webgl-3d-orthographic.html
 //       ^^ Boil all transforms down to a single Matrix4x4
-void GameObject_drawMesh(uint8_t* bitmap, struct GameObject* go, struct Camera* camera)
+void Actor_drawMesh(uint8_t* bitmap, struct Actor* act, struct Camera* camera)
 {
 	if (camera == NULL) return; // Camera required
 
-	struct Mesh* m = go->mesh;
+	struct Mesh* m = act->mesh;
 	
 	struct Vector3* projected_vertices = NULL;
 	struct Vector3* screen_vertices = NULL;
 	if (projected_vertices == NULL) {
-		projected_vertices = pd->system->realloc(projected_vertices, sizeof(struct Vector3) * go->mesh->numVertices);
+		projected_vertices = pd->system->realloc(projected_vertices, sizeof(struct Vector3) * act->mesh->numVertices);
 	}
 	if (screen_vertices == NULL) {
-		screen_vertices = pd->system->realloc(screen_vertices, sizeof(struct Vector3) * go->mesh->numVertices);
+		screen_vertices = pd->system->realloc(screen_vertices, sizeof(struct Vector3) * act->mesh->numVertices);
 	}
 	struct Triangle* tris = NULL;
 	if (tris == NULL)
 	{
-		tris = pd->system->realloc(tris, sizeof(struct Triangle) * go->mesh->numIndices / 3);
+		tris = pd->system->realloc(tris, sizeof(struct Triangle) * act->mesh->numIndices / 3);
 	}
 
 	int time_ms = pd->system->getCurrentTimeMilliseconds();
 
-	for (int i = 0; i < go->mesh->numVertices; i++)
+	for (int i = 0; i < act->mesh->numVertices; i++)
 	{
-		projected_vertices[i] = go->mesh->vertices[i];
+		projected_vertices[i] = act->mesh->vertices[i];
 
-		if (go->vertShader != 0x0) {
-			go->vertShader(go, time_ms, &projected_vertices[i]);
+		if (act->vertShader != 0x0) {
+			act->vertShader(act, time_ms, &projected_vertices[i]);
 		}
 
 		// Origin Translate
 		projected_vertices[i] = Vector3_subtract(&projected_vertices[i], &m->origin);
 
 		// Transform (translate -> scale -> rotate)
-		projected_vertices[i] = Matrix4_apply(&go->transform, &projected_vertices[i]);
+		projected_vertices[i] = Matrix4_apply(&act->transform, &projected_vertices[i]);
 		
 		// Z limiting
 		/*if (projected_vertices[i].z > (camera->position.z - camera->near))
@@ -102,7 +102,7 @@ void GameObject_drawMesh(uint8_t* bitmap, struct GameObject* go, struct Camera* 
 		}*/
 
 		screen_vertices[i] = projected_vertices[i];
-		screen_vertices[i] = Vector3_subtract(&screen_vertices[i], &camera->position);
+		screen_vertices[i] = Vector3_subtract(&screen_vertices[i], &camera->actor->position);
 		screen_vertices[i] = Matrix3_apply(&camera->rotate_transform, &screen_vertices[i]);
 		PTR_Camera_worldToScreenPos(camera, &screen_vertices[i]);
 	}
@@ -122,7 +122,7 @@ void GameObject_drawMesh(uint8_t* bitmap, struct GameObject* go, struct Camera* 
 			.z = (point[0].z + point[1].z + point[2].z) / 3.0f,
 		};
 
-		struct Vector3 line_to_camera = Vector3_subtract(&camera->position, &center);
+		struct Vector3 line_to_camera = Vector3_subtract(&camera->actor->position, &center);
 		float backface = Vector3_dot(normal, line_to_camera);
 		float worldZ0 = point[0].z;
 
@@ -204,7 +204,7 @@ void YPlane_render(uint8_t* bitmap, struct Camera* camera, float y_plane)
 			// TODO: Add "behind camera" check.
 			dot.x = x; dot.y = y_plane; dot.z = z;
 
-			dot = Vector3_subtract(&dot, &camera->position);
+			dot = Vector3_subtract(&dot, &camera->actor->position);
 
 			// Rotation
 			PTR_Matrix3_apply(&camera->rotate_transform, &dot);
@@ -222,8 +222,8 @@ void Line_worldDraw(struct Vector3 p1, struct Vector3 p2, float size, struct Cam
 	struct Vector3 a = p1;
 	struct Vector3 b = p2;
 
-	a = Vector3_subtract(&a, &camera->position);
-	b = Vector3_subtract(&b, &camera->position);
+	a = Vector3_subtract(&a, &camera->actor->position);
+	b = Vector3_subtract(&b, &camera->actor->position);
 
 	// Rotation
 	a = Matrix3_apply(&camera->rotate_transform, &a);

@@ -18,7 +18,7 @@ extern float DELTA_TIME;
 /*
 	Game Objects
 */
- struct GameObject object_cube2 = {
+ struct Actor object_cube2 = {
  	.name = "Cube 2",
  	.mesh = &mesh_cube,
  	.position = { 3, .5f, 0 },
@@ -26,7 +26,7 @@ extern float DELTA_TIME;
  	.scale = { .05f, .05f, .05f }
  };
 
-// struct GameObject object_cube = {
+// struct Actor object_cube = {
 // 	.name = "Cube",
 // 	.mesh = &mesh_cube,
 // 	.position = { 0, 1.5f, 0},
@@ -34,18 +34,21 @@ extern float DELTA_TIME;
 // 	.scale = { .1f, .1f, .1f }
 // };
 
-struct GameObject object_blahaj = {
+struct Actor object_blahaj = {
 	.name = "Blahaj",
 	.mesh = &blahaj_tri,
 	.position = { -2, 2, 0 },
 	.rotation = { 0, 0, 0 },
-	.scale = { 1, 1, 1 }
+	.scale = { 1, 1, 1 },
+	.look_target = {
+		.tween_speed = 1.f,
+	}
 };
 
-struct GameObject object_terrain = {
+struct Actor object_terrain = {
 	.name = "Terrain",
 	.mesh = &terrain1,
-	.position = { 0, .5, 0 },
+	.position = { 0, -1.5f, 0 },
 	.rotation = { 0, 0, 0 },
 	.scale = { 1, 1, 1 }
 };
@@ -55,18 +58,30 @@ struct GameObject object_terrain = {
 	Cameras
 */
 
+struct Actor camera_default_object = {
+	.name = "Default Camera",
+	.position = { 0, 2.5, 5.0f },
+	.rotation = { 0, 0, 0},
+	.scale = { 1, 1, 1 },
+	.look_target = {
+		.tween_speed = 1.f,
+	}
+};
+
 struct Camera camera_default = {
+	.actor = &camera_default_object,
 	.near = 0.0f,
 	.far = 10.0f,
 	.fov = 60.0f,
 	.far_fog = 10.0f,
 	.near_fog = 1,
 	//.look_target = &GLOBAL_ORIGIN,
-	.position = { 0, 2.5, 5.0f },
-	.rotation = {0,0,0},
+	//.position = { 0, 2.5, 5.0f },
+	//.rotation = {0,0,0},
 	.render_mode = RENDER_WIREFRAME,
 	.light_dir = { .5f,.5f,.5f },
 };
+
 
 /*
 	Methods
@@ -75,14 +90,14 @@ struct Camera camera_default = {
 void blahaj_update()
 {
 	//object_blahaj.rotation.y += DELTA_TIME;
-	struct Vector3 forward = object_blahaj.forward;// Vector3_getForward(&object_blahaj.rotation);
-	forward = Vector3_normalize(forward);
-	forward = Vector3_multiplyScalar(&forward, 150.0f * DELTA_TIME);
+	struct Vector3 move_direction = object_blahaj.forward;// Vector3_getForward(&object_blahaj.rotation);
+	move_direction = Vector3_normalize(move_direction);
+	move_direction = Vector3_multiplyScalar(&move_direction, 150.0f * DELTA_TIME);
 
 	struct Vector3 move_forward = Vector3_multiplyScalar(&object_blahaj.forward, -DELTA_TIME * 1.f);
-	object_blahaj.position = Vector3_add(&object_blahaj.position, &move_forward);
+	//object_blahaj.position = Vector3_add(&object_blahaj.position, &move_forward);
 
-	struct Vector3 trace_target = Vector3_subtract(&object_blahaj.position, &forward);
+	struct Vector3 trace_target = Vector3_subtract(&object_blahaj.position, &move_direction);
 	Line_worldDraw(
 		trace_target,
 		object_blahaj.position,
@@ -95,10 +110,10 @@ void cube2_update()
 	object_cube2.rotation.y += DELTA_TIME;
 }
 
-void test_vertShader (struct GameObject* go, int time, struct Vector3* v_out)
+void test_vertShader (struct Actor* act, int time, struct Vector3* v_out)
 {
-	float z_extent = go->mesh->max_bounds.z - go->mesh->min_bounds.z;
-	float p = (v_out->z - go->mesh->min_bounds.z) / z_extent;
+	float z_extent = act->mesh->max_bounds.z - act->mesh->min_bounds.z;
+	float p = (v_out->z - act->mesh->min_bounds.z) / z_extent;
 	v_out->x += Gradient_sample(1.0f - p) / 5.0f;
 }
 
@@ -118,14 +133,16 @@ void test_scene_init()
 	object_terrain.update = &terrain_update;
 
 	object_blahaj.vertShader = &test_vertShader;
-	//object_blahaj.look_target = &camera_default.position;
+	//object_blahaj.look_target.current = &camera_default.position;
+	//LookTarget_setTarget(&object_blahaj.look_target, &camera_default.actor->position);
+	LookTarget_setTarget(&object_blahaj.look_target, &object_cube2.position);
 
-	//Scene_addGameObject(&TestScene, &object_cube);
-	Scene_addGameObject(&TestScene, &object_cube2);
-	//Scene_addGameObject(&TestScene, &object_terrain);
-	Scene_addGameObject(&TestScene, &object_blahaj);
-	//Scene_addGameObject(&TestScene, &object_test2);
-	//Scene_addGameObject(&TestScene, &object_test3);
+	//Scene_addActor(&TestScene, &object_cube);
+	Scene_addActor(&TestScene, &object_terrain);
+	Scene_addActor(&TestScene, &object_blahaj);
+	Scene_addActor(&TestScene, &object_cube2);
+	//Scene_addActor(&TestScene, &object_test2);
+	//Scene_addActor(&TestScene, &object_test3);
 }
 
 void test_scene_update()

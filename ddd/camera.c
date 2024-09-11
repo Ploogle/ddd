@@ -89,6 +89,8 @@ void LookTarget_setTarget(struct LookTarget* lt, struct Vector3* target)
 
 	lt->blend = 0;
 	lt->is_tweening = true;
+
+	lt->has_target = lt->current == NULL;
 }
 
 void LookTarget_tick(struct LookTarget* lt)
@@ -99,8 +101,10 @@ void LookTarget_tick(struct LookTarget* lt)
 		lt->has_target = true;
 	}
 	if (!lt->has_target) return;
-	if (!lt->is_tweening) return;
-
+	if (!lt->is_tweening) {
+		lt->value = *lt->current;
+		return;
+	}
 
 	// Currently tweening, lerp between current and next target
 	lt->blend += DELTA_TIME * lt->tween_speed;
@@ -116,6 +120,7 @@ void LookTarget_tick(struct LookTarget* lt)
 			lt->current = lt->next;
 			lt->next = NULL;
 		}
+
 		lt->value = *lt->current;
 	}
 	else

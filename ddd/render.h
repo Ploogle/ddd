@@ -16,7 +16,7 @@ extern float DELTA_TIME;
 int compare_zdepth(struct Triangle* a, struct Triangle* b);
 void sortTri(struct Vector3** p1, struct Vector3** p2, struct Vector3** p3);
 
-void GameObject_drawMesh(uint8_t* bitmap, struct GameObject* go, struct Camera* camera);
+void Actor_drawMesh(uint8_t* bitmap, struct Actor* act, struct Camera* camera);
 void Line_worldDraw(struct Vector3 p1, struct Vector3 p2, float size, struct Camera* camera);
 void YPlane_render(uint8_t* bitmap, struct Camera* camera, float y_plane);
 

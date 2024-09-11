@@ -190,32 +190,35 @@ void handleButtons()
 
 
 
-	if (pressed & kButtonA && !camera_default.look_target.is_tweening) {
+	if (pressed & kButtonA && !camera_default.actor->look_target.is_tweening) {
 		if (target_idx == 0)
 		{
 			target_idx = 1;
-			LookTarget_setTarget(&camera_default.look_target, &object_blahaj.position);
+			LookTarget_setTarget(&camera_default.actor->look_target, &object_blahaj.position);
+			//LookTarget_setTarget(&object_blahaj.look_target, &camera_default.actor->position);
 		}
 		else if(target_idx == 1)
 		{
 			target_idx = 0;
-			LookTarget_setTarget(&camera_default.look_target, &object_cube2.position);
+			LookTarget_setTarget(&camera_default.actor->look_target, &object_cube2.position);
+			//LookTarget_setTarget(&object_blahaj.look_target, &object_cube2.position);
 		}
 	}
 
 	float crankDelta = pd->system->getCrankChange();
 	if (camera_default.look_blend == 1.f) {
-		camera_default.rotation.y -= 0.01f * crankDelta;
+		camera_default.actor->rotation.y -= 0.01f * crankDelta;
 	}
 	else {
-		camera_default.position.y += 0.01f * crankDelta;
+		camera_default.actor->position.y += 0.01f * crankDelta;
 	}
 }
 
+// TODO: Make this a more generic Camera_init(Camera* c)
 void camera_init()
 {
 	camera_default.look_blend = 1.f;
-	camera_default.look_target = (struct LookTarget){
+	camera_default.actor->look_target = (struct LookTarget){
 		.blend = 0,
 		.is_tweening = false,
 		.tween_speed = 2.f,
@@ -227,7 +230,7 @@ void camera_init()
 void camera_update()
 {
 	// Calculate our look_target->value
-	LookTarget_tick(&camera_default.look_target);
+	LookTarget_tick(&camera_default.actor->look_target);
 
 	// Debug camera controls
 	// TODO: hide this behind a flag or move to separate function
@@ -268,52 +271,43 @@ void camera_update()
 
 	if (isRotateLeft)
 	{
-		camera_default.rotation.y += DELTA_TIME;
+		camera_default.actor->rotation.y += DELTA_TIME;
 	}
 	else if (isRotateRight)
 	{
-		camera_default.rotation.y -= DELTA_TIME;
+		camera_default.actor->rotation.y -= DELTA_TIME;
 	}
 
-	struct Vector3 raw_forward = Vector3_getForward(&camera_default.rotation);
-	struct Vector3 raw_left = Vector3_getLeft(&camera_default.rotation);
-	struct Vector3 raw_up = Vector3_getUp(&camera_default.rotation);
+	struct Vector3 raw_forward = Vector3_getForward(&camera_default.actor->rotation);
+	struct Vector3 raw_left = Vector3_getLeft(&camera_default.actor->rotation);
+	struct Vector3 raw_up = Vector3_getUp(&camera_default.actor->rotation);
 	struct Vector3 forward = Vector3_multiplyScalar(&raw_forward, camera_velocity.z);
 	struct Vector3 left = Vector3_multiplyScalar(&raw_left, -camera_velocity.x);
 	struct Vector3 up = Vector3_multiplyScalar(&raw_up, -camera_velocity.y);
 	struct Vector3 dir = Vector3_add(&forward, &left);
 	dir = Vector3_add(&dir, &up);
 
-	camera_default.position = Vector3_add(&camera_default.position, &dir);
+	camera_default.actor->position = Vector3_add(&camera_default.actor->position, &dir);
 	camera_velocity = Vector3_multiplyScalar(&camera_velocity, 0.5f);
 
-	//if (camera_default.look_blend > 0)
-	//{
-		// We've got a lookat target
+	if (camera_default.look_blend == 1.f)
+	{
+		// Manually set yaw for left/right relative camera movement around looktarget.
+		struct Vector3 target_forward = Vector3_subtract(&camera_default.actor->position, &camera_default.actor->look_target.value);
+		camera_default.actor->rotation.y = atan2f(-target_forward.x, target_forward.z);
 
-		if (camera_default.look_blend == 1.f)
-		{
-			// Manually set yaw for left/right relative camera movement around looktarget.
-			struct Vector3 target_forward = Vector3_subtract(&camera_default.position, &camera_default.look_target.value);
-			camera_default.rotation.y = atan2f(-target_forward.x, target_forward.z);
-
-			// Compute lookat matrix
-			camera_default.rotate_transform = Matrix3_lookAt(camera_default.position, camera_default.look_target.value);
-		}
-		//else if (camera_default.look_blend < 1.f)
-		//{
-		//	// Lerp free camera -> lookat
-		//	struct Matrix3x3 rotate_matrix = Camera_getRotationMatrix(&camera_default, camera_default.rotation.x, camera_default.rotation.y, camera_default.rotation.z);
-		//	struct Matrix3x3 lookat_matrix = Matrix3_lookAt(camera_default.position, camera_default.look_target.value);
-
-		//	camera_default.rotate_transform = Matrix3_lerp(rotate_matrix, lookat_matrix, camera_default.look_blend);
-		//}
-	//}
-	//else
-	//{
-	//	// Compute rotation matrix for free-camera rotation thetas
-	//	camera_default.rotate_transform = Camera_getRotationMatrix(&camera_default, camera_default.rotation.x, camera_default.rotation.y, camera_default.rotation.z);
-	//}
+		// Compute lookat matrix
+		camera_default.rotate_transform = Matrix3_lookAt(camera_default.actor->position, camera_default.actor->look_target.value);
+	}
+	else {
+		// Compute rotation matrix for free-camera rotation thetas
+		camera_default.rotate_transform = Camera_getRotationMatrix(
+			&camera_default,
+			camera_default.actor->rotation.x,
+			camera_default.actor->rotation.y,
+			camera_default.actor->rotation.z
+		);
+	}
 }
 
 static int update(void* userdata)
@@ -331,36 +325,18 @@ static int update(void* userdata)
 
 	handleButtons();
 
-	// Tween camera to look_at
-	//if (look_lerp)
-	//{
-	//	camera_default.look_blend += DELTA_TIME * look_lerp_dir * 2.f;
-	//	if (camera_default.look_blend > 1)
-	//	{
-	//		camera_default.look_blend = 1;
-	//		look_lerp = false;
-	//		//look_lerp_dir = -1;
-	//	}
-	//	else if (camera_default.look_blend < 0) {
-	//		//camera_default.look_target = NULL;
-	//		camera_default.look_blend = 0;
-	//		look_lerp = false;
-	//		//look_lerp_dir = 1;
-	//	}
-	//}
-
 	Scene_update(ActiveScene);
 
 	camera_update();
 
 	YPlane_render(frame, &camera_default, 0);
 
-	for (int i = 0; i < ActiveScene->numGameObjects; i++)
+	for (int i = 0; i < ActiveScene->numActors; i++)
 	{
-		GameObject_drawMesh(frame, ActiveScene->gameObjects[i], &camera_default);
+		Actor_drawMesh(frame, ActiveScene->actors[i], &camera_default);
 	}
 
-	pd->system->drawFPS(LCD_COLUMNS - 20, LCD_ROWS - 15);
+	//pd->system->drawFPS(LCD_COLUMNS - 20, LCD_ROWS - 15);
 
 	return 1;
 }

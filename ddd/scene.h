@@ -1,23 +1,23 @@
 #ifndef _SCENE_
 #define _SCENE_
 
-#include "gameobject.h"
+#include "actor.h"
 #include "pd_api.h"
 
 extern PlaydateAPI* pd;
 
 struct Scene {
 	char name[32];
-	int numGameObjects;
-	struct GameObject* gameObjects[256];
+	int numActors;
+	struct Actor* actors[256];
 	int numCameras;
 	struct Camera** cameras;
 
 	/** Lifecycle methods */
 	void (*init)();
 	void (*update)();
-	/*void (*addGameObject)(struct GameObject);
-	void (*removeGameObject)(struct GameObject);*/
+	/*void (*addActor)(struct Actor);
+	void (*removeActor)(struct Actor);*/
 };
 
 /*
@@ -41,9 +41,9 @@ struct Scene {
 
 
 
-int Scene_addGameObject(struct Scene* scene, struct GameObject* obj);
+int Scene_addActor(struct Scene* scene, struct Actor* obj);
 
-bool Scene_removeGameObject(struct Scene* scene, struct GameObject* obj);
+bool Scene_removeActor(struct Scene* scene, struct Actor* obj);
 
 void Scene_update(struct Scene* scene);
 

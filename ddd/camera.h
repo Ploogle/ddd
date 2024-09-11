@@ -35,16 +35,18 @@ void LookTarget_tick(struct LookTarget* lt);
 
 struct Camera
 {
-	// TODO: Replace a lot of these values with a single GameObject reference
+	struct Actor* actor;
+
+	// TODO: Replace a lot of these values with a single Actor reference 
 	// == Transforms ==
-	struct Vector3 position; // Position in space the camera is looking from
-	struct Vector3 rotation;
-	struct LookTarget look_target;
+	//struct Vector3 position; // Position in space the camera is looking from
+	//struct Vector3 rotation;
+	//struct LookTarget look_target;
 
 	// == Calculated / Cached Transforms ==
 	struct Matrix3x3 rotate_transform;
-	struct Matrix3x3 previous_rotate_transform; // for look target blending
 	struct Matrix4x4 projection; // Should be updated when fov, near, or far changes
+	struct Matrix3x3 previous_rotate_transform; // for look target blending
 
 	// == Planes ==
 	float fov; // Field of View

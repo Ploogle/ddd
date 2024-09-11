@@ -169,6 +169,30 @@ ddd\3dmath.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\ddd\3dmath.c.s
 .PHONY : ddd\3dmath.c.s
 
+ddd\actor.obj: ddd\actor.c.obj
+.PHONY : ddd\actor.obj
+
+# target to build an object file
+ddd\actor.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\ddd\actor.c.obj
+.PHONY : ddd\actor.c.obj
+
+ddd\actor.i: ddd\actor.c.i
+.PHONY : ddd\actor.i
+
+# target to preprocess a source file
+ddd\actor.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\ddd\actor.c.i
+.PHONY : ddd\actor.c.i
+
+ddd\actor.s: ddd\actor.c.s
+.PHONY : ddd\actor.s
+
+# target to generate assembly for a file
+ddd\actor.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\ddd\actor.c.s
+.PHONY : ddd\actor.c.s
+
 ddd\camera.obj: ddd\camera.c.obj
 .PHONY : ddd\camera.obj
 
@@ -192,30 +216,6 @@ ddd\camera.s: ddd\camera.c.s
 ddd\camera.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\ddd\camera.c.s
 .PHONY : ddd\camera.c.s
-
-ddd\gameobject.obj: ddd\gameobject.c.obj
-.PHONY : ddd\gameobject.obj
-
-# target to build an object file
-ddd\gameobject.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\ddd\gameobject.c.obj
-.PHONY : ddd\gameobject.c.obj
-
-ddd\gameobject.i: ddd\gameobject.c.i
-.PHONY : ddd\gameobject.i
-
-# target to preprocess a source file
-ddd\gameobject.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\ddd\gameobject.c.i
-.PHONY : ddd\gameobject.c.i
-
-ddd\gameobject.s: ddd\gameobject.c.s
-.PHONY : ddd\gameobject.s
-
-# target to generate assembly for a file
-ddd\gameobject.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\ddd\gameobject.c.s
-.PHONY : ddd\gameobject.c.s
 
 ddd\quaternion.obj: ddd\quaternion.c.obj
 .PHONY : ddd\quaternion.obj
@@ -352,12 +352,12 @@ help:
 	@echo ... ddd/3dmath.obj
 	@echo ... ddd/3dmath.i
 	@echo ... ddd/3dmath.s
+	@echo ... ddd/actor.obj
+	@echo ... ddd/actor.i
+	@echo ... ddd/actor.s
 	@echo ... ddd/camera.obj
 	@echo ... ddd/camera.i
 	@echo ... ddd/camera.s
-	@echo ... ddd/gameobject.obj
-	@echo ... ddd/gameobject.i
-	@echo ... ddd/gameobject.s
 	@echo ... ddd/quaternion.obj
 	@echo ... ddd/quaternion.i
 	@echo ... ddd/quaternion.s

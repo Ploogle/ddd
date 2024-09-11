@@ -10,7 +10,7 @@
     <ClCompile Include="..\..\..\Downloads\fast_triangle_rasteriser.c" />
     <ClCompile Include="ddd\camera.c" />
     <ClCompile Include="ddd\symbols.c" />
-    <ClCompile Include="ddd\gameobject.c" />
+    <ClCompile Include="ddd\actor.c" />
     <ClCompile Include="ddd\3dmath.c" />
     <ClCompile Include="ddd\scene.c" />
   </ItemGroup>
@@ -25,7 +25,7 @@
     <ClInclude Include="ddd\gradient.h" />
     <ClInclude Include="ddd\symbols.h" />
     <ClInclude Include="ddd\camera.h" />
-    <ClInclude Include="ddd\gameobject.h" />
+    <ClInclude Include="ddd\actor.h" />
     <ClInclude Include="ddd\3dmath.h" />
     <ClInclude Include="ddd\scene.h" />
     <ClInclude Include="src\cube.h" />

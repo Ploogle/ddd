@@ -21,12 +21,12 @@ struct Vector2
 
 struct Matrix3x3
 {
-	int isIdentity : 1;
-	int inverting : 1;
 	float m[3][3];
 	float x;
 	float y;
 	float z;
+	int isIdentity : 1;
+	int inverting : 1;
 };
 
 struct Matrix4x4
@@ -36,14 +36,14 @@ struct Matrix4x4
 
 struct Mesh
 {
-	char name[32];
-	uint32_t numVertices;
-	uint32_t numIndices;
-	struct Vector3 min_bounds;
-	struct Vector3 max_bounds;
 	struct Vector3* vertices;
 	uint16_t* indices;
+	uint32_t numVertices;
+	uint32_t numIndices;
 	struct Vector3 origin;
+	struct Vector3 min_bounds;
+	struct Vector3 max_bounds;
+	char name[32];
 };
 
 struct Triangle
@@ -56,10 +56,10 @@ struct Triangle
 
 struct Quaternion
 {
-	float w;
 	float x;
 	float y;
 	float z;
+	float w;
 };
 
 #endif
