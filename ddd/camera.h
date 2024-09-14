@@ -58,6 +58,7 @@ struct Camera
 	// == Render Properties ==
 	RENDER_MODE render_mode;
 	float look_blend; // Blend between normal projection and look_target calculated projection
+	// TODO: light dir should be for the scene
 	struct Vector3 light_dir; // "Global" (to camera) light direction
 };
 

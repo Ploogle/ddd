@@ -12,12 +12,11 @@ struct Scene {
 	struct Actor* actors[256];
 	int numCameras;
 	struct Camera** cameras;
+	int activeCameraIndex;
 
 	/** Lifecycle methods */
 	void (*init)();
 	void (*update)();
-	/*void (*addActor)(struct Actor);
-	void (*removeActor)(struct Actor);*/
 };
 
 /*

@@ -14,6 +14,7 @@ struct Scene TestScene;
 
 extern PlaydateAPI* pd;
 extern float DELTA_TIME;
+extern struct Camera* ActiveCamera;
 
 /*
 	Game Objects
@@ -60,8 +61,18 @@ struct Actor object_terrain = {
 
 struct Actor camera_default_object = {
 	.name = "Default Camera",
-	.position = { 0, 2.5, 5.0f },
+	.position = { 0, 2.5f, 5.0f },
 	.rotation = { 0, 0, 0},
+	.scale = { 1, 1, 1 },
+	.look_target = {
+		.tween_speed = 1.f,
+	}
+};
+
+struct Actor camera_secondary_object = {
+	.name = "Secondary Camera",
+	.position = { -4.0f, 4.f, 2.0f },
+	.rotation = { 0, 3.14f, 0},
 	.scale = { 1, 1, 1 },
 	.look_target = {
 		.tween_speed = 1.f,
@@ -70,6 +81,21 @@ struct Actor camera_default_object = {
 
 struct Camera camera_default = {
 	.actor = &camera_default_object,
+	.near = 0.0f,
+	.far = 10.0f,
+	.fov = 60.0f,
+	.far_fog = 10.0f,
+	.near_fog = 1,
+	//.look_target = &GLOBAL_ORIGIN,
+	//.position = { 0, 2.5, 5.0f },
+	//.rotation = {0,0,0},
+	.render_mode = RENDER_WIREFRAME,
+	.light_dir = { .5f,.5f,.5f },
+};
+
+
+struct Camera camera_secondary = {
+	.actor = &camera_secondary_object,
 	.near = 0.0f,
 	.far = 10.0f,
 	.fov = 60.0f,
@@ -102,7 +128,7 @@ void blahaj_update()
 		trace_target,
 		object_blahaj.position,
 		1.0f,
-		&camera_default);
+		ActiveCamera);
 }
 
 void cube2_update()
@@ -124,9 +150,6 @@ void terrain_update()
 
 void test_scene_init()
 {
-	// TODO: This will need to be moved
-	camera_default.projection = Camera_getProjectionMatrix(&camera_default);
-
 	// object_cube.update = &cube_update;
 	 object_cube2.update = &cube2_update;
 	object_blahaj.update = &blahaj_update;
@@ -143,6 +166,9 @@ void test_scene_init()
 	Scene_addActor(&TestScene, &object_cube2);
 	//Scene_addActor(&TestScene, &object_test2);
 	//Scene_addActor(&TestScene, &object_test3);
+
+	LookTarget_setTarget(&camera_default.actor->look_target, &object_blahaj.position);
+	LookTarget_setTarget(&camera_secondary.actor->look_target, &object_cube2.position);
 }
 
 void test_scene_update()
@@ -169,8 +195,7 @@ void test_scene_update()
 */
 struct Scene TestScene = {
 	.name = "Test",
-	.numCameras = 1,
-	.cameras = (struct Camera* []){ &camera_default },
+	.numCameras = 2,
+	.cameras = (struct Camera* []){ &camera_default, &camera_secondary },
 	.init = &test_scene_init,
-	.update = &test_scene_update,
 };

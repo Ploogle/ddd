@@ -39,6 +39,8 @@ const char* fontpath = "/System/Fonts/Asheville-Sans-14-Bold.pft";
 
 struct Scene* ActiveScene;
 struct Scene* DefaultScene = &TestScene;
+struct Camera* ActiveCamera;
+
 
 struct Vector3 camera_velocity = { 0,0,0 };
 
@@ -59,9 +61,12 @@ void loadScene(struct Scene* new_scene)
 
 	ActiveScene = new_scene;
 
+	ActiveCamera = ActiveScene->cameras[ActiveScene->activeCameraIndex];
+
 	if (ActiveScene->init != NULL) {
 		ActiveScene->init();
 	}
+
 }
 
 int eventHandler(PlaydateAPI* _pd, PDSystemEvent event, uint32_t arg)
@@ -89,7 +94,7 @@ int eventHandler(PlaydateAPI* _pd, PDSystemEvent event, uint32_t arg)
 		//srand(time(NULL));
 
 		pd->system->setUpdateCallback(update, pd);
-		pd->display->setRefreshRate(50);
+		pd->display->setRefreshRate(30);
 		pd->system->setAutoLockDisabled(true);
 
 		loadScene(DefaultScene);
@@ -188,14 +193,12 @@ void handleButtons()
 		camera_velocity.x -= moveSpeed;
 	}
 
-
-
 	if (pressed & kButtonA && !camera_default.actor->look_target.is_tweening) {
 		if (target_idx == 0)
 		{
 			target_idx = 1;
 			LookTarget_setTarget(&camera_default.actor->look_target, &object_blahaj.position);
-			//LookTarget_setTarget(&object_blahaj.look_target, &camera_default.actor->position);
+			//LookTarget_setTarget(&object_blahaj.look_target, &activeCamera->actor->position);
 		}
 		else if(target_idx == 1)
 		{
@@ -203,6 +206,13 @@ void handleButtons()
 			LookTarget_setTarget(&camera_default.actor->look_target, &object_cube2.position);
 			//LookTarget_setTarget(&object_blahaj.look_target, &object_cube2.position);
 		}
+	}
+
+	if (pressed & kButtonB)
+	{
+		ActiveScene->activeCameraIndex++;
+		if (ActiveScene->activeCameraIndex >= ActiveScene->numCameras)
+			ActiveScene->activeCameraIndex = 0;
 	}
 
 	float crankDelta = pd->system->getCrankChange();
@@ -217,20 +227,34 @@ void handleButtons()
 // TODO: Make this a more generic Camera_init(Camera* c)
 void camera_init()
 {
-	camera_default.look_blend = 1.f;
-	camera_default.actor->look_target = (struct LookTarget){
-		.blend = 0,
-		.is_tweening = false,
-		.tween_speed = 2.f,
-		.current = &object_blahaj.position,
-		.next = NULL,
-	};
+	struct Camera* cam;
+	for (int i = 0; i < ActiveScene->numCameras; i++)
+	{
+		cam = ActiveScene->cameras[i];
+
+		cam->projection = Camera_getProjectionMatrix(cam);
+		cam->rotate_transform = Camera_getRotationMatrix(
+			cam,
+			cam->actor->rotation.x,
+			cam->actor->rotation.y,
+			cam->actor->rotation.z
+		);
+		cam->look_blend = 1.f;
+		//cam->actor->look_target = (struct LookTarget){
+		//	.blend = 0,
+		//	.is_tweening = false,
+		//	.tween_speed = 2.f,
+		//	//.current = &object_blahaj.position,
+		//	.next = NULL,
+		//};
+		
+	}
 }
 
 void camera_update()
 {
 	// Calculate our look_target->value
-	LookTarget_tick(&camera_default.actor->look_target);
+	LookTarget_tick(&ActiveCamera->actor->look_target);
 
 	// Debug camera controls
 	// TODO: hide this behind a flag or move to separate function
@@ -290,28 +314,30 @@ void camera_update()
 	camera_default.actor->position = Vector3_add(&camera_default.actor->position, &dir);
 	camera_velocity = Vector3_multiplyScalar(&camera_velocity, 0.5f);
 
-	if (camera_default.look_blend == 1.f)
+	if (ActiveCamera->look_blend == 1.f)
 	{
 		// Manually set yaw for left/right relative camera movement around looktarget.
-		struct Vector3 target_forward = Vector3_subtract(&camera_default.actor->position, &camera_default.actor->look_target.value);
-		camera_default.actor->rotation.y = atan2f(-target_forward.x, target_forward.z);
+		struct Vector3 target_forward = Vector3_subtract(&ActiveCamera->actor->position, &ActiveCamera->actor->look_target.value);
+		ActiveCamera->actor->rotation.y = atan2f(-target_forward.x, target_forward.z);
 
 		// Compute lookat matrix
-		camera_default.rotate_transform = Matrix3_lookAt(camera_default.actor->position, camera_default.actor->look_target.value);
+		ActiveCamera->rotate_transform = Matrix3_lookAt(ActiveCamera->actor->position, ActiveCamera->actor->look_target.value);
 	}
 	else {
 		// Compute rotation matrix for free-camera rotation thetas
-		camera_default.rotate_transform = Camera_getRotationMatrix(
-			&camera_default,
-			camera_default.actor->rotation.x,
-			camera_default.actor->rotation.y,
-			camera_default.actor->rotation.z
+		ActiveCamera->rotate_transform = Camera_getRotationMatrix(
+			ActiveCamera,
+			ActiveCamera->actor->rotation.x,
+			ActiveCamera->actor->rotation.y,
+			ActiveCamera->actor->rotation.z
 		);
 	}
 }
 
 static int update(void* userdata)
 {
+	ActiveCamera = ActiveScene->cameras[ActiveScene->activeCameraIndex];
+	
 	if (pd == NULL) return 1;
 
 	Gradient_tick(5);
@@ -329,11 +355,11 @@ static int update(void* userdata)
 
 	camera_update();
 
-	YPlane_render(frame, &camera_default, 0);
+	YPlane_render(frame, ActiveCamera, 0);
 
 	for (int i = 0; i < ActiveScene->numActors; i++)
 	{
-		Actor_drawMesh(frame, ActiveScene->actors[i], &camera_default);
+		Actor_drawMesh(frame, ActiveScene->actors[i], ActiveCamera);
 	}
 
 	//pd->system->drawFPS(LCD_COLUMNS - 20, LCD_ROWS - 15);
