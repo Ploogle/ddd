@@ -18,7 +18,7 @@ void sortTri(struct Vector3** p1, struct Vector3** p2, struct Vector3** p3);
 
 void Actor_drawMesh(uint8_t* bitmap, struct Actor* act, struct Camera* camera);
 void Line_worldDraw(struct Vector3 p1, struct Vector3 p2, float size, struct Camera* camera);
-void YPlane_render(uint8_t* bitmap, struct Camera* camera, float y_plane);
+void YPlane_render(uint8_t* bitmap, struct Camera* camera, float y_plane, bool show_axis);
 
 // == "Borrowed" from SDK 3D Project ==
 void sortTri(struct Vector3** p1, struct Vector3** p2, struct Vector3** p3);

@@ -1,0 +1,1421 @@
+Archive member included to satisfy reference by file (symbol)
+
+C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+                              CMakeFiles\ddd.dir\ddd\3dmath.c.obj (__aeabi_dsub)
+C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_truncdfsf2.o)
+                              CMakeFiles\ddd.dir\ddd\3dmath.c.obj (__aeabi_d2f)
+C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-malloc.o)
+                              CMakeFiles\ddd.dir\src\main.c.obj (malloc)
+C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-qsort.o)
+                              CMakeFiles\ddd.dir\ddd\render.c.obj (qsort)
+C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-memset.o)
+                              CMakeFiles\ddd.dir\src\main.c.obj (memset)
+C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-impure.o)
+                              C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-malloc.o) (_impure_ptr)
+C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
+                              C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-impure.o) (__sf)
+C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fwalk.o)
+                              C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o) (_fwalk_sglue)
+C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-stdio.o)
+                              C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o) (__sread)
+C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-closer.o)
+                              C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-stdio.o) (_close_r)
+C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-reent.o)
+                              C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-closer.o) (errno)
+C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lseekr.o)
+                              C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-stdio.o) (_lseek_r)
+C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-readr.o)
+                              C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-stdio.o) (_read_r)
+C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-writer.o)
+                              C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-stdio.o) (_write_r)
+C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lock.o)
+                              C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o) (__retarget_lock_init_recursive)
+C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fclose.o)
+                              C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o) (_fclose_r)
+C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fflush.o)
+                              C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fclose.o) (__sflush_r)
+C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_acos.o)
+                              CMakeFiles\ddd.dir\ddd\3dmath.c.obj (acosf)
+C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_atan2.o)
+                              CMakeFiles\ddd.dir\src\main.c.obj (atan2f)
+C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_sqrt.o)
+                              CMakeFiles\ddd.dir\ddd\3dmath.c.obj (sqrtf)
+C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_cos.o)
+                              CMakeFiles\ddd.dir\ddd\3dmath.c.obj (cosf)
+C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_fabs.o)
+                              C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_acos.o) (fabsf)
+C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_sin.o)
+                              CMakeFiles\ddd.dir\src\main.c.obj (sinf)
+C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_tan.o)
+                              CMakeFiles\ddd.dir\ddd\camera.c.obj (tanf)
+C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_nan.o)
+                              C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_acos.o) (nanf)
+C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_sqrt.o)
+                              C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_sqrt.o) (__ieee754_sqrtf)
+C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_cos.o)
+                              C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_cos.o) (__kernel_cosf)
+C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_sin.o)
+                              C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_cos.o) (__kernel_sinf)
+C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_tan.o)
+                              C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_tan.o) (__kernel_tanf)
+C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_acos.o)
+                              C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_acos.o) (__ieee754_acosf)
+C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_atan2.o)
+                              C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_atan2.o) (__ieee754_atan2f)
+C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_rem_pio2.o)
+                              C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_cos.o) (__ieee754_rem_pio2f)
+C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_atan.o)
+                              C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_atan2.o) (atanf)
+C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_rem_pio2.o)
+                              C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_rem_pio2.o) (__kernel_rem_pio2f)
+C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_scalbn.o)
+                              C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_rem_pio2.o) (scalbnf)
+C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_floor.o)
+                              C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_rem_pio2.o) (floorf)
+C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libc.a(libc_a-errno.o)
+                              C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_acos.o) (__errno)
+
+Discarded input sections
+
+ .text          0x00000000        0x0 CMakeFiles\ddd.dir\src\main.c.obj
+ .data          0x00000000        0x0 CMakeFiles\ddd.dir\src\main.c.obj
+ .bss           0x00000000        0x0 CMakeFiles\ddd.dir\src\main.c.obj
+ .text.Gradient_init
+                0x00000000       0x44 CMakeFiles\ddd.dir\src\main.c.obj
+ .text.Gradient_tick
+                0x00000000       0x14 CMakeFiles\ddd.dir\src\main.c.obj
+ .text.Gradient_sample
+                0x00000000       0x2c CMakeFiles\ddd.dir\src\main.c.obj
+ .text.loadScene
+                0x00000000       0x14 CMakeFiles\ddd.dir\src\main.c.obj
+ .text.camera_init
+                0x00000000       0x30 CMakeFiles\ddd.dir\src\main.c.obj
+ .data.look_lerp_dir
+                0x00000000        0x4 CMakeFiles\ddd.dir\src\main.c.obj
+ .bss.look_lerp
+                0x00000000        0x1 CMakeFiles\ddd.dir\src\main.c.obj
+ .rodata.GLOBAL_UNIT
+                0x00000000        0xc CMakeFiles\ddd.dir\src\main.c.obj
+ .rodata.GLOBAL_ORIGIN
+                0x00000000        0xc CMakeFiles\ddd.dir\src\main.c.obj
+ .rodata.GLOBAL_UP
+                0x00000000        0xc CMakeFiles\ddd.dir\src\main.c.obj
+ .text          0x00000000        0x0 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+ .data          0x00000000        0x0 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+ .bss           0x00000000        0x0 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+ .text.fast_atan2
+                0x00000000      0x100 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+ .text.Vector3_cross
+                0x00000000       0x2c CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+ .text.Vector3_lengthSquared
+                0x00000000       0x1c CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+ .text.Vector3_length
+                0x00000000       0x20 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+ .text.Vector3_multiply
+                0x00000000       0x2c CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+ .text.Matrix4_from3
+                0x00000000       0x64 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+ .text.Matrix4_multiply
+                0x00000000       0x88 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+ .text.Matrix3_multiplyScalar
+                0x00000000       0x80 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+ .text.Matrix3_add
+                0x00000000       0x84 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+ .text.Matrix3_lerp
+                0x00000000      0x1c0 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+ .text.Matrix3_rotationFromAngles
+                0x00000000       0xcc CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+ .text.Matrix4_getTransform
+                0x00000000      0x114 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+ .text.Matrix3_fromQuaternion
+                0x00000000       0xb0 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+ .text.Quaternion_fromAngleAxis
+                0x00000000       0x6c CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+ .text.Vector3_fromQuaternion
+                0x00000000       0xe0 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+ .text.Quaternion_LookAt
+                0x00000000       0xf8 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+ .text.Quaternion_normalize
+                0x00000000       0x34 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+ .text.Vector3_applyQuaternion
+                0x00000000       0x84 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+ .text          0x00000000        0x0 CMakeFiles\ddd.dir\ddd\actor.c.obj
+ .data          0x00000000        0x0 CMakeFiles\ddd.dir\ddd\actor.c.obj
+ .bss           0x00000000        0x0 CMakeFiles\ddd.dir\ddd\actor.c.obj
+ .text          0x00000000        0x0 CMakeFiles\ddd.dir\ddd\camera.c.obj
+ .data          0x00000000        0x0 CMakeFiles\ddd.dir\ddd\camera.c.obj
+ .bss           0x00000000        0x0 CMakeFiles\ddd.dir\ddd\camera.c.obj
+ .text          0x00000000        0x0 CMakeFiles\ddd.dir\ddd\quaternion.c.obj
+ .data          0x00000000        0x0 CMakeFiles\ddd.dir\ddd\quaternion.c.obj
+ .bss           0x00000000        0x0 CMakeFiles\ddd.dir\ddd\quaternion.c.obj
+ .debug_line    0x00000000        0x0 CMakeFiles\ddd.dir\ddd\quaternion.c.obj
+ .debug_str     0x00000000      0x16a CMakeFiles\ddd.dir\ddd\quaternion.c.obj
+ .comment       0x00000000       0x45 CMakeFiles\ddd.dir\ddd\quaternion.c.obj
+ .ARM.attributes
+                0x00000000       0x34 CMakeFiles\ddd.dir\ddd\quaternion.c.obj
+ .text          0x00000000        0x0 CMakeFiles\ddd.dir\ddd\render.c.obj
+ .data          0x00000000        0x0 CMakeFiles\ddd.dir\ddd\render.c.obj
+ .bss           0x00000000        0x0 CMakeFiles\ddd.dir\ddd\render.c.obj
+ .text.api_drawFragment
+                0x00000000       0x10 CMakeFiles\ddd.dir\ddd\render.c.obj
+ .text.api_drawMaskPattern
+                0x00000000       0x10 CMakeFiles\ddd.dir\ddd\render.c.obj
+ .text.api_slope
+                0x00000000       0x28 CMakeFiles\ddd.dir\ddd\render.c.obj
+ .text.api_swap
+                0x00000000        0x4 CMakeFiles\ddd.dir\ddd\render.c.obj
+ .data.bluenoise_table
+                0x00000000    0x17700 CMakeFiles\ddd.dir\ddd\render.c.obj
+ .text          0x00000000        0x0 CMakeFiles\ddd.dir\ddd\scene.c.obj
+ .data          0x00000000        0x0 CMakeFiles\ddd.dir\ddd\scene.c.obj
+ .bss           0x00000000        0x0 CMakeFiles\ddd.dir\ddd\scene.c.obj
+ .text.Scene_removeActor
+                0x00000000       0x1c CMakeFiles\ddd.dir\ddd\scene.c.obj
+ .text          0x00000000        0x0 CMakeFiles\ddd.dir\ddd\symbols.c.obj
+ .data          0x00000000        0x0 CMakeFiles\ddd.dir\ddd\symbols.c.obj
+ .bss           0x00000000        0x0 CMakeFiles\ddd.dir\ddd\symbols.c.obj
+ .text          0x00000000        0x0 CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
+ .data          0x00000000        0x0 CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
+ .bss           0x00000000        0x0 CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
+ .text._realloc_r
+                0x00000000       0x10 CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
+ .text._free_r  0x00000000       0x14 CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
+ .text          0x00000000      0x378 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+ .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+ .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+ .debug_line_str
+                0x00000000       0xce C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+ .debug_frame   0x00000000       0xac C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+ .ARM.attributes
+                0x00000000       0x22 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+ .text          0x00000000       0xa0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_truncdfsf2.o)
+ .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_truncdfsf2.o)
+ .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_truncdfsf2.o)
+ .debug_line_str
+                0x00000000       0xce C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_truncdfsf2.o)
+ .debug_frame   0x00000000       0x24 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_truncdfsf2.o)
+ .ARM.attributes
+                0x00000000       0x22 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_truncdfsf2.o)
+ .text          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-malloc.o)
+ .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-malloc.o)
+ .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-malloc.o)
+ .text.free     0x00000000       0x10 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-malloc.o)
+ .text          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-qsort.o)
+ .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-qsort.o)
+ .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-qsort.o)
+ .text          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-memset.o)
+ .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-memset.o)
+ .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-memset.o)
+ .text          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-impure.o)
+ .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-impure.o)
+ .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-impure.o)
+ .text          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
+ .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
+ .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
+ .text.stdio_exit_handler
+                0x00000000       0x18 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
+ .text.cleanup_stdio
+                0x00000000       0x40 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
+ .text.__fp_lock
+                0x00000000       0x1c C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
+ .text.__fp_unlock
+                0x00000000       0x1c C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
+ .text.global_stdio_init.part.0
+                0x00000000       0xf0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
+ .text.__sfp    0x00000000       0xc0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
+ .text.__sinit  0x00000000       0x3c C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
+ .text.__sfp_lock_acquire
+                0x00000000        0xc C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
+ .text.__sfp_lock_release
+                0x00000000        0xc C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
+ .text.__fp_lock_all
+                0x00000000       0x24 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
+ .text.__fp_unlock_all
+                0x00000000       0x24 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
+ .data.__sglue  0x00000000        0xc C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
+ .bss.__stdio_exit_handler
+                0x00000000        0x4 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
+ .text          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fwalk.o)
+ .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fwalk.o)
+ .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fwalk.o)
+ .text._fwalk_sglue
+                0x00000000       0x44 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fwalk.o)
+ .debug_frame   0x00000000       0x34 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fwalk.o)
+ .ARM.attributes
+                0x00000000       0x34 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fwalk.o)
+ .text          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-stdio.o)
+ .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-stdio.o)
+ .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-stdio.o)
+ .text.__sread  0x00000000       0x24 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-stdio.o)
+ .text.__seofread
+                0x00000000        0x4 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-stdio.o)
+ .text.__swrite
+                0x00000000       0x40 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-stdio.o)
+ .text.__sseek  0x00000000       0x24 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-stdio.o)
+ .text.__sclose
+                0x00000000        0x8 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-stdio.o)
+ .debug_frame   0x00000000       0x8c C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-stdio.o)
+ .ARM.attributes
+                0x00000000       0x34 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-stdio.o)
+ .text          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-closer.o)
+ .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-closer.o)
+ .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-closer.o)
+ .text._close_r
+                0x00000000       0x24 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-closer.o)
+ .debug_frame   0x00000000       0x2c C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-closer.o)
+ .ARM.attributes
+                0x00000000       0x34 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-closer.o)
+ .text          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-reent.o)
+ .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-reent.o)
+ .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-reent.o)
+ .text._reclaim_reent
+                0x00000000       0x5c C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-reent.o)
+ .bss.errno     0x00000000        0x4 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-reent.o)
+ .debug_frame   0x00000000       0x3c C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-reent.o)
+ .ARM.attributes
+                0x00000000       0x34 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-reent.o)
+ .text          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lseekr.o)
+ .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lseekr.o)
+ .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lseekr.o)
+ .text._lseek_r
+                0x00000000       0x2c C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lseekr.o)
+ .debug_frame   0x00000000       0x2c C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lseekr.o)
+ .ARM.attributes
+                0x00000000       0x34 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lseekr.o)
+ .text          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-readr.o)
+ .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-readr.o)
+ .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-readr.o)
+ .text._read_r  0x00000000       0x2c C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-readr.o)
+ .debug_frame   0x00000000       0x2c C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-readr.o)
+ .ARM.attributes
+                0x00000000       0x34 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-readr.o)
+ .text          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-writer.o)
+ .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-writer.o)
+ .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-writer.o)
+ .text._write_r
+                0x00000000       0x2c C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-writer.o)
+ .debug_frame   0x00000000       0x2c C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-writer.o)
+ .ARM.attributes
+                0x00000000       0x34 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-writer.o)
+ .text          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lock.o)
+ .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lock.o)
+ .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lock.o)
+ .text.__retarget_lock_init
+                0x00000000        0x4 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lock.o)
+ .text.__retarget_lock_init_recursive
+                0x00000000        0x4 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lock.o)
+ .text.__retarget_lock_close
+                0x00000000        0x4 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lock.o)
+ .text.__retarget_lock_close_recursive
+                0x00000000        0x4 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lock.o)
+ .text.__retarget_lock_acquire
+                0x00000000        0x4 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lock.o)
+ .text.__retarget_lock_acquire_recursive
+                0x00000000        0x4 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lock.o)
+ .text.__retarget_lock_try_acquire
+                0x00000000        0x4 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lock.o)
+ .text.__retarget_lock_try_acquire_recursive
+                0x00000000        0x4 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lock.o)
+ .text.__retarget_lock_release
+                0x00000000        0x4 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lock.o)
+ .text.__retarget_lock_release_recursive
+                0x00000000        0x4 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lock.o)
+ .bss.__lock___arc4random_mutex
+                0x00000000        0x1 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lock.o)
+ .bss.__lock___dd_hash_mutex
+                0x00000000        0x1 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lock.o)
+ .bss.__lock___tz_mutex
+                0x00000000        0x1 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lock.o)
+ .bss.__lock___env_recursive_mutex
+                0x00000000        0x1 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lock.o)
+ .bss.__lock___malloc_recursive_mutex
+                0x00000000        0x1 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lock.o)
+ .bss.__lock___at_quick_exit_mutex
+                0x00000000        0x1 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lock.o)
+ .bss.__lock___atexit_recursive_mutex
+                0x00000000        0x1 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lock.o)
+ .bss.__lock___sfp_recursive_mutex
+                0x00000000        0x1 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lock.o)
+ .debug_frame   0x00000000       0xb0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lock.o)
+ .ARM.attributes
+                0x00000000       0x34 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lock.o)
+ .text          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fclose.o)
+ .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fclose.o)
+ .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fclose.o)
+ .text._fclose_r
+                0x00000000       0xc0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fclose.o)
+ .text.fclose   0x00000000       0x10 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fclose.o)
+ .debug_frame   0x00000000       0x3c C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fclose.o)
+ .ARM.attributes
+                0x00000000       0x34 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fclose.o)
+ .text          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fflush.o)
+ .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fflush.o)
+ .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fflush.o)
+ .text.__sflush_r
+                0x00000000      0x138 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fflush.o)
+ .text._fflush_r
+                0x00000000       0x54 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fflush.o)
+ .text.fflush   0x00000000       0x74 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fflush.o)
+ .debug_frame   0x00000000       0x70 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fflush.o)
+ .ARM.attributes
+                0x00000000       0x34 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fflush.o)
+ .text          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_acos.o)
+ .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_acos.o)
+ .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_acos.o)
+ .rodata.acosf.str1.4
+                0x00000000        0x1 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_acos.o)
+ .text.acosf    0x00000000       0x58 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_acos.o)
+ .debug_frame   0x00000000       0x48 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_acos.o)
+ .ARM.attributes
+                0x00000000       0x34 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_acos.o)
+ .text          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_atan2.o)
+ .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_atan2.o)
+ .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_atan2.o)
+ .text          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_sqrt.o)
+ .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_sqrt.o)
+ .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_sqrt.o)
+ .text.sqrtf    0x00000000       0x44 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_sqrt.o)
+ .debug_frame   0x00000000       0x44 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_sqrt.o)
+ .ARM.attributes
+                0x00000000       0x34 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_sqrt.o)
+ .text          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_cos.o)
+ .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_cos.o)
+ .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_cos.o)
+ .text          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_fabs.o)
+ .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_fabs.o)
+ .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_fabs.o)
+ .text          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_sin.o)
+ .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_sin.o)
+ .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_sin.o)
+ .text          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_tan.o)
+ .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_tan.o)
+ .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_tan.o)
+ .text          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_nan.o)
+ .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_nan.o)
+ .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_nan.o)
+ .text.nanf     0x00000000        0xc C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_nan.o)
+ .debug_frame   0x00000000       0x20 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_nan.o)
+ .ARM.attributes
+                0x00000000       0x34 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_nan.o)
+ .text          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_sqrt.o)
+ .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_sqrt.o)
+ .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_sqrt.o)
+ .text.__ieee754_sqrtf
+                0x00000000        0x8 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_sqrt.o)
+ .debug_frame   0x00000000       0x20 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_sqrt.o)
+ .ARM.attributes
+                0x00000000       0x34 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_sqrt.o)
+ .text          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_cos.o)
+ .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_cos.o)
+ .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_cos.o)
+ .text          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_sin.o)
+ .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_sin.o)
+ .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_sin.o)
+ .text          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_tan.o)
+ .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_tan.o)
+ .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_tan.o)
+ .text          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_acos.o)
+ .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_acos.o)
+ .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_acos.o)
+ .text.__ieee754_acosf
+                0x00000000      0x244 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_acos.o)
+ .debug_frame   0x00000000       0x64 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_acos.o)
+ .ARM.attributes
+                0x00000000       0x34 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_acos.o)
+ .text          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_atan2.o)
+ .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_atan2.o)
+ .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_atan2.o)
+ .text          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_rem_pio2.o)
+ .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_rem_pio2.o)
+ .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_rem_pio2.o)
+ .text          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_atan.o)
+ .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_atan.o)
+ .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_atan.o)
+ .text          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_rem_pio2.o)
+ .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_rem_pio2.o)
+ .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_rem_pio2.o)
+ .text          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_scalbn.o)
+ .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_scalbn.o)
+ .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_scalbn.o)
+ .text          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_floor.o)
+ .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_floor.o)
+ .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_floor.o)
+ .text          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libc.a(libc_a-errno.o)
+ .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libc.a(libc_a-errno.o)
+ .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libc.a(libc_a-errno.o)
+ .text.__errno  0x00000000        0xc C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libc.a(libc_a-errno.o)
+ .debug_frame   0x00000000       0x20 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libc.a(libc_a-errno.o)
+ .ARM.attributes
+                0x00000000       0x34 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libc.a(libc_a-errno.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD CMakeFiles\ddd.dir\src\main.c.obj
+LOAD CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+LOAD CMakeFiles\ddd.dir\ddd\actor.c.obj
+LOAD CMakeFiles\ddd.dir\ddd\camera.c.obj
+LOAD CMakeFiles\ddd.dir\ddd\quaternion.c.obj
+LOAD CMakeFiles\ddd.dir\ddd\render.c.obj
+LOAD CMakeFiles\ddd.dir\ddd\scene.c.obj
+LOAD CMakeFiles\ddd.dir\ddd\symbols.c.obj
+LOAD CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
+START GROUP
+LOAD C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libgcc.a
+LOAD C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a
+LOAD C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libc.a
+END GROUP
+START GROUP
+LOAD C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libgcc.a
+LOAD C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libc.a
+LOAD C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a
+END GROUP
+
+.text           0x00000000     0x3fc8
+ *(.text)
+ *(.text.*)
+ .text.cube2_update
+                0x00000000       0x20 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00000000                cube2_update
+ .text.terrain_update
+                0x00000020        0x4 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00000020                terrain_update
+ *fill*         0x00000024        0xc 
+ .text.blahaj_update
+                0x00000030       0x90 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00000030                blahaj_update
+ .text.test_scene_init
+                0x000000c0       0xa8 CMakeFiles\ddd.dir\src\main.c.obj
+                0x000000c0                test_scene_init
+ *fill*         0x00000168        0x8 
+ .text.test_scene_update
+                0x00000170        0x4 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00000170                test_scene_update
+ *fill*         0x00000174        0xc 
+ .text.test_vertShader
+                0x00000180       0x60 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00000180                test_vertShader
+ .text.eventHandler
+                0x000001e0      0x250 CMakeFiles\ddd.dir\src\main.c.obj
+                0x000001e0                eventHandler
+ .text.handleButtons
+                0x00000430      0x118 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00000430                handleButtons
+ *fill*         0x00000548        0x8 
+ .text.camera_update
+                0x00000550      0x2d0 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00000550                camera_update
+ .text.update   0x00000820       0xd8 CMakeFiles\ddd.dir\src\main.c.obj
+ *fill*         0x000008f8        0x8 
+ .text.Vector3_dot
+                0x00000900       0x18 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                0x00000900                Vector3_dot
+ *fill*         0x00000918        0x8 
+ .text.Vector3_add
+                0x00000920       0x2c CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                0x00000920                Vector3_add
+ *fill*         0x0000094c        0x4 
+ .text.Vector3_subtract
+                0x00000950       0x2c CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                0x00000950                Vector3_subtract
+ *fill*         0x0000097c        0x4 
+ .text.Vector3_multiplyScalar
+                0x00000980       0x20 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                0x00000980                Vector3_multiplyScalar
+ .text.Vector3_normalize
+                0x000009a0       0x24 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                0x000009a0                Vector3_normalize
+ *fill*         0x000009c4        0xc 
+ .text.pnormal  0x000009d0       0x78 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                0x000009d0                pnormal
+ *fill*         0x00000a48        0x8 
+ .text.Vector3_getForward
+                0x00000a50       0x58 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                0x00000a50                Vector3_getForward
+ *fill*         0x00000aa8        0x8 
+ .text.Vector3_getUp
+                0x00000ab0       0x58 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                0x00000ab0                Vector3_getUp
+ *fill*         0x00000b08        0x8 
+ .text.Vector3_getLeft
+                0x00000b10       0x40 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                0x00000b10                Vector3_getLeft
+ .text.Vector3_lerp
+                0x00000b50       0x68 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                0x00000b50                Vector3_lerp
+ *fill*         0x00000bb8        0x8 
+ .text.Matrix3_multiply
+                0x00000bc0      0x174 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                0x00000bc0                Matrix3_multiply
+ *fill*         0x00000d34        0xc 
+ .text.Matrix3_apply
+                0x00000d40       0x74 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                0x00000d40                Matrix3_apply
+ *fill*         0x00000db4        0xc 
+ .text.PTR_Matrix3_apply
+                0x00000dc0       0x7c CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                0x00000dc0                PTR_Matrix3_apply
+ *fill*         0x00000e3c        0x4 
+ .text.Matrix3_getRotationX
+                0x00000e40       0x4c CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                0x00000e40                Matrix3_getRotationX
+ *fill*         0x00000e8c        0x4 
+ .text.Matrix3_getRotationY
+                0x00000e90       0x4c CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                0x00000e90                Matrix3_getRotationY
+ *fill*         0x00000edc        0x4 
+ .text.Matrix3_getRotationZ
+                0x00000ee0       0x50 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                0x00000ee0                Matrix3_getRotationZ
+ .text.Matrix3_lookAt
+                0x00000f30       0xd4 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                0x00000f30                Matrix3_lookAt
+ *fill*         0x00001004        0xc 
+ .text.Matrix4_getQuaternionTransform
+                0x00001010       0xf0 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                0x00001010                Matrix4_getQuaternionTransform
+ .text.Matrix4_getMatrixTransform
+                0x00001100       0x9c CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                0x00001100                Matrix4_getMatrixTransform
+ *fill*         0x0000119c        0x4 
+ .text.Matrix4_apply
+                0x000011a0       0xac CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                0x000011a0                Matrix4_apply
+ *fill*         0x0000124c        0x4 
+ .text.PTR_Matrix4_apply
+                0x00001250       0xb4 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                0x00001250                PTR_Matrix4_apply
+ *fill*         0x00001304        0xc 
+ .text.Quaternion_fromVector3
+                0x00001310       0xe0 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                0x00001310                Quaternion_fromVector3
+ .text.Actor_updateTransform
+                0x000013f0      0x118 CMakeFiles\ddd.dir\ddd\actor.c.obj
+                0x000013f0                Actor_updateTransform
+ *fill*         0x00001508        0x8 
+ .text.Camera_getProjectionMatrix
+                0x00001510       0x6c CMakeFiles\ddd.dir\ddd\camera.c.obj
+                0x00001510                Camera_getProjectionMatrix
+ *fill*         0x0000157c        0x4 
+ .text.Camera_worldToScreenPos
+                0x00001580       0x38 CMakeFiles\ddd.dir\ddd\camera.c.obj
+                0x00001580                Camera_worldToScreenPos
+ *fill*         0x000015b8        0x8 
+ .text.PTR_Camera_worldToScreenPos
+                0x000015c0       0x4c CMakeFiles\ddd.dir\ddd\camera.c.obj
+                0x000015c0                PTR_Camera_worldToScreenPos
+ *fill*         0x0000160c        0x4 
+ .text.Camera_getRotationMatrix
+                0x00001610       0xec CMakeFiles\ddd.dir\ddd\camera.c.obj
+                0x00001610                Camera_getRotationMatrix
+ *fill*         0x000016fc        0x4 
+ .text.LookTarget_setTarget
+                0x00001700       0x24 CMakeFiles\ddd.dir\ddd\camera.c.obj
+                0x00001700                LookTarget_setTarget
+ *fill*         0x00001724        0xc 
+ .text.LookTarget_tick
+                0x00001730       0x90 CMakeFiles\ddd.dir\ddd\camera.c.obj
+                0x00001730                LookTarget_tick
+ .text.compare_zdepth
+                0x000017c0       0x18 CMakeFiles\ddd.dir\ddd\render.c.obj
+                0x000017c0                compare_zdepth
+ *fill*         0x000017d8        0x8 
+ .text.api_drawFragment.part.0
+                0x000017e0       0xd0 CMakeFiles\ddd.dir\ddd\render.c.obj
+ .text.Line_worldDraw
+                0x000018b0      0x128 CMakeFiles\ddd.dir\ddd\render.c.obj
+                0x000018b0                Line_worldDraw
+ *fill*         0x000019d8        0x8 
+ .text.YPlane_render
+                0x000019e0       0xec CMakeFiles\ddd.dir\ddd\render.c.obj
+                0x000019e0                YPlane_render
+ *fill*         0x00001acc        0x4 
+ .text.sortTri  0x00001ad0       0x78 CMakeFiles\ddd.dir\ddd\render.c.obj
+                0x00001ad0                sortTri
+ *fill*         0x00001b48        0x8 
+ .text.api_fillRange
+                0x00001b50       0xb0 CMakeFiles\ddd.dir\ddd\render.c.obj
+                0x00001b50                api_fillRange
+ .text.api_fillTriangle
+                0x00001c00      0x1f8 CMakeFiles\ddd.dir\ddd\render.c.obj
+                0x00001c00                api_fillTriangle
+ *fill*         0x00001df8        0x8 
+ .text.Actor_drawMesh
+                0x00001e00      0x3e4 CMakeFiles\ddd.dir\ddd\render.c.obj
+                0x00001e00                Actor_drawMesh
+ *fill*         0x000021e4        0xc 
+ .text.Scene_addActor
+                0x000021f0       0x40 CMakeFiles\ddd.dir\ddd\scene.c.obj
+                0x000021f0                Scene_addActor
+ .text.Scene_update
+                0x00002230       0x40 CMakeFiles\ddd.dir\ddd\scene.c.obj
+                0x00002230                Scene_update
+ .text.Vector3_make
+                0x00002270        0x8 CMakeFiles\ddd.dir\ddd\symbols.c.obj
+                0x00002270                Vector3_make
+ *fill*         0x00002278        0x8 
+ .text.eventHandlerShim
+                0x00002280       0x1c CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
+                0x00002280                eventHandlerShim
+ *fill*         0x0000229c        0x4 
+ .text._malloc_r
+                0x000022a0        0xc CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
+                0x000022a0                _malloc_r
+ .text.malloc   0x000022ac       0x10 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-malloc.o)
+                0x000022ac                malloc
+ .text.qsort    0x000022bc      0x628 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-qsort.o)
+                0x000022bc                qsort
+ .text.memset   0x000028e4       0xa4 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-memset.o)
+                0x000028e4                memset
+ .text.atan2f   0x00002988        0x4 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_atan2.o)
+                0x00002988                atan2f
+ .text.cosf     0x0000298c       0x70 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_cos.o)
+                0x0000298c                cosf
+ .text.fabsf    0x000029fc       0x10 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_fabs.o)
+                0x000029fc                fabsf
+ .text.sinf     0x00002a0c       0x74 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_sin.o)
+                0x00002a0c                sinf
+ .text.tanf     0x00002a80       0x54 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_tan.o)
+                0x00002a80                tanf
+ .text.__kernel_cosf
+                0x00002ad4      0x104 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_cos.o)
+                0x00002ad4                __kernel_cosf
+ .text.__kernel_sinf
+                0x00002bd8       0x90 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_sin.o)
+                0x00002bd8                __kernel_sinf
+ .text.__kernel_tanf
+                0x00002c68      0x1c0 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_tan.o)
+                0x00002c68                __kernel_tanf
+ .text.__ieee754_atan2f
+                0x00002e28      0x150 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_atan2.o)
+                0x00002e28                __ieee754_atan2f
+ .text.__ieee754_rem_pio2f
+                0x00002f78      0x260 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_rem_pio2.o)
+                0x00002f78                __ieee754_rem_pio2f
+ .text.atanf    0x000031d8      0x1ac C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_atan.o)
+                0x000031d8                atanf
+ .text.__kernel_rem_pio2f
+                0x00003384      0x63c C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_rem_pio2.o)
+                0x00003384                __kernel_rem_pio2f
+ .text.scalbnf  0x000039c0       0xe4 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_scalbn.o)
+                0x000039c0                scalbnf
+ .text.floorf   0x00003aa4       0x94 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_floor.o)
+                0x00003aa4                floorf
+ *(.init)
+ *(.fini)
+ *crtbegin.o(.ctors)
+ *crtbegin?.o(.ctors)
+ *(EXCLUDE_FILE(*crtend.o *crtend?.o) .ctors)
+ *(SORT_BY_NAME(.ctors.*))
+ *(.ctors)
+ *crtbegin.o(.dtors)
+ *crtbegin?.o(.dtors)
+ *(EXCLUDE_FILE(*crtend.o *crtend?.o) .dtors)
+ *(SORT_BY_NAME(.dtors.*))
+ *(.dtors)
+ *(.rodata*)
+ .rodata.eventHandler.str1.4
+                0x00003b38       0x85 CMakeFiles\ddd.dir\src\main.c.obj
+                                 0x5c (size before relaxing)
+ .rodata.str1.4
+                0x00003bbd       0x29 CMakeFiles\ddd.dir\src\main.c.obj
+ *fill*         0x00003bbd        0x3 
+ .rodata.CSWTCH.9
+                0x00003bc0        0xc C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_atan2.o)
+ .rodata.CSWTCH.8
+                0x00003bcc        0xc C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_atan2.o)
+ .rodata.npio2_hw
+                0x00003bd8       0x80 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_rem_pio2.o)
+ .rodata.two_over_pi
+                0x00003c58      0x318 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_rem_pio2.o)
+ .rodata.atanlo
+                0x00003f70       0x10 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_atan.o)
+ .rodata.atanhi
+                0x00003f80       0x10 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_atan.o)
+ .rodata.PIo2   0x00003f90       0x2c C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_rem_pio2.o)
+ .rodata.init_jk
+                0x00003fbc        0xc C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_rem_pio2.o)
+ *(.eh_frame*)
+
+.glue_7         0x00003fc8        0x0
+ .glue_7        0x00003fc8        0x0 linker stubs
+
+.glue_7t        0x00003fc8        0x0
+ .glue_7t       0x00003fc8        0x0 linker stubs
+
+.vfp11_veneer   0x00003fc8        0x0
+ .vfp11_veneer  0x00003fc8        0x0 linker stubs
+
+.v4_bx          0x00003fc8        0x0
+ .v4_bx         0x00003fc8        0x0 linker stubs
+
+.iplt           0x00003fc8        0x0
+ .iplt          0x00003fc8        0x0 CMakeFiles\ddd.dir\src\main.c.obj
+
+.rel.dyn        0x00003fc8        0x0
+ .rel.iplt      0x00003fc8        0x0 CMakeFiles\ddd.dir\src\main.c.obj
+
+.data           0x00003fc8     0x3978
+                0x00003fc8                        __etext = .
+                0x00003fc8                        __data_start__ = .
+ *(vtable)
+ *(.data*)
+ .data.target_idx
+                0x00003fc8        0x4 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00003fc8                target_idx
+ .data.DefaultScene
+                0x00003fcc        0x4 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00003fcc                DefaultScene
+ .data.fontpath
+                0x00003fd0        0x4 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00003fd0                fontpath
+ .data.__compound_literal.6
+                0x00003fd4        0x4 CMakeFiles\ddd.dir\src\main.c.obj
+ .data.camera_default
+                0x00003fd8       0xd4 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00003fd8                camera_default
+ .data.camera_default_object
+                0x000040ac       0xd4 CMakeFiles\ddd.dir\src\main.c.obj
+                0x000040ac                camera_default_object
+ .data.object_terrain
+                0x00004180       0xd4 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00004180                object_terrain
+ .data.object_blahaj
+                0x00004254       0xd4 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00004254                object_blahaj
+ .data.object_cube2
+                0x00004328       0xd4 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00004328                object_cube2
+ .data.TestScene
+                0x000043fc      0x434 CMakeFiles\ddd.dir\src\main.c.obj
+                0x000043fc                TestScene
+ .data.terrain1
+                0x00004830       0x54 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00004830                terrain1
+ .data.__compound_literal.5
+                0x00004884      0xc00 CMakeFiles\ddd.dir\src\main.c.obj
+ .data.__compound_literal.4
+                0x00005484      0xd8c CMakeFiles\ddd.dir\src\main.c.obj
+ .data.blahaj_tri
+                0x00006210       0x54 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00006210                blahaj_tri
+ .data.__compound_literal.3
+                0x00006264      0x9a8 CMakeFiles\ddd.dir\src\main.c.obj
+ .data.__compound_literal.2
+                0x00006c0c      0x9c0 CMakeFiles\ddd.dir\src\main.c.obj
+ .data.mesh_cube
+                0x000075cc       0x54 CMakeFiles\ddd.dir\src\main.c.obj
+                0x000075cc                mesh_cube
+ .data.__compound_literal.1
+                0x00007620       0x48 CMakeFiles\ddd.dir\src\main.c.obj
+ .data.__compound_literal.0
+                0x00007668       0x60 CMakeFiles\ddd.dir\src\main.c.obj
+ .data.grid_points
+                0x000076c8       0x48 CMakeFiles\ddd.dir\ddd\render.c.obj
+                0x000076c8                grid_points
+ .data.patterns
+                0x00007710      0x108 CMakeFiles\ddd.dir\ddd\render.c.obj
+ .data._impure_ptr
+                0x00007818        0x4 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-impure.o)
+                0x00007818                _impure_ptr
+ *fill*         0x0000781c        0x4 
+ .data._impure_data
+                0x00007820      0x120 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-impure.o)
+                0x00007820                _impure_data
+                0x00007940                        . = ALIGN (0x4)
+                [!provide]                        PROVIDE (__preinit_array_start = .)
+ *(.preinit_array)
+                [!provide]                        PROVIDE (__preinit_array_end = .)
+                0x00007940                        . = ALIGN (0x4)
+                [!provide]                        PROVIDE (__init_array_start = .)
+ *(SORT_BY_NAME(.init_array.*))
+ *(.init_array)
+                [!provide]                        PROVIDE (__init_array_end = .)
+                0x00007940                        . = ALIGN (0x4)
+                [!provide]                        PROVIDE (__fini_array_start = .)
+ *(SORT_BY_NAME(.fini_array.*))
+ *(.fini_array)
+                [!provide]                        PROVIDE (__fini_array_end = .)
+                0x00007940                        . = ALIGN (0x4)
+                0x00007940                        __data_end__ = .
+
+.igot.plt       0x00007940        0x0
+ .igot.plt      0x00007940        0x0 CMakeFiles\ddd.dir\src\main.c.obj
+
+.bss            0x00007940      0x368
+                0x00007940                        . = ALIGN (0x4)
+                0x00007940                        __bss_start__ = .
+ *(.bss*)
+ .bss.isRotateRight
+                0x00007940        0x1 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00007940                isRotateRight
+ .bss.isRotateLeft
+                0x00007941        0x1 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00007941                isRotateLeft
+ .bss.isRight   0x00007942        0x1 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00007942                isRight
+ .bss.isLeft    0x00007943        0x1 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00007943                isLeft
+ .bss.isBackward
+                0x00007944        0x1 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00007944                isBackward
+ .bss.isForward
+                0x00007945        0x1 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00007945                isForward
+ .bss.isDown    0x00007946        0x1 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00007946                isDown
+ .bss.isUp      0x00007947        0x1 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00007947                isUp
+ .bss.camera_velocity
+                0x00007948        0xc CMakeFiles\ddd.dir\src\main.c.obj
+                0x00007948                camera_velocity
+ .bss.ActiveScene
+                0x00007954        0x4 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00007954                ActiveScene
+ .bss.frame     0x00007958        0x4 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00007958                frame
+ .bss.font      0x0000795c        0x4 CMakeFiles\ddd.dir\src\main.c.obj
+                0x0000795c                font
+ .bss.SINE_GRADIENT_OFFSET
+                0x00007960        0x4 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00007960                SINE_GRADIENT_OFFSET
+ .bss.SINE_GRADIENT
+                0x00007964      0x200 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00007964                SINE_GRADIENT
+ .bss.DELTA_TIME
+                0x00007b64        0x4 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00007b64                DELTA_TIME
+ .bss.pd        0x00007b68        0x4 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00007b68                pd
+ .bss.pdrealloc
+                0x00007b6c        0x4 CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
+ .bss.__sf      0x00007b70      0x138 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
+                0x00007b70                __sf
+ *(COMMON)
+ *(COM)
+                0x00007ca8                        . = ALIGN (0x4)
+                0x00007ca8                        __bss_end__ = .
+
+/DISCARD/
+ *(.ARM.exidx)
+OUTPUT(ddd.elf elf32-littlearm)
+LOAD linker stubs
+
+.debug_info     0x00000000    0x17e52
+ .debug_info    0x00000000     0x6e0f CMakeFiles\ddd.dir\src\main.c.obj
+ .debug_info    0x00006e0f     0x215a CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+ .debug_info    0x00008f69      0x636 CMakeFiles\ddd.dir\ddd\actor.c.obj
+ .debug_info    0x0000959f      0x73f CMakeFiles\ddd.dir\ddd\camera.c.obj
+ .debug_info    0x00009cde     0x7465 CMakeFiles\ddd.dir\ddd\render.c.obj
+ .debug_info    0x00011143      0x6b3 CMakeFiles\ddd.dir\ddd\scene.c.obj
+ .debug_info    0x000117f6      0x1c6 CMakeFiles\ddd.dir\ddd\symbols.c.obj
+ .debug_info    0x000119bc     0x6496 CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
+
+.debug_abbrev   0x00000000     0x18cf
+ .debug_abbrev  0x00000000      0x608 CMakeFiles\ddd.dir\src\main.c.obj
+ .debug_abbrev  0x00000608      0x423 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+ .debug_abbrev  0x00000a2b      0x187 CMakeFiles\ddd.dir\ddd\actor.c.obj
+ .debug_abbrev  0x00000bb2      0x232 CMakeFiles\ddd.dir\ddd\camera.c.obj
+ .debug_abbrev  0x00000de4      0x593 CMakeFiles\ddd.dir\ddd\render.c.obj
+ .debug_abbrev  0x00001377      0x19c CMakeFiles\ddd.dir\ddd\scene.c.obj
+ .debug_abbrev  0x00001513       0xbc CMakeFiles\ddd.dir\ddd\symbols.c.obj
+ .debug_abbrev  0x000015cf      0x300 CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
+
+.debug_loc      0x00000000     0x55e4
+ .debug_loc     0x00000000      0x863 CMakeFiles\ddd.dir\src\main.c.obj
+ .debug_loc     0x00000863     0x2a7a CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+ .debug_loc     0x000032dd       0xdd CMakeFiles\ddd.dir\ddd\actor.c.obj
+ .debug_loc     0x000033ba      0x481 CMakeFiles\ddd.dir\ddd\camera.c.obj
+ .debug_loc     0x0000383b     0x197e CMakeFiles\ddd.dir\ddd\render.c.obj
+ .debug_loc     0x000051b9      0x195 CMakeFiles\ddd.dir\ddd\scene.c.obj
+ .debug_loc     0x0000534e       0x2c CMakeFiles\ddd.dir\ddd\symbols.c.obj
+ .debug_loc     0x0000537a      0x26a CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
+
+.debug_aranges  0x00000000      0x350
+ .debug_aranges
+                0x00000000       0x90 CMakeFiles\ddd.dir\src\main.c.obj
+ .debug_aranges
+                0x00000090      0x158 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+ .debug_aranges
+                0x000001e8       0x20 CMakeFiles\ddd.dir\ddd\actor.c.obj
+ .debug_aranges
+                0x00000208       0x48 CMakeFiles\ddd.dir\ddd\camera.c.obj
+ .debug_aranges
+                0x00000250       0x78 CMakeFiles\ddd.dir\ddd\render.c.obj
+ .debug_aranges
+                0x000002c8       0x30 CMakeFiles\ddd.dir\ddd\scene.c.obj
+ .debug_aranges
+                0x000002f8       0x20 CMakeFiles\ddd.dir\ddd\symbols.c.obj
+ .debug_aranges
+                0x00000318       0x38 CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
+
+.debug_ranges   0x00000000      0x9e0
+ .debug_ranges  0x00000000      0x148 CMakeFiles\ddd.dir\src\main.c.obj
+ .debug_ranges  0x00000148      0x508 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+ .debug_ranges  0x00000650       0x10 CMakeFiles\ddd.dir\ddd\actor.c.obj
+ .debug_ranges  0x00000660       0x38 CMakeFiles\ddd.dir\ddd\camera.c.obj
+ .debug_ranges  0x00000698      0x2b8 CMakeFiles\ddd.dir\ddd\render.c.obj
+ .debug_ranges  0x00000950       0x58 CMakeFiles\ddd.dir\ddd\scene.c.obj
+ .debug_ranges  0x000009a8       0x10 CMakeFiles\ddd.dir\ddd\symbols.c.obj
+ .debug_ranges  0x000009b8       0x28 CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
+
+.debug_line     0x00000000     0x3f8e
+ .debug_line    0x00000000      0xd8a CMakeFiles\ddd.dir\src\main.c.obj
+ .debug_line    0x00000d8a     0x17fc CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+ .debug_line    0x00002586      0x191 CMakeFiles\ddd.dir\ddd\actor.c.obj
+ .debug_line    0x00002717      0x349 CMakeFiles\ddd.dir\ddd\camera.c.obj
+ .debug_line    0x00002a60      0xee9 CMakeFiles\ddd.dir\ddd\render.c.obj
+ .debug_line    0x00003949      0x23e CMakeFiles\ddd.dir\ddd\scene.c.obj
+ .debug_line    0x00003b87       0x8d CMakeFiles\ddd.dir\ddd\symbols.c.obj
+ .debug_line    0x00003c14      0x37a CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
+
+.debug_str      0x00000000     0x391c
+ .debug_str     0x00000000     0x391c CMakeFiles\ddd.dir\src\main.c.obj
+                               0x3193 (size before relaxing)
+ .debug_str     0x0000391c      0x69c CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+ .debug_str     0x0000391c      0x439 CMakeFiles\ddd.dir\ddd\actor.c.obj
+ .debug_str     0x0000391c      0x4d5 CMakeFiles\ddd.dir\ddd\camera.c.obj
+ .debug_str     0x0000391c     0x2f15 CMakeFiles\ddd.dir\ddd\render.c.obj
+ .debug_str     0x0000391c      0x4cb CMakeFiles\ddd.dir\ddd\scene.c.obj
+ .debug_str     0x0000391c      0x248 CMakeFiles\ddd.dir\ddd\symbols.c.obj
+ .debug_str     0x0000391c     0x2e7e CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
+
+.comment        0x00000000       0x44
+ .comment       0x00000000       0x44 CMakeFiles\ddd.dir\src\main.c.obj
+                                 0x45 (size before relaxing)
+ .comment       0x00000044       0x45 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+ .comment       0x00000044       0x45 CMakeFiles\ddd.dir\ddd\actor.c.obj
+ .comment       0x00000044       0x45 CMakeFiles\ddd.dir\ddd\camera.c.obj
+ .comment       0x00000044       0x45 CMakeFiles\ddd.dir\ddd\render.c.obj
+ .comment       0x00000044       0x45 CMakeFiles\ddd.dir\ddd\scene.c.obj
+ .comment       0x00000044       0x45 CMakeFiles\ddd.dir\ddd\symbols.c.obj
+ .comment       0x00000044       0x45 CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
+
+.ARM.attributes
+                0x00000000       0x34
+ .ARM.attributes
+                0x00000000       0x34 CMakeFiles\ddd.dir\src\main.c.obj
+ .ARM.attributes
+                0x00000034       0x34 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+ .ARM.attributes
+                0x00000068       0x34 CMakeFiles\ddd.dir\ddd\actor.c.obj
+ .ARM.attributes
+                0x0000009c       0x34 CMakeFiles\ddd.dir\ddd\camera.c.obj
+ .ARM.attributes
+                0x000000d0       0x34 CMakeFiles\ddd.dir\ddd\render.c.obj
+ .ARM.attributes
+                0x00000104       0x34 CMakeFiles\ddd.dir\ddd\scene.c.obj
+ .ARM.attributes
+                0x00000138       0x34 CMakeFiles\ddd.dir\ddd\symbols.c.obj
+ .ARM.attributes
+                0x0000016c       0x34 CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
+ .ARM.attributes
+                0x000001a0       0x34 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-malloc.o)
+ .ARM.attributes
+                0x000001d4       0x34 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-qsort.o)
+ .ARM.attributes
+                0x00000208       0x34 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-memset.o)
+ .ARM.attributes
+                0x0000023c       0x34 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-impure.o)
+ .ARM.attributes
+                0x00000270       0x34 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
+ .ARM.attributes
+                0x000002a4       0x34 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_atan2.o)
+ .ARM.attributes
+                0x000002d8       0x34 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_cos.o)
+ .ARM.attributes
+                0x0000030c       0x34 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_fabs.o)
+ .ARM.attributes
+                0x00000340       0x34 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_sin.o)
+ .ARM.attributes
+                0x00000374       0x34 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_tan.o)
+ .ARM.attributes
+                0x000003a8       0x34 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_cos.o)
+ .ARM.attributes
+                0x000003dc       0x34 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_sin.o)
+ .ARM.attributes
+                0x00000410       0x34 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_tan.o)
+ .ARM.attributes
+                0x00000444       0x34 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_atan2.o)
+ .ARM.attributes
+                0x00000478       0x34 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_rem_pio2.o)
+ .ARM.attributes
+                0x000004ac       0x34 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_atan.o)
+ .ARM.attributes
+                0x000004e0       0x34 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_rem_pio2.o)
+ .ARM.attributes
+                0x00000514       0x34 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_scalbn.o)
+ .ARM.attributes
+                0x00000548       0x34 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_floor.o)
+
+.debug_frame    0x00000000     0x1040
+ .debug_frame   0x00000000      0x1c8 CMakeFiles\ddd.dir\src\main.c.obj
+ .debug_frame   0x000001c8      0x648 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+ .debug_frame   0x00000810       0x38 CMakeFiles\ddd.dir\ddd\actor.c.obj
+ .debug_frame   0x00000848       0xc0 CMakeFiles\ddd.dir\ddd\camera.c.obj
+ .debug_frame   0x00000908      0x1f0 CMakeFiles\ddd.dir\ddd\render.c.obj
+ .debug_frame   0x00000af8       0x68 CMakeFiles\ddd.dir\ddd\scene.c.obj
+ .debug_frame   0x00000b60       0x28 CMakeFiles\ddd.dir\ddd\symbols.c.obj
+ .debug_frame   0x00000b88       0x5c CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
+ .debug_frame   0x00000be4       0x30 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-malloc.o)
+ .debug_frame   0x00000c14       0x44 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-qsort.o)
+ .debug_frame   0x00000c58       0x2c C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-memset.o)
+ .debug_frame   0x00000c84      0x13c C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
+ .debug_frame   0x00000dc0       0x20 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_atan2.o)
+ .debug_frame   0x00000de0       0x34 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_cos.o)
+ .debug_frame   0x00000e14       0x20 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_fabs.o)
+ .debug_frame   0x00000e34       0x34 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_sin.o)
+ .debug_frame   0x00000e68       0x30 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_tan.o)
+ .debug_frame   0x00000e98       0x20 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_cos.o)
+ .debug_frame   0x00000eb8       0x20 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_sin.o)
+ .debug_frame   0x00000ed8       0x28 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_tan.o)
+ .debug_frame   0x00000f00       0x44 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_atan2.o)
+ .debug_frame   0x00000f44       0x34 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_rem_pio2.o)
+ .debug_frame   0x00000f78       0x2c C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_atan.o)
+ .debug_frame   0x00000fa4       0x5c C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_rem_pio2.o)
+ .debug_frame   0x00001000       0x20 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_scalbn.o)
+ .debug_frame   0x00001020       0x20 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_floor.o)
+
+Cross Reference Table
+
+Symbol                                            File
+ActiveScene                                       CMakeFiles\ddd.dir\src\main.c.obj
+Actor_drawMesh                                    CMakeFiles\ddd.dir\ddd\render.c.obj
+                                                  CMakeFiles\ddd.dir\src\main.c.obj
+Actor_updateTransform                             CMakeFiles\ddd.dir\ddd\actor.c.obj
+                                                  CMakeFiles\ddd.dir\ddd\scene.c.obj
+Camera_getProjectionMatrix                        CMakeFiles\ddd.dir\ddd\camera.c.obj
+                                                  CMakeFiles\ddd.dir\src\main.c.obj
+Camera_getRotationMatrix                          CMakeFiles\ddd.dir\ddd\camera.c.obj
+                                                  CMakeFiles\ddd.dir\src\main.c.obj
+Camera_worldToScreenPos                           CMakeFiles\ddd.dir\ddd\camera.c.obj
+                                                  CMakeFiles\ddd.dir\ddd\render.c.obj
+DELTA_TIME                                        CMakeFiles\ddd.dir\src\main.c.obj
+                                                  CMakeFiles\ddd.dir\ddd\camera.c.obj
+DefaultScene                                      CMakeFiles\ddd.dir\src\main.c.obj
+GLOBAL_ORIGIN                                     CMakeFiles\ddd.dir\src\main.c.obj
+GLOBAL_UNIT                                       CMakeFiles\ddd.dir\src\main.c.obj
+GLOBAL_UP                                         CMakeFiles\ddd.dir\src\main.c.obj
+Gradient_init                                     CMakeFiles\ddd.dir\src\main.c.obj
+Gradient_sample                                   CMakeFiles\ddd.dir\src\main.c.obj
+Gradient_tick                                     CMakeFiles\ddd.dir\src\main.c.obj
+Line_worldDraw                                    CMakeFiles\ddd.dir\ddd\render.c.obj
+                                                  CMakeFiles\ddd.dir\src\main.c.obj
+LookTarget_setTarget                              CMakeFiles\ddd.dir\ddd\camera.c.obj
+                                                  CMakeFiles\ddd.dir\src\main.c.obj
+LookTarget_tick                                   CMakeFiles\ddd.dir\ddd\camera.c.obj
+                                                  CMakeFiles\ddd.dir\ddd\scene.c.obj
+                                                  CMakeFiles\ddd.dir\src\main.c.obj
+Matrix3_add                                       CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+Matrix3_apply                                     CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                                                  CMakeFiles\ddd.dir\ddd\render.c.obj
+Matrix3_fromQuaternion                            CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+Matrix3_getRotationX                              CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                                                  CMakeFiles\ddd.dir\ddd\camera.c.obj
+Matrix3_getRotationY                              CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                                                  CMakeFiles\ddd.dir\ddd\camera.c.obj
+Matrix3_getRotationZ                              CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                                                  CMakeFiles\ddd.dir\ddd\camera.c.obj
+Matrix3_lerp                                      CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+Matrix3_lookAt                                    CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                                                  CMakeFiles\ddd.dir\ddd\actor.c.obj
+                                                  CMakeFiles\ddd.dir\src\main.c.obj
+Matrix3_multiply                                  CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                                                  CMakeFiles\ddd.dir\ddd\camera.c.obj
+Matrix3_multiplyScalar                            CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+Matrix3_rotationFromAngles                        CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+Matrix4_apply                                     CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                                                  CMakeFiles\ddd.dir\ddd\render.c.obj
+                                                  CMakeFiles\ddd.dir\ddd\camera.c.obj
+Matrix4_from3                                     CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+Matrix4_getMatrixTransform                        CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                                                  CMakeFiles\ddd.dir\ddd\actor.c.obj
+Matrix4_getQuaternionTransform                    CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                                                  CMakeFiles\ddd.dir\ddd\actor.c.obj
+Matrix4_getTransform                              CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+Matrix4_multiply                                  CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+PTR_Camera_worldToScreenPos                       CMakeFiles\ddd.dir\ddd\camera.c.obj
+                                                  CMakeFiles\ddd.dir\ddd\render.c.obj
+PTR_Matrix3_apply                                 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                                                  CMakeFiles\ddd.dir\ddd\render.c.obj
+PTR_Matrix4_apply                                 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                                                  CMakeFiles\ddd.dir\ddd\camera.c.obj
+Quaternion_LookAt                                 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+Quaternion_fromAngleAxis                          CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+Quaternion_fromVector3                            CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                                                  CMakeFiles\ddd.dir\ddd\actor.c.obj
+Quaternion_normalize                              CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+SINE_GRADIENT                                     CMakeFiles\ddd.dir\src\main.c.obj
+SINE_GRADIENT_OFFSET                              CMakeFiles\ddd.dir\src\main.c.obj
+Scene_addActor                                    CMakeFiles\ddd.dir\ddd\scene.c.obj
+                                                  CMakeFiles\ddd.dir\src\main.c.obj
+Scene_removeActor                                 CMakeFiles\ddd.dir\ddd\scene.c.obj
+Scene_update                                      CMakeFiles\ddd.dir\ddd\scene.c.obj
+                                                  CMakeFiles\ddd.dir\src\main.c.obj
+TestScene                                         CMakeFiles\ddd.dir\src\main.c.obj
+Vector3_add                                       CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                                                  CMakeFiles\ddd.dir\src\main.c.obj
+Vector3_applyQuaternion                           CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+Vector3_cross                                     CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+Vector3_dot                                       CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                                                  CMakeFiles\ddd.dir\ddd\render.c.obj
+Vector3_fromQuaternion                            CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+Vector3_getForward                                CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                                                  CMakeFiles\ddd.dir\src\main.c.obj
+Vector3_getLeft                                   CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                                                  CMakeFiles\ddd.dir\src\main.c.obj
+Vector3_getUp                                     CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                                                  CMakeFiles\ddd.dir\src\main.c.obj
+Vector3_length                                    CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+Vector3_lengthSquared                             CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+Vector3_lerp                                      CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                                                  CMakeFiles\ddd.dir\ddd\camera.c.obj
+Vector3_make                                      CMakeFiles\ddd.dir\ddd\symbols.c.obj
+                                                  CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+Vector3_multiply                                  CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+Vector3_multiplyScalar                            CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                                                  CMakeFiles\ddd.dir\src\main.c.obj
+Vector3_normalize                                 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                                                  CMakeFiles\ddd.dir\ddd\actor.c.obj
+                                                  CMakeFiles\ddd.dir\src\main.c.obj
+Vector3_subtract                                  CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                                                  CMakeFiles\ddd.dir\ddd\render.c.obj
+                                                  CMakeFiles\ddd.dir\ddd\actor.c.obj
+                                                  CMakeFiles\ddd.dir\src\main.c.obj
+YPlane_render                                     CMakeFiles\ddd.dir\ddd\render.c.obj
+                                                  CMakeFiles\ddd.dir\src\main.c.obj
+__adddf3                                          C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+__aeabi_d2f                                       C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_truncdfsf2.o)
+                                                  CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+__aeabi_dadd                                      C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+__aeabi_drsub                                     C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+__aeabi_dsub                                      C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+                                                  CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+__aeabi_f2d                                       C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+                                                  CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+__aeabi_i2d                                       C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+__aeabi_l2d                                       C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+__aeabi_ui2d                                      C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+__aeabi_ul2d                                      C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+__errno                                           C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libc.a(libc_a-errno.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_sqrt.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_acos.o)
+__extendsfdf2                                     C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+__floatdidf                                       C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+__floatsidf                                       C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+__floatundidf                                     C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+__floatunsidf                                     C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+__fp_lock_all                                     C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
+__fp_unlock_all                                   C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
+__ieee754_acosf                                   C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_acos.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_acos.o)
+__ieee754_atan2f                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_atan2.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_atan2.o)
+__ieee754_rem_pio2f                               C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_rem_pio2.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_tan.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_sin.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_cos.o)
+__ieee754_sqrtf                                   C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_sqrt.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_acos.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_sqrt.o)
+__kernel_cosf                                     C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_cos.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_sin.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_cos.o)
+__kernel_rem_pio2f                                C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_rem_pio2.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_rem_pio2.o)
+__kernel_sinf                                     C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_sin.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_sin.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_cos.o)
+__kernel_tanf                                     C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_tan.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_tan.o)
+__lock___arc4random_mutex                         C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lock.o)
+__lock___at_quick_exit_mutex                      C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lock.o)
+__lock___atexit_recursive_mutex                   C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lock.o)
+__lock___dd_hash_mutex                            C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lock.o)
+__lock___env_recursive_mutex                      C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lock.o)
+__lock___malloc_recursive_mutex                   C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lock.o)
+__lock___sfp_recursive_mutex                      C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lock.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
+__lock___tz_mutex                                 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lock.o)
+__retarget_lock_acquire                           C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lock.o)
+__retarget_lock_acquire_recursive                 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lock.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fflush.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fclose.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
+__retarget_lock_close                             C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lock.o)
+__retarget_lock_close_recursive                   C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lock.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fclose.o)
+__retarget_lock_init                              C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lock.o)
+__retarget_lock_init_recursive                    C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lock.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
+__retarget_lock_release                           C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lock.o)
+__retarget_lock_release_recursive                 C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lock.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fflush.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fclose.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
+__retarget_lock_try_acquire                       C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lock.o)
+__retarget_lock_try_acquire_recursive             C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lock.o)
+__sclose                                          C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-stdio.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
+__seofread                                        C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-stdio.o)
+__sf                                              C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-impure.o)
+__sflush_r                                        C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fflush.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fclose.o)
+__sfp                                             C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
+__sfp_lock_acquire                                C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fclose.o)
+__sfp_lock_release                                C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fclose.o)
+__sglue                                           C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fflush.o)
+__sinit                                           C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fflush.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fclose.o)
+__sread                                           C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-stdio.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
+__sseek                                           C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-stdio.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
+__stdio_exit_handler                              C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
+__subdf3                                          C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+__swrite                                          C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-stdio.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
+__truncdfsf2                                      C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_truncdfsf2.o)
+_close                                            C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-closer.o)
+_close_r                                          C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-closer.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-stdio.o)
+_fclose_r                                         C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fclose.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
+_fflush_r                                         C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fflush.o)
+_free_r                                           CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fflush.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fclose.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-reent.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-malloc.o)
+_fwalk_sglue                                      C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fwalk.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fflush.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
+_impure_data                                      C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-impure.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fflush.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
+_impure_ptr                                       C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-impure.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libc.a(libc_a-errno.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fflush.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fclose.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-reent.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-malloc.o)
+_lseek                                            C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lseekr.o)
+_lseek_r                                          C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lseekr.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-stdio.o)
+_malloc_r                                         CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-malloc.o)
+_read                                             C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-readr.o)
+_read_r                                           C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-readr.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-stdio.o)
+_realloc_r                                        CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
+_reclaim_reent                                    C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-reent.o)
+_write                                            C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-writer.o)
+_write_r                                          C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-writer.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-stdio.o)
+acosf                                             C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_acos.o)
+                                                  CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+api_drawFragment                                  CMakeFiles\ddd.dir\ddd\render.c.obj
+api_drawMaskPattern                               CMakeFiles\ddd.dir\ddd\render.c.obj
+api_fillRange                                     CMakeFiles\ddd.dir\ddd\render.c.obj
+api_fillTriangle                                  CMakeFiles\ddd.dir\ddd\render.c.obj
+api_slope                                         CMakeFiles\ddd.dir\ddd\render.c.obj
+api_swap                                          CMakeFiles\ddd.dir\ddd\render.c.obj
+atan2f                                            C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_atan2.o)
+                                                  CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                                                  CMakeFiles\ddd.dir\src\main.c.obj
+atanf                                             C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_atan.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_atan2.o)
+blahaj_tri                                        CMakeFiles\ddd.dir\src\main.c.obj
+blahaj_update                                     CMakeFiles\ddd.dir\src\main.c.obj
+bluenoise_table                                   CMakeFiles\ddd.dir\ddd\render.c.obj
+camera_default                                    CMakeFiles\ddd.dir\src\main.c.obj
+camera_default_object                             CMakeFiles\ddd.dir\src\main.c.obj
+camera_init                                       CMakeFiles\ddd.dir\src\main.c.obj
+camera_update                                     CMakeFiles\ddd.dir\src\main.c.obj
+camera_velocity                                   CMakeFiles\ddd.dir\src\main.c.obj
+compare_zdepth                                    CMakeFiles\ddd.dir\ddd\render.c.obj
+cosf                                              C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_cos.o)
+                                                  CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+cube2_update                                      CMakeFiles\ddd.dir\src\main.c.obj
+errno                                             C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-reent.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-writer.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-readr.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lseekr.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-closer.o)
+eventHandler                                      CMakeFiles\ddd.dir\src\main.c.obj
+                                                  CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
+eventHandlerShim                                  CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
+fabsf                                             C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_fabs.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_atan.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_rem_pio2.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_atan2.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_tan.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_acos.o)
+fast_atan2                                        CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+fclose                                            C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fclose.o)
+fflush                                            C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fflush.o)
+floorf                                            C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_floor.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_rem_pio2.o)
+font                                              CMakeFiles\ddd.dir\src\main.c.obj
+fontpath                                          CMakeFiles\ddd.dir\src\main.c.obj
+frame                                             CMakeFiles\ddd.dir\src\main.c.obj
+free                                              C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-malloc.o)
+grid_points                                       CMakeFiles\ddd.dir\ddd\render.c.obj
+handleButtons                                     CMakeFiles\ddd.dir\src\main.c.obj
+isBackward                                        CMakeFiles\ddd.dir\src\main.c.obj
+isDown                                            CMakeFiles\ddd.dir\src\main.c.obj
+isForward                                         CMakeFiles\ddd.dir\src\main.c.obj
+isLeft                                            CMakeFiles\ddd.dir\src\main.c.obj
+isRight                                           CMakeFiles\ddd.dir\src\main.c.obj
+isRotateLeft                                      CMakeFiles\ddd.dir\src\main.c.obj
+isRotateRight                                     CMakeFiles\ddd.dir\src\main.c.obj
+isUp                                              CMakeFiles\ddd.dir\src\main.c.obj
+loadScene                                         CMakeFiles\ddd.dir\src\main.c.obj
+look_lerp                                         CMakeFiles\ddd.dir\src\main.c.obj
+look_lerp_dir                                     CMakeFiles\ddd.dir\src\main.c.obj
+malloc                                            C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-malloc.o)
+                                                  CMakeFiles\ddd.dir\src\main.c.obj
+memset                                            C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-memset.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
+                                                  CMakeFiles\ddd.dir\ddd\render.c.obj
+                                                  CMakeFiles\ddd.dir\ddd\camera.c.obj
+                                                  CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                                                  CMakeFiles\ddd.dir\src\main.c.obj
+mesh_cube                                         CMakeFiles\ddd.dir\src\main.c.obj
+nanf                                              C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_nan.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_acos.o)
+object_blahaj                                     CMakeFiles\ddd.dir\src\main.c.obj
+object_cube2                                      CMakeFiles\ddd.dir\src\main.c.obj
+object_terrain                                    CMakeFiles\ddd.dir\src\main.c.obj
+pd                                                CMakeFiles\ddd.dir\src\main.c.obj
+                                                  CMakeFiles\ddd.dir\ddd\render.c.obj
+pnormal                                           CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                                                  CMakeFiles\ddd.dir\ddd\render.c.obj
+qsort                                             C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libg.a(libc_a-qsort.o)
+                                                  CMakeFiles\ddd.dir\ddd\render.c.obj
+scalbnf                                           C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_scalbn.o)
+                                                  C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_rem_pio2.o)
+sinf                                              C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_sin.o)
+                                                  CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                                                  CMakeFiles\ddd.dir\src\main.c.obj
+sortTri                                           CMakeFiles\ddd.dir\ddd\render.c.obj
+sqrtf                                             C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_sqrt.o)
+                                                  CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+tanf                                              C:/PROGRA~2/ARMGNU~1/13C7F1~1.2RE/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_tan.o)
+                                                  CMakeFiles\ddd.dir\ddd\camera.c.obj
+target_idx                                        CMakeFiles\ddd.dir\src\main.c.obj
+terrain1                                          CMakeFiles\ddd.dir\src\main.c.obj
+terrain_update                                    CMakeFiles\ddd.dir\src\main.c.obj
+test_scene_init                                   CMakeFiles\ddd.dir\src\main.c.obj
+test_scene_update                                 CMakeFiles\ddd.dir\src\main.c.obj
+test_vertShader                                   CMakeFiles\ddd.dir\src\main.c.obj

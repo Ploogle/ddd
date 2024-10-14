@@ -10,8 +10,6 @@
 #include "camera.h"
 #include "bluenoise.h"
 
-#define sign(x) (-(int)((unsigned int)((int)(x)) >> (sizeof(int) * CHAR_BIT - 1)))
-
 typedef uint8_t Pattern[8];
 
 static Pattern patterns[] =
@@ -185,11 +183,14 @@ struct Vector3 grid_points[] = {
 	{ 0, 0, 1},
 };
 
-void YPlane_render(uint8_t* bitmap, struct Camera* camera, float y_plane)
+void YPlane_render(uint8_t* bitmap, struct Camera* camera, float y_plane, bool show_axis)
 {
-	for (int i = 0; i < 6; i += 2)
+	if (show_axis)
 	{
-		Line_worldDraw(grid_points[i], grid_points[i + 1], 1, camera);
+		for (int i = 0; i < 6; i += 2)
+		{
+			Line_worldDraw(grid_points[i], grid_points[i + 1], 1, camera);
+		}
 	}
 
 	// Plane lines

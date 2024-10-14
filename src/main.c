@@ -13,7 +13,7 @@
 
 #include "pd_api.h"
 #include "../ddd/ddd.h"
-#include "scenes\TestScene.h"
+#include "scenes\FishingScene.h"
 #include "../ddd/gradient.h"
 
 
@@ -38,9 +38,10 @@ const char* fontpath = "/System/Fonts/Asheville-Sans-14-Bold.pft";
 #define TEXT_HEIGHT 16
 
 struct Scene* ActiveScene;
-struct Scene* DefaultScene = &TestScene;
+struct Scene* DefaultScene = &FishingScene;
 struct Camera* ActiveCamera;
 
+PDButtons heldButtons, pressedButtons, releasedButtons;
 
 struct Vector3 camera_velocity = { 0,0,0 };
 
@@ -60,8 +61,15 @@ void loadScene(struct Scene* new_scene)
 	// TODO: scene->unload() or whatever
 
 	ActiveScene = new_scene;
+	
+	/*for (int v = 0; ActiveScene->views[v] != NULL; v++)
+	{
+		if (ActiveScene->views[v]->Visible)
+			ActiveCamera = ActiveScene->views[v]->cameras[
+				ActiveScene->views[v]->activeCameraIndex
+			];
+	}*/
 
-	ActiveCamera = ActiveScene->cameras[ActiveScene->activeCameraIndex];
 
 	if (ActiveScene->init != NULL) {
 		ActiveScene->init();
@@ -94,7 +102,7 @@ int eventHandler(PlaydateAPI* _pd, PDSystemEvent event, uint32_t arg)
 		//srand(time(NULL));
 
 		pd->system->setUpdateCallback(update, pd);
-		pd->display->setRefreshRate(30);
+		pd->display->setRefreshRate(50);
 		pd->system->setAutoLockDisabled(true);
 
 		loadScene(DefaultScene);
@@ -197,23 +205,23 @@ void handleButtons()
 		if (target_idx == 0)
 		{
 			target_idx = 1;
-			LookTarget_setTarget(&camera_default.actor->look_target, &object_blahaj.position);
+			LookTarget_setTarget(&camera_default.actor->look_target, &object_fish.position);
 			//LookTarget_setTarget(&object_blahaj.look_target, &activeCamera->actor->position);
 		}
 		else if(target_idx == 1)
 		{
 			target_idx = 0;
-			LookTarget_setTarget(&camera_default.actor->look_target, &object_cube2.position);
+			LookTarget_setTarget(&camera_default.actor->look_target, &object_lure.position);
 			//LookTarget_setTarget(&object_blahaj.look_target, &object_cube2.position);
 		}
 	}
 
-	if (pressed & kButtonB)
+	/*if (pressed & kButtonB)
 	{
-		ActiveScene->activeCameraIndex++;
-		if (ActiveScene->activeCameraIndex >= ActiveScene->numCameras)
-			ActiveScene->activeCameraIndex = 0;
-	}
+		UnderwaterView.activeCameraIndex++;
+		if (UnderwaterView.activeCameraIndex >= UnderwaterView.numCameras)
+			UnderwaterView.activeCameraIndex = 0;
+	}*/
 
 	float crankDelta = pd->system->getCrankChange();
 	if (camera_default.look_blend == 1.f) {
@@ -228,9 +236,11 @@ void handleButtons()
 void camera_init()
 {
 	struct Camera* cam;
-	for (int i = 0; i < ActiveScene->numCameras; i++)
+	for (int v = 0; ActiveScene->views[v] != NULL; v++) {
+
+	for (int i = 0; i < ActiveScene->views[v]->numCameras; i++)
 	{
-		cam = ActiveScene->cameras[i];
+		cam = ActiveScene->views[v]->cameras[i];
 
 		cam->projection = Camera_getProjectionMatrix(cam);
 		cam->rotate_transform = Camera_getRotationMatrix(
@@ -249,95 +259,104 @@ void camera_init()
 		//};
 		
 	}
+	}
 }
 
 void camera_update()
 {
-	// Calculate our look_target->value
-	LookTarget_tick(&ActiveCamera->actor->look_target);
+	struct Camera* ActiveCamera;
+	for (int v = 0; v < ActiveScene->views[v] != NULL; v++)
+	{
+		if (!ActiveScene->views[v]->Enabled) continue;
 
-	// Debug camera controls
-	// TODO: hide this behind a flag or move to separate function
-	float accelSpeed = 4.0f * DELTA_TIME;
-	float maxSpeed = 5.0f;
-	if (isForward)
-	{
-		camera_velocity.z -= accelSpeed;
-		if (camera_velocity.z > maxSpeed) camera_velocity.z = maxSpeed;
-	}
-	else if (isBackward)
-	{
-		camera_velocity.z += accelSpeed;
-		if (camera_velocity.z < -maxSpeed) camera_velocity.z = -maxSpeed;
-	}
+		ActiveCamera = ActiveScene->views[v]->cameras[
+			ActiveScene->views[v]->activeCameraIndex];
 
-	if (isLeft)
-	{
-		camera_velocity.x += accelSpeed;
-		if (camera_velocity.x > maxSpeed) camera_velocity.x = maxSpeed;
-	}
-	if (isRight)
-	{
-		camera_velocity.x -= accelSpeed;
-		if (camera_velocity.x < -maxSpeed) camera_velocity.x = -maxSpeed;
-	}
+		// Calculate our look_target->value
+		LookTarget_tick(&ActiveCamera->actor->look_target);
 
-	if (isUp)
-	{
-		camera_velocity.y += accelSpeed;
-		if (camera_velocity.y > maxSpeed) camera_velocity.y = maxSpeed;
-	}
-	if (isDown)
-	{
-		camera_velocity.y -= accelSpeed;
-		if (camera_velocity.y < -maxSpeed) camera_velocity.y = -maxSpeed;
-	}
+		// Debug camera controls
+		// TODO: hide this behind a flag or move to separate function
+		float accelSpeed = 4.0f * DELTA_TIME;
+		float maxSpeed = 5.0f;
+		if (isForward)
+		{
+			camera_velocity.z -= accelSpeed;
+			if (camera_velocity.z > maxSpeed) camera_velocity.z = maxSpeed;
+		}
+		else if (isBackward)
+		{
+			camera_velocity.z += accelSpeed;
+			if (camera_velocity.z < -maxSpeed) camera_velocity.z = -maxSpeed;
+		}
 
-	if (isRotateLeft)
-	{
-		camera_default.actor->rotation.y += DELTA_TIME;
-	}
-	else if (isRotateRight)
-	{
-		camera_default.actor->rotation.y -= DELTA_TIME;
-	}
+		if (isLeft)
+		{
+			camera_velocity.x += accelSpeed;
+			if (camera_velocity.x > maxSpeed) camera_velocity.x = maxSpeed;
+		}
+		if (isRight)
+		{
+			camera_velocity.x -= accelSpeed;
+			if (camera_velocity.x < -maxSpeed) camera_velocity.x = -maxSpeed;
+		}
 
-	struct Vector3 raw_forward = Vector3_getForward(&camera_default.actor->rotation);
-	struct Vector3 raw_left = Vector3_getLeft(&camera_default.actor->rotation);
-	struct Vector3 raw_up = Vector3_getUp(&camera_default.actor->rotation);
-	struct Vector3 forward = Vector3_multiplyScalar(&raw_forward, camera_velocity.z);
-	struct Vector3 left = Vector3_multiplyScalar(&raw_left, -camera_velocity.x);
-	struct Vector3 up = Vector3_multiplyScalar(&raw_up, -camera_velocity.y);
-	struct Vector3 dir = Vector3_add(&forward, &left);
-	dir = Vector3_add(&dir, &up);
+		if (isUp)
+		{
+			camera_velocity.y += accelSpeed;
+			if (camera_velocity.y > maxSpeed) camera_velocity.y = maxSpeed;
+		}
+		if (isDown)
+		{
+			camera_velocity.y -= accelSpeed;
+			if (camera_velocity.y < -maxSpeed) camera_velocity.y = -maxSpeed;
+		}
 
-	camera_default.actor->position = Vector3_add(&camera_default.actor->position, &dir);
-	camera_velocity = Vector3_multiplyScalar(&camera_velocity, 0.5f);
+		if (isRotateLeft)
+		{
+			camera_default.actor->rotation.y += DELTA_TIME;
+		}
+		else if (isRotateRight)
+		{
+			camera_default.actor->rotation.y -= DELTA_TIME;
+		}
 
-	if (ActiveCamera->look_blend == 1.f)
-	{
-		// Manually set yaw for left/right relative camera movement around looktarget.
-		struct Vector3 target_forward = Vector3_subtract(&ActiveCamera->actor->position, &ActiveCamera->actor->look_target.value);
-		ActiveCamera->actor->rotation.y = atan2f(-target_forward.x, target_forward.z);
+		struct Vector3 raw_forward = Vector3_getForward(&camera_default.actor->rotation);
+		struct Vector3 raw_left = Vector3_getLeft(&camera_default.actor->rotation);
+		struct Vector3 raw_up = Vector3_getUp(&camera_default.actor->rotation);
+		struct Vector3 forward = Vector3_multiplyScalar(&raw_forward, camera_velocity.z);
+		struct Vector3 left = Vector3_multiplyScalar(&raw_left, -camera_velocity.x);
+		struct Vector3 up = Vector3_multiplyScalar(&raw_up, -camera_velocity.y);
+		struct Vector3 dir = Vector3_add(&forward, &left);
+		dir = Vector3_add(&dir, &up);
 
-		// Compute lookat matrix
-		ActiveCamera->rotate_transform = Matrix3_lookAt(ActiveCamera->actor->position, ActiveCamera->actor->look_target.value);
-	}
-	else {
-		// Compute rotation matrix for free-camera rotation thetas
-		ActiveCamera->rotate_transform = Camera_getRotationMatrix(
-			ActiveCamera,
-			ActiveCamera->actor->rotation.x,
-			ActiveCamera->actor->rotation.y,
-			ActiveCamera->actor->rotation.z
-		);
+		camera_default.actor->position = Vector3_add(&camera_default.actor->position, &dir);
+		camera_velocity = Vector3_multiplyScalar(&camera_velocity, 0.5f);
+
+		if (ActiveCamera->look_blend == 1.f)
+		{
+			// Manually set yaw for left/right relative camera movement around looktarget.
+			struct Vector3 target_forward = Vector3_subtract(&ActiveCamera->actor->position, &ActiveCamera->actor->look_target.value);
+			ActiveCamera->actor->rotation.y = atan2f(-target_forward.x, target_forward.z);
+
+			// Compute lookat matrix
+			ActiveCamera->rotate_transform = Matrix3_lookAt(ActiveCamera->actor->position, ActiveCamera->actor->look_target.value);
+		}
+		else {
+			// Compute rotation matrix for free-camera rotation thetas
+			ActiveCamera->rotate_transform = Camera_getRotationMatrix(
+				ActiveCamera,
+				ActiveCamera->actor->rotation.x,
+				ActiveCamera->actor->rotation.y,
+				ActiveCamera->actor->rotation.z
+			);
+		}
 	}
 }
 
+
 static int update(void* userdata)
 {
-	ActiveCamera = ActiveScene->cameras[ActiveScene->activeCameraIndex];
-	
 	if (pd == NULL) return 1;
 
 	Gradient_tick(5);
@@ -345,21 +364,38 @@ static int update(void* userdata)
 	DELTA_TIME = pd->system->getElapsedTime();
 	pd->system->resetElapsedTime();
 	
-	pd->graphics->clear(kColorBlack);
+	pd->graphics->clear(kColorWhite);
 	pd->graphics->setFont(font);
 	frame = pd->graphics->getFrame();
 
 	handleButtons();
 
+	pd->system->getButtonState(&heldButtons, &pressedButtons, &releasedButtons);
+
 	Scene_update(ActiveScene);
 
 	camera_update();
 
-	YPlane_render(frame, ActiveCamera, 0);
-
-	for (int i = 0; i < ActiveScene->numActors; i++)
+	for (int v = 0; v < ActiveScene->views[v] != NULL; v++)
 	{
-		Actor_drawMesh(frame, ActiveScene->actors[i], ActiveCamera);
+		if (!ActiveScene->views[v]->Visible) continue;
+
+		ActiveCamera = ActiveScene->views[v]->cameras[
+			ActiveScene->views[v]->activeCameraIndex];
+	
+		if (ActiveScene->views[v]->predraw != 0x0)
+			ActiveScene->views[v]->predraw();
+
+		if (ActiveScene->views[v]->draw != 0x0)
+			ActiveScene->views[v]->draw();
+
+		for (int i = 0; i < ActiveScene->views[v]->actors[i] != NULL; i++)
+		{
+			Actor_drawMesh(frame, ActiveScene->views[v]->actors[i], ActiveCamera);
+		}
+
+		if (ActiveScene->views[v]->postdraw != 0x0)
+			ActiveScene->views[v]->postdraw();
 	}
 
 	//pd->system->drawFPS(LCD_COLUMNS - 20, LCD_ROWS - 15);

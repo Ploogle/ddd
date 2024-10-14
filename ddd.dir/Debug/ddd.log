@@ -1,9 +1,2626 @@
-﻿  Microsoft (R) C/C++ Optimizing Compiler Version 19.33.31630 for x64
+﻿  Microsoft (R) C/C++ Optimizing Compiler Version 19.41.34120 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
-  cl /c /IC:\Users\shrin\Documents\PlaydateSDK\C_API /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _WINDLL /D _MBCS /D WIN32 /D _WINDOWS /D TARGET_SIMULATOR=1 /D _WINDLL=1 /D TARGET_EXTENSION=1 /D "CMAKE_INTDIR=\"Debug\"" /D ddd_EXPORTS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"ddd.dir\Debug\\" /Fd"ddd.dir\Debug\vc143.pdb" /external:W3 /Gd /TC /errorReport:prompt "C:\Users\shrin\Documents\Playdate Projects\ddd\src\main.c"
+  cl /c /IC:\Users\shrin\Documents\PlaydateSDK\C_API /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _WINDLL /D _MBCS /D WIN32 /D _WINDOWS /D TARGET_SIMULATOR=1 /D _WINDLL=1 /D TARGET_EXTENSION=1 /D "CMAKE_INTDIR=\"Debug\"" /D ddd_EXPORTS /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"ddd.dir\Debug\\" /Fd"ddd.dir\Debug\vc143.pdb" /external:W3 /Gd /TC /errorReport:prompt "C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\actor.c" "C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\render.c" "C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\scene.c" "C:\Users\shrin\Documents\Playdate Projects\ddd\src\main.c"
+  actor.c
+  render.c
+C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\render.c(54,21): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\render.c(81,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\render.c(112,16): warning C4018: '<': signed/unsigned mismatch
+C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\render.c(151,58): warning C4090: 'function': different 'const' qualifiers
+C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\render.c(151,58): warning C4113: 'int (__cdecl *)(Triangle *,Triangle *)' differs in parameter lists from '_CoreCrtNonSecureSearchSortCompareFunction'
+C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\render.c(153,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\render.c(163,74): warning C4047: 'function': 'uint8_t *' differs in levels of indirection from 'Pattern (*)'
+C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\render.c(163,74): warning C4024: 'api_fillTriangle': different types for formal and actual parameter 6
+C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\render.c(130,21): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\render.c(216,30): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\render.c(216,37): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\render.c(239,26): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\render.c(239,31): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\render.c(239,46): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\render.c(239,62): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\render.c(239,67): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\render.c(303,37): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\render.c(303,42): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\render.c(309,14): warning C4244: '=': conversion from 'float' to 'int32_t', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\render.c(310,38): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\render.c(314,14): warning C4244: '=': conversion from 'float' to 'int32_t', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\render.c(315,38): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\render.c(290,13): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\render.c(294,21): warning C4244: 'initializing': conversion from 'float' to 'int32_t', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\render.c(426,13): warning C4244: 'return': conversion from 'float' to 'int32_t', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\render.c(428,18): warning C4244: 'return': conversion from 'float' to 'int32_t', possible loss of data
+  scene.c
+C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\scene.c(11,21): warning C4047: '<': 'int' differs in levels of indirection from 'Actor *'
+C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\scene.c(11,50): warning C4047: '!=': 'int' differs in levels of indirection from 'void *'
   main.c
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\main.c(202,33): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\main.c(204,33): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\main.c(205,33): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\main.c(185,7): warning C4101: 'frame_text': unreferenced local variable
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(9,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(9,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(9,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(10,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(10,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(10,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(11,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(11,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(11,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(12,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(12,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(12,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(13,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(13,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(13,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(14,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(14,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(14,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(15,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(15,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(15,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(16,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(16,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(16,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(17,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(17,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(17,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(18,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(18,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(18,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(19,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(19,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(19,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(20,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(20,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(20,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(21,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(21,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(21,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(22,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(22,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(22,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(23,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(23,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(23,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(24,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(24,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(24,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(25,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(25,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(25,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(26,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(26,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(26,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(27,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(27,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(27,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(28,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(28,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(28,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(29,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(29,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(29,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(30,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(30,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(30,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(31,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(31,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(31,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(32,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(32,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(32,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(33,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(33,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(33,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(34,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(34,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(34,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(35,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(35,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(35,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(36,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(36,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(36,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(37,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(37,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(37,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(38,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(38,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(38,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(39,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(39,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(39,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(40,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(40,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(40,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(41,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(41,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(41,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(42,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(42,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(42,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(43,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(43,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(43,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(44,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(44,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(44,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(45,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(45,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(45,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(46,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(46,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(46,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(47,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(47,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(47,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(48,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(48,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(48,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(49,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(49,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(49,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(50,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(50,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(50,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(51,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(51,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(51,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(52,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(52,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(52,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(53,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(53,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(53,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(54,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(54,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(54,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(55,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(55,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(56,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(56,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(57,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(57,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(58,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(58,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(59,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(59,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(60,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(60,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(61,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(61,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(62,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(62,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(63,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(63,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(64,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(64,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(65,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(65,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(66,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(66,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(67,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(67,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(68,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(68,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(69,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(69,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(70,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(70,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(71,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(71,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(72,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(72,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(73,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(73,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(74,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(74,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(75,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(75,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(76,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(76,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(77,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(77,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(78,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(78,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(79,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(79,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(80,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(80,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(81,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(81,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(82,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(82,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(83,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(83,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(84,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(84,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(85,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(85,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(86,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(86,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(87,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(87,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(88,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(88,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(89,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(89,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(90,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(90,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(91,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(91,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(92,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(92,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(93,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(93,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(94,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(94,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(95,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(95,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(96,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(96,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(97,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(97,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(98,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(98,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(99,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(99,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(100,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(100,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(101,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(101,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(102,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(102,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(103,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(103,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(104,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(104,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(105,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(105,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(106,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(106,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(107,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(107,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(108,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(108,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(109,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(109,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(110,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(110,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(111,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(111,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(112,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(112,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(113,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(113,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(114,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(114,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(115,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(115,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(116,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(116,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(117,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(117,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(117,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(118,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(118,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(118,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(119,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(119,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(119,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(120,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(120,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(120,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(121,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(121,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(121,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(122,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(122,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(122,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(123,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(123,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(123,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(124,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(124,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(124,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(125,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(125,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(125,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(126,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(126,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(126,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(127,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(127,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(127,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(128,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(128,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(128,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(129,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(129,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(129,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(130,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(130,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(130,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(131,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(131,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(131,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(132,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(132,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(132,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(133,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(133,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(133,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(134,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(134,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(134,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(135,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(135,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(135,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(136,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(136,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(136,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(137,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(137,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(137,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(138,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(138,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(138,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(139,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(139,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(139,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(140,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(140,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(140,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(141,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(141,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(141,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(142,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(142,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(142,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(143,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(143,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(143,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(144,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(144,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(144,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(145,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(145,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(145,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(146,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(146,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(146,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(147,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(147,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(147,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(148,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(148,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(148,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(149,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(149,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(149,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(150,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(150,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(150,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(151,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(151,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(151,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(152,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(152,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(152,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(153,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(153,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(153,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(154,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(154,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(154,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(155,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(155,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(155,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(156,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(156,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(156,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(157,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(157,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(157,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(158,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(158,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(158,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(159,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(159,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(159,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(160,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(160,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(160,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(161,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(161,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(161,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(162,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(162,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(162,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(163,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(163,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(163,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(164,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(164,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(164,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(165,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(165,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(165,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(166,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(166,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(166,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(167,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(167,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(167,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(168,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(168,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(168,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(169,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(169,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(169,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(170,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(170,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(170,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(171,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(171,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(171,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(172,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(172,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(172,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(173,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(173,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(173,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(174,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(174,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(174,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(175,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(175,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(175,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(176,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(176,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(176,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(177,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(177,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(177,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(178,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(178,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(178,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(179,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(179,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(179,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(180,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(180,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(180,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(181,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(181,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(181,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(182,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(182,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(182,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(183,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(183,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(183,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(184,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(184,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(184,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(185,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(185,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(185,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(186,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(186,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(186,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(187,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(187,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(187,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(188,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(188,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(188,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(189,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(189,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(189,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(190,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(190,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(190,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(191,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(191,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(191,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(192,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(192,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(192,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(193,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(193,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(193,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(194,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(194,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(194,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(195,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(195,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(195,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(196,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(196,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(196,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(197,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(197,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(197,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(198,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(198,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(198,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(199,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(199,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(199,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(200,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(200,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(200,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(201,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(201,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(201,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(202,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(202,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(202,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(203,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(203,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(203,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(204,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(204,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(204,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(205,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(205,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(205,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(206,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(206,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(206,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(207,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(207,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(207,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(208,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(208,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(208,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(209,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(209,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(209,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(210,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(210,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(210,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(211,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(211,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(211,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(212,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(212,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(212,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(213,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(213,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(213,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(214,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(214,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(214,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(215,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(215,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(215,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(216,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(216,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(216,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(218,17): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(218,27): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(218,35): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(219,17): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(219,26): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\blahaj_tri.h(219,35): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(8,26): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(9,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(10,26): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(11,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(12,26): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(13,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(14,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(15,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(16,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(17,26): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(18,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(19,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(20,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(21,26): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(22,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(23,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(24,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(25,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(26,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(27,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(28,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(29,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(30,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(31,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(32,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(33,26): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(34,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(35,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(36,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(37,26): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(38,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(39,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(40,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(41,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(42,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(43,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(44,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(45,26): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(46,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(47,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(48,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(49,26): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(50,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(51,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(52,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(53,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(54,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(55,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(56,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(57,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(58,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(59,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(60,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(61,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(62,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(63,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(64,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(65,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(66,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(67,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(68,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(69,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(70,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(71,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(72,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(73,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(74,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(75,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(76,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(77,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(78,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(79,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(80,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(81,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(82,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(83,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(84,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(85,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(86,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(87,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(88,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(89,26): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(90,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(91,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(92,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(93,26): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(94,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(95,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(96,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(97,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(98,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(99,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(100,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(101,26): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(102,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(103,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(104,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(105,26): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(106,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(107,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(108,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(109,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(110,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(111,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(112,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(113,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(114,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(115,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(116,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(117,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(118,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(119,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(120,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(121,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(122,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(123,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(124,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(125,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(126,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(127,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(128,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(129,26): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(130,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(131,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(132,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(133,26): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(134,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(135,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(136,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(137,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(138,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(139,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(140,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(141,26): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(142,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(143,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(144,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(145,26): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(146,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(147,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(148,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(149,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(150,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(151,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(152,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(153,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(154,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(155,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(156,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(157,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(158,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(159,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(160,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(161,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(162,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(163,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(164,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(165,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(166,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(167,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(168,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(169,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(170,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(171,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(172,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(173,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(174,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(175,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(176,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(177,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(178,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(179,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(180,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(181,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(182,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(183,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(184,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(185,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(186,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(187,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(188,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(189,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(190,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(191,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(192,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(193,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(194,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(195,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(196,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(197,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(198,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(199,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(200,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(201,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(202,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(203,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(204,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(205,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(206,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(207,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(208,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(209,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(210,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(211,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(212,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(213,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(214,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(215,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(216,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(217,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(218,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(219,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(220,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(221,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(222,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(223,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(224,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(225,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(226,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(227,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(228,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(229,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(230,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(231,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(232,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(233,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  Generating Code...
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(234,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(235,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(236,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(237,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(238,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(239,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(240,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(241,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(242,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(243,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(244,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(245,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(246,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(247,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(248,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(249,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(250,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(251,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(252,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(253,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(254,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(255,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(256,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(257,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(258,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(259,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(260,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(261,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(262,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(263,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(264,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(265,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(266,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(267,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(268,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(269,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(270,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(271,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(272,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(273,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(274,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(275,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(276,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(277,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(278,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(279,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(280,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(281,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(282,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(283,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(284,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(285,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(286,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(287,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(288,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(289,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(290,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(291,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(292,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(293,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(294,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(295,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(296,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\terrain1.h(299,22): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\FishingScene.h(6,31): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\FishingScene.h(149,17): warning C4101: 'move_forward': unreferenced local variable
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\FishingScene.h(152,17): warning C4101: 'trace_target': unreferenced local variable
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\main.c(268,20): warning C4047: '<': 'int' differs in levels of indirection from 'View *'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\main.c(268,44): warning C4047: '!=': 'int' differs in levels of indirection from 'void *'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\main.c(379,20): warning C4047: '<': 'int' differs in levels of indirection from 'View *'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\main.c(379,44): warning C4047: '!=': 'int' differs in levels of indirection from 'void *'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\main.c(392,21): warning C4047: '<': 'int' differs in levels of indirection from 'Actor *'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\main.c(392,56): warning C4047: '!=': 'int' differs in levels of indirection from 'void *'
   ddd.vcxproj -> C:\Users\shrin\Documents\Playdate Projects\ddd\Debug\ddd.dll

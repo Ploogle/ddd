@@ -4,53 +4,72 @@
     <ClCompile Include="C:\Users\shrin\Documents\Playdate Projects\ddd\src\main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\3dmath.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\actor.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\camera.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\quaternion.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\render.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Downloads\fast_triangle_rasteriser.c" />
-    <ClCompile Include="ddd\camera.c" />
-    <ClCompile Include="ddd\symbols.c" />
-    <ClCompile Include="ddd\actor.c" />
-    <ClCompile Include="ddd\3dmath.c" />
-    <ClCompile Include="ddd\scene.c" />
+    <ClCompile Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\scene.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\symbols.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\3dmath.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\actor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\bluenoise.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\cvector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\ddd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\globals.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\gradient.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\quaternion.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\render.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ddd\bluenoise.h" />
-    <ClInclude Include="ddd\gradient.h" />
-    <ClInclude Include="ddd\symbols.h" />
-    <ClInclude Include="ddd\camera.h" />
-    <ClInclude Include="ddd\actor.h" />
-    <ClInclude Include="ddd\3dmath.h" />
-    <ClInclude Include="ddd\scene.h" />
-    <ClInclude Include="src\cube.h" />
-    <ClInclude Include="src\toa-head.h" />
-    <ClInclude Include="src\scenes\TestScene.h" />
-    <ClInclude Include="dev-resources\archive-models\cube2.h" />
-    <ClInclude Include="dev-resources\archive-models\fish.h" />
-    <ClInclude Include="dev-resources\archive-models\fish2.h" />
-    <ClInclude Include="dev-resources\archive-models\toa_head.h" />
-    <ClInclude Include="ddd\cvector.h" />
-    <ClInclude Include="ddd\globals.h" />
+    <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\scene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\symbols.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\shrin\Documents\Playdate Projects\ddd\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Source\Assets\playdate-fish.png" />
-    <Image Include="Source\Assets\launcher\card.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Filter Include="Header Files">
       <UniqueIdentifier>{509B5562-64B9-38D4-87E5-021C62C3442E}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Resources">
-      <UniqueIdentifier>{1111DA55-461E-32EB-9EB8-97B3C0A4D8A4}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files">
       <UniqueIdentifier>{5C426909-A7AB-3EA2-81C3-DA60B6A38112}</UniqueIdentifier>

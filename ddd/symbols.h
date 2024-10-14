@@ -25,8 +25,6 @@ struct Matrix3x3
 	float x;
 	float y;
 	float z;
-	int isIdentity : 1;
-	int inverting : 1;
 };
 
 struct Matrix4x4
@@ -50,8 +48,8 @@ struct Triangle
 {
 	int indices[3];
 	struct Vector3 center;
-	int shade;
 	bool visible;
+	int shade;
 };
 
 struct Quaternion

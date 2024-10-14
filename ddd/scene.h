@@ -6,43 +6,33 @@
 
 extern PlaydateAPI* pd;
 
-struct Scene {
-	char name[32];
-	int numActors;
-	struct Actor* actors[256];
-	int numCameras;
+struct View {
+	bool Enabled;
+	bool Visible;
+
+	struct Actor** actors;
 	struct Camera** cameras;
+	int numCameras;
 	int activeCameraIndex;
+
+	/** Lifecycle methods */
+	void (*init)();
+	void (*predraw)(); // Before draw
+	void (*draw)(); // Before models
+	void (*postdraw)(); // After models
+	void (*onEnable)();
+	void (*onDisable)();
+};
+
+struct Scene {
+	struct View** views;
 
 	/** Lifecycle methods */
 	void (*init)();
 	void (*update)();
 };
 
-/*
-	I envision Scenes as large related groups of related UI and game objects.
-	Multiple scenes can be activated at once through a parent-child hierarchy and visibility.
-*/
-//struct Scene
-//{
-//	char name[32];
-//	bool visible; // Flag to render
-//	bool active; // Flag to process (paused if inactive)
-//
-//	int num_scenes;
-//	struct Scene** sub_scenes;
-//
-//	/*
-//		TODO:
-//		- 
-//	*/
-//};
 
-
-
-int Scene_addActor(struct Scene* scene, struct Actor* obj);
-
-bool Scene_removeActor(struct Scene* scene, struct Actor* obj);
 
 void Scene_update(struct Scene* scene);
 
