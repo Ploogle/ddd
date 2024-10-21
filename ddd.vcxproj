@@ -239,25 +239,26 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="C:\Users\shrin\Documents\Playdate Projects\ddd\src\main.c" />
-    <ClCompile Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\3dmath.c" />
-    <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\3dmath.h" />
-    <ClCompile Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\actor.c" />
-    <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\actor.h" />
-    <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\bluenoise.h" />
-    <ClCompile Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\camera.c" />
-    <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\camera.h" />
-    <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\cvector.h" />
-    <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\ddd.h" />
-    <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\globals.h" />
-    <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\gradient.h" />
-    <ClCompile Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\quaternion.c" />
-    <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\quaternion.h" />
-    <ClCompile Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\render.c" />
-    <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\render.h" />
-    <ClCompile Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\scene.c" />
-    <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\scene.h" />
-    <ClCompile Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\symbols.c" />
-    <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ddd\symbols.h" />
+    <ClCompile Include="engine\3dmath.c" />
+    <ClInclude Include="engine\3dmath.h" />
+    <ClCompile Include="engine\actor.c" />
+    <ClInclude Include="engine\actor.h" />
+    <ClInclude Include="engine\bluenoise.h" />
+    <ClCompile Include="engine\camera.c" />
+    <ClInclude Include="engine\camera.h" />
+    <ClInclude Include="engine\cvector.h" />
+    <ClInclude Include="engine\ddd.h" />
+    <ClInclude Include="engine\globals.h" />
+    <ClInclude Include="engine\gradient.h" />
+    <ClCompile Include="engine\quaternion.c" />
+    <ClInclude Include="engine\quaternion.h" />
+    <ClCompile Include="engine\render.c" />
+    <ClInclude Include="engine\render.h" />
+    <ClCompile Include="engine\scene.c" />
+    <ClInclude Include="engine\scene.h" />
+    <ClCompile Include="engine\symbols.c" />
+    <ClInclude Include="engine\symbols.h" />
+    <ClInclude Include="src\scenes\fsm_fishing.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ZERO_CHECK.vcxproj">

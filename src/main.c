@@ -12,9 +12,9 @@
 #include <time.h>
 
 #include "pd_api.h"
-#include "../ddd/ddd.h"
-#include "scenes\FishingScene.h"
-#include "../ddd/gradient.h"
+#include "../engine/ddd.h"
+#include "scenes\scene_fishing.h"
+#include "../engine/gradient.h"
 
 
 /* 
@@ -30,9 +30,15 @@ __declspec(dllexport)
 	Values
 */
 LCDFont* font = NULL;
+LCDFont* FONT_MONTSERRAT_BLACK_24 = NULL;
+LCDFont* FONT_MONTSERRAT_BLACK_ITALIC_24 = NULL;
+LCDFont* FONT_MONTSERRAT_BOLD_14 = NULL;
 uint8_t* frame;
 
 const char* fontpath = "/System/Fonts/Asheville-Sans-14-Bold.pft";
+const char* fontpath2 = "/Assets/Fonts/Montserrat-Black.pft";
+const char* fontpath3 = "/Assets/Fonts/Montserrat-BlackItalic.pft";
+const char* fontpath4 = "/Assets/Fonts/Montserrat-Bold-14.pft";
 
 #define TEXT_WIDTH 86
 #define TEXT_HEIGHT 16
@@ -86,10 +92,23 @@ int eventHandler(PlaydateAPI* _pd, PDSystemEvent event, uint32_t arg)
 	if ( event == kEventInit )
 	{
 		const char* err;
-		font = pd->graphics->loadFont(fontpath, &err);
 
+		font = pd->graphics->loadFont(fontpath, &err);
 		if ( font == NULL )
 			pd->system->error("%s:%i Couldn't load font %s: %s", __FILE__, __LINE__, fontpath, err);
+
+		FONT_MONTSERRAT_BLACK_24 = pd->graphics->loadFont(fontpath2, &err);
+		if (FONT_MONTSERRAT_BLACK_24 == NULL)
+			pd->system->error("%s:%i Couldn't load font %s: %s", __FILE__, __LINE__, fontpath, err);
+
+		FONT_MONTSERRAT_BLACK_ITALIC_24 = pd->graphics->loadFont(fontpath3, &err);
+		if (FONT_MONTSERRAT_BLACK_ITALIC_24 == NULL)
+			pd->system->error("%s:%i Couldn't load font %s: %s", __FILE__, __LINE__, fontpath, err);
+
+		FONT_MONTSERRAT_BOLD_14 = pd->graphics->loadFont(fontpath4, &err);
+		if (FONT_MONTSERRAT_BOLD_14 == NULL)
+			pd->system->error("%s:%i Couldn't load font %s: %s", __FILE__, __LINE__, fontpath, err);
+
 
 		// HOW TO LOAD A BITMAP
 		/*bluenoise = pd->graphics->loadBitmap("Assets/bluenoise-pd.png.bin", NULL);
@@ -363,8 +382,9 @@ static int update(void* userdata)
 
 	DELTA_TIME = pd->system->getElapsedTime();
 	pd->system->resetElapsedTime();
+	DELTA_TIME *= TIME_SCALE;
 	
-	pd->graphics->clear(kColorWhite);
+	pd->graphics->clear(kColorBlack);
 	pd->graphics->setFont(font);
 	frame = pd->graphics->getFrame();
 

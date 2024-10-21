@@ -1,17 +1,31 @@
 Archive member included to satisfy reference by file (symbol)
 
 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
-                              CMakeFiles\ddd.dir\ddd\3dmath.c.obj (__aeabi_dsub)
+                              CMakeFiles\ddd.dir\src\main.c.obj (__aeabi_dsub)
 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_truncdfsf2.o)
-                              CMakeFiles\ddd.dir\ddd\3dmath.c.obj (__aeabi_d2f)
+                              CMakeFiles\ddd.dir\src\main.c.obj (__aeabi_d2f)
+C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-itoa.o)
+                              CMakeFiles\ddd.dir\src\main.c.obj (itoa)
 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-malloc.o)
                               CMakeFiles\ddd.dir\src\main.c.obj (malloc)
+C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-rand.o)
+                              CMakeFiles\ddd.dir\src\main.c.obj (rand)
+C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-utoa.o)
+                              C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-itoa.o) (__utoa)
 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-qsort.o)
                               CMakeFiles\ddd.dir\ddd\render.c.obj (qsort)
+C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-memmove.o)
+                              CMakeFiles\ddd.dir\src\main.c.obj (memmove)
 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-memset.o)
                               CMakeFiles\ddd.dir\ddd\3dmath.c.obj (memset)
+C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-stpcpy.o)
+                              CMakeFiles\ddd.dir\src\main.c.obj (stpcpy)
 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-impure.o)
                               C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-malloc.o) (_impure_ptr)
+C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-strcpy.o)
+                              CMakeFiles\ddd.dir\src\main.c.obj (strcpy)
+C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-strlen.o)
+                              CMakeFiles\ddd.dir\src\main.c.obj (strlen)
 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
                               C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-impure.o) (__sf)
 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fwalk.o)
@@ -86,6 +100,8 @@ Discarded input sections
                 0x00000000       0x14 CMakeFiles\ddd.dir\src\main.c.obj
  .text.Gradient_sample
                 0x00000000       0x2c CMakeFiles\ddd.dir\src\main.c.obj
+ .text.ui_radar
+                0x00000000       0x64 CMakeFiles\ddd.dir\src\main.c.obj
  .text.lake_update
                 0x00000000        0x4 CMakeFiles\ddd.dir\src\main.c.obj
  .text.underwater_update
@@ -96,6 +112,8 @@ Discarded input sections
                 0x00000000        0x4 CMakeFiles\ddd.dir\src\main.c.obj
  .bss.look_lerp
                 0x00000000        0x1 CMakeFiles\ddd.dir\src\main.c.obj
+ .rodata.TICKER_SPEED
+                0x00000000        0x4 CMakeFiles\ddd.dir\src\main.c.obj
  .rodata.GLOBAL_UNIT
                 0x00000000        0xc CMakeFiles\ddd.dir\src\main.c.obj
  .rodata.GLOBAL_ORIGIN
@@ -158,8 +176,6 @@ Discarded input sections
  .text          0x00000000        0x0 CMakeFiles\ddd.dir\ddd\render.c.obj
  .data          0x00000000        0x0 CMakeFiles\ddd.dir\ddd\render.c.obj
  .bss           0x00000000        0x0 CMakeFiles\ddd.dir\ddd\render.c.obj
- .text.api_drawFragment
-                0x00000000       0x10 CMakeFiles\ddd.dir\ddd\render.c.obj
  .text.api_drawMaskPattern
                 0x00000000       0x10 CMakeFiles\ddd.dir\ddd\render.c.obj
  .text.api_slope
@@ -180,35 +196,48 @@ Discarded input sections
  .text._realloc_r
                 0x00000000       0x10 CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
  .text._free_r  0x00000000       0x14 CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
- .text          0x00000000      0x378 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
  .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
  .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
- .debug_line_str
-                0x00000000       0xce C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
- .debug_frame   0x00000000       0xac C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
- .ARM.attributes
-                0x00000000       0x22 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
- .text          0x00000000       0xa0 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_truncdfsf2.o)
  .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_truncdfsf2.o)
  .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_truncdfsf2.o)
- .debug_line_str
-                0x00000000       0xce C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_truncdfsf2.o)
- .debug_frame   0x00000000       0x24 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_truncdfsf2.o)
- .ARM.attributes
-                0x00000000       0x22 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_truncdfsf2.o)
+ .text          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-itoa.o)
+ .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-itoa.o)
+ .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-itoa.o)
+ .text.__itoa   0x00000000       0x2c C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-itoa.o)
  .text          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-malloc.o)
  .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-malloc.o)
  .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-malloc.o)
  .text.free     0x00000000       0x10 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-malloc.o)
+ .text          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-rand.o)
+ .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-rand.o)
+ .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-rand.o)
+ .text.srand    0x00000000       0x10 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-rand.o)
+ .text          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-utoa.o)
+ .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-utoa.o)
+ .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-utoa.o)
+ .text.utoa     0x00000000        0x4 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-utoa.o)
  .text          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-qsort.o)
  .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-qsort.o)
  .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-qsort.o)
+ .text          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-memmove.o)
+ .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-memmove.o)
+ .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-memmove.o)
  .text          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-memset.o)
  .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-memset.o)
  .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-memset.o)
+ .text          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-stpcpy.o)
+ .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-stpcpy.o)
+ .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-stpcpy.o)
  .text          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-impure.o)
  .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-impure.o)
  .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-impure.o)
+ .text          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-strcpy.o)
+ .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-strcpy.o)
+ .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-strcpy.o)
+ .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-strlen.o)
+ .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-strlen.o)
+ .ARM.extab     0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-strlen.o)
+ .ARM.exidx     0x00000000        0x8 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-strlen.o)
  .text          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
  .data          0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
  .bss           0x00000000        0x0 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
@@ -475,243 +504,316 @@ LOAD C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb
 LOAD C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a
 END GROUP
 
-.text           0x00000000     0x4088
+.text           0x00000000     0x5670
  *(.text)
+ .text          0x00000000      0x378 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+                0x00000000                __aeabi_drsub
+                0x00000008                __aeabi_dsub
+                0x00000008                __subdf3
+                0x0000000c                __aeabi_dadd
+                0x0000000c                __adddf3
+                0x00000284                __floatunsidf
+                0x00000284                __aeabi_ui2d
+                0x000002a4                __floatsidf
+                0x000002a4                __aeabi_i2d
+                0x000002c8                __aeabi_f2d
+                0x000002c8                __extendsfdf2
+                0x0000030c                __floatundidf
+                0x0000030c                __aeabi_ul2d
+                0x0000031c                __floatdidf
+                0x0000031c                __aeabi_l2d
+ .text          0x00000378       0xa0 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_truncdfsf2.o)
+                0x00000378                __truncdfsf2
+                0x00000378                __aeabi_d2f
+ *fill*         0x00000418       0x28 
+ .text          0x00000440       0xd8 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-strlen.o)
+                0x00000440                strlen
  *(.text.*)
+ *fill*         0x00000518        0x8 
  .text.lure_update
-                0x00000000       0x20 CMakeFiles\ddd.dir\src\main.c.obj
-                0x00000000                lure_update
- .text.fish_update
-                0x00000020       0x78 CMakeFiles\ddd.dir\src\main.c.obj
-                0x00000020                fish_update
- *fill*         0x00000098        0x8 
- .text.fishing_scene_init
-                0x000000a0       0x3c CMakeFiles\ddd.dir\src\main.c.obj
-                0x000000a0                fishing_scene_init
- *fill*         0x000000dc        0x4 
- .text.lake_draw
-                0x000000e0       0x1c CMakeFiles\ddd.dir\src\main.c.obj
-                0x000000e0                lake_draw
- *fill*         0x000000fc        0x4 
+                0x00000520       0x20 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00000520                lure_update
  .text.fishing_scene_update
-                0x00000100       0x24 CMakeFiles\ddd.dir\src\main.c.obj
-                0x00000100                fishing_scene_update
- *fill*         0x00000124        0xc 
+                0x00000540      0x120 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00000540                fishing_scene_update
+ .text.fish_update
+                0x00000660       0x78 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00000660                fish_update
+ *fill*         0x000006d8        0x8 
+ .text.lake_draw
+                0x000006e0       0x1c CMakeFiles\ddd.dir\src\main.c.obj
+                0x000006e0                lake_draw
+ *fill*         0x000006fc        0x4 
  .text.underwater_draw
-                0x00000130        0x4 CMakeFiles\ddd.dir\src\main.c.obj
-                0x00000130                underwater_draw
- *fill*         0x00000134        0xc 
+                0x00000700        0x4 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00000700                underwater_draw
+ *fill*         0x00000704        0xc 
  .text.fish_vertShader
-                0x00000140       0x60 CMakeFiles\ddd.dir\src\main.c.obj
-                0x00000140                fish_vertShader
- .text.handleButtons
-                0x000001a0      0x118 CMakeFiles\ddd.dir\src\main.c.obj
-                0x000001a0                handleButtons
- *fill*         0x000002b8        0x8 
- .text.camera_init
-                0x000002c0       0xbc CMakeFiles\ddd.dir\src\main.c.obj
-                0x000002c0                camera_init
- *fill*         0x0000037c        0x4 
- .text.eventHandler
-                0x00000380      0x228 CMakeFiles\ddd.dir\src\main.c.obj
-                0x00000380                eventHandler
- *fill*         0x000005a8        0x8 
- .text.camera_update
-                0x000005b0      0x338 CMakeFiles\ddd.dir\src\main.c.obj
-                0x000005b0                camera_update
- *fill*         0x000008e8        0x8 
- .text.update   0x000008f0      0x11c CMakeFiles\ddd.dir\src\main.c.obj
- *fill*         0x00000a0c        0x4 
- .text.Vector3_dot
-                0x00000a10       0x18 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
-                0x00000a10                Vector3_dot
- *fill*         0x00000a28        0x8 
- .text.Vector3_add
-                0x00000a30       0x2c CMakeFiles\ddd.dir\ddd\3dmath.c.obj
-                0x00000a30                Vector3_add
- *fill*         0x00000a5c        0x4 
- .text.Vector3_subtract
-                0x00000a60       0x2c CMakeFiles\ddd.dir\ddd\3dmath.c.obj
-                0x00000a60                Vector3_subtract
- *fill*         0x00000a8c        0x4 
- .text.Vector3_multiplyScalar
-                0x00000a90       0x20 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
-                0x00000a90                Vector3_multiplyScalar
- .text.Vector3_normalize
-                0x00000ab0       0x24 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
-                0x00000ab0                Vector3_normalize
+                0x00000710       0x60 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00000710                fish_vertShader
+ .text.ticker_add
+                0x00000770       0xc0 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00000770                ticker_add
+ .text.ticker_add_from
+                0x00000830       0x4c CMakeFiles\ddd.dir\src\main.c.obj
+                0x00000830                ticker_add_from
+ *fill*         0x0000087c        0x4 
+ .text.fishing_scene_init
+                0x00000880       0x50 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00000880                fishing_scene_init
+ .text.ticker_clear_first
+                0x000008d0      0x140 CMakeFiles\ddd.dir\src\main.c.obj
+                0x000008d0                ticker_clear_first
+ .text.ui_news_ticker
+                0x00000a10       0xc4 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00000a10                ui_news_ticker
  *fill*         0x00000ad4        0xc 
- .text.pnormal  0x00000ae0       0x78 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
-                0x00000ae0                pnormal
- *fill*         0x00000b58        0x8 
+ .text.ui_fish_name
+                0x00000ae0       0x7c CMakeFiles\ddd.dir\src\main.c.obj
+                0x00000ae0                ui_fish_name
+ *fill*         0x00000b5c        0x4 
+ .text.ui_depth
+                0x00000b60      0x218 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00000b60                ui_depth
+ *fill*         0x00000d78        0x8 
+ .text.ui_yards
+                0x00000d80      0x140 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00000d80                ui_yards
+ .text.ui_tension
+                0x00000ec0      0x184 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00000ec0                ui_tension
+ *fill*         0x00001044        0xc 
+ .text.lake_postdraw
+                0x00001050       0x14 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00001050                lake_postdraw
+ *fill*         0x00001064        0xc 
+ .text.underwater_postdraw
+                0x00001070       0x1c CMakeFiles\ddd.dir\src\main.c.obj
+                0x00001070                underwater_postdraw
+ *fill*         0x0000108c        0x4 
+ .text.handleButtons
+                0x00001090      0x118 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00001090                handleButtons
+ *fill*         0x000011a8        0x8 
+ .text.camera_init
+                0x000011b0       0xbc CMakeFiles\ddd.dir\src\main.c.obj
+                0x000011b0                camera_init
+ *fill*         0x0000126c        0x4 
+ .text.eventHandler
+                0x00001270      0x2cc CMakeFiles\ddd.dir\src\main.c.obj
+                0x00001270                eventHandler
+ *fill*         0x0000153c        0x4 
+ .text.camera_update
+                0x00001540      0x338 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00001540                camera_update
+ *fill*         0x00001878        0x8 
+ .text.update   0x00001880      0x13c CMakeFiles\ddd.dir\src\main.c.obj
+ *fill*         0x000019bc        0x4 
+ .text.Vector3_dot
+                0x000019c0       0x18 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                0x000019c0                Vector3_dot
+ *fill*         0x000019d8        0x8 
+ .text.Vector3_add
+                0x000019e0       0x2c CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                0x000019e0                Vector3_add
+ *fill*         0x00001a0c        0x4 
+ .text.Vector3_subtract
+                0x00001a10       0x2c CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                0x00001a10                Vector3_subtract
+ *fill*         0x00001a3c        0x4 
+ .text.Vector3_multiplyScalar
+                0x00001a40       0x20 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                0x00001a40                Vector3_multiplyScalar
+ .text.Vector3_normalize
+                0x00001a60       0x24 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                0x00001a60                Vector3_normalize
+ *fill*         0x00001a84        0xc 
+ .text.pnormal  0x00001a90       0x78 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                0x00001a90                pnormal
+ *fill*         0x00001b08        0x8 
  .text.Vector3_getForward
-                0x00000b60       0x58 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
-                0x00000b60                Vector3_getForward
- *fill*         0x00000bb8        0x8 
+                0x00001b10       0x58 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                0x00001b10                Vector3_getForward
+ *fill*         0x00001b68        0x8 
  .text.Vector3_getUp
-                0x00000bc0       0x58 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
-                0x00000bc0                Vector3_getUp
- *fill*         0x00000c18        0x8 
+                0x00001b70       0x58 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                0x00001b70                Vector3_getUp
+ *fill*         0x00001bc8        0x8 
  .text.Vector3_getLeft
-                0x00000c20       0x40 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
-                0x00000c20                Vector3_getLeft
+                0x00001bd0       0x40 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                0x00001bd0                Vector3_getLeft
  .text.Vector3_lerp
-                0x00000c60       0x68 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
-                0x00000c60                Vector3_lerp
- *fill*         0x00000cc8        0x8 
+                0x00001c10       0x68 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                0x00001c10                Vector3_lerp
+ *fill*         0x00001c78        0x8 
  .text.Matrix3_multiply
-                0x00000cd0      0x158 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
-                0x00000cd0                Matrix3_multiply
- *fill*         0x00000e28        0x8 
+                0x00001c80      0x158 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                0x00001c80                Matrix3_multiply
+ *fill*         0x00001dd8        0x8 
  .text.Matrix3_apply
-                0x00000e30       0x74 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
-                0x00000e30                Matrix3_apply
- *fill*         0x00000ea4        0xc 
+                0x00001de0       0x74 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                0x00001de0                Matrix3_apply
+ *fill*         0x00001e54        0xc 
  .text.PTR_Matrix3_apply
-                0x00000eb0       0x7c CMakeFiles\ddd.dir\ddd\3dmath.c.obj
-                0x00000eb0                PTR_Matrix3_apply
- *fill*         0x00000f2c        0x4 
+                0x00001e60       0x7c CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                0x00001e60                PTR_Matrix3_apply
+ *fill*         0x00001edc        0x4 
  .text.Matrix3_getRotationX
-                0x00000f30       0x4c CMakeFiles\ddd.dir\ddd\3dmath.c.obj
-                0x00000f30                Matrix3_getRotationX
- *fill*         0x00000f7c        0x4 
+                0x00001ee0       0x4c CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                0x00001ee0                Matrix3_getRotationX
+ *fill*         0x00001f2c        0x4 
  .text.Matrix3_getRotationY
-                0x00000f80       0x4c CMakeFiles\ddd.dir\ddd\3dmath.c.obj
-                0x00000f80                Matrix3_getRotationY
- *fill*         0x00000fcc        0x4 
+                0x00001f30       0x4c CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                0x00001f30                Matrix3_getRotationY
+ *fill*         0x00001f7c        0x4 
  .text.Matrix3_getRotationZ
-                0x00000fd0       0x50 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
-                0x00000fd0                Matrix3_getRotationZ
+                0x00001f80       0x50 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                0x00001f80                Matrix3_getRotationZ
  .text.Matrix3_lookAt
-                0x00001020       0xd0 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
-                0x00001020                Matrix3_lookAt
+                0x00001fd0       0xd0 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                0x00001fd0                Matrix3_lookAt
  .text.Matrix4_getQuaternionTransform
-                0x000010f0       0xf0 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
-                0x000010f0                Matrix4_getQuaternionTransform
+                0x000020a0       0xf0 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                0x000020a0                Matrix4_getQuaternionTransform
  .text.Matrix4_getMatrixTransform
-                0x000011e0       0x9c CMakeFiles\ddd.dir\ddd\3dmath.c.obj
-                0x000011e0                Matrix4_getMatrixTransform
- *fill*         0x0000127c        0x4 
+                0x00002190       0x9c CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                0x00002190                Matrix4_getMatrixTransform
+ *fill*         0x0000222c        0x4 
  .text.Matrix4_apply
-                0x00001280       0xac CMakeFiles\ddd.dir\ddd\3dmath.c.obj
-                0x00001280                Matrix4_apply
- *fill*         0x0000132c        0x4 
+                0x00002230       0xac CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                0x00002230                Matrix4_apply
+ *fill*         0x000022dc        0x4 
  .text.PTR_Matrix4_apply
-                0x00001330       0xb4 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
-                0x00001330                PTR_Matrix4_apply
- *fill*         0x000013e4        0xc 
+                0x000022e0       0xb4 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                0x000022e0                PTR_Matrix4_apply
+ *fill*         0x00002394        0xc 
  .text.Quaternion_fromVector3
-                0x000013f0       0xe0 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
-                0x000013f0                Quaternion_fromVector3
+                0x000023a0       0xe0 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                0x000023a0                Quaternion_fromVector3
  .text.Actor_updateTransform
-                0x000014d0      0x118 CMakeFiles\ddd.dir\ddd\actor.c.obj
-                0x000014d0                Actor_updateTransform
- *fill*         0x000015e8        0x8 
+                0x00002480      0x118 CMakeFiles\ddd.dir\ddd\actor.c.obj
+                0x00002480                Actor_updateTransform
+ *fill*         0x00002598        0x8 
  .text.Camera_getProjectionMatrix
-                0x000015f0       0x6c CMakeFiles\ddd.dir\ddd\camera.c.obj
-                0x000015f0                Camera_getProjectionMatrix
- *fill*         0x0000165c        0x4 
+                0x000025a0       0x6c CMakeFiles\ddd.dir\ddd\camera.c.obj
+                0x000025a0                Camera_getProjectionMatrix
+ *fill*         0x0000260c        0x4 
  .text.Camera_worldToScreenPos
-                0x00001660       0x38 CMakeFiles\ddd.dir\ddd\camera.c.obj
-                0x00001660                Camera_worldToScreenPos
- *fill*         0x00001698        0x8 
+                0x00002610       0x38 CMakeFiles\ddd.dir\ddd\camera.c.obj
+                0x00002610                Camera_worldToScreenPos
+ *fill*         0x00002648        0x8 
  .text.PTR_Camera_worldToScreenPos
-                0x000016a0       0x4c CMakeFiles\ddd.dir\ddd\camera.c.obj
-                0x000016a0                PTR_Camera_worldToScreenPos
- *fill*         0x000016ec        0x4 
+                0x00002650       0x4c CMakeFiles\ddd.dir\ddd\camera.c.obj
+                0x00002650                PTR_Camera_worldToScreenPos
+ *fill*         0x0000269c        0x4 
  .text.Camera_getRotationMatrix
-                0x000016f0       0xcc CMakeFiles\ddd.dir\ddd\camera.c.obj
-                0x000016f0                Camera_getRotationMatrix
- *fill*         0x000017bc        0x4 
+                0x000026a0       0xcc CMakeFiles\ddd.dir\ddd\camera.c.obj
+                0x000026a0                Camera_getRotationMatrix
+ *fill*         0x0000276c        0x4 
  .text.LookTarget_setTarget
-                0x000017c0       0x24 CMakeFiles\ddd.dir\ddd\camera.c.obj
-                0x000017c0                LookTarget_setTarget
- *fill*         0x000017e4        0xc 
+                0x00002770       0x24 CMakeFiles\ddd.dir\ddd\camera.c.obj
+                0x00002770                LookTarget_setTarget
+ *fill*         0x00002794        0xc 
  .text.LookTarget_tick
-                0x000017f0       0x90 CMakeFiles\ddd.dir\ddd\camera.c.obj
-                0x000017f0                LookTarget_tick
+                0x000027a0       0x90 CMakeFiles\ddd.dir\ddd\camera.c.obj
+                0x000027a0                LookTarget_tick
  .text.compare_zdepth
-                0x00001880       0x18 CMakeFiles\ddd.dir\ddd\render.c.obj
-                0x00001880                compare_zdepth
- *fill*         0x00001898        0x8 
- .text.api_drawFragment.part.0
-                0x000018a0       0xd0 CMakeFiles\ddd.dir\ddd\render.c.obj
+                0x00002830       0x18 CMakeFiles\ddd.dir\ddd\render.c.obj
+                0x00002830                compare_zdepth
+ *fill*         0x00002848        0x8 
  .text.Line_worldDraw
-                0x00001970      0x128 CMakeFiles\ddd.dir\ddd\render.c.obj
-                0x00001970                Line_worldDraw
- *fill*         0x00001a98        0x8 
+                0x00002850      0x128 CMakeFiles\ddd.dir\ddd\render.c.obj
+                0x00002850                Line_worldDraw
+ *fill*         0x00002978        0x8 
  .text.YPlane_render
-                0x00001aa0       0xf0 CMakeFiles\ddd.dir\ddd\render.c.obj
-                0x00001aa0                YPlane_render
- .text.sortTri  0x00001b90       0x78 CMakeFiles\ddd.dir\ddd\render.c.obj
-                0x00001b90                sortTri
- *fill*         0x00001c08        0x8 
+                0x00002980       0xf0 CMakeFiles\ddd.dir\ddd\render.c.obj
+                0x00002980                YPlane_render
+ .text.sortTri  0x00002a70       0x78 CMakeFiles\ddd.dir\ddd\render.c.obj
+                0x00002a70                sortTri
+ *fill*         0x00002ae8        0x8 
+ .text.api_drawFragment
+                0x00002af0       0xe4 CMakeFiles\ddd.dir\ddd\render.c.obj
+                0x00002af0                api_drawFragment
+ *fill*         0x00002bd4        0xc 
  .text.api_fillRange
-                0x00001c10       0xb0 CMakeFiles\ddd.dir\ddd\render.c.obj
-                0x00001c10                api_fillRange
+                0x00002be0       0xc4 CMakeFiles\ddd.dir\ddd\render.c.obj
+                0x00002be0                api_fillRange
+ *fill*         0x00002ca4        0xc 
  .text.api_fillTriangle
-                0x00001cc0      0x1f8 CMakeFiles\ddd.dir\ddd\render.c.obj
-                0x00001cc0                api_fillTriangle
- *fill*         0x00001eb8        0x8 
+                0x00002cb0      0x1f8 CMakeFiles\ddd.dir\ddd\render.c.obj
+                0x00002cb0                api_fillTriangle
+ *fill*         0x00002ea8        0x8 
  .text.Actor_drawMesh
-                0x00001ec0      0x3e4 CMakeFiles\ddd.dir\ddd\render.c.obj
-                0x00001ec0                Actor_drawMesh
- *fill*         0x000022a4        0xc 
+                0x00002eb0      0x3e4 CMakeFiles\ddd.dir\ddd\render.c.obj
+                0x00002eb0                Actor_drawMesh
+ *fill*         0x00003294        0xc 
  .text.Scene_update
-                0x000022b0       0x74 CMakeFiles\ddd.dir\ddd\scene.c.obj
-                0x000022b0                Scene_update
- *fill*         0x00002324        0xc 
+                0x000032a0       0x74 CMakeFiles\ddd.dir\ddd\scene.c.obj
+                0x000032a0                Scene_update
+ *fill*         0x00003314        0xc 
  .text.Vector3_make
-                0x00002330        0x8 CMakeFiles\ddd.dir\ddd\symbols.c.obj
-                0x00002330                Vector3_make
- *fill*         0x00002338        0x8 
+                0x00003320        0x8 CMakeFiles\ddd.dir\ddd\symbols.c.obj
+                0x00003320                Vector3_make
+ *fill*         0x00003328        0x8 
  .text.eventHandlerShim
-                0x00002340       0x1c CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
-                0x00002340                eventHandlerShim
- *fill*         0x0000235c        0x4 
+                0x00003330       0x1c CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
+                0x00003330                eventHandlerShim
+ *fill*         0x0000334c        0x4 
  .text._malloc_r
-                0x00002360        0xc CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
-                0x00002360                _malloc_r
- .text.malloc   0x0000236c       0x10 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-malloc.o)
-                0x0000236c                malloc
- .text.qsort    0x0000237c      0x628 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-qsort.o)
-                0x0000237c                qsort
- .text.memset   0x000029a4       0xa4 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-memset.o)
-                0x000029a4                memset
- .text.atan2f   0x00002a48        0x4 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_atan2.o)
-                0x00002a48                atan2f
- .text.cosf     0x00002a4c       0x70 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_cos.o)
-                0x00002a4c                cosf
- .text.fabsf    0x00002abc       0x10 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_fabs.o)
-                0x00002abc                fabsf
- .text.sinf     0x00002acc       0x74 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_sin.o)
-                0x00002acc                sinf
- .text.tanf     0x00002b40       0x54 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_tan.o)
-                0x00002b40                tanf
+                0x00003350        0xc CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
+                0x00003350                _malloc_r
+ .text.itoa     0x0000335c       0x2c C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-itoa.o)
+                0x0000335c                itoa
+ .text.malloc   0x00003388       0x10 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-malloc.o)
+                0x00003388                malloc
+ .text.rand     0x00003398       0x40 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-rand.o)
+                0x00003398                rand
+ .text.__utoa   0x000033d8       0x9c C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-utoa.o)
+                0x000033d8                __utoa
+ .text.qsort    0x00003474      0x628 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-qsort.o)
+                0x00003474                qsort
+ .text.memmove  0x00003a9c      0x100 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-memmove.o)
+                0x00003a9c                memmove
+ .text.memset   0x00003b9c       0xa4 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-memset.o)
+                0x00003b9c                memset
+ .text.stpcpy   0x00003c40       0x48 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-stpcpy.o)
+                0x00003c40                stpcpy
+ .text.strcpy   0x00003c88       0xbc C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-strcpy.o)
+                0x00003c88                strcpy
+ .text.atan2f   0x00003d44        0x4 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_atan2.o)
+                0x00003d44                atan2f
+ .text.cosf     0x00003d48       0x70 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_cos.o)
+                0x00003d48                cosf
+ .text.fabsf    0x00003db8       0x10 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_fabs.o)
+                0x00003db8                fabsf
+ .text.sinf     0x00003dc8       0x74 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_sin.o)
+                0x00003dc8                sinf
+ .text.tanf     0x00003e3c       0x54 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_tan.o)
+                0x00003e3c                tanf
  .text.__kernel_cosf
-                0x00002b94      0x104 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_cos.o)
-                0x00002b94                __kernel_cosf
+                0x00003e90      0x104 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_cos.o)
+                0x00003e90                __kernel_cosf
  .text.__kernel_sinf
-                0x00002c98       0x90 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_sin.o)
-                0x00002c98                __kernel_sinf
+                0x00003f94       0x90 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_sin.o)
+                0x00003f94                __kernel_sinf
  .text.__kernel_tanf
-                0x00002d28      0x1c0 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_tan.o)
-                0x00002d28                __kernel_tanf
+                0x00004024      0x1c0 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_tan.o)
+                0x00004024                __kernel_tanf
  .text.__ieee754_atan2f
-                0x00002ee8      0x150 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_atan2.o)
-                0x00002ee8                __ieee754_atan2f
+                0x000041e4      0x150 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_atan2.o)
+                0x000041e4                __ieee754_atan2f
  .text.__ieee754_rem_pio2f
-                0x00003038      0x260 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_rem_pio2.o)
-                0x00003038                __ieee754_rem_pio2f
- .text.atanf    0x00003298      0x1ac C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_atan.o)
-                0x00003298                atanf
+                0x00004334      0x260 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_rem_pio2.o)
+                0x00004334                __ieee754_rem_pio2f
+ .text.atanf    0x00004594      0x1ac C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_atan.o)
+                0x00004594                atanf
  .text.__kernel_rem_pio2f
-                0x00003444      0x63c C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_rem_pio2.o)
-                0x00003444                __kernel_rem_pio2f
- .text.scalbnf  0x00003a80       0xe4 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_scalbn.o)
-                0x00003a80                scalbnf
- .text.floorf   0x00003b64       0x94 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_floor.o)
-                0x00003b64                floorf
+                0x00004740      0x63c C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_rem_pio2.o)
+                0x00004740                __kernel_rem_pio2f
+ .text.scalbnf  0x00004d7c       0xe4 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_scalbn.o)
+                0x00004d7c                scalbnf
+ .text.floorf   0x00004e60       0x94 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_floor.o)
+                0x00004e60                floorf
  *(.init)
  *(.fini)
  *crtbegin.o(.ctors)
@@ -725,309 +827,377 @@ END GROUP
  *(SORT_BY_NAME(.dtors.*))
  *(.dtors)
  *(.rodata*)
+ .rodata.ui_fish_name.str1.4
+                0x00004ef4      0x33d CMakeFiles\ddd.dir\src\main.c.obj
+                                  0xf (size before relaxing)
+ .rodata.ui_yards.str1.4
+                0x00005231        0x4 CMakeFiles\ddd.dir\src\main.c.obj
  .rodata.eventHandler.str1.4
-                0x00003bf8       0x85 CMakeFiles\ddd.dir\src\main.c.obj
-                                 0x5c (size before relaxing)
+                0x00005231       0x5c CMakeFiles\ddd.dir\src\main.c.obj
  .rodata.str1.4
-                0x00003c7d       0x29 CMakeFiles\ddd.dir\src\main.c.obj
- *fill*         0x00003c7d        0x3 
+                0x00005231      0x2a5 CMakeFiles\ddd.dir\src\main.c.obj
+ .rodata.__utoa.str1.4
+                0x00005231       0x25 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-utoa.o)
+ *fill*         0x00005231        0x3 
  .rodata.CSWTCH.9
-                0x00003c80        0xc C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_atan2.o)
+                0x00005234        0xc C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_atan2.o)
  .rodata.CSWTCH.8
-                0x00003c8c        0xc C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_atan2.o)
+                0x00005240        0xc C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_atan2.o)
  .rodata.npio2_hw
-                0x00003c98       0x80 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_rem_pio2.o)
+                0x0000524c       0x80 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_rem_pio2.o)
  .rodata.two_over_pi
-                0x00003d18      0x318 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_rem_pio2.o)
+                0x000052cc      0x318 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_rem_pio2.o)
  .rodata.atanlo
-                0x00004030       0x10 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_atan.o)
+                0x000055e4       0x10 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_atan.o)
  .rodata.atanhi
-                0x00004040       0x10 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_atan.o)
- .rodata.PIo2   0x00004050       0x2c C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_rem_pio2.o)
+                0x000055f4       0x10 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_atan.o)
+ .rodata.PIo2   0x00005604       0x2c C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_rem_pio2.o)
  .rodata.init_jk
-                0x0000407c        0xc C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_rem_pio2.o)
+                0x00005630        0xc C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_rem_pio2.o)
  *(.eh_frame*)
+ .eh_frame      0x0000563c       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-strlen.o)
 
-.glue_7         0x00004088        0x0
- .glue_7        0x00004088        0x0 linker stubs
+.glue_7         0x00005670        0x0
+ .glue_7        0x00005670        0x0 linker stubs
 
-.glue_7t        0x00004088        0x0
- .glue_7t       0x00004088        0x0 linker stubs
+.glue_7t        0x00005670        0x0
+ .glue_7t       0x00005670        0x0 linker stubs
 
-.vfp11_veneer   0x00004088        0x0
- .vfp11_veneer  0x00004088        0x0 linker stubs
+.vfp11_veneer   0x00005670        0x0
+ .vfp11_veneer  0x00005670        0x0 linker stubs
 
-.v4_bx          0x00004088        0x0
- .v4_bx         0x00004088        0x0 linker stubs
+.v4_bx          0x00005670        0x0
+ .v4_bx         0x00005670        0x0 linker stubs
 
-.iplt           0x00004088        0x0
- .iplt          0x00004088        0x0 CMakeFiles\ddd.dir\src\main.c.obj
+.iplt           0x00005670        0x0
+ .iplt          0x00005670        0x0 CMakeFiles\ddd.dir\src\main.c.obj
 
-.rel.dyn        0x00004088        0x0
- .rel.iplt      0x00004088        0x0 CMakeFiles\ddd.dir\src\main.c.obj
+.rel.dyn        0x00005670        0x0
+ .rel.iplt      0x00005670        0x0 CMakeFiles\ddd.dir\src\main.c.obj
 
-.data           0x00004088     0x3930
-                0x00004088                        __etext = .
-                0x00004088                        __data_start__ = .
+.data           0x00005670     0x3990
+                0x00005670                        __etext = .
+                0x00005670                        __data_start__ = .
  *(vtable)
  *(.data*)
  .data.target_idx
-                0x00004088        0x4 CMakeFiles\ddd.dir\src\main.c.obj
-                0x00004088                target_idx
+                0x00005670        0x4 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00005670                target_idx
  .data.DefaultScene
-                0x0000408c        0x4 CMakeFiles\ddd.dir\src\main.c.obj
-                0x0000408c                DefaultScene
+                0x00005674        0x4 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00005674                DefaultScene
+ .data.fontpath4
+                0x00005678        0x4 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00005678                fontpath4
+ .data.fontpath3
+                0x0000567c        0x4 CMakeFiles\ddd.dir\src\main.c.obj
+                0x0000567c                fontpath3
+ .data.fontpath2
+                0x00005680        0x4 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00005680                fontpath2
  .data.fontpath
-                0x00004090        0x4 CMakeFiles\ddd.dir\src\main.c.obj
-                0x00004090                fontpath
+                0x00005684        0x4 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00005684                fontpath
  .data.__compound_literal.10
-                0x00004094        0xc CMakeFiles\ddd.dir\src\main.c.obj
+                0x00005688        0xc CMakeFiles\ddd.dir\src\main.c.obj
  .data.__compound_literal.8
-                0x000040a0        0x8 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00005694        0x8 CMakeFiles\ddd.dir\src\main.c.obj
  .data.__compound_literal.7
-                0x000040a8       0x10 CMakeFiles\ddd.dir\src\main.c.obj
+                0x0000569c       0x10 CMakeFiles\ddd.dir\src\main.c.obj
  .data.__compound_literal.6
-                0x000040b8        0xc CMakeFiles\ddd.dir\src\main.c.obj
+                0x000056ac        0xc CMakeFiles\ddd.dir\src\main.c.obj
+ .data.pullMod  0x000056b8        0x4 CMakeFiles\ddd.dir\src\main.c.obj
+                0x000056b8                pullMod
+ .data.line_integrity
+                0x000056bc        0x4 CMakeFiles\ddd.dir\src\main.c.obj
+                0x000056bc                line_integrity
+ .data.yards    0x000056c0        0x4 CMakeFiles\ddd.dir\src\main.c.obj
+                0x000056c0                yards
+ .data.depth_width
+                0x000056c4        0x4 CMakeFiles\ddd.dir\src\main.c.obj
+                0x000056c4                depth_width
+ .data.depth    0x000056c8        0x4 CMakeFiles\ddd.dir\src\main.c.obj
+                0x000056c8                depth
+ .data.ticker_filler_table
+                0x000056cc       0x20 CMakeFiles\ddd.dir\src\main.c.obj
+                0x000056cc                ticker_filler_table
+ .data.ticker_buffer
+                0x000056ec        0x4 CMakeFiles\ddd.dir\src\main.c.obj
+                0x000056ec                ticker_buffer
+ .data.ticker_x
+                0x000056f0        0x4 CMakeFiles\ddd.dir\src\main.c.obj
+                0x000056f0                ticker_x
  .data.camera_lake
-                0x000040c4       0xcc CMakeFiles\ddd.dir\src\main.c.obj
-                0x000040c4                camera_lake
+                0x000056f4       0xcc CMakeFiles\ddd.dir\src\main.c.obj
+                0x000056f4                camera_lake
  .data.camera_secondary
-                0x00004190       0xcc CMakeFiles\ddd.dir\src\main.c.obj
-                0x00004190                camera_secondary
+                0x000057c0       0xcc CMakeFiles\ddd.dir\src\main.c.obj
+                0x000057c0                camera_secondary
  .data.camera_default
-                0x0000425c       0xcc CMakeFiles\ddd.dir\src\main.c.obj
-                0x0000425c                camera_default
+                0x0000588c       0xcc CMakeFiles\ddd.dir\src\main.c.obj
+                0x0000588c                camera_default
  .data.camera_lake_object
-                0x00004328       0xd8 CMakeFiles\ddd.dir\src\main.c.obj
-                0x00004328                camera_lake_object
+                0x00005958       0xd8 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00005958                camera_lake_object
  .data.camera_secondary_object
-                0x00004400       0xd8 CMakeFiles\ddd.dir\src\main.c.obj
-                0x00004400                camera_secondary_object
+                0x00005a30       0xd8 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00005a30                camera_secondary_object
  .data.camera_default_object
-                0x000044d8       0xd8 CMakeFiles\ddd.dir\src\main.c.obj
-                0x000044d8                camera_default_object
+                0x00005b08       0xd8 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00005b08                camera_default_object
  .data.object_terrain
-                0x000045b0       0xd8 CMakeFiles\ddd.dir\src\main.c.obj
-                0x000045b0                object_terrain
+                0x00005be0       0xd8 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00005be0                object_terrain
  .data.object_fish
-                0x00004688       0xd8 CMakeFiles\ddd.dir\src\main.c.obj
-                0x00004688                object_fish
+                0x00005cb8       0xd8 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00005cb8                object_fish
  .data.object_lure
-                0x00004760       0xd8 CMakeFiles\ddd.dir\src\main.c.obj
-                0x00004760                object_lure
+                0x00005d90       0xd8 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00005d90                object_lure
  .data.LakeView
-                0x00004838       0x24 CMakeFiles\ddd.dir\src\main.c.obj
-                0x00004838                LakeView
+                0x00005e68       0x2c CMakeFiles\ddd.dir\src\main.c.obj
+                0x00005e68                LakeView
  .data.UnderwaterView
-                0x0000485c       0x24 CMakeFiles\ddd.dir\src\main.c.obj
-                0x0000485c                UnderwaterView
+                0x00005e94       0x2c CMakeFiles\ddd.dir\src\main.c.obj
+                0x00005e94                UnderwaterView
  .data.FishingScene
-                0x00004880        0xc CMakeFiles\ddd.dir\src\main.c.obj
-                0x00004880                FishingScene
+                0x00005ec0        0xc CMakeFiles\ddd.dir\src\main.c.obj
+                0x00005ec0                FishingScene
  .data.terrain1
-                0x0000488c       0x54 CMakeFiles\ddd.dir\src\main.c.obj
-                0x0000488c                terrain1
+                0x00005ecc       0x54 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00005ecc                terrain1
  .data.__compound_literal.5
-                0x000048e0      0xc00 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00005f20      0xc00 CMakeFiles\ddd.dir\src\main.c.obj
  .data.__compound_literal.4
-                0x000054e0      0xd8c CMakeFiles\ddd.dir\src\main.c.obj
+                0x00006b20      0xd8c CMakeFiles\ddd.dir\src\main.c.obj
  .data.blahaj_tri
-                0x0000626c       0x54 CMakeFiles\ddd.dir\src\main.c.obj
-                0x0000626c                blahaj_tri
+                0x000078ac       0x54 CMakeFiles\ddd.dir\src\main.c.obj
+                0x000078ac                blahaj_tri
  .data.__compound_literal.3
-                0x000062c0      0x9a8 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00007900      0x9a8 CMakeFiles\ddd.dir\src\main.c.obj
  .data.__compound_literal.2
-                0x00006c68      0x9c0 CMakeFiles\ddd.dir\src\main.c.obj
+                0x000082a8      0x9c0 CMakeFiles\ddd.dir\src\main.c.obj
  .data.mesh_cube
-                0x00007628       0x54 CMakeFiles\ddd.dir\src\main.c.obj
-                0x00007628                mesh_cube
+                0x00008c68       0x54 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00008c68                mesh_cube
  .data.__compound_literal.1
-                0x0000767c       0x48 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00008cbc       0x48 CMakeFiles\ddd.dir\src\main.c.obj
  .data.__compound_literal.0
-                0x000076c4       0x60 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00008d04       0x60 CMakeFiles\ddd.dir\src\main.c.obj
+ .data.TIME_SCALE
+                0x00008d64        0x4 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00008d64                TIME_SCALE
  .data.grid_points
-                0x00007724       0x48 CMakeFiles\ddd.dir\ddd\render.c.obj
-                0x00007724                grid_points
+                0x00008d68       0x48 CMakeFiles\ddd.dir\ddd\render.c.obj
+                0x00008d68                grid_points
  .data.patterns
-                0x0000776c      0x108 CMakeFiles\ddd.dir\ddd\render.c.obj
+                0x00008db0      0x108 CMakeFiles\ddd.dir\ddd\render.c.obj
  .data._impure_ptr
-                0x00007874        0x4 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-impure.o)
-                0x00007874                _impure_ptr
+                0x00008eb8        0x4 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-impure.o)
+                0x00008eb8                _impure_ptr
+ *fill*         0x00008ebc        0x4 
  .data._impure_data
-                0x00007878      0x140 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-impure.o)
-                0x00007878                _impure_data
-                0x000079b8                        . = ALIGN (0x4)
+                0x00008ec0      0x140 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-impure.o)
+                0x00008ec0                _impure_data
+                0x00009000                        . = ALIGN (0x4)
                 [!provide]                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array)
                 [!provide]                        PROVIDE (__preinit_array_end = .)
-                0x000079b8                        . = ALIGN (0x4)
+                0x00009000                        . = ALIGN (0x4)
                 [!provide]                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array)
                 [!provide]                        PROVIDE (__init_array_end = .)
-                0x000079b8                        . = ALIGN (0x4)
+                0x00009000                        . = ALIGN (0x4)
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array)
                 [!provide]                        PROVIDE (__fini_array_end = .)
-                0x000079b8                        . = ALIGN (0x4)
-                0x000079b8                        __data_end__ = .
+                0x00009000                        . = ALIGN (0x4)
+                0x00009000                        __data_end__ = .
 
-.igot.plt       0x000079b8        0x0
- .igot.plt      0x000079b8        0x0 CMakeFiles\ddd.dir\src\main.c.obj
+.igot.plt       0x00009000        0x0
+ .igot.plt      0x00009000        0x0 CMakeFiles\ddd.dir\src\main.c.obj
 
-.bss            0x000079b8      0x374
-                0x000079b8                        . = ALIGN (0x4)
-                0x000079b8                        __bss_start__ = .
+.bss            0x00009000      0x810
+                0x00009000                        . = ALIGN (0x4)
+                0x00009000                        __bss_start__ = .
  *(.bss*)
  .bss.isRotateRight
-                0x000079b8        0x1 CMakeFiles\ddd.dir\src\main.c.obj
-                0x000079b8                isRotateRight
+                0x00009000        0x1 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00009000                isRotateRight
  .bss.isRotateLeft
-                0x000079b9        0x1 CMakeFiles\ddd.dir\src\main.c.obj
-                0x000079b9                isRotateLeft
- .bss.isRight   0x000079ba        0x1 CMakeFiles\ddd.dir\src\main.c.obj
-                0x000079ba                isRight
- .bss.isLeft    0x000079bb        0x1 CMakeFiles\ddd.dir\src\main.c.obj
-                0x000079bb                isLeft
+                0x00009001        0x1 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00009001                isRotateLeft
+ .bss.isRight   0x00009002        0x1 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00009002                isRight
+ .bss.isLeft    0x00009003        0x1 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00009003                isLeft
  .bss.isBackward
-                0x000079bc        0x1 CMakeFiles\ddd.dir\src\main.c.obj
-                0x000079bc                isBackward
+                0x00009004        0x1 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00009004                isBackward
  .bss.isForward
-                0x000079bd        0x1 CMakeFiles\ddd.dir\src\main.c.obj
-                0x000079bd                isForward
- .bss.isDown    0x000079be        0x1 CMakeFiles\ddd.dir\src\main.c.obj
-                0x000079be                isDown
- .bss.isUp      0x000079bf        0x1 CMakeFiles\ddd.dir\src\main.c.obj
-                0x000079bf                isUp
+                0x00009005        0x1 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00009005                isForward
+ .bss.isDown    0x00009006        0x1 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00009006                isDown
+ .bss.isUp      0x00009007        0x1 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00009007                isUp
  .bss.camera_velocity
-                0x000079c0        0xc CMakeFiles\ddd.dir\src\main.c.obj
-                0x000079c0                camera_velocity
+                0x00009008        0xc CMakeFiles\ddd.dir\src\main.c.obj
+                0x00009008                camera_velocity
  .bss.releasedButtons
-                0x000079cc        0x1 CMakeFiles\ddd.dir\src\main.c.obj
-                0x000079cc                releasedButtons
+                0x00009014        0x1 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00009014                releasedButtons
  .bss.pressedButtons
-                0x000079cd        0x1 CMakeFiles\ddd.dir\src\main.c.obj
-                0x000079cd                pressedButtons
+                0x00009015        0x1 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00009015                pressedButtons
  .bss.heldButtons
-                0x000079ce        0x1 CMakeFiles\ddd.dir\src\main.c.obj
-                0x000079ce                heldButtons
- *fill*         0x000079cf        0x1 
+                0x00009016        0x1 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00009016                heldButtons
+ *fill*         0x00009017        0x1 
  .bss.ActiveCamera
-                0x000079d0        0x4 CMakeFiles\ddd.dir\src\main.c.obj
-                0x000079d0                ActiveCamera
+                0x00009018        0x4 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00009018                ActiveCamera
  .bss.ActiveScene
-                0x000079d4        0x4 CMakeFiles\ddd.dir\src\main.c.obj
-                0x000079d4                ActiveScene
- .bss.frame     0x000079d8        0x4 CMakeFiles\ddd.dir\src\main.c.obj
-                0x000079d8                frame
- .bss.font      0x000079dc        0x4 CMakeFiles\ddd.dir\src\main.c.obj
-                0x000079dc                font
+                0x0000901c        0x4 CMakeFiles\ddd.dir\src\main.c.obj
+                0x0000901c                ActiveScene
+ .bss.frame     0x00009020        0x4 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00009020                frame
+ .bss.FONT_MONTSERRAT_BOLD_14
+                0x00009024        0x4 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00009024                FONT_MONTSERRAT_BOLD_14
+ .bss.FONT_MONTSERRAT_BLACK_ITALIC_24
+                0x00009028        0x4 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00009028                FONT_MONTSERRAT_BLACK_ITALIC_24
+ .bss.FONT_MONTSERRAT_BLACK_24
+                0x0000902c        0x4 CMakeFiles\ddd.dir\src\main.c.obj
+                0x0000902c                FONT_MONTSERRAT_BLACK_24
+ .bss.font      0x00009030        0x4 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00009030                font
  .bss.__compound_literal.9
-                0x000079e0        0x4 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00009034        0x4 CMakeFiles\ddd.dir\src\main.c.obj
+ .bss.line_tension
+                0x00009038        0x4 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00009038                line_tension
+ .bss.ticker_text
+                0x0000903c      0x400 CMakeFiles\ddd.dir\src\main.c.obj
+                0x0000903c                ticker_text
+ .bss.TICKER_FONT
+                0x0000943c        0x4 CMakeFiles\ddd.dir\src\main.c.obj
+                0x0000943c                TICKER_FONT
+ .bss.next_clear_width
+                0x00009440        0x4 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00009440                next_clear_width
+ .bss.ticker_queue_length
+                0x00009444        0x4 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00009444                ticker_queue_length
+ .bss.ticker_queue
+                0x00009448       0x80 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00009448                ticker_queue
  .bss.SINE_GRADIENT_OFFSET
-                0x000079e4        0x4 CMakeFiles\ddd.dir\src\main.c.obj
-                0x000079e4                SINE_GRADIENT_OFFSET
+                0x000094c8        0x4 CMakeFiles\ddd.dir\src\main.c.obj
+                0x000094c8                SINE_GRADIENT_OFFSET
  .bss.SINE_GRADIENT
-                0x000079e8      0x200 CMakeFiles\ddd.dir\src\main.c.obj
-                0x000079e8                SINE_GRADIENT
+                0x000094cc      0x200 CMakeFiles\ddd.dir\src\main.c.obj
+                0x000094cc                SINE_GRADIENT
  .bss.DELTA_TIME
-                0x00007be8        0x4 CMakeFiles\ddd.dir\src\main.c.obj
-                0x00007be8                DELTA_TIME
- .bss.pd        0x00007bec        0x4 CMakeFiles\ddd.dir\src\main.c.obj
-                0x00007bec                pd
+                0x000096cc        0x4 CMakeFiles\ddd.dir\src\main.c.obj
+                0x000096cc                DELTA_TIME
+ .bss.pd        0x000096d0        0x4 CMakeFiles\ddd.dir\src\main.c.obj
+                0x000096d0                pd
  .bss.pdrealloc
-                0x00007bf0        0x4 CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
- .bss.__sf      0x00007bf4      0x138 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
-                0x00007bf4                __sf
+                0x000096d4        0x4 CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
+ .bss.__sf      0x000096d8      0x138 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
+                0x000096d8                __sf
  *(COMMON)
  *(COM)
-                0x00007d2c                        . = ALIGN (0x4)
-                0x00007d2c                        __bss_end__ = .
+                0x00009810                        . = ALIGN (0x4)
+                0x00009810                        __bss_end__ = .
 
 /DISCARD/
  *(.ARM.exidx)
 OUTPUT(ddd.elf elf32-littlearm)
 LOAD linker stubs
 
-.debug_info     0x00000000    0x181db
- .debug_info    0x00000000     0x6f6d CMakeFiles\ddd.dir\src\main.c.obj
- .debug_info    0x00006f6d     0x2129 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
- .debug_info    0x00009096      0x810 CMakeFiles\ddd.dir\ddd\actor.c.obj
- .debug_info    0x000098a6      0x717 CMakeFiles\ddd.dir\ddd\camera.c.obj
- .debug_info    0x00009fbd     0x754c CMakeFiles\ddd.dir\ddd\render.c.obj
- .debug_info    0x00011509      0x67d CMakeFiles\ddd.dir\ddd\scene.c.obj
- .debug_info    0x00011b86      0x19e CMakeFiles\ddd.dir\ddd\symbols.c.obj
- .debug_info    0x00011d24     0x64b7 CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
+.debug_info     0x00000000    0x18fc1
+ .debug_info    0x00000000     0x7e7f CMakeFiles\ddd.dir\src\main.c.obj
+ .debug_info    0x00007e7f     0x211f CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+ .debug_info    0x00009f9e      0x82e CMakeFiles\ddd.dir\ddd\actor.c.obj
+ .debug_info    0x0000a7cc      0x717 CMakeFiles\ddd.dir\ddd\camera.c.obj
+ .debug_info    0x0000aee3     0x73ee CMakeFiles\ddd.dir\ddd\render.c.obj
+ .debug_info    0x000122d1      0x69b CMakeFiles\ddd.dir\ddd\scene.c.obj
+ .debug_info    0x0001296c      0x19e CMakeFiles\ddd.dir\ddd\symbols.c.obj
+ .debug_info    0x00012b0a     0x64b7 CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
 
-.debug_abbrev   0x00000000     0x183b
- .debug_abbrev  0x00000000      0x629 CMakeFiles\ddd.dir\src\main.c.obj
- .debug_abbrev  0x00000629      0x40c CMakeFiles\ddd.dir\ddd\3dmath.c.obj
- .debug_abbrev  0x00000a35      0x183 CMakeFiles\ddd.dir\ddd\actor.c.obj
- .debug_abbrev  0x00000bb8      0x21b CMakeFiles\ddd.dir\ddd\camera.c.obj
- .debug_abbrev  0x00000dd3      0x593 CMakeFiles\ddd.dir\ddd\render.c.obj
- .debug_abbrev  0x00001366      0x130 CMakeFiles\ddd.dir\ddd\scene.c.obj
- .debug_abbrev  0x00001496       0xa5 CMakeFiles\ddd.dir\ddd\symbols.c.obj
- .debug_abbrev  0x0000153b      0x300 CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
+.debug_abbrev   0x00000000     0x191b
+ .debug_abbrev  0x00000000      0x72c CMakeFiles\ddd.dir\src\main.c.obj
+ .debug_abbrev  0x0000072c      0x428 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+ .debug_abbrev  0x00000b54      0x183 CMakeFiles\ddd.dir\ddd\actor.c.obj
+ .debug_abbrev  0x00000cd7      0x21b CMakeFiles\ddd.dir\ddd\camera.c.obj
+ .debug_abbrev  0x00000ef2      0x554 CMakeFiles\ddd.dir\ddd\render.c.obj
+ .debug_abbrev  0x00001446      0x130 CMakeFiles\ddd.dir\ddd\scene.c.obj
+ .debug_abbrev  0x00001576       0xa5 CMakeFiles\ddd.dir\ddd\symbols.c.obj
+ .debug_abbrev  0x0000161b      0x300 CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
 
-.debug_loc      0x00000000     0x58fc
- .debug_loc     0x00000000      0x98f CMakeFiles\ddd.dir\src\main.c.obj
- .debug_loc     0x0000098f     0x2cfa CMakeFiles\ddd.dir\ddd\3dmath.c.obj
- .debug_loc     0x00003689       0xdd CMakeFiles\ddd.dir\ddd\actor.c.obj
- .debug_loc     0x00003766      0x481 CMakeFiles\ddd.dir\ddd\camera.c.obj
- .debug_loc     0x00003be7     0x19ad CMakeFiles\ddd.dir\ddd\render.c.obj
- .debug_loc     0x00005594       0xd2 CMakeFiles\ddd.dir\ddd\scene.c.obj
- .debug_loc     0x00005666       0x2c CMakeFiles\ddd.dir\ddd\symbols.c.obj
- .debug_loc     0x00005692      0x26a CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
+.debug_loc      0x00000000     0x5f07
+ .debug_loc     0x00000000     0x1172 CMakeFiles\ddd.dir\src\main.c.obj
+ .debug_loc     0x00001172     0x2cfa CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+ .debug_loc     0x00003e6c       0xdd CMakeFiles\ddd.dir\ddd\actor.c.obj
+ .debug_loc     0x00003f49      0x481 CMakeFiles\ddd.dir\ddd\camera.c.obj
+ .debug_loc     0x000043ca     0x17d5 CMakeFiles\ddd.dir\ddd\render.c.obj
+ .debug_loc     0x00005b9f       0xd2 CMakeFiles\ddd.dir\ddd\scene.c.obj
+ .debug_loc     0x00005c71       0x2c CMakeFiles\ddd.dir\ddd\symbols.c.obj
+ .debug_loc     0x00005c9d      0x26a CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
 
-.debug_aranges  0x00000000      0x358
+.debug_aranges  0x00000000      0x3a8
  .debug_aranges
-                0x00000000       0xa8 CMakeFiles\ddd.dir\src\main.c.obj
+                0x00000000      0x100 CMakeFiles\ddd.dir\src\main.c.obj
  .debug_aranges
-                0x000000a8      0x158 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                0x00000100      0x158 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
  .debug_aranges
-                0x00000200       0x20 CMakeFiles\ddd.dir\ddd\actor.c.obj
+                0x00000258       0x20 CMakeFiles\ddd.dir\ddd\actor.c.obj
  .debug_aranges
-                0x00000220       0x48 CMakeFiles\ddd.dir\ddd\camera.c.obj
+                0x00000278       0x48 CMakeFiles\ddd.dir\ddd\camera.c.obj
  .debug_aranges
-                0x00000268       0x78 CMakeFiles\ddd.dir\ddd\render.c.obj
+                0x000002c0       0x70 CMakeFiles\ddd.dir\ddd\render.c.obj
  .debug_aranges
-                0x000002e0       0x20 CMakeFiles\ddd.dir\ddd\scene.c.obj
+                0x00000330       0x20 CMakeFiles\ddd.dir\ddd\scene.c.obj
  .debug_aranges
-                0x00000300       0x20 CMakeFiles\ddd.dir\ddd\symbols.c.obj
+                0x00000350       0x20 CMakeFiles\ddd.dir\ddd\symbols.c.obj
  .debug_aranges
-                0x00000320       0x38 CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
+                0x00000370       0x38 CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
 
-.debug_ranges   0x00000000      0x990
- .debug_ranges  0x00000000      0x1b8 CMakeFiles\ddd.dir\src\main.c.obj
- .debug_ranges  0x000001b8      0x4a0 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
- .debug_ranges  0x00000658       0x10 CMakeFiles\ddd.dir\ddd\actor.c.obj
- .debug_ranges  0x00000668       0x38 CMakeFiles\ddd.dir\ddd\camera.c.obj
- .debug_ranges  0x000006a0      0x290 CMakeFiles\ddd.dir\ddd\render.c.obj
- .debug_ranges  0x00000930       0x28 CMakeFiles\ddd.dir\ddd\scene.c.obj
- .debug_ranges  0x00000958       0x10 CMakeFiles\ddd.dir\ddd\symbols.c.obj
- .debug_ranges  0x00000968       0x28 CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
+.debug_ranges   0x00000000      0xa08
+ .debug_ranges  0x00000000      0x238 CMakeFiles\ddd.dir\src\main.c.obj
+ .debug_ranges  0x00000238      0x4a0 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+ .debug_ranges  0x000006d8       0x10 CMakeFiles\ddd.dir\ddd\actor.c.obj
+ .debug_ranges  0x000006e8       0x38 CMakeFiles\ddd.dir\ddd\camera.c.obj
+ .debug_ranges  0x00000720      0x288 CMakeFiles\ddd.dir\ddd\render.c.obj
+ .debug_ranges  0x000009a8       0x28 CMakeFiles\ddd.dir\ddd\scene.c.obj
+ .debug_ranges  0x000009d0       0x10 CMakeFiles\ddd.dir\ddd\symbols.c.obj
+ .debug_ranges  0x000009e0       0x28 CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
 
-.debug_line     0x00000000     0x416f
- .debug_line    0x00000000      0xfa8 CMakeFiles\ddd.dir\src\main.c.obj
- .debug_line    0x00000fa8     0x17af CMakeFiles\ddd.dir\ddd\3dmath.c.obj
- .debug_line    0x00002757      0x19c CMakeFiles\ddd.dir\ddd\actor.c.obj
- .debug_line    0x000028f3      0x33d CMakeFiles\ddd.dir\ddd\camera.c.obj
- .debug_line    0x00002c30      0xeea CMakeFiles\ddd.dir\ddd\render.c.obj
- .debug_line    0x00003b1a      0x24e CMakeFiles\ddd.dir\ddd\scene.c.obj
- .debug_line    0x00003d68       0x8d CMakeFiles\ddd.dir\ddd\symbols.c.obj
- .debug_line    0x00003df5      0x37a CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
+.debug_line     0x00000000     0x4ba1
+ .debug_line    0x00000000     0x19e7 CMakeFiles\ddd.dir\src\main.c.obj
+ .debug_line    0x000019e7     0x1797 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+ .debug_line    0x0000317e      0x19c CMakeFiles\ddd.dir\ddd\actor.c.obj
+ .debug_line    0x0000331a      0x33d CMakeFiles\ddd.dir\ddd\camera.c.obj
+ .debug_line    0x00003657      0xef7 CMakeFiles\ddd.dir\ddd\render.c.obj
+ .debug_line    0x0000454e      0x24c CMakeFiles\ddd.dir\ddd\scene.c.obj
+ .debug_line    0x0000479a       0x8d CMakeFiles\ddd.dir\ddd\symbols.c.obj
+ .debug_line    0x00004827      0x37a CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
 
-.debug_str      0x00000000     0x39f9
- .debug_str     0x00000000     0x39f9 CMakeFiles\ddd.dir\src\main.c.obj
-                               0x3257 (size before relaxing)
- .debug_str     0x000039f9      0x687 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
- .debug_str     0x000039f9      0x562 CMakeFiles\ddd.dir\ddd\actor.c.obj
- .debug_str     0x000039f9      0x4c0 CMakeFiles\ddd.dir\ddd\camera.c.obj
- .debug_str     0x000039f9     0x2f7e CMakeFiles\ddd.dir\ddd\render.c.obj
- .debug_str     0x000039f9      0x4e0 CMakeFiles\ddd.dir\ddd\scene.c.obj
- .debug_str     0x000039f9      0x233 CMakeFiles\ddd.dir\ddd\symbols.c.obj
- .debug_str     0x000039f9     0x2e93 CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
+.debug_str      0x00000000     0x3cab
+ .debug_str     0x00000000     0x3cab CMakeFiles\ddd.dir\src\main.c.obj
+                               0x358b (size before relaxing)
+ .debug_str     0x00003cab      0x687 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+ .debug_str     0x00003cab      0x573 CMakeFiles\ddd.dir\ddd\actor.c.obj
+ .debug_str     0x00003cab      0x4c0 CMakeFiles\ddd.dir\ddd\camera.c.obj
+ .debug_str     0x00003cab     0x2f8f CMakeFiles\ddd.dir\ddd\render.c.obj
+ .debug_str     0x00003cab      0x4f1 CMakeFiles\ddd.dir\ddd\scene.c.obj
+ .debug_str     0x00003cab      0x233 CMakeFiles\ddd.dir\ddd\symbols.c.obj
+ .debug_str     0x00003cab     0x2e93 CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
 
 .comment        0x00000000       0x45
  .comment       0x00000000       0x45 CMakeFiles\ddd.dir\src\main.c.obj
@@ -1041,7 +1211,7 @@ LOAD linker stubs
  .comment       0x00000045       0x46 CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
 
 .ARM.attributes
-                0x00000000       0x34
+                0x00000000       0x32
  .ARM.attributes
                 0x00000000       0x34 CMakeFiles\ddd.dir\src\main.c.obj
  .ARM.attributes
@@ -1059,71 +1229,107 @@ LOAD linker stubs
  .ARM.attributes
                 0x0000016c       0x34 CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
  .ARM.attributes
-                0x000001a0       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-malloc.o)
+                0x000001a0       0x22 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
  .ARM.attributes
-                0x000001d4       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-qsort.o)
+                0x000001c2       0x22 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_truncdfsf2.o)
  .ARM.attributes
-                0x00000208       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-memset.o)
+                0x000001e4       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-itoa.o)
  .ARM.attributes
-                0x0000023c       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-impure.o)
+                0x00000218       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-malloc.o)
  .ARM.attributes
-                0x00000270       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
+                0x0000024c       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-rand.o)
  .ARM.attributes
-                0x000002a4       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_atan2.o)
+                0x00000280       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-utoa.o)
  .ARM.attributes
-                0x000002d8       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_cos.o)
+                0x000002b4       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-qsort.o)
  .ARM.attributes
-                0x0000030c       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_fabs.o)
+                0x000002e8       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-memmove.o)
  .ARM.attributes
-                0x00000340       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_sin.o)
+                0x0000031c       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-memset.o)
  .ARM.attributes
-                0x00000374       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_tan.o)
+                0x00000350       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-stpcpy.o)
  .ARM.attributes
-                0x000003a8       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_cos.o)
+                0x00000384       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-impure.o)
  .ARM.attributes
-                0x000003dc       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_sin.o)
+                0x000003b8       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-strcpy.o)
  .ARM.attributes
-                0x00000410       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_tan.o)
+                0x000003ec       0x1c C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-strlen.o)
  .ARM.attributes
-                0x00000444       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_atan2.o)
+                0x00000408       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
  .ARM.attributes
-                0x00000478       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_rem_pio2.o)
+                0x0000043c       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_atan2.o)
  .ARM.attributes
-                0x000004ac       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_atan.o)
+                0x00000470       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_cos.o)
  .ARM.attributes
-                0x000004e0       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_rem_pio2.o)
+                0x000004a4       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_fabs.o)
  .ARM.attributes
-                0x00000514       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_scalbn.o)
+                0x000004d8       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_sin.o)
  .ARM.attributes
-                0x00000548       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_floor.o)
+                0x0000050c       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_tan.o)
+ .ARM.attributes
+                0x00000540       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_cos.o)
+ .ARM.attributes
+                0x00000574       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_sin.o)
+ .ARM.attributes
+                0x000005a8       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_tan.o)
+ .ARM.attributes
+                0x000005dc       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_atan2.o)
+ .ARM.attributes
+                0x00000610       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_rem_pio2.o)
+ .ARM.attributes
+                0x00000644       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_atan.o)
+ .ARM.attributes
+                0x00000678       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_rem_pio2.o)
+ .ARM.attributes
+                0x000006ac       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_scalbn.o)
+ .ARM.attributes
+                0x000006e0       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_floor.o)
 
-.debug_frame    0x00000000     0x1050
- .debug_frame   0x00000000      0x208 CMakeFiles\ddd.dir\src\main.c.obj
- .debug_frame   0x00000208      0x644 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
- .debug_frame   0x0000084c       0x38 CMakeFiles\ddd.dir\ddd\actor.c.obj
- .debug_frame   0x00000884       0xc0 CMakeFiles\ddd.dir\ddd\camera.c.obj
- .debug_frame   0x00000944      0x1f0 CMakeFiles\ddd.dir\ddd\render.c.obj
- .debug_frame   0x00000b34       0x3c CMakeFiles\ddd.dir\ddd\scene.c.obj
- .debug_frame   0x00000b70       0x28 CMakeFiles\ddd.dir\ddd\symbols.c.obj
- .debug_frame   0x00000b98       0x5c CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
- .debug_frame   0x00000bf4       0x30 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-malloc.o)
- .debug_frame   0x00000c24       0x44 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-qsort.o)
- .debug_frame   0x00000c68       0x2c C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-memset.o)
- .debug_frame   0x00000c94      0x13c C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
- .debug_frame   0x00000dd0       0x20 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_atan2.o)
- .debug_frame   0x00000df0       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_cos.o)
- .debug_frame   0x00000e24       0x20 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_fabs.o)
- .debug_frame   0x00000e44       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_sin.o)
- .debug_frame   0x00000e78       0x30 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_tan.o)
- .debug_frame   0x00000ea8       0x20 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_cos.o)
- .debug_frame   0x00000ec8       0x20 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_sin.o)
- .debug_frame   0x00000ee8       0x28 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_tan.o)
- .debug_frame   0x00000f10       0x44 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_atan2.o)
- .debug_frame   0x00000f54       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_rem_pio2.o)
- .debug_frame   0x00000f88       0x2c C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_atan.o)
- .debug_frame   0x00000fb4       0x5c C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_rem_pio2.o)
- .debug_frame   0x00001010       0x20 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_scalbn.o)
- .debug_frame   0x00001030       0x20 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_floor.o)
+.debug_frame    0x00000000     0x1428
+ .debug_frame   0x00000000      0x3f4 CMakeFiles\ddd.dir\src\main.c.obj
+ .debug_frame   0x000003f4      0x644 CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+ .debug_frame   0x00000a38       0x38 CMakeFiles\ddd.dir\ddd\actor.c.obj
+ .debug_frame   0x00000a70       0xc0 CMakeFiles\ddd.dir\ddd\camera.c.obj
+ .debug_frame   0x00000b30      0x1c4 CMakeFiles\ddd.dir\ddd\render.c.obj
+ .debug_frame   0x00000cf4       0x3c CMakeFiles\ddd.dir\ddd\scene.c.obj
+ .debug_frame   0x00000d30       0x28 CMakeFiles\ddd.dir\ddd\symbols.c.obj
+ .debug_frame   0x00000d58       0x5c CMakeFiles\ddd.dir\C_\Users\shrin\Documents\PlaydateSDK\C_API\buildsupport\setup.c.obj
+ .debug_frame   0x00000db4       0xac C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+ .debug_frame   0x00000e60       0x24 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_truncdfsf2.o)
+ .debug_frame   0x00000e84       0x40 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-itoa.o)
+ .debug_frame   0x00000ec4       0x30 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-malloc.o)
+ .debug_frame   0x00000ef4       0x3c C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-rand.o)
+ .debug_frame   0x00000f30       0x4c C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-utoa.o)
+ .debug_frame   0x00000f7c       0x44 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-qsort.o)
+ .debug_frame   0x00000fc0       0x40 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-memmove.o)
+ .debug_frame   0x00001000       0x2c C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-memset.o)
+ .debug_frame   0x0000102c       0x20 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-stpcpy.o)
+ .debug_frame   0x0000104c       0x20 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-strcpy.o)
+ .debug_frame   0x0000106c      0x13c C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
+ .debug_frame   0x000011a8       0x20 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_atan2.o)
+ .debug_frame   0x000011c8       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_cos.o)
+ .debug_frame   0x000011fc       0x20 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_fabs.o)
+ .debug_frame   0x0000121c       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_sin.o)
+ .debug_frame   0x00001250       0x30 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_tan.o)
+ .debug_frame   0x00001280       0x20 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_cos.o)
+ .debug_frame   0x000012a0       0x20 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_sin.o)
+ .debug_frame   0x000012c0       0x28 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_tan.o)
+ .debug_frame   0x000012e8       0x44 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_atan2.o)
+ .debug_frame   0x0000132c       0x34 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_rem_pio2.o)
+ .debug_frame   0x00001360       0x2c C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_atan.o)
+ .debug_frame   0x0000138c       0x5c C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_rem_pio2.o)
+ .debug_frame   0x000013e8       0x20 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_scalbn.o)
+ .debug_frame   0x00001408       0x20 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_floor.o)
+
+.debug_line_str
+                0x00000000      0x1b0
+ .debug_line_str
+                0x00000000      0x1b0 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+                                 0xce (size before relaxing)
+ .debug_line_str
+                0x000001b0       0xce C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_truncdfsf2.o)
+ .debug_line_str
+                0x000001b0       0xe2 C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-strlen.o)
 
 Cross Reference Table
 
@@ -1143,6 +1349,9 @@ Camera_worldToScreenPos                           CMakeFiles\ddd.dir\ddd\camera.
 DELTA_TIME                                        CMakeFiles\ddd.dir\src\main.c.obj
                                                   CMakeFiles\ddd.dir\ddd\camera.c.obj
 DefaultScene                                      CMakeFiles\ddd.dir\src\main.c.obj
+FONT_MONTSERRAT_BLACK_24                          CMakeFiles\ddd.dir\src\main.c.obj
+FONT_MONTSERRAT_BLACK_ITALIC_24                   CMakeFiles\ddd.dir\src\main.c.obj
+FONT_MONTSERRAT_BOLD_14                           CMakeFiles\ddd.dir\src\main.c.obj
 FishingScene                                      CMakeFiles\ddd.dir\src\main.c.obj
 GLOBAL_ORIGIN                                     CMakeFiles\ddd.dir\src\main.c.obj
 GLOBAL_UNIT                                       CMakeFiles\ddd.dir\src\main.c.obj
@@ -1200,6 +1409,9 @@ SINE_GRADIENT                                     CMakeFiles\ddd.dir\src\main.c.
 SINE_GRADIENT_OFFSET                              CMakeFiles\ddd.dir\src\main.c.obj
 Scene_update                                      CMakeFiles\ddd.dir\ddd\scene.c.obj
                                                   CMakeFiles\ddd.dir\src\main.c.obj
+TICKER_FONT                                       CMakeFiles\ddd.dir\src\main.c.obj
+TICKER_SPEED                                      CMakeFiles\ddd.dir\src\main.c.obj
+TIME_SCALE                                        CMakeFiles\ddd.dir\src\main.c.obj
 UnderwaterView                                    CMakeFiles\ddd.dir\src\main.c.obj
 Vector3_add                                       CMakeFiles\ddd.dir\ddd\3dmath.c.obj
                                                   CMakeFiles\ddd.dir\src\main.c.obj
@@ -1235,12 +1447,16 @@ YPlane_render                                     CMakeFiles\ddd.dir\ddd\render.
 __adddf3                                          C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
 __aeabi_d2f                                       C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_truncdfsf2.o)
                                                   CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                                                  CMakeFiles\ddd.dir\src\main.c.obj
 __aeabi_dadd                                      C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+                                                  CMakeFiles\ddd.dir\src\main.c.obj
 __aeabi_drsub                                     C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
 __aeabi_dsub                                      C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
                                                   CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                                                  CMakeFiles\ddd.dir\src\main.c.obj
 __aeabi_f2d                                       C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
                                                   CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+                                                  CMakeFiles\ddd.dir\src\main.c.obj
 __aeabi_i2d                                       C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
 __aeabi_l2d                                       C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
 __aeabi_ui2d                                      C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
@@ -1266,6 +1482,7 @@ __ieee754_rem_pio2f                               C:/PROGRA~2/ARMGNU~1/133167~1.
 __ieee754_sqrtf                                   C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_sqrt.o)
                                                   C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_acos.o)
                                                   C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_sqrt.o)
+__itoa                                            C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-itoa.o)
 __kernel_cosf                                     C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_cos.o)
                                                   C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_sin.o)
                                                   C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_cos.o)
@@ -1329,6 +1546,8 @@ __subdf3                                          C:/PROGRA~2/ARMGNU~1/133167~1.
 __swrite                                          C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-stdio.o)
                                                   C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
 __truncdfsf2                                      C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_truncdfsf2.o)
+__utoa                                            C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-utoa.o)
+                                                  C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-itoa.o)
 _close                                            C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-closer.o)
 _close_r                                          C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-closer.o)
                                                   C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-stdio.o)
@@ -1351,6 +1570,7 @@ _impure_ptr                                       C:/PROGRA~2/ARMGNU~1/133167~1.
                                                   C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fflush.o)
                                                   C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-fclose.o)
                                                   C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-reent.o)
+                                                  C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-rand.o)
                                                   C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-malloc.o)
 _lseek                                            C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lseekr.o)
 _lseek_r                                          C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-lseekr.o)
@@ -1393,6 +1613,8 @@ camera_velocity                                   CMakeFiles\ddd.dir\src\main.c.
 compare_zdepth                                    CMakeFiles\ddd.dir\ddd\render.c.obj
 cosf                                              C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_cos.o)
                                                   CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+depth                                             CMakeFiles\ddd.dir\src\main.c.obj
+depth_width                                       CMakeFiles\ddd.dir\src\main.c.obj
 errno                                             C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-reent.o)
                                                   C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-writer.o)
                                                   C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-readr.o)
@@ -1418,6 +1640,9 @@ floorf                                            C:/PROGRA~2/ARMGNU~1/133167~1.
                                                   C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_rem_pio2.o)
 font                                              CMakeFiles\ddd.dir\src\main.c.obj
 fontpath                                          CMakeFiles\ddd.dir\src\main.c.obj
+fontpath2                                         CMakeFiles\ddd.dir\src\main.c.obj
+fontpath3                                         CMakeFiles\ddd.dir\src\main.c.obj
+fontpath4                                         CMakeFiles\ddd.dir\src\main.c.obj
 frame                                             CMakeFiles\ddd.dir\src\main.c.obj
 free                                              C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-malloc.o)
 grid_points                                       CMakeFiles\ddd.dir\ddd\render.c.obj
@@ -1431,13 +1656,20 @@ isRight                                           CMakeFiles\ddd.dir\src\main.c.
 isRotateLeft                                      CMakeFiles\ddd.dir\src\main.c.obj
 isRotateRight                                     CMakeFiles\ddd.dir\src\main.c.obj
 isUp                                              CMakeFiles\ddd.dir\src\main.c.obj
+itoa                                              C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-itoa.o)
+                                                  CMakeFiles\ddd.dir\src\main.c.obj
 lake_draw                                         CMakeFiles\ddd.dir\src\main.c.obj
+lake_postdraw                                     CMakeFiles\ddd.dir\src\main.c.obj
 lake_update                                       CMakeFiles\ddd.dir\src\main.c.obj
+line_integrity                                    CMakeFiles\ddd.dir\src\main.c.obj
+line_tension                                      CMakeFiles\ddd.dir\src\main.c.obj
 loadScene                                         CMakeFiles\ddd.dir\src\main.c.obj
 look_lerp                                         CMakeFiles\ddd.dir\src\main.c.obj
 look_lerp_dir                                     CMakeFiles\ddd.dir\src\main.c.obj
 lure_update                                       CMakeFiles\ddd.dir\src\main.c.obj
 malloc                                            C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-malloc.o)
+                                                  CMakeFiles\ddd.dir\src\main.c.obj
+memmove                                           C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-memmove.o)
                                                   CMakeFiles\ddd.dir\src\main.c.obj
 memset                                            C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-memset.o)
                                                   C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-findfp.o)
@@ -1447,6 +1679,7 @@ memset                                            C:/PROGRA~2/ARMGNU~1/133167~1.
 mesh_cube                                         CMakeFiles\ddd.dir\src\main.c.obj
 nanf                                              C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_nan.o)
                                                   C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_acos.o)
+next_clear_width                                  CMakeFiles\ddd.dir\src\main.c.obj
 object_fish                                       CMakeFiles\ddd.dir\src\main.c.obj
 object_lure                                       CMakeFiles\ddd.dir\src\main.c.obj
 object_terrain                                    CMakeFiles\ddd.dir\src\main.c.obj
@@ -1455,8 +1688,11 @@ pd                                                CMakeFiles\ddd.dir\src\main.c.
 pnormal                                           CMakeFiles\ddd.dir\ddd\3dmath.c.obj
                                                   CMakeFiles\ddd.dir\ddd\render.c.obj
 pressedButtons                                    CMakeFiles\ddd.dir\src\main.c.obj
+pullMod                                           CMakeFiles\ddd.dir\src\main.c.obj
 qsort                                             C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-qsort.o)
                                                   CMakeFiles\ddd.dir\ddd\render.c.obj
+rand                                              C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-rand.o)
+                                                  CMakeFiles\ddd.dir\src\main.c.obj
 releasedButtons                                   CMakeFiles\ddd.dir\src\main.c.obj
 scalbnf                                           C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_scalbn.o)
                                                   C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-kf_rem_pio2.o)
@@ -1466,9 +1702,34 @@ sinf                                              C:/PROGRA~2/ARMGNU~1/133167~1.
 sortTri                                           CMakeFiles\ddd.dir\ddd\render.c.obj
 sqrtf                                             C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_sqrt.o)
                                                   CMakeFiles\ddd.dir\ddd\3dmath.c.obj
+srand                                             C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-rand.o)
+stpcpy                                            C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-stpcpy.o)
+                                                  CMakeFiles\ddd.dir\src\main.c.obj
+strcpy                                            C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-strcpy.o)
+                                                  CMakeFiles\ddd.dir\src\main.c.obj
+strlen                                            C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-strlen.o)
+                                                  CMakeFiles\ddd.dir\src\main.c.obj
 tanf                                              C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_tan.o)
                                                   CMakeFiles\ddd.dir\ddd\camera.c.obj
 target_idx                                        CMakeFiles\ddd.dir\src\main.c.obj
 terrain1                                          CMakeFiles\ddd.dir\src\main.c.obj
+ticker_add                                        CMakeFiles\ddd.dir\src\main.c.obj
+ticker_add_from                                   CMakeFiles\ddd.dir\src\main.c.obj
+ticker_buffer                                     CMakeFiles\ddd.dir\src\main.c.obj
+ticker_clear_first                                CMakeFiles\ddd.dir\src\main.c.obj
+ticker_filler_table                               CMakeFiles\ddd.dir\src\main.c.obj
+ticker_queue                                      CMakeFiles\ddd.dir\src\main.c.obj
+ticker_queue_length                               CMakeFiles\ddd.dir\src\main.c.obj
+ticker_text                                       CMakeFiles\ddd.dir\src\main.c.obj
+ticker_x                                          CMakeFiles\ddd.dir\src\main.c.obj
+ui_depth                                          CMakeFiles\ddd.dir\src\main.c.obj
+ui_fish_name                                      CMakeFiles\ddd.dir\src\main.c.obj
+ui_news_ticker                                    CMakeFiles\ddd.dir\src\main.c.obj
+ui_radar                                          CMakeFiles\ddd.dir\src\main.c.obj
+ui_tension                                        CMakeFiles\ddd.dir\src\main.c.obj
+ui_yards                                          CMakeFiles\ddd.dir\src\main.c.obj
 underwater_draw                                   CMakeFiles\ddd.dir\src\main.c.obj
+underwater_postdraw                               CMakeFiles\ddd.dir\src\main.c.obj
 underwater_update                                 CMakeFiles\ddd.dir\src\main.c.obj
+utoa                                              C:/PROGRA~2/ARMGNU~1/133167~1.3RE/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-utoa.o)
+yards                                             CMakeFiles\ddd.dir\src\main.c.obj
