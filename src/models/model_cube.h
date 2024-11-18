@@ -1,4 +1,7 @@
-#include "../engine/symbols.h"
+#ifndef __MODEL_CUBE__
+#define __MODEL_CUBE__
+
+#include "../../engine/symbols.h"
 #define CUBE_SIZE 10
 
 struct Mesh mesh_cube = {
@@ -34,3 +37,5 @@ struct Mesh mesh_cube = {
 		0, 3, 4, // bottom2
 	}
 };
+
+#endif

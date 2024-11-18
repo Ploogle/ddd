@@ -22,6 +22,7 @@ struct View {
 	void (*postdraw)(); // After models
 	void (*onEnable)();
 	void (*onDisable)();
+	void (*update)();
 };
 
 struct Scene {

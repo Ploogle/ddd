@@ -1,32 +1,23 @@
 ﻿  Microsoft (R) C/C++ Optimizing Compiler Version 19.41.34120 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
-  cl /c /IC:\Users\shrin\Documents\PlaydateSDK\C_API /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _WINDLL /D _MBCS /D WIN32 /D _WINDOWS /D TARGET_SIMULATOR=1 /D _WINDLL=1 /D TARGET_EXTENSION=1 /D "CMAKE_INTDIR=\"Debug\"" /D ddd_EXPORTS /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"ddd.dir\Debug\\" /Fd"ddd.dir\Debug\vc143.pdb" /external:W3 /Gd /TC /errorReport:prompt "C:\Users\shrin\Documents\Playdate Projects\ddd\src\main.c" engine\symbols.c
+  cl /c /IC:\Users\shrin\Documents\PlaydateSDK\C_API /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _WINDLL /D _MBCS /D WIN32 /D _WINDOWS /D TARGET_SIMULATOR=1 /D _WINDLL=1 /D TARGET_EXTENSION=1 /D "CMAKE_INTDIR=\"Debug\"" /D ddd_EXPORTS /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"ddd.dir\Debug\\" /Fd"ddd.dir\Debug\vc143.pdb" /external:W3 /Gd /TC /errorReport:prompt "C:\Users\shrin\Documents\Playdate Projects\ddd\src\main.c"
   main.c
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(9,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\engine\pd_stub.h(50,20): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(9,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\engine\pd_stub.h(51,20): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(9,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(1,30): warning C4067: unexpected tokens following preprocessor directive - expected a newline
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(10,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(2,35): warning C4067: unexpected tokens following preprocessor directive - expected a newline
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(10,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(3,34): warning C4067: unexpected tokens following preprocessor directive - expected a newline
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(10,40): warning C4305: 'initializing': truncation from 'double' to 'float'
-  (compiling source file 'src/main.c')
-  
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(11,9): warning C4305: 'initializing': truncation from 'double' to 'float'
-  (compiling source file 'src/main.c')
-  
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(11,25): warning C4305: 'initializing': truncation from 'double' to 'float'
-  (compiling source file 'src/main.c')
-  
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(11,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(4,40): warning C4067: unexpected tokens following preprocessor directive - expected a newline
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(12,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -44,7 +35,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(13,
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(13,25): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(13,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(13,40): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(14,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -53,7 +44,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(14,
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(14,25): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(14,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(14,40): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(15,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -80,7 +71,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(17,
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(17,25): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(17,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(17,41): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(18,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -89,7 +80,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(18,
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(18,25): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(18,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(18,41): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(19,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -116,7 +107,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(21,
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(21,25): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(21,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(21,40): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(22,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -125,7 +116,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(22,
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(22,25): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(22,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(22,41): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(23,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -143,7 +134,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(24,
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(24,25): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(24,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(24,41): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(25,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -224,7 +215,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(33,
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(33,25): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(33,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(33,40): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(34,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -233,7 +224,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(34,
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(34,25): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(34,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(34,40): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(35,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -242,7 +233,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(35,
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(35,25): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(35,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(35,40): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(36,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -251,7 +242,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(36,
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(36,25): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(36,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(36,41): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(37,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -269,7 +260,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(38,
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(38,25): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(38,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(38,41): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(39,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -278,7 +269,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(39,
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(39,25): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(39,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(39,40): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(40,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -287,7 +278,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(40,
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(40,25): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(40,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(40,41): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(41,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -314,7 +305,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(43,
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(43,25): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(43,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(43,40): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(44,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -341,7 +332,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(46,
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(46,25): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(46,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(46,41): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(47,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -368,7 +359,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(49,
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(49,25): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(49,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(49,40): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(50,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -377,7 +368,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(50,
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(50,25): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(50,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(50,40): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(51,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -416,154 +407,163 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(54,
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(54,41): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(55,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(55,9): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(55,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(55,25): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(56,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(55,41): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(56,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(56,9): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(57,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(56,25): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(57,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(56,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(57,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(57,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(57,41): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(58,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(58,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(58,39): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(59,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(59,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(59,40): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(60,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(60,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(60,39): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(61,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(61,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(61,40): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(62,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(62,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(62,39): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(63,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(63,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(63,40): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(64,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(64,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(64,39): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(65,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(65,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(65,40): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(66,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(66,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(66,39): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(67,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(67,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(67,40): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(68,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(68,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(68,39): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(69,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(69,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(69,40): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(70,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(70,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(70,39): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(71,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(71,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(71,40): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(72,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(72,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(72,39): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(73,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(73,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(73,40): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(74,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(74,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(74,39): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(75,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(75,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(75,40): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(76,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(76,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(76,39): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(77,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(77,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(77,40): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(78,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(78,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(78,39): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(79,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(79,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(79,40): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(80,24): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -575,7 +575,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(80,
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(81,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(81,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(81,40): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(82,24): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -617,19 +617,19 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(87,
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(88,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(88,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(88,39): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(89,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(89,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(89,39): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(90,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(90,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(90,39): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(91,24): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -665,7 +665,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(95,
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(96,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(96,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(96,40): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(97,24): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -677,55 +677,55 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(97,
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(98,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(98,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(98,40): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(99,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(99,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(99,39): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(100,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(100,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(100,40): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(101,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(101,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(101,39): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(102,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(102,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(102,40): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(103,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(103,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(103,39): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(104,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(104,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(104,40): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(105,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(105,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(105,39): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(106,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(106,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(106,40): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(107,24): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -737,7 +737,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(107
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(108,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(108,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(108,40): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(109,24): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -788,31 +788,22 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(116
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(116,39): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(117,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(117,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(117,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(117,39): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(117,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(118,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(118,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(118,39): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(118,25): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(119,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(118,40): warning C4305: 'initializing': truncation from 'double' to 'float'
-  (compiling source file 'src/main.c')
-  
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(119,9): warning C4305: 'initializing': truncation from 'double' to 'float'
-  (compiling source file 'src/main.c')
-  
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(119,25): warning C4305: 'initializing': truncation from 'double' to 'float'
-  (compiling source file 'src/main.c')
-  
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(119,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(119,39): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(120,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -866,7 +857,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(125
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(125,25): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(125,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(125,41): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(126,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -875,7 +866,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(126
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(126,25): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(126,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(126,41): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(127,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -911,7 +902,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(130
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(130,25): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(130,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(130,40): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(131,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -920,7 +911,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(131
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(131,25): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(131,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(131,40): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(132,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -929,7 +920,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(132
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(132,25): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(132,41): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(132,40): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(133,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -1034,28 +1025,28 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(143
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(144,9): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(144,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(144,25): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(144,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(144,41): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(145,9): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(145,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(145,25): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(145,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(145,41): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(146,9): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(146,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(146,25): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(146,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(146,41): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(147,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -1073,7 +1064,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(148
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(148,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(148,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(148,39): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(149,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -1082,7 +1073,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(149
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(149,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(149,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(149,39): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(150,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -1109,7 +1100,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(152
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(152,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(152,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(152,40): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(153,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -1118,7 +1109,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(153
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(153,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(153,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(153,40): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(154,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -1145,7 +1136,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(156
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(156,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(156,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(156,39): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(157,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -1154,7 +1145,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(157
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(157,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(157,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(157,40): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(158,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -1172,7 +1163,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(159
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(159,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(159,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(159,40): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(160,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -1253,7 +1244,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(168
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(168,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(168,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(168,39): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(169,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -1262,7 +1253,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(169
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(169,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(169,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(169,39): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(170,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -1271,7 +1262,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(170
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(170,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(170,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(170,39): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(171,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -1280,7 +1271,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(171
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(171,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(171,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(171,40): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(172,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -1298,7 +1289,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(173
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(173,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(173,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(173,40): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(174,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -1307,7 +1298,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(174
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(174,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(174,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(174,39): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(175,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -1316,7 +1307,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(175
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(175,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(175,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(175,40): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(176,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -1343,7 +1334,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(178
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(178,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(178,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(178,39): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(179,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -1370,7 +1361,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(181
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(181,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(181,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(181,40): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(182,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -1397,7 +1388,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(184
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(184,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(184,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(184,39): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(185,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -1406,7 +1397,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(185
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(185,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(185,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(185,39): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(186,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -1460,7 +1451,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(191
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(191,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(191,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(191,40): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(192,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -1523,7 +1514,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(198
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(198,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(198,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(198,40): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(199,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -1532,7 +1523,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(199
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(199,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(199,39): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(199,40): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(200,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -1568,7 +1559,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(203
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(203,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(203,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(203,39): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(204,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -1577,7 +1568,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(204
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(204,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(204,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(204,39): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(205,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -1586,7 +1577,7 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(205
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(205,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(205,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(205,39): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(206,9): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -1688,22 +1679,52 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(216
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(216,40): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(218,17): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(217,9): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(218,27): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(217,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(218,35): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(217,40): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(219,17): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(218,9): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(219,26): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(218,24): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(219,35): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(218,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(219,9): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(219,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(219,40): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(221,17): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(221,27): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(221,35): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(222,17): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(222,26): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_blahaj_tri.h(222,35): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(5,38): warning C4067: unexpected tokens following preprocessor directive - expected a newline
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_terrain1.h(8,26): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -2121,7 +2142,6 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_terrain1.h(145,2
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_terrain1.h(146,25): warning C4305: 'initializing': truncation from 'double' to 'float'
-  symbols.c
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_terrain1.h(147,25): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -2577,128 +2597,195 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_terrain1.h(296,2
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_terrain1.h(299,22): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(6,34): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(6,35): warning C4067: unexpected tokens following preprocessor directive - expected a newline
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(188,5): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(7,34): warning C4067: unexpected tokens following preprocessor directive - expected a newline
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(177,2): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(8,30): warning C4067: unexpected tokens following preprocessor directive - expected a newline
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(178,2): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(10,27): warning C4067: unexpected tokens following preprocessor directive - expected a newline
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(215,31): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\data\lures.h(5,20): warning C4067: unexpected tokens following preprocessor directive - expected a newline
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(228,4): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\data\lure.h(25,45): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(240,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\data\lure.h(26,45): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(243,3): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\data\lure.h(27,44): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(244,3): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\data\lure.h(61,2): warning C4091: 'typedef ': ignored on left of 'Lure' when no variable is declared
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(271,75): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\data\lures.h(73,21): warning C4047: 'initializing': 'TimingComparison *' differs in levels of indirection from 'TimingComparison (*)[4]'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(302,31): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\data\lures.h(76,24): warning C4113: 'float (__cdecl *)(CrankPeriod *,TimingComparison *)' differs in parameter lists from 'float (__cdecl *)(float *,TimingComparison *)'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(310,10): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(276,5): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(310,31): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(265,2): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(311,11): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(266,2): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(311,33): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(303,31): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(340,29): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(316,4): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(340,44): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(328,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(345,85): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(331,3): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(307,16): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(332,3): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(308,16): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(360,75): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(330,21): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(391,31): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(344,4): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details.
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(399,10): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(358,7): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(399,31): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(370,81): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(400,11): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(358,2): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details.
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(400,33): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(360,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(429,29): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(436,35): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(429,44): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(438,35): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(434,85): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(444,35): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(396,16): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(446,35): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(397,16): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(452,70): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(419,21): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(455,42): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(433,4): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details.
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(456,39): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(447,7): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(457,3): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(459,81): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(458,5): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(447,2): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details.
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(391,12): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(449,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(392,12): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(527,51): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(470,17): warning C4101: 'move_forward': unreferenced local variable
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(534,47): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(473,17): warning C4101: 'trace_target': unreferenced local variable
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(542,47): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\main.c(287,20): warning C4047: '<': 'int' differs in levels of indirection from 'View *'
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\main.c(287,44): warning C4047: '!=': 'int' differs in levels of indirection from 'void *'
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\main.c(399,20): warning C4047: '<': 'int' differs in levels of indirection from 'View *'
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\main.c(399,44): warning C4047: '!=': 'int' differs in levels of indirection from 'void *'
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\main.c(412,21): warning C4047: '<': 'int' differs in levels of indirection from 'Actor *'
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\main.c(412,56): warning C4047: '!=': 'int' differs in levels of indirection from 'void *'
-  Generating Code...
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(543,44): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(544,29): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(545,44): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(550,47): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(551,44): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(552,29): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(553,44): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(559,70): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(562,108): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(563,48): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(564,3): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(565,5): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(500,12): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(501,12): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(577,17): warning C4101: 'move_forward': unreferenced local variable
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(580,17): warning C4101: 'trace_target': unreferenced local variable
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(607,26): warning C4244: 'function': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(737,48): warning C4133: 'function': incompatible types - from 'CrankPeriod [20]' to 'float *'
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_debug.h(2,30): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_debug.h(3,35): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_debug.h(4,34): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_debug.h(5,40): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_debug.h(6,34): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\main.c(138,20): warning C4047: '<': 'int' differs in levels of indirection from 'View *'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\main.c(138,44): warning C4047: '!=': 'int' differs in levels of indirection from 'void *'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\main.c(191,20): warning C4047: '<': 'int' differs in levels of indirection from 'View *'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\main.c(191,44): warning C4047: '!=': 'int' differs in levels of indirection from 'void *'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\data\lure.h(140,1): warning C4716: 'pattern_fit_morse': must return a value
   ddd.vcxproj -> C:\Users\shrin\Documents\Playdate Projects\ddd\Debug\ddd.dll

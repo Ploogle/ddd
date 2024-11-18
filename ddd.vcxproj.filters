@@ -4,66 +4,77 @@
     <ClCompile Include="C:\Users\shrin\Documents\Playdate Projects\ddd\src\main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="engine\3dmath.c">
+    <ClCompile Include="C:\Users\shrin\Documents\Playdate Projects\ddd\engine\3dmath.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="engine\actor.c">
+    <ClCompile Include="C:\Users\shrin\Documents\Playdate Projects\ddd\engine\actor.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="engine\camera.c">
+    <ClCompile Include="C:\Users\shrin\Documents\Playdate Projects\ddd\engine\camera.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="engine\quaternion.c">
+    <ClCompile Include="C:\Users\shrin\Documents\Playdate Projects\ddd\engine\fsm.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="engine\render.c">
+    <ClCompile Include="C:\Users\shrin\Documents\Playdate Projects\ddd\engine\quaternion.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="engine\scene.c">
+    <ClCompile Include="C:\Users\shrin\Documents\Playdate Projects\ddd\engine\render.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="engine\symbols.c">
+    <ClCompile Include="C:\Users\shrin\Documents\Playdate Projects\ddd\engine\scene.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\shrin\Documents\Playdate Projects\ddd\engine\symbols.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="engine\3dmath.h">
+    <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\engine\3dmath.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="engine\actor.h">
+    <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\engine\actor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="engine\bluenoise.h">
+    <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\engine\bluenoise.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="engine\camera.h">
+    <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\engine\camera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="engine\cvector.h">
+    <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\engine\cvector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="engine\ddd.h">
+    <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\engine\ddd.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="engine\globals.h">
+    <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\engine\fsm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="engine\gradient.h">
+    <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\engine\globals.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="engine\quaternion.h">
+    <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\engine\gradient.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="engine\render.h">
+    <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\engine\quaternion.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="engine\scene.h">
+    <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\engine\render.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="engine\symbols.h">
+    <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\engine\scene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\scenes\fsm_fishing.h" />
+    <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\engine\symbols.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\pd_stub.h" />
+    <ClInclude Include="src\data\lure.h" />
+    <ClInclude Include="src\data\lures.h" />
+    <ClInclude Include="src\scenes\scene_debug.h" />
+    <ClInclude Include="src\models\model_plane.h" />
+    <ClInclude Include="engine\texture.h" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\shrin\Documents\Playdate Projects\ddd\CMakeLists.txt" />

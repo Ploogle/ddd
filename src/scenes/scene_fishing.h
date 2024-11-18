@@ -1,12 +1,16 @@
-#include "../../engine/ddd.h"
-#include "../../engine/gradient.h"
-#include "../models/model_cube.h"
-#include "../models/model_blahaj_tri.h"
-#include "../models/model_terrain1.h"
+#include "../../engine/ddd.h";
+#include "../../engine/gradient.h";
+#include "../models/model_cube.h";
+#include "../models/model_blahaj_tri.h";
+#include "../models/model_terrain1.h";
+#include "../models/model_plane.h";
 #include "../../engine/symbols.h";
+#include "../../engine/fsm.h";
+//#include "../../engine/pd_stub.h";
+#include "../data/lures.h";
 
 /*
-Externs
+	Externs
 */
 
 extern PlaydateAPI* pd;
@@ -24,15 +28,47 @@ struct Scene FishingScene;
 struct View UnderwaterView;
 struct View LakeView;
 
+struct Lure* ActiveLure = &DefaultLure;
+
+SamplePlayer* reel_click_player;
+SamplePlayer* reel_long_player;
+
 void fish_update();
 void lure_update();
 void fish_vertShader(struct Actor* act, int time, struct Vector3* v_out);
+void fsm_fishing_init();
+void fsm_fishing_update();
+void underwater_camera_update();
+
 
 /*
-	Game Objects
+	Assets
 */
+
+AudioSample* audio_reel_click;
+AudioSample* audio_reel_long;
+
+/*
+	State Machines
+*/
+struct FSM fsm_fishing = {
+	.init = &fsm_fishing_init,
+	.update = &fsm_fishing_update
+};
+
+#define FSM_LOADING 0
+#define FSM_CASTING 1
+#define FSM_REELING 2
+#define FSM_FISH_ON 3
+#define FSM_RESULTS 4
+
+/*
+	Actors
+*/
+
  struct Actor object_lure = {
  	.name = "Lure",
+	.visible = true,
  	.mesh = &mesh_cube,
  	.position = { 0, .5f, 0 },
  	.rotation = { 0, 0, 0 },
@@ -42,25 +78,38 @@ void fish_vertShader(struct Actor* act, int time, struct Vector3* v_out);
  };
 
  struct Actor object_fish = {
-	 .name = "Fish",
-	 .mesh = &blahaj_tri,
-	 .position = { 3, 2, -3 },
-	 .rotation = { 0, 0, 0 },
-	 .scale = { 1, 1, 1 },
-	 .look_target = {
-		 .tween_speed = 1.f,
-	 },
-	 .update = &fish_update,
-	 .vertShader = &fish_vertShader,
-	 .scene = &FishingScene,
+	.name = "Fish",
+	.visible = true,
+	.mesh = &blahaj_tri,
+	.position = { 3, 2, -3 },
+	.rotation = { 0, 0, 0 },
+	.scale = { 1, 1, 1 },
+	.look_target = {
+		.tween_speed = 1.f,
+	},
+	.update = &fish_update,
+	.vertShader = &fish_vertShader,
+	.scene = &FishingScene,
 };
 
 struct Actor object_terrain = {
 	.name = "Terrain",
-	.mesh = &terrain1,
-	.position = { 0, -1.5f, 0 },
+	.visible = true,
+	.mesh = &flat_plane, //&terrain1,
+	.position = { 0, 0, 0 },
 	.rotation = { 0, 0, 0 },
-	.scale = { 1, 1, 1 },
+	.scale = { 10, 1, 30 },
+	.scene = &FishingScene,
+};
+
+struct Actor object_cast_selector = {
+	.name = "Cast Selector",
+	.visible = true,
+	.mesh = &mesh_cube,
+	.position = { 0, .5f, 0 },
+	.rotation = { 0, 0, 0 },
+	.scale = { .1f, .01f, .1f },
+	//.update = &lure_update,
 	.scene = &FishingScene,
 };
 
@@ -70,16 +119,19 @@ struct Actor object_terrain = {
 
 struct Actor camera_default_object = {
 	.name = "Default Camera",
+	.visible = true,
 	.position = { 0, 2.5f, 5.0f },
 	.rotation = { 0, 0, 0},
 	.scale = { 1, 1, 1 },
 	.look_target = {
 		.tween_speed = 1.f,
-	}
+	},
+	.update = &underwater_camera_update,
 };
 
 struct Actor camera_secondary_object = {
 	.name = "Secondary Camera",
+	.visible = true,
 	.position = { -4.0f, 4.f, 2.0f },
 	.rotation = { 0, 3.14f, 0},
 	.scale = { 1, 1, 1 },
@@ -90,6 +142,7 @@ struct Actor camera_secondary_object = {
 
 struct Actor camera_lake_object = {
 	.name = "Lake Camera",
+	.visible = true,
 	.position = { 0.f, 2.f, 5.0f },
 	.rotation = { 0, 0, 0},
 	.scale = { 1, 1, 1 },
@@ -105,9 +158,6 @@ struct Camera camera_default = {
 	.fov = 60.0f,
 	.far_fog = 10.0f,
 	.near_fog = 1,
-	//.look_target = &GLOBAL_ORIGIN,
-	//.position = { 0, 2.5, 5.0f },
-	//.rotation = {0,0,0},
 	.render_mode = RENDER_WIREFRAME,
 	.light_dir = { .5f,.5f,.5f },
 };
@@ -120,9 +170,6 @@ struct Camera camera_secondary = {
 	.fov = 60.0f,
 	.far_fog = 10.0f,
 	.near_fog = 1,
-	//.look_target = &GLOBAL_ORIGIN,
-	//.position = { 0, 2.5, 5.0f },
-	//.rotation = {0,0,0},
 	.render_mode = RENDER_WIREFRAME,
 	.light_dir = { .5f,.5f,.5f },
 };
@@ -142,6 +189,47 @@ struct Camera camera_lake = {
 	Methods
 */
 
+#define WATER_SURFACE_Y 10
+bool fsm_fishing_cast_to_reeling() {
+	pd->system->logToConsole("CAST -> REELING");
+	
+	object_lure.position.x = MAP_RANGE(-5, 5, -10, 10, object_cast_selector.position.x);
+	object_lure.position.z = MAP_RANGE(-5, 5, -30, 30, object_cast_selector.position.z);
+	object_lure.position.y = WATER_SURFACE_Y;
+
+
+	LakeView.Visible = false;
+	UnderwaterView.Visible = true;
+
+	camera_default_object.position.z = object_lure.position.z + 5;
+	camera_default_object.position.y = object_lure.position.y - 3;
+	camera_default_object.position.x = object_lure.position.x;
+
+	return true;
+}
+
+bool fsm_fishing_reeling_to_cast() {
+	pd->system->logToConsole("CAUGHT NOTHING");
+
+	object_cast_selector.position.x = 0;
+	object_cast_selector.position.y = 0;
+	object_cast_selector.position.z = 0;
+
+	object_cast_selector.scale.x = .1f;
+	object_cast_selector.scale.z = .1f;
+
+	LakeView.Visible = true;
+	UnderwaterView.Visible = false;
+
+	return true;
+}
+
+void fsm_fishing_init()
+{
+	fsm_fishing.on_change[FSM_CASTING][FSM_REELING] = &fsm_fishing_cast_to_reeling;
+	fsm_fishing.on_change[FSM_REELING][FSM_CASTING] = &fsm_fishing_reeling_to_cast;
+}
+
 float ticker_x = 420;
 const float TICKER_SPEED = 90;
 char* ticker_queue[32];
@@ -151,20 +239,20 @@ char* ticker_buffer = "            ";
 int ticker_filler_index = 0;
 LCDFont* TICKER_FONT;
 char* ticker_filler_table[] = {
-	////"Trying to sneak into the fish heaven? You'll need to complete all the lake rituals!",
-	//"Here's my fish impression: glub glub glub glub glub glub glub glub glub glub",
-	//"If you hold your breath for too long, you'll die.",
-	///"Some fish have evolved the ability to have feelings about sports.",
-	////"Having trouble attracting a fish? Try changing the lure! There's someone out there for everybody, according to my ex. Monica, I still love you.",
-	//"If you're a fish cop, you have to tell me, or it's entrapment.",
-	//"The Fish Vatican is located somewhere in Italy, but I've never been there.",
+	//"Trying to sneak into the fish heaven? You'll need to complete all the lake rituals!",
+	"Here's my fish impression: glub glub glub glub glub glub glub glub glub glub",
+	"If you hold your breath for too long, you'll die.",
+	"Some fish have evolved the ability to have feelings about sports.",
+	//"Having trouble attracting a fish? Try changing the lure! There's someone out there for everybody, according to my ex. Monica, I still love you.",
+	"If you're a fish cop, you have to tell me, or it's entrapment.",
+	"The Fish Vatican is located somewhere in Italy, but I've never been there.",
 	//"Today's winning lottery numbers are: 2 94 84 2 65 8 19 297 4 3 27 3 7273 42 72 27",
-	////"Da early fish gets da worm.",
-	//"Don't throw empty beer cans into the lake. The fish are trying to cut back.",
-	"Religious oppression has been reported in Florida. World Government has been dispatched to assist.",
+	//"Da early fish gets da worm.",
+	"Don't throw empty beer cans into the lake. The fish are trying to cut back.",
+	/*"Religious oppression has been reported in Florida. World Government has been dispatched to assist.",
 	"Have you read the New New New International Version translation of scripture?",
 	"The rivers have turned to blood throughout Europe. Fishing is on hold under further notice.",
-	"Crowds chanting 'there is no God' have destroyed priceless monuments. Sadly, this is common.",
+	"Crowds chanting 'there is no God' have destroyed priceless monuments. Sadly, this is common.",*/
 	NULL
 };
 char ticker_text[1024];
@@ -251,6 +339,7 @@ void ticker_clear_first()
 	}
 }
 
+// BUG: Repeats same "random" ticker item
 void ui_news_ticker()
 {
 	static const TICKER_HEIGHT = 18;
@@ -341,7 +430,7 @@ void ui_depth()
 
 		if (i % mod_by == 0)
 		{
-			itoa(i, s_text, 10);
+			itoa(abs(i), s_text, 10);
 			pd->graphics->drawText(s_text, strlen(s_text), kASCIIEncoding, line_width + 2, y - 7);
 		}
 	}
@@ -354,7 +443,7 @@ void ui_depth()
 float yards = 40;
 void ui_yards()
 {
-	char s_yards[4] = "000";
+	char s_yards[5] = "000";
 	itoa(yards, s_yards, 10);
 
 	float s_width = pd->graphics->getTextWidth(FONT_MONTSERRAT_BLACK_24, s_yards, strlen(s_yards), kASCIIEncoding, 0);
@@ -382,18 +471,36 @@ void ui_radar()
 	// TODO: Draw to radar buffer, update.
 }
 
+#define TENSION_METER_HEIGHT 170
+#define TENSION_METER_WIDTH 24
+#define TENSION_OFFSET_BUFFER 8
+float tension_offset_x = TENSION_METER_WIDTH + TENSION_OFFSET_BUFFER;
+bool tension_meter_visible = false;
 
 float line_integrity = 1.f;
 float line_tension = 0.f;
 void ui_tension()
 {
+	// Slide in / out as visibility changes
+	if (tension_meter_visible)
+	{
+		// TODO: Use curve ramp
+		if (tension_offset_x > 0)
+			tension_offset_x -= DELTA_TIME * 60;
+		else tension_offset_x = 0;
+	}
+	else
+	{
+		if (tension_offset_x < TENSION_METER_WIDTH + TENSION_OFFSET_BUFFER)
+			tension_offset_x += DELTA_TIME * 60;
+		else tension_offset_x = TENSION_METER_WIDTH + TENSION_OFFSET_BUFFER;
+	}
+
 	float h = 0;
 	float a = .3; // First threshold % value
 	float b = .9; // Second threshold % value
 	float aY = .5f; // First threshold % location
 	float bY = .8f; // Second threshold % location
-	int meterHeight = 170;
-	int meterWidth = 24;
 	int buffer = 4;
 	int border = 2;
 
@@ -417,45 +524,45 @@ void ui_tension()
 	}
 
 	pd->graphics->fillRect(
-		400 - meterWidth - buffer - border * 2,
+		400 - TENSION_METER_WIDTH - buffer - border * 2 + tension_offset_x,
 		buffer + border,
-		meterWidth + border * 2,
-		meterHeight + border * 2,
+		TENSION_METER_WIDTH + border * 2,
+		TENSION_METER_HEIGHT + border * 2,
 		kColorBlack
 	);
 	pd->graphics->drawRect(
-		400 - meterWidth - buffer - border,
+		400 - TENSION_METER_WIDTH - buffer - border + tension_offset_x,
 		buffer + border * 2,
-		meterWidth,
-		meterHeight,
+		TENSION_METER_WIDTH,
+		TENSION_METER_HEIGHT,
 		kColorWhite
 	);
 
 	pd->graphics->drawLine(
-		400 - meterWidth - buffer - border,
-		(meterHeight + buffer + border) - meterHeight * aY,
-		400 - buffer - border - 1,
-		(meterHeight + buffer + border) - meterHeight * aY,
+		400 - TENSION_METER_WIDTH - buffer - border + tension_offset_x,
+		(TENSION_METER_HEIGHT + buffer + border) - TENSION_METER_HEIGHT * aY,
+		400 - buffer - border - 1 + tension_offset_x,
+		(TENSION_METER_HEIGHT + buffer + border) - TENSION_METER_HEIGHT * aY,
 		1,
 		kColorWhite
 	);
 	pd->graphics->drawLine(
-		400 - meterWidth - buffer - border,
-		(meterHeight + buffer + border) - meterHeight * bY,
-		400 - buffer - border - 1,
-		(meterHeight + buffer + border) - meterHeight * bY,
+		400 - TENSION_METER_WIDTH - buffer - border + tension_offset_x,
+		(TENSION_METER_HEIGHT + buffer + border) - TENSION_METER_HEIGHT * bY,
+		400 - buffer - border - 1 + tension_offset_x,
+		(TENSION_METER_HEIGHT + buffer + border) - TENSION_METER_HEIGHT * bY,
 		1,
 		kColorWhite
 	);
 
-	float adjMeterWidth = line_integrity * meterWidth;
+	float adjMeterWidth = line_integrity * TENSION_METER_WIDTH;
 	if ((int)adjMeterWidth % 2 != 0) adjMeterWidth = (int)adjMeterWidth + 1;
 
 	pd->graphics->fillRect(
-		(400.f - meterWidth - buffer - border) + ((float)meterWidth - adjMeterWidth + 1) / 2.f,
-		(buffer + border + meterHeight + 2) - meterHeight * h,
+		(400.f - TENSION_METER_WIDTH - buffer - border) + ((float)TENSION_METER_WIDTH - adjMeterWidth + 1) / 2.f + tension_offset_x,
+		(buffer + border + TENSION_METER_HEIGHT + 2) - TENSION_METER_HEIGHT * h,
 		adjMeterWidth,
-		h * meterHeight,
+		h * TENSION_METER_HEIGHT,
 		kColorWhite
 	);
 }
@@ -476,6 +583,90 @@ void fish_update()
 void lure_update()
 {
 	object_lure.rotation.y += DELTA_TIME;
+
+	//object_lure.position.y -= DELTA_TIME;
+	//if (object_lure.position.y < 0) object_lure.position.y = 0;
+
+
+	// TODO: use to play crank clicks
+	int crank_ticks = playdate_getCrankTicks(10);
+	float crank_change = pd->system->getCrankChange();
+	if (crank_ticks != 0) // We don't care about direction currently
+	{
+		pd->system->logToConsole("change %d", crank_change);
+		pd->system->logToConsole("ticks %d", crank_ticks);
+		//pd->sound->sampleplayer->setVolume(reel_click_player);
+		//if (crank_ticks <- 1)
+		//{
+		//	if (!pd->sound->sampleplayer->isPlaying(reel_long_player))
+		//		pd->sound->sampleplayer->play(reel_long_player, 1, 1.f);
+		//}
+		//else {
+			//pd->sound->sampleplayer->stop(reel_long_player);
+
+			float volume = (fabsf(crank_ticks) / 10) * .75f + .25f;
+			pd->sound->sampleplayer->setVolume(reel_click_player, volume, volume);
+			pd->sound->sampleplayer->play(reel_click_player, 1, 1.f);
+		//}
+	}
+
+
+
+	if (fsm_fishing.current_state == FSM_REELING ||
+		fsm_fishing.current_state == FSM_FISH_ON)
+	{
+		if (ActiveLure->update != 0x0) {
+			ActiveLure->update(ActiveLure, &object_lure);
+		}
+
+		float change = pd->system->getCrankChange();
+		if (UnderwaterView.Visible && change != 0) // We don't care about direction currently
+		{
+			//object_lure.position.z -= change * .002f;
+			//object_lure.position.y -= change * .001f;
+
+			if (ActiveLure->move != 0x0) {
+				ActiveLure->move(ActiveLure, &object_lure, fabsf(crank_change));
+			}
+		}
+
+		if (yards <= 5) // TODO: Define "return to shore" threshold
+		{
+			yards = 1000;
+			if (fsm_fishing.current_state == FSM_REELING)
+			{
+				// Return to shore without fish
+				fsm_set_state(&fsm_fishing, FSM_CASTING);
+			}
+			else if (fsm_fishing.current_state == FSM_FISH_ON)
+			{
+				// Caught a fish! Show results.
+				fsm_set_state(&fsm_fishing, FSM_RESULTS);
+			}
+		}
+	}
+
+}
+
+struct Vector3 target_underwater_camera_position = { 0 };
+void underwater_camera_update()
+{
+	target_underwater_camera_position.z = object_lure.position.z + 3;
+	target_underwater_camera_position.y = MAX(object_lure.position.y + 3, 0);
+	target_underwater_camera_position.x = object_lure.position.x;
+
+	/*if (camera_default_object.position.z > object_lure.position.z + 1)
+		camera_default_object.position.z = object_lure.position.z + 1;*/
+
+	struct Vector3 diff = Vector3_subtract(&camera_default_object.position, &target_underwater_camera_position);
+	if (Vector3_lengthSquared(&diff) > .1f)
+	{
+		diff = Vector3_multiplyScalar(&diff, DELTA_TIME *2);
+	
+		camera_default_object.position = Vector3_subtract(&camera_default_object.position, &diff);
+	}
+
+	// TODO: Add camera controls (but not too extreme so we can use our clipping hack)
 }
 
 void fish_vertShader (struct Actor* act, int time, struct Vector3* v_out)
@@ -490,29 +681,126 @@ void fishing_scene_init()
 	LookTarget_setTarget(&object_fish.look_target, &object_lure.position);
 	LookTarget_setTarget(&camera_default.actor->look_target, &object_lure.position);
 	LookTarget_setTarget(&camera_secondary.actor->look_target, &object_lure.position);
+	LookTarget_setTarget(&camera_lake.actor->look_target, &object_cast_selector.position);
 
 	ticker_add_from(ticker_filler_table);
 	TICKER_FONT = FONT_MONTSERRAT_BOLD_14;
+
+	fsm_fishing.init();
+	fsm_set_state(&fsm_fishing, FSM_LOADING);
+
+	reel_click_player = pd->sound->sampleplayer->newPlayer();
+	reel_long_player = pd->sound->sampleplayer->newPlayer();
+
+	// Load Assets
+	// TODO: Loading screen
+	audio_reel_click = pd->sound->sample->load("Assets/Sounds/reel_click_single.wav");
+	audio_reel_long = pd->sound->sample->load("Assets/Sounds/reel_click_long.wav");
+	//float length = pd->sound->sample->getLength(audio_reel_click);
+	pd->sound->sampleplayer->setSample(reel_click_player, audio_reel_click);
+	pd->sound->sampleplayer->setSample(reel_long_player, audio_reel_long);
+}
+
+
+float lure_fitness = 0;
+struct CrankPeriod crank_buffer[TIMING_BUFFER_LENGTH];
+void shift_crank_buffer(float duration, float distance)
+{
+	float deg_per_second = (duration > 0 ? distance / duration / 360 : 0);
+	pd->system->logToConsole("duration: %f, distance: %f, speed: %f", duration, distance, deg_per_second);
+
+	// Find last empty space if the buffer isn't full
+	int last_value_index = -1;
+	for (int i = 0; i < TIMING_BUFFER_LENGTH - 1; i++)
+	{
+		if (crank_buffer[i].duration > 0)
+		{
+			last_value_index = i;
+		}
+	}
+
+	// Shift everything to the left
+	if (last_value_index == TIMING_BUFFER_LENGTH - 2)
+	{
+		for (int i = 0; i < TIMING_BUFFER_LENGTH - 1; i++)
+		{
+			crank_buffer[i] = crank_buffer[i + 1];
+		}
+	}
+
+	// Insert new value in first empty spot
+	crank_buffer[last_value_index + 1].duration = duration;
+	crank_buffer[last_value_index + 1].distance = distance;
+	
+	if (ActiveLure->timing_pattern != NULL && ActiveLure->fit_score_pattern != NULL)
+	{
+		lure_fitness = ActiveLure->fit_score_pattern(crank_buffer, ActiveLure->timing_pattern);
+		pd->system->logToConsole("fitness: %f", lure_fitness);
+	}
 }
 
 float pullMod = 1;
+float test_timer = 0;
+int lake_length = 100;
+
+float crank_duration = 0;
+float idle_duration = 0;
+float crank_distance = 0;
+#define IDLE_DEADZONE .2f
+bool is_cranking = false;
+
 void fishing_scene_update()
 {
 	ticker_x -= DELTA_TIME * TICKER_SPEED;
-	yards -= DELTA_TIME * 2;
-	if (yards < 0) yards = 40;
 
-	depth -= DELTA_TIME * 4.75f;
+	float change = pd->system->getCrankChange();
 
-	line_tension += pullMod * DELTA_TIME * .25f;
-	if (line_tension > 1) {
-		line_tension = 1;
-		pullMod = -1;
+	if (change != 0) {
+		if (!is_cranking) // First frame cranking, previously idle
+		{
+			// Add idle_duration to buffer
+			shift_crank_buffer(idle_duration, 0);
+
+			crank_duration = 0;
+			crank_distance = 0;
+		}
+		// Direction changed without idle period?
+		else if ( (change < 0) != (crank_distance < 0) ) { // sign diff check
+			pd->system->logToConsole("Change direction %f -> %f", change, crank_distance);
+			// Add crank_duration to buffer
+			shift_crank_buffer(crank_duration, crank_distance);
+
+			idle_duration = 0;
+			crank_duration = 0;
+		}
+
+		idle_duration = 0;
+		is_cranking = true;
+		crank_duration += DELTA_TIME;
+		crank_distance += change;
 	}
-	else if (line_tension < 0)
+	else 
 	{
-		line_tension = 0;
-		pullMod = 1;
+		if (idle_duration > IDLE_DEADZONE) {
+			if (is_cranking) // First frame idle
+			{
+				// Add crank_duration to buffer
+				shift_crank_buffer(crank_duration, crank_distance);
+
+				idle_duration = 0;
+				crank_duration = 0;
+			}
+
+			is_cranking = false;
+		}
+
+		idle_duration += DELTA_TIME;
+	}
+
+	if (fsm_fishing.current_state == FSM_REELING || fsm_fishing.current_state == FSM_FISH_ON)
+	{
+		depth = object_lure.position.y - WATER_SURFACE_Y;
+		yards = MAP_RANGE(-30, 30, 100, 0, object_lure.position.z);
 	}
 
 	if (line_tension > .98f)
@@ -525,21 +813,78 @@ void fishing_scene_update()
 		}
 	}
 
+	fsm_fishing.update();
+}
 
-	
-	//pull = fabsf(sinf(pd->system->getCurrentTimeMilliseconds() / 500.f));
-	//tension = fabsf(sinf(pd->system->getCurrentTimeMilliseconds() / 1234.f));
 
-	if (pressedButtons & kButtonB)
+void fsm_fishing_update()
+{
+	switch (fsm_fishing.current_state)
 	{
-		LakeView.Visible = !LakeView.Visible;
-		UnderwaterView.Visible = !LakeView.Visible;
+	case FSM_LOADING:
+		// Do initial scene stuff
+
+		fsm_set_state(&fsm_fishing, FSM_CASTING);
+		break;
+
+	case FSM_CASTING:
+		//pd->system->logToConsole("FSM_CASTING");
+		break;
 	}
 }
 
+#define CAST_SELECTOR_SPEED 5
+#define CAST_ANIMATION_TIME 1
+float cast_animation_timer = 0;
 void lake_update()
 {
+	// TODO: Add bounds
+	if (heldButtons & kButtonLeft) {
+		object_cast_selector.position.x += DELTA_TIME * CAST_SELECTOR_SPEED;
+	}
+	else if (heldButtons & kButtonRight) {
+		object_cast_selector.position.x -= DELTA_TIME * CAST_SELECTOR_SPEED;
+	}
 
+	if (heldButtons & kButtonUp) {
+		object_cast_selector.position.z -= DELTA_TIME * CAST_SELECTOR_SPEED;
+	}
+	else if (heldButtons & kButtonDown) {
+		object_cast_selector.position.z += DELTA_TIME * CAST_SELECTOR_SPEED;
+	}
+
+	if (object_cast_selector.position.x > 5) object_cast_selector.position.x = 5;
+	if (object_cast_selector.position.x < -5) object_cast_selector.position.x = -5;
+
+	if (object_cast_selector.position.z > 5) object_cast_selector.position.z = 5;
+	if (object_cast_selector.position.z < -5) object_cast_selector.position.z = -5;
+
+	if (fsm_fishing.current_state == FSM_CASTING)
+	{
+		// Cast selection
+		if (pressedButtons & kButtonA && cast_animation_timer == 0)
+		{
+			// Trigger cast animation playing out
+			cast_animation_timer = CAST_ANIMATION_TIME;
+		}
+
+		// When that's done, go to FSM_REELING
+		if (cast_animation_timer > 0) 
+		{
+			cast_animation_timer -= DELTA_TIME;
+
+			object_cast_selector.scale.x =
+				object_cast_selector.scale.z -= DELTA_TIME * .1f / CAST_ANIMATION_TIME;
+
+			// If we _were_ above 0 and now we're not
+			if (cast_animation_timer <= 0)
+			{
+				cast_animation_timer = 0;
+
+				fsm_set_state(&fsm_fishing, FSM_REELING);
+			}
+		}
+	}
 }
 
 void lake_draw()
@@ -549,22 +894,28 @@ void lake_draw()
 
 void lake_postdraw()
 {
-	// TODO: Add scene postdraw stage for UI that gets shared across views
 	// UI Rendering
-	//ui_depth(); // render before yards / ticker
-	ui_yards();
+	if (fsm_fishing.current_state == FSM_FISH_ON)
+	{
+		ui_yards();
+		ui_tension();
+	}
 	ui_news_ticker();
-	ui_tension();
+}
+
+
+void underwater_update()
+{
 }
 
 void underwater_draw()
 {
-
 }
 
 void underwater_postdraw()
 {
-	// TODO: Add scene postdraw stage for UI that gets shared across views
+	YPlane_render(frame, &camera_default, WATER_SURFACE_Y, false);
+
 	// UI Rendering
 	ui_depth(); // render before yards / ticker
 	ui_yards();
@@ -574,19 +925,13 @@ void underwater_postdraw()
 	ui_tension();
 }
 
-void underwater_update()
-{
-
-}
-
-
 /* 
 	Scene Object
 */
 
 struct View UnderwaterView = {
 	.Enabled = true,
-	.Visible = true,
+	.Visible = false,
 	.numCameras = 2,
 	.cameras = (struct Camera* []){
 		&camera_default,
@@ -599,21 +944,24 @@ struct View UnderwaterView = {
 		&object_lure,
 		NULL
 	},
+	.update = &underwater_update,
 	.draw = &underwater_draw,
 	.postdraw = &underwater_postdraw,
 };
 
 struct View LakeView = {
 	.Enabled = true,
-	.Visible = false,
+	.Visible = true,
 	.numCameras = 1,
 	.cameras = (struct Camera* []){
 		&camera_lake,
 		NULL
 	},
 	.actors = (struct Actor* []){
+		&object_cast_selector,
 		NULL
 	},
+	.update = &lake_update,
 	.draw = &lake_draw,
 	.postdraw = &lake_postdraw,
 };
@@ -622,8 +970,8 @@ struct Scene FishingScene = {
 	.init = &fishing_scene_init,
 	.update = &fishing_scene_update,
 	.views = (struct View* []) {
-		&UnderwaterView,
 		&LakeView,
+		&UnderwaterView,
 		NULL
 	},
 };

@@ -31,8 +31,8 @@ set(PLAYDATE_GAME_DEVICE ddd)
 project(${PLAYDATE_GAME_NAME} C ASM)
 
 file(GLOB DDD_GLOB
-     "ddd/*.c"
-     "ddd/*.h"
+     "engine/*.c"
+     "engine/*.h"
 )
 
 file(GLOB ASSETS_GLOB

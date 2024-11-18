@@ -1,4 +1,7 @@
-#include "../engine/symbols.h"
+#ifndef __MODEL_BLAHAJ_TRI__
+#define __MODEL_BLAHAJ_TRI__
+
+#include "../../engine/symbols.h"
 
 struct Mesh blahaj_tri = {
 	.name = "blahaj_tri",
@@ -632,3 +635,5 @@ struct Mesh blahaj_tri = {
 		189,193,188
 	}
 };
+
+#endif

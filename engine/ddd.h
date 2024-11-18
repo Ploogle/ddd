@@ -8,6 +8,7 @@
 #include "actor.h"
 #include "scene.h"
 #include "globals.h"
+#include "pd_stub.h"
 
 #include <stdio.h>
 #include <stdint.h>

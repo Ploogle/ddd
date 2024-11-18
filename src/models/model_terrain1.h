@@ -1,4 +1,4 @@
-#include "../engine/symbols.h"
+#include "../../engine/symbols.h"
 
 struct Mesh terrain1 = {
 	.name="terrain1",

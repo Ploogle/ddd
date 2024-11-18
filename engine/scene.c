@@ -7,16 +7,26 @@ void Scene_update(struct Scene* scene)
 	{
 		if (!scene->views[v]->Enabled) continue;
 
-		// First update all our game objects
+		if (scene->views[v]->update != 0x0)
+			scene->views[v]->update();
+
+		// First update all our actors
 		for (int i = 0; i < scene->views[v]->actors[i] != NULL; i++)
 		{
 			// TODO: project actors right before update
-			if (scene->views[v]->actors[i]->update != NULL)
+			if (scene->views[v]->actors[i]->update != 0x0)
 				scene->views[v]->actors[i]->update();
 
 			LookTarget_tick(&scene->views[v]->actors[i]->look_target);
 
 			Actor_updateTransform(scene->views[v]->actors[i]);
+		}
+
+		// Then update camera actors
+		for (int i = 0; i < scene->views[v]->cameras[i] != NULL; i++)
+		{
+			if (scene->views[v]->cameras[i]->actor->update != 0x0)
+				scene->views[v]->cameras[i]->actor->update();
 		}
 	}
 
@@ -27,7 +37,5 @@ void Scene_update(struct Scene* scene)
 
 	// Now call the custom update logic, if defined
 	if (scene->update!= NULL)
-	{
 		scene->update();
-	}
 }

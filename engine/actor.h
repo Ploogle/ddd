@@ -24,6 +24,8 @@ typedef struct Actor
 	// the calculated value.
 	struct Matrix4x4 transform;
 
+	bool visible;
+
 	int num_children;
 	struct Actor** children;
 	struct Actor* parent;

@@ -93,11 +93,12 @@ void Actor_drawMesh(uint8_t* bitmap, struct Actor* act, struct Camera* camera)
 		projected_vertices[i] = Matrix4_apply(&act->transform, &projected_vertices[i]);
 		
 		// Z limiting
-		/*if (projected_vertices[i].z > (camera->position.z - camera->near))
+		// TODO: Actual clipping?
+		if (m->z_limit && projected_vertices[i].z > (camera->actor->position.z - camera->near))
 		{
-			projected_vertices[i].z = camera->position.z - camera->near;
+			projected_vertices[i].z = camera->actor->position.z - camera->near;
 			projected_vertices[i].y = 0.75f;
-		}*/
+		}
 
 		screen_vertices[i] = projected_vertices[i];
 		screen_vertices[i] = Vector3_subtract(&screen_vertices[i], &camera->actor->position);
@@ -160,10 +161,10 @@ void Actor_drawMesh(uint8_t* bitmap, struct Actor* act, struct Camera* camera)
 			point[ii] = screen_vertices[tri->indices[ii]];
 		}
 
-		api_fillTriangle(bitmap, LCD_ROWSIZE, &point[0], &point[1], &point[2], &patterns[tri->shade]);
+		api_fillTriangle(bitmap, LCD_ROWSIZE, &point[0], &point[1], &point[2], &patterns[tri->shade], tri->shade);
 	}
 
-	// Free the vertex projection memory
+	// Free the struct Vector3 projection memory
 	pd->system->realloc(projected_vertices, 0);
 	projected_vertices = NULL;
 
@@ -282,7 +283,7 @@ void sortTri(struct Vector3** p1, struct Vector3** p2, struct Vector3** p3)
 }
 
 // == "Borrowed" from SDK 3D Project ==
-void api_fillTriangle(uint8_t* bitmap, int rowstride, struct Vector3* p1, struct Vector3* p2, struct Vector3* p3, uint8_t pattern[8])
+void api_fillTriangle(uint8_t* bitmap, int rowstride, struct Vector3* p1, struct Vector3* p2, struct Vector3* p3, uint8_t pattern[8], char shade)
 {
 	// sort by y coord
 	sortTri(&p1, &p2, &p3);
@@ -300,25 +301,26 @@ void api_fillTriangle(uint8_t* bitmap, int rowstride, struct Vector3* p1, struct
 	int32_t dx1 = MIN(sb, sc);
 	int32_t dx2 = MAX(sb, sc);
 	
-	api_fillRange(bitmap, rowstride, p1->y, MIN(LCD_ROWS, p2->y), &x1, dx1, &x2, dx2, pattern);
+	api_fillRange(bitmap, rowstride, p1->y, MIN(LCD_ROWS, p2->y), &x1, dx1, &x2, dx2, pattern, shade);
 	
 	int dx = api_slope(p2->x, p2->y, p3->x, p3->y);
 	
 	if ( sb < sc )
 	{
 		x1 = p2->x * (1<<16);
-		api_fillRange(bitmap, rowstride, p2->y, endy, &x1, dx, &x2, dx2, pattern);
+		api_fillRange(bitmap, rowstride, p2->y, endy, &x1, dx, &x2, dx2, pattern, shade);
 	}
 	else
 	{
 		x2 = p2->x * (1<<16);
-		api_fillRange(bitmap, rowstride, p2->y, endy, &x1, dx1, &x2, dx, pattern);
+		api_fillRange(bitmap, rowstride, p2->y, endy, &x1, dx1, &x2, dx, pattern, shade);
 	}
 }
 
-void api_fillRange(uint8_t* bitmap, int rowstride, int y, int endy, int32_t* x1p, int32_t dx1, int32_t* x2p, int32_t dx2, uint8_t pattern[8])
+void api_fillRange(uint8_t* bitmap, int rowstride, int y, int endy, int32_t* x1p, int32_t dx1, int32_t* x2p, int32_t dx2, uint8_t pattern[8], char shade)
 {
 	int32_t x1 = *x1p, x2 = *x2p;
+	int starty = y;
 	
 	if ( endy < 0 )
 	{
@@ -335,26 +337,33 @@ void api_fillRange(uint8_t* bitmap, int rowstride, int y, int endy, int32_t* x1p
 		y = 0;
 	}
 	
+	float y_perc = 0;
+	float y_inc = 1.f / (float)(endy - starty);
 	while ( y < endy )
 	{
-		uint8_t p = pattern[y%8];
+		uint8_t p = patterns[shade][y % 8];
+		//uint8_t p = pattern[y%8];
 		uint32_t color = (p<<24) | (p<<16) | (p<<8) | p;
+
+		/*if (y_perc > .25f && y_perc < .75f)
+			color = 0;*/
 
 		if (y > RENDER_Y_START && y < RENDER_Y_END)
 		{
-			api_drawFragment((uint32_t*)&bitmap[y * rowstride], (x1 >> 16), (x2 >> 16) + 1, color);
+			api_drawFragment((uint32_t*)&bitmap[y * rowstride], (x1 >> 16), (x2 >> 16) + 1, y, color);
 		}
 
 		x1 += dx1;
 		x2 += dx2;
 		++y;
+		y_perc += y_inc;
 	}
 	
 	*x1p = x1;
 	*x2p = x2;
 }
 
-void api_drawFragment(uint32_t* row, int x1, int x2, uint32_t color)
+void api_drawFragment(uint32_t* row, int x1, int x2, int y, uint32_t color)
 {
 	if (x1 < RENDER_X_START) x1 = RENDER_X_START;
 	if (x2 > RENDER_X_END) x2 = RENDER_X_END;
@@ -381,6 +390,11 @@ void api_drawFragment(uint32_t* row, int x1, int x2, uint32_t color)
 	int col = x1 / 32;
 	uint32_t* p = row + col;
 
+	float x_perc = 0;
+	float x_inc = 1.f / ((float)(x2 - x1) / 34.f);
+	/*uint8_t pat = patterns[0][y % 8];
+	color = (pat << 24) | (pat << 16) | (pat << 8) | pat;*/
+
 	if ( col == x2 / 32 )
 	{
 		uint32_t mask = 0;
@@ -397,17 +411,22 @@ void api_drawFragment(uint32_t* row, int x1, int x2, uint32_t color)
 	else
 	{
 		int x = x1;
-		
+
 		if ( startbit > 0 )
 		{
 			api_drawMaskPattern(p++, startmask, color);
 			x += (32 - startbit);
+			x_perc += x_inc;
 		}
 		
 		while ( x + 32 <= x2 )
 		{
 			api_drawMaskPattern(p++, 0xffffffff, color);
 			x += 32;
+			x_perc += x_inc;
+
+			/*pat = patterns[(int)(x_perc * 32.f)][y % 8];
+			color = (pat << 24) | (pat << 16) | (pat << 8) | pat;*/
 		}
 		
 		if ( endbit > 0 )

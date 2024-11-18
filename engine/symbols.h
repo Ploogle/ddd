@@ -42,6 +42,7 @@ struct Mesh
 	struct Vector3 min_bounds;
 	struct Vector3 max_bounds;
 	char name[32];
+	bool z_limit;
 };
 
 struct Triangle
