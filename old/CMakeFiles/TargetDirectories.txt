@@ -1,0 +1,3 @@
+C:/Users/shrin/Documents/Playdate Projects/ddd/CMakeFiles/ddd.dir
+C:/Users/shrin/Documents/Playdate Projects/ddd/CMakeFiles/ALL_BUILD.dir
+C:/Users/shrin/Documents/Playdate Projects/ddd/CMakeFiles/ZERO_CHECK.dir
