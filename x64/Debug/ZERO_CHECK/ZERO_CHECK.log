@@ -1,6 +1,6 @@
 ﻿  1>Checking Build System
   CMake is re-running because C:/Users/shrin/Documents/Playdate Projects/ddd/CMakeFiles/generate.stamp is out-of-date.
-    the file 'C:/Users/shrin/Documents/Playdate Projects/ddd/CMakeLists.txt'
+    the file 'C:/Users/shrin/Documents/PlaydateSDK/C_API/buildsupport/playdate.cmake'
     is newer than 'C:/Users/shrin/Documents/Playdate Projects/ddd/CMakeFiles/generate.stamp.depend'
     result='-1'
   -- Building for: Visual Studio 17 2022
@@ -14,6 +14,6 @@
   -- Detecting C compile features
   -- Detecting C compile features - done
   -- SDK Path: C:/Users/shrin/Documents/PlaydateSDK
-  -- Configuring done (6.5s)
-  -- Generating done (0.1s)
+  -- Configuring done (5.6s)
+  -- Generating done (0.2s)
   -- Build files have been written to: C:/Users/shrin/Documents/Playdate Projects/ddd

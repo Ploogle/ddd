@@ -4,6 +4,7 @@
 #include "../models/model_blahaj_tri.h";
 #include "../models/model_terrain1.h";
 #include "../models/model_plane.h";
+#include "../models/model_grid_512_long.h";
 #include "../../engine/symbols.h";
 #include "../../engine/fsm.h";
 //#include "../../engine/pd_stub.h";
@@ -75,6 +76,7 @@ struct FSM fsm_fishing = {
  	.scale = { .05f, .05f, .05f },
 	.update = &lure_update,
 	.scene = &FishingScene,
+	.use_fog = true,
  };
 
  struct Actor object_fish = {
@@ -90,16 +92,19 @@ struct FSM fsm_fishing = {
 	.update = &fish_update,
 	.vertShader = &fish_vertShader,
 	.scene = &FishingScene,
+	.use_fog = true,
 };
 
 struct Actor object_terrain = {
 	.name = "Terrain",
 	.visible = true,
-	.mesh = &flat_plane, //&terrain1,
+	.mesh = &Grid512Long, //&terrain1, //  &flat_plane,
 	.position = { 0, 0, 0 },
 	.rotation = { 0, 0, 0 },
-	.scale = { 10, 1, 30 },
+	.scale = {15,1,15},// { 30, 1, 50 },
 	.scene = &FishingScene,
+	.use_fog = true,
+	.skip_black_triangles = true,
 };
 
 struct Actor object_cast_selector = {
@@ -194,7 +199,7 @@ bool fsm_fishing_cast_to_reeling() {
 	pd->system->logToConsole("CAST -> REELING");
 	
 	object_lure.position.x = MAP_RANGE(-5, 5, -10, 10, object_cast_selector.position.x);
-	object_lure.position.z = MAP_RANGE(-5, 5, -30, 30, object_cast_selector.position.z);
+	object_lure.position.z = MAP_RANGE(-5, 5, -20, 20, object_cast_selector.position.z);
 	object_lure.position.y = WATER_SURFACE_Y;
 
 
@@ -249,10 +254,6 @@ char* ticker_filler_table[] = {
 	//"Today's winning lottery numbers are: 2 94 84 2 65 8 19 297 4 3 27 3 7273 42 72 27",
 	//"Da early fish gets da worm.",
 	"Don't throw empty beer cans into the lake. The fish are trying to cut back.",
-	/*"Religious oppression has been reported in Florida. World Government has been dispatched to assist.",
-	"Have you read the New New New International Version translation of scripture?",
-	"The rivers have turned to blood throughout Europe. Fishing is on hold under further notice.",
-	"Crowds chanting 'there is no God' have destroyed priceless monuments. Sadly, this is common.",*/
 	NULL
 };
 char ticker_text[1024];
@@ -292,7 +293,7 @@ void ticker_add_from(char** table)
 	// TODO: Ensure that we don't get duplicates until we've shown them all.
 	//int idx = ((float)rand() / (float)RAND_MAX) * (length - 1);
 	int idx = ticker_filler_index++;
-	if (idx >= 4) idx = 0;
+	if (idx >= 6) idx = 0;
 	ticker_add(table[idx]);
 }
 
@@ -699,6 +700,23 @@ void fishing_scene_init()
 	//float length = pd->sound->sample->getLength(audio_reel_click);
 	pd->sound->sampleplayer->setSample(reel_click_player, audio_reel_click);
 	pd->sound->sampleplayer->setSample(reel_long_player, audio_reel_long);
+
+	float r = 0;
+	for (int i = 0; i < Grid512Long.numVertices; i++)
+	{
+		r = 0;
+		if (fabsf(Grid512Long.vertices[i].x) >= .25f)
+		{
+			r += ((float)rand() / (float)RAND_MAX) * fabsf(Grid512Long.vertices[i].x) * 1.f;
+			r += (fabsf(Grid512Long.vertices[i].x * Grid512Long.vertices[i].x) / 1.f) * 2.f;
+			//r += ((float)rand() / (float)RAND_MAX) * 1.5f;
+		}
+		else
+		{
+			r += ((float)rand() / (float)RAND_MAX) * .05f;
+		}
+		Grid512Long.vertices[i].y = r;
+	}
 }
 
 

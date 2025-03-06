@@ -2600,13 +2600,16 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\models\model_terrain1.h(299,2
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(6,35): warning C4067: unexpected tokens following preprocessor directive - expected a newline
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(7,34): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(7,43): warning C4067: unexpected tokens following preprocessor directive - expected a newline
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(8,30): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(8,34): warning C4067: unexpected tokens following preprocessor directive - expected a newline
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(10,27): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(9,30): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(11,27): warning C4067: unexpected tokens following preprocessor directive - expected a newline
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\data\lures.h(5,20): warning C4067: unexpected tokens following preprocessor directive - expected a newline
@@ -2630,142 +2633,145 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\data\lures.h(73,21): warning 
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\data\lures.h(76,24): warning C4113: 'float (__cdecl *)(CrankPeriod *,TimingComparison *)' differs in parameter lists from 'float (__cdecl *)(float *,TimingComparison *)'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(276,5): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-  (compiling source file 'src/main.c')
-  
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(265,2): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(277,5): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(266,2): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(303,31): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(267,2): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(316,4): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(304,31): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(328,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(317,4): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(331,3): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(329,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(332,3): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(360,75): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(333,3): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(391,31): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(361,75): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(399,10): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(392,31): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(399,31): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(400,10): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(400,11): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(400,31): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(400,33): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(401,11): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(429,29): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(401,33): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(429,44): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(430,29): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(434,85): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(430,44): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(396,16): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(435,85): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(397,16): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(419,21): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(398,16): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(433,4): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details.
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(420,21): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(447,7): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(434,4): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details.
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(459,81): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(448,7): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(447,2): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details.
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(460,81): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(449,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(448,2): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details.
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(527,51): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(450,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(534,47): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(528,51): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(542,47): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(535,47): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(543,44): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(543,47): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(544,29): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(544,44): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(545,44): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(545,29): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(550,47): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(546,44): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(551,44): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(551,47): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(552,29): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(552,44): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(553,44): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(553,29): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(559,70): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(554,44): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(562,108): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(560,70): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(563,48): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(563,108): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(564,3): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(564,48): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(565,5): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(565,3): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(500,12): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(566,5): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(501,12): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(577,17): warning C4101: 'move_forward': unreferenced local variable
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(502,12): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(580,17): warning C4101: 'trace_target': unreferenced local variable
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(578,17): warning C4101: 'move_forward': unreferenced local variable
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(607,26): warning C4244: 'function': conversion from 'int' to 'float', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(581,17): warning C4101: 'trace_target': unreferenced local variable
   (compiling source file 'src/main.c')
   
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(737,48): warning C4133: 'function': incompatible types - from 'CrankPeriod [20]' to 'float *'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(608,26): warning C4244: 'function': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(705,20): warning C4018: '<': signed/unsigned mismatch
+  (compiling source file 'src/main.c')
+  
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(755,48): warning C4133: 'function': incompatible types - from 'CrankPeriod [20]' to 'float *'
   (compiling source file 'src/main.c')
   
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_debug.h(2,30): warning C4067: unexpected tokens following preprocessor directive - expected a newline

@@ -57,6 +57,9 @@
     <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\engine\gradient.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\engine\pd_stub.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\engine\quaternion.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -69,12 +72,9 @@
     <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\engine\symbols.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="engine\pd_stub.h" />
-    <ClInclude Include="src\data\lure.h" />
-    <ClInclude Include="src\data\lures.h" />
-    <ClInclude Include="src\scenes\scene_debug.h" />
-    <ClInclude Include="src\models\model_plane.h" />
-    <ClInclude Include="engine\texture.h" />
+    <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\engine\texture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\shrin\Documents\Playdate Projects\ddd\CMakeLists.txt" />

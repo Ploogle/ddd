@@ -36,6 +36,7 @@ struct Mesh mesh_cube = {
 		5, 2, 1, // top2
 		0, 3, 4, // bottom2
 	}
+	,.triangle_colors = (float[]){1,1,1,1,1,1,1,1,1,1,1,1,}
 };
 
 #endif

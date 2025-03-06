@@ -1,6 +1,7 @@
 import sys
-import imageio.v3 as iio
 import getopt
+
+help = 'makemodel.py -f <file> -o <output> -n <name>'
 
 def main(argv):
     filename= ''
@@ -13,6 +14,8 @@ def main(argv):
     except getopt.GetoptError:
         print(help)
         sys.exit(2)
+
+    print(opts)
 
     if (opts == []):
         print(help)
@@ -33,7 +36,8 @@ def main(argv):
         indices = []
         bounds_min = [0, 0, 0]
         bounds_max = [0, 0, 0]
-        name = filename.split(".")[0].split("/")[-1]
+        if (not name):
+            name = filename.split(".")[0].split("/")[-1]
         print (name)
         with open(filename, "r") as objfile:
             for line in objfile:
@@ -75,7 +79,17 @@ def main(argv):
             nv = nv.replace("Z", vertex[2])
             verticesOut.append(nv)
 
-        output = '#include "../ddd/symbols.h"\n' \
+        ifdefName = '__' + name.upper() + '__'
+
+        # Default behavior; replace with actual colors if detected
+        # TODO: Detect actual material or vertex colors
+        triangleColors = []
+        for i in indices:
+            triangleColors.append("1")
+        output = '#ifndef ' + ifdefName + '\n'\
+        '#define ' + ifdefName + '\n' \
+        '\n' \
+        '#include "../../engine/symbols.h"\n' \
         '\n' \
         'struct Mesh ' + name + ' = {\n'\
         '\t.name="'+name+'",\n'\
@@ -88,15 +102,20 @@ def main(argv):
         '\t.max_bounds = {'+','.join(map(str, bounds_max))+"},\n"\
         '\t.indices = (uint16_t[]) {\n'+\
         ',\n'.join(indices)+'\n'\
-        '\t}\n' \
-        '};'
+        '\t},\n' \
+        '\t.triangle_colors = (float[]) {\n'+\
+        '\t\t'+','.join(triangleColors)+'\n'\
+        '\t},\n' \
+        '};\n' \
+        '\n' \
+        '#endif'
 
         if (outputpath):
             print ('Writing to', outputpath, '...')
             with open(outputpath, 'w') as f:
                 print(output, file=f)
         else:
-            print(output)
+            print ("No output path...")
         print('fin ~')
     
 

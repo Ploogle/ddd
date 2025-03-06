@@ -128,7 +128,7 @@ float pattern_fit_default(struct CrankPeriod cranks[TIMING_BUFFER_LENGTH], struc
 	if (f_end < 0) f_end = TIMING_BUFFER_LENGTH;
 
 	float final_fit = largest_fit / (f_end - lf_start);
-	return max(0, min(final_fit, 1));
+	return MAX(0, MIN(final_fit, 1));
 }
 
 float pattern_fit_morse(float times[10])

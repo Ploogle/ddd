@@ -10,6 +10,8 @@
 #include "camera.h"
 #include "bluenoise.h"
 
+#define FOG_RADIUS 12.f
+
 typedef uint8_t Pattern[8];
 
 static Pattern patterns[] =
@@ -54,6 +56,10 @@ int compare_zdepth(struct Triangle* a, struct Triangle* b)
 	return a->center.z - b->center.z;
 } 
 
+
+struct Vector3 projected_vertices[1024];
+//struct Vector3 screen_vertices[1024];
+struct Triangle tris[2048];
 // TODO: https://webglfundamentals.org/webgl/lessons/webgl-3d-orthographic.html
 //       ^^ Boil all transforms down to a single Matrix4x4
 void Actor_drawMesh(uint8_t* bitmap, struct Actor* act, struct Camera* camera)
@@ -62,57 +68,86 @@ void Actor_drawMesh(uint8_t* bitmap, struct Actor* act, struct Camera* camera)
 
 	struct Mesh* m = act->mesh;
 	
-	struct Vector3* projected_vertices = NULL;
-	struct Vector3* screen_vertices = NULL;
-	if (projected_vertices == NULL) {
+	/*if (projected_vertices == NULL) {
 		projected_vertices = pd->system->realloc(projected_vertices, sizeof(struct Vector3) * act->mesh->numVertices);
 	}
 	if (screen_vertices == NULL) {
 		screen_vertices = pd->system->realloc(screen_vertices, sizeof(struct Vector3) * act->mesh->numVertices);
-	}
-	struct Triangle* tris = NULL;
-	if (tris == NULL)
+	}*/
+
+	/*if (tris == NULL)
 	{
 		tris = pd->system->realloc(tris, sizeof(struct Triangle) * act->mesh->numIndices / 3);
-	}
+	}*/
 
 	int time_ms = pd->system->getCurrentTimeMilliseconds();
+	struct Matrix4x4 act_transform = act->transform;
+	struct Mesh act_mesh = *act->mesh;
+	struct Vector3 m_origin = m->origin;
+	struct Vector3 camera_actor_position = camera->actor->position;
+
+	int x_range = camera_actor_position.x - (FOG_RADIUS);
+	int z_range = camera_actor_position.z - (FOG_RADIUS);
 
 	for (int i = 0; i < act->mesh->numVertices; i++)
 	{
-		projected_vertices[i] = act->mesh->vertices[i];
+		projected_vertices[i] = act_mesh.vertices[i];
 
 		if (act->vertShader != 0x0) {
 			act->vertShader(act, time_ms, &projected_vertices[i]);
 		}
 
 		// Origin Translate
-		projected_vertices[i] = Vector3_subtract(&projected_vertices[i], &m->origin);
+		projected_vertices[i] = Vector3_subtract(&projected_vertices[i], &m_origin);
 
 		// Transform (translate -> scale -> rotate)
-		projected_vertices[i] = Matrix4_apply(&act->transform, &projected_vertices[i]);
-		
+		projected_vertices[i] = Matrix4_apply(&act_transform, &projected_vertices[i]);
+
 		// Z limiting
 		// TODO: Actual clipping?
-		if (m->z_limit && projected_vertices[i].z > (camera->actor->position.z - camera->near))
+		if (m->z_limit && projected_vertices[i].z > (camera_actor_position.z - camera->near))
 		{
-			projected_vertices[i].z = camera->actor->position.z - camera->near;
+			projected_vertices[i].z = camera_actor_position.z - camera->near;
 			projected_vertices[i].y = 0.75f;
 		}
 
-		screen_vertices[i] = projected_vertices[i];
-		screen_vertices[i] = Vector3_subtract(&screen_vertices[i], &camera->actor->position);
-		screen_vertices[i] = Matrix3_apply(&camera->rotate_transform, &screen_vertices[i]);
-		PTR_Camera_worldToScreenPos(camera, &screen_vertices[i]);
+		/*projected_vertices[i] = Vector3_subtract(&projected_vertices[i], &camera->actor->position);
+		projected_vertices[i] = Matrix3_apply(&camera->rotate_transform, &projected_vertices[i]);*/
+
+		/*screen_vertices[i] = projected_vertices[i];
+		PTR_Camera_worldToScreenPos(camera, &screen_vertices[i]);*/
 	}
 
 
+
+
+	struct Vector3 camera_light_dir = camera->light_dir;
 	struct Vector3 point[3] = { {0,0,0}, {0,0,0}, {0,0,0} };
 	int i = 0, p = 0;
 	int t_idx = 0;
 	for (i = 0; i < m->numIndices; i += 3, t_idx++)
 	{
-		for (int ii = 0; ii < 3; ii++) point[ii] = projected_vertices[m->indices[i + ii]];
+		int triangle_idx = (float)i / 3.f;
+		bool break_early = false;
+		for (int ii = 0; ii < 3; ii++)
+		{
+			point[ii] = projected_vertices[m->indices[i + ii]];
+
+			// If we're using fog, skip any geo that's definitely
+			// outside the fog radius on the x and y axes
+			if (act->use_fog)
+			{
+				if ((point[ii].x <= x_range || point[ii].x >= x_range + (FOG_RADIUS * 2)) ||
+					 (point[ii].z <= z_range || point[ii].z >= z_range + (FOG_RADIUS * 2)))
+				{
+					tris[t_idx] = (struct Triangle){ .visible = false };
+					break_early = true;
+				}
+			}
+
+		}
+		if (break_early) continue;
+
 
 		struct Vector3 normal = pnormal(&point[0], &point[1], &point[2]);
 		struct Vector3 center = {
@@ -120,18 +155,29 @@ void Actor_drawMesh(uint8_t* bitmap, struct Actor* act, struct Camera* camera)
 			.y = (point[0].y + point[1].y + point[2].y) / 3.0f,
 			.z = (point[0].z + point[1].z + point[2].z) / 3.0f,
 		};
-
-		struct Vector3 line_to_camera = Vector3_subtract(&camera->actor->position, &center);
-		float backface = Vector3_dot(normal, line_to_camera);
 		float worldZ0 = point[0].z;
 
-		float NdotL = Vector3_dot(normal, camera->light_dir);
-		float fog = 1;
+		/*for (int ii = 0; ii < 3; ii++)
+		{
+		//screen_vertices[i] = projected_vertices[i];
+			point[ii + i] = Vector3_subtract(&point[ii + i], &camera->actor->position);
+			point[ii + i] = Matrix3_apply(&camera->rotate_transform, &point[ii + i]);
+			PTR_Camera_worldToScreenPos(camera, &point[ii + i]);
+		}*/
+
+		struct Vector3 line_to_camera = Vector3_subtract(&camera_actor_position, &center);
+		float c_dist = Vector3_length(&line_to_camera);
+		float backface = Vector3_dot(normal, line_to_camera); 
+
+		float NdotL = Vector3_dot(normal, camera_light_dir);
+		float fog = act->use_fog ? 1 - (c_dist / FOG_RADIUS) : 1; // 1;
 		float light = NdotL * fog;
+		float triangle_color = m->triangle_colors[triangle_idx];
+		//light *= triangle_color;
 		int pattern_idx = MAX(MIN(light * 32, 32), 0); // clamp to 0-32
 
 		// Load cached screenspace-projected points
-		for (int ii = 0; ii < 3; ii++) point[ii] = screen_vertices[m->indices[i + ii]];
+		//for (int ii = 0; ii < 3; ii++) point[ii] = screen_vertices[m->indices[i + ii]];
 
 		tris[t_idx] = (struct Triangle){
 			.indices = {
@@ -141,9 +187,14 @@ void Actor_drawMesh(uint8_t* bitmap, struct Actor* act, struct Camera* camera)
 			},
 			.center = center, // screenspace center
 			.shade = pattern_idx,
-			.visible = backface > 0 &&
+			.visible = backface > 0 && act->visible &&
+				(act->skip_black_triangles ? pattern_idx > 0 : true)
+				/*(point[0].x >= 0 || point[1].x >= 0 || point[2].x >= 0) &&
+				(point[0].x <= 400 || point[1].x <= 400 || point[2].x <= 400) &&
+				(point[0].y >= 0 || point[1].y >= 0 || point[2].y >= 0) &&
+				(point[0].y <= 240 || point[1].y <= 240 || point[2].y <= 240) &&*/
 				//point[0].z < (camera->position.z - camera->near) && // near clip
-				point[0].z > 0 && point[1].z > 0 && point[2].z > 0
+				 //point[0].z > 0 && point[1].z > 0 && point[2].z > 0
 				//&& worldZ0 > (camera->position.z - camera->far), // far clip
 		};
 	}
@@ -151,28 +202,45 @@ void Actor_drawMesh(uint8_t* bitmap, struct Actor* act, struct Camera* camera)
 	// Sort triangles by screen depth (z)
 	qsort(tris, m->numIndices / 3, sizeof(struct Triangle), compare_zdepth);
 
+	// Screen project the points
+	for (int i = 0; i < act->mesh->numVertices; i++)
+	{
+		if (act->use_fog &&
+			((projected_vertices[i].x <= x_range || projected_vertices[i].x >= x_range + (FOG_RADIUS * 2)) ||
+			(projected_vertices[i].z <= z_range || projected_vertices[i].z >= z_range + (FOG_RADIUS * 2)))
+			)
+			continue;
+
+		projected_vertices[i] = Vector3_subtract(&projected_vertices[i], &camera->actor->position);
+		projected_vertices[i] = Matrix3_apply(&camera->rotate_transform, &projected_vertices[i]);
+		PTR_Camera_worldToScreenPos(camera, &projected_vertices[i]);
+	}
+
 	for (int i = 0; i < m->numIndices / 3; i++)
 	{
 		struct Triangle* tri = &tris[i];
 		if (!tri->visible) continue;
 
+		bool render = true;
 		for (int ii = 0; ii < 3; ii++)
 		{
-			point[ii] = screen_vertices[tri->indices[ii]];
+			point[ii] = projected_vertices[tri->indices[ii]];
+			if (point[ii].z < 0) render = false;
 		}
+		if (!render) continue;
 
 		api_fillTriangle(bitmap, LCD_ROWSIZE, &point[0], &point[1], &point[2], &patterns[tri->shade], tri->shade);
 	}
 
 	// Free the struct Vector3 projection memory
-	pd->system->realloc(projected_vertices, 0);
+	/*pd->system->realloc(projected_vertices, 0);
 	projected_vertices = NULL;
 
 	pd->system->realloc(screen_vertices, 0);
 	screen_vertices = NULL;
 
 	pd->system->realloc(tris, 0);
-	tris = NULL;
+	tris = NULL;*/
 }
 
 struct Vector3 grid_points[] = {
@@ -322,13 +390,13 @@ void api_fillRange(uint8_t* bitmap, int rowstride, int y, int endy, int32_t* x1p
 	int32_t x1 = *x1p, x2 = *x2p;
 	int starty = y;
 	
-	if ( endy < 0 )
+	/*if ( endy < 0 )
 	{
 		int dy = endy - y;
 		*x1p = x1 + dy * dx1;
 		*x2p = x2 + dy * dx2;
 		return;
-	}
+	}*/
 	
 	if ( y < 0 )
 	{
@@ -339,6 +407,7 @@ void api_fillRange(uint8_t* bitmap, int rowstride, int y, int endy, int32_t* x1p
 	
 	float y_perc = 0;
 	float y_inc = 1.f / (float)(endy - starty);
+	if (endy >= RENDER_Y_END) endy = RENDER_Y_END - 1;
 	while ( y < endy )
 	{
 		uint8_t p = patterns[shade][y % 8];
@@ -348,10 +417,10 @@ void api_fillRange(uint8_t* bitmap, int rowstride, int y, int endy, int32_t* x1p
 		/*if (y_perc > .25f && y_perc < .75f)
 			color = 0;*/
 
-		if (y > RENDER_Y_START && y < RENDER_Y_END)
-		{
+		//if (y > RENDER_Y_START && y < RENDER_Y_END)
+		//{
 			api_drawFragment((uint32_t*)&bitmap[y * rowstride], (x1 >> 16), (x2 >> 16) + 1, y, color);
-		}
+		//}
 
 		x1 += dx1;
 		x2 += dx2;
