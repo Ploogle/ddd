@@ -36,6 +36,7 @@ struct Mesh
 {
 	struct Vector3* vertices;
 	uint16_t* indices;
+	float* triangle_colors; // length numIndices / 3
 	uint32_t numVertices;
 	uint32_t numIndices;
 	struct Vector3 origin;

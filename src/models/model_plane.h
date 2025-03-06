@@ -22,6 +22,7 @@ struct Mesh flat_plane = {
 		3, 2, 0,
 	},
 	.z_limit = true,
+	.triangle_colors = (float[]) {.8f,.8f}
 };
 
 #endif

@@ -25,6 +25,8 @@ typedef struct Actor
 	struct Matrix4x4 transform;
 
 	bool visible;
+	bool use_fog;
+	bool skip_black_triangles;
 
 	int num_children;
 	struct Actor** children;
