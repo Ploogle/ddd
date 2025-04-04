@@ -5,17 +5,21 @@
 #include "../models/model_terrain1.h";
 #include "../models/model_plane.h";
 #include "../models/model_grid_512_long.h";
+#include "../models/model_fractal_terrain.h";
+#include "../models/fractal_terrain_lod.h";
+#include "../models/lake_terrain1.h";
 #include "../../engine/symbols.h";
 #include "../../engine/fsm.h";
 //#include "../../engine/pd_stub.h";
 #include "../data/lures.h";
+#include "../../engine/wave_heightmap.h";
 
 /*
 	Externs
 */
 
 extern PlaydateAPI* pd;
-extern float DELTA_TIME;
+extern double DELTA_TIME;
 extern uint8_t* frame;
 extern PDButtons heldButtons, pressedButtons, releasedButtons;
 extern LCDFont* FONT_MONTSERRAT_BLACK_ITALIC_24;
@@ -71,7 +75,7 @@ struct FSM fsm_fishing = {
  	.name = "Lure",
 	.visible = true,
  	.mesh = &mesh_cube,
- 	.position = { 0, .5f, 0 },
+ 	.position = { 0, 0, 0 },
  	.rotation = { 0, 0, 0 },
  	.scale = { .05f, .05f, .05f },
 	.update = &lure_update,
@@ -98,10 +102,10 @@ struct FSM fsm_fishing = {
 struct Actor object_terrain = {
 	.name = "Terrain",
 	.visible = true,
-	.mesh = &Grid512Long, //&terrain1, //  &flat_plane,
+	.mesh = &fractal_terrain_lod, //&fractal_terrain,// &Grid512Long, //&terrain1, //  &flat_plane,
 	.position = { 0, 0, 0 },
 	.rotation = { 0, 0, 0 },
-	.scale = {15,1,15},// { 30, 1, 50 },
+	.scale = {15, 1, 10},//{15,1,15},// { 30, 1, 50 },
 	.scene = &FishingScene,
 	.use_fog = true,
 	.skip_black_triangles = true,
@@ -115,6 +119,16 @@ struct Actor object_cast_selector = {
 	.rotation = { 0, 0, 0 },
 	.scale = { .1f, .01f, .1f },
 	//.update = &lure_update,
+	.scene = &FishingScene,
+};
+
+struct Actor lake_terrain = {
+	.name = "Distant Terrain",
+	.visible = true,
+	.mesh = &lake_terrain_mesh,
+	.position = {0, 0, -20},
+	.rotation = {0, 1.57f, 0}, // 90deg on y axis
+	.scale = {1.f,2.5f,5.f},
 	.scene = &FishingScene,
 };
 
@@ -202,7 +216,6 @@ bool fsm_fishing_cast_to_reeling() {
 	object_lure.position.z = MAP_RANGE(-5, 5, -20, 20, object_cast_selector.position.z);
 	object_lure.position.y = WATER_SURFACE_Y;
 
-
 	LakeView.Visible = false;
 	UnderwaterView.Visible = true;
 
@@ -236,7 +249,7 @@ void fsm_fishing_init()
 }
 
 float ticker_x = 420;
-const float TICKER_SPEED = 90;
+const float TICKER_SPEED = 60.0f;
 char* ticker_queue[32];
 int ticker_queue_length;
 float next_clear_width = 0;
@@ -254,6 +267,10 @@ char* ticker_filler_table[] = {
 	//"Today's winning lottery numbers are: 2 94 84 2 65 8 19 297 4 3 27 3 7273 42 72 27",
 	//"Da early fish gets da worm.",
 	"Don't throw empty beer cans into the lake. The fish are trying to cut back.",
+	"If you teach a man to fish, he'll eat for a day. If you teach a fish to man, he will attain salvation, amen.",
+	"Hint: Shake a fish. They love it!",
+	"You'll catch more flies with honey than vinegar. But we're catching fish, baby!",
+	"The average human can run faster than most fish.",
 	NULL
 };
 char ticker_text[1024];
@@ -293,7 +310,9 @@ void ticker_add_from(char** table)
 	// TODO: Ensure that we don't get duplicates until we've shown them all.
 	//int idx = ((float)rand() / (float)RAND_MAX) * (length - 1);
 	int idx = ticker_filler_index++;
-	if (idx >= 6) idx = 0;
+	if (idx >= length) {
+		idx = 0; ticker_filler_index = 0;
+	}
 	ticker_add(table[idx]);
 }
 
@@ -842,6 +861,7 @@ void fsm_fishing_update()
 	case FSM_LOADING:
 		// Do initial scene stuff
 
+
 		fsm_set_state(&fsm_fishing, FSM_CASTING);
 		break;
 
@@ -877,6 +897,18 @@ void lake_update()
 	if (object_cast_selector.position.z > 5) object_cast_selector.position.z = 5;
 	if (object_cast_selector.position.z < -5) object_cast_selector.position.z = -5;
 
+	// == Cast selector y bob
+	float WATER_X_SIZE = 20;
+	float WATER_Z_SIZE = 20;
+	float MAX_HEIGHT = .2f;
+	float u = (object_cast_selector.position.x + WATER_X_SIZE) / (WATER_X_SIZE * 2.5f);
+	float v = (object_cast_selector.position.z - camera_lake.actor->position.z) / (camera_lake.actor->position.z - WATER_Z_SIZE);
+
+	float height_sample = (sample_wave_heightmap((int)((u + WAVE_RIPPLE_U) * WAVE_HEIGHTMAP_COLUMNS), (int)(((v + WAVE_RIPPLE_V) * WAVE_HEIGHTMAP_ROWS))) / 128.f) * MAX_HEIGHT;
+	height_sample = MAX_HEIGHT - height_sample; // invert!
+	object_cast_selector.mesh->origin.y = height_sample / object_cast_selector.scale.y * .75f;
+	// ==
+
 	if (fsm_fishing.current_state == FSM_CASTING)
 	{
 		// Cast selection
@@ -905,9 +937,42 @@ void lake_update()
 	}
 }
 
+float jerlin(float x, float y) {
+	return (cos(x) * sin(y * .05f)) * sin(y);
+}
+
+/* Begin value noise functions*/
+float toff = 0;
+float perlin_timer = 0.f;
+void perlin_test()
+{
+	toff += DELTA_TIME * 1.f;
+	perlin_timer += DELTA_TIME;
+	if (perlin_timer > 1.f) perlin_timer = 0;
+
+	LCDSolidColor color;
+	double threshold = .5f;
+	float xoff = toff;
+	float yoff = -object_cast_selector.position.z;
+
+	for (double y = 0; y < 200; y++)
+	{
+		for (double x = 0; x < 200; x++)
+		{
+			float p = jerlin((x + xoff) * 1.f, (y + yoff) * 1.f);
+			color = p > threshold ? kColorWhite : kColorBlack;
+			pd->graphics->setPixel(x, y, color);
+		}
+	}
+}
+
 void lake_draw()
 {
-	YPlane_render(frame, &camera_lake, 0, false);
+	//YPlane_render(frame, &camera_lake, 0, false);
+	//YPlane_renderGrid(frame, &camera_lake, 0);
+	LakeWaves_render(frame, &camera_lake);
+	LakeWaves_renderWaterHeight(frame, &camera_lake);
+	//perlin_test();
 }
 
 void lake_postdraw()
@@ -977,6 +1042,7 @@ struct View LakeView = {
 	},
 	.actors = (struct Actor* []){
 		&object_cast_selector,
+		&lake_terrain,
 		NULL
 	},
 	.update = &lake_update,

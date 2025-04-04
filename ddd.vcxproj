@@ -69,12 +69,15 @@
       </ExceptionHandling>
       <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
       <LanguageStandard_C>stdc11</LanguageStandard_C>
-      <MinimalRebuild></MinimalRebuild>
+      <MinimalRebuild>
+      </MinimalRebuild>
       <Optimization>Disabled</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <SupportJustMyCode></SupportJustMyCode>
-      <SuppressStartupBanner></SuppressStartupBanner>
+      <SupportJustMyCode>
+      </SupportJustMyCode>
+      <SuppressStartupBanner>
+      </SuppressStartupBanner>
       <UseFullPaths>false</UseFullPaths>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;TARGET_SIMULATOR=1;_WINDLL=1;TARGET_EXTENSION=1;CMAKE_INTDIR="Debug";ddd_EXPORTS</PreprocessorDefinitions>
@@ -94,7 +97,8 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <PostBuildEvent>
-      <Message>	</Message>
+      <Message>
+      </Message>
       <Command>setlocal
 "C:\Program Files\CMake\bin\cmake.exe" -E copy "C:/Users/shrin/Documents/Playdate Projects/ddd/Debug/ddd.dll" "C:/Users/shrin/Documents/Playdate Projects/ddd/Source/pdex.dll"
 if %errorlevel% neq 0 goto :cmEnd
@@ -136,12 +140,15 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       </ExceptionHandling>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <LanguageStandard_C>stdc11</LanguageStandard_C>
-      <MinimalRebuild></MinimalRebuild>
+      <MinimalRebuild>
+      </MinimalRebuild>
       <Optimization>MaxSpeed</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <SupportJustMyCode></SupportJustMyCode>
-      <SuppressStartupBanner></SuppressStartupBanner>
+      <SupportJustMyCode>
+      </SupportJustMyCode>
+      <SuppressStartupBanner>
+      </SuppressStartupBanner>
       <UseFullPaths>false</UseFullPaths>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;TARGET_SIMULATOR=1;_WINDLL=1;TARGET_EXTENSION=1;CMAKE_INTDIR="Release";ddd_EXPORTS</PreprocessorDefinitions>
@@ -163,7 +170,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <PostBuildEvent>
-      <Message>	</Message>
+      <Message>
+      </Message>
       <Command>setlocal
 "C:\Program Files\CMake\bin\cmake.exe" -E copy "C:/Users/shrin/Documents/Playdate Projects/ddd/Release/ddd.dll" "C:/Users/shrin/Documents/Playdate Projects/ddd/Source/pdex.dll"
 if %errorlevel% neq 0 goto :cmEnd
@@ -231,6 +239,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   <ItemGroup>
     <ClCompile Include="C:\Users\shrin\Documents\Playdate Projects\ddd\src\main.c" />
     <ClCompile Include="C:\Users\shrin\Documents\Playdate Projects\ddd\engine\3dmath.c" />
+    <ClCompile Include="engine\wave_heightmap.c" />
     <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\engine\3dmath.h" />
     <ClCompile Include="C:\Users\shrin\Documents\Playdate Projects\ddd\engine\actor.c" />
     <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\engine\actor.h" />
@@ -253,6 +262,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="C:\Users\shrin\Documents\Playdate Projects\ddd\engine\symbols.c" />
     <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\engine\symbols.h" />
     <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\engine\texture.h" />
+    <ClInclude Include="engine\preperlin.h" />
+    <ClInclude Include="engine\wave-noise.h" />
+    <ClInclude Include="engine\wave-ripple.h" />
+    <ClInclude Include="engine\wave_heightmap.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="C:\Users\shrin\Documents\Playdate Projects\ddd\ZERO_CHECK.vcxproj">

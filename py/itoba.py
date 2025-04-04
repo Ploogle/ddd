@@ -58,7 +58,8 @@ def main(argv):
             with open(outputpath, 'w') as f:
                 print(output, file=f)
         else:
-            print(output)
+            print ('No output found: ', outputpath)
+            #print(output)
         print('fin ~')
     
 

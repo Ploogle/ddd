@@ -11,6 +11,12 @@ struct Vector3
 
 struct Vector3 Vector3_make(float x, float y, float z);
 
+struct Line3
+{
+	struct Vector3 a;
+	struct Vector3 b;
+};
+
 struct Vector2
 {
 	union {

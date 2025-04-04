@@ -9,6 +9,7 @@
 
 float fast_atan2(float y, float x);
 
+float lerp(float a, float b, float t);
 
 // -- Vector -- 
 
@@ -80,5 +81,4 @@ struct Quaternion Quaternion_fromAngleAxis(struct Vector3* axis, float angle);
 struct Quaternion Quaternion_normalize(struct Quaternion q);
 struct Vector3 Vector3_applyQuaternion(struct Vector3* v, struct Quaternion* q);
 struct Quaternion Quaternion_fromVector3(struct Vector3* v);
-
 #endif

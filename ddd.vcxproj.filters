@@ -28,6 +28,7 @@
     <ClCompile Include="C:\Users\shrin\Documents\Playdate Projects\ddd\engine\symbols.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="engine\wave_heightmap.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\engine\3dmath.h">
@@ -75,6 +76,10 @@
     <ClInclude Include="C:\Users\shrin\Documents\Playdate Projects\ddd\engine\texture.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="engine\preperlin.h" />
+    <ClInclude Include="engine\wave_heightmap.h" />
+    <ClInclude Include="engine\wave-noise.h" />
+    <ClInclude Include="engine\wave-ripple.h" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\shrin\Documents\Playdate Projects\ddd\CMakeLists.txt" />

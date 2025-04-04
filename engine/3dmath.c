@@ -15,6 +15,10 @@ float fast_atan2(float y, float x)
 	return r;
 }
 
+float lerp(float a, float b, float t) {
+	return a + t * (b - a);
+}
+
 // -- Vector --
 
 static inline int Vector3_equals(struct Vector3 a, struct Vector3 b)

@@ -337,6 +337,30 @@ engine\symbols.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\engine\symbols.c.s
 .PHONY : engine\symbols.c.s
 
+engine\wave_heightmap.obj: engine\wave_heightmap.c.obj
+.PHONY : engine\wave_heightmap.obj
+
+# target to build an object file
+engine\wave_heightmap.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\engine\wave_heightmap.c.obj
+.PHONY : engine\wave_heightmap.c.obj
+
+engine\wave_heightmap.i: engine\wave_heightmap.c.i
+.PHONY : engine\wave_heightmap.i
+
+# target to preprocess a source file
+engine\wave_heightmap.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\engine\wave_heightmap.c.i
+.PHONY : engine\wave_heightmap.c.i
+
+engine\wave_heightmap.s: engine\wave_heightmap.c.s
+.PHONY : engine\wave_heightmap.s
+
+# target to generate assembly for a file
+engine\wave_heightmap.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\engine\wave_heightmap.c.s
+.PHONY : engine\wave_heightmap.c.s
+
 src\main.obj: src\main.c.obj
 .PHONY : src\main.obj
 
@@ -397,6 +421,9 @@ help:
 	@echo ... engine/symbols.obj
 	@echo ... engine/symbols.i
 	@echo ... engine/symbols.s
+	@echo ... engine/wave_heightmap.obj
+	@echo ... engine/wave_heightmap.i
+	@echo ... engine/wave_heightmap.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s

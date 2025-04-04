@@ -98,6 +98,8 @@ int eventHandler(PlaydateAPI* _pd, PDSystemEvent event, uint32_t arg)
 		Gradient_init();
 
 		camera_init();
+
+		//srand(time(0));
 	}
 	
 	return 0;
