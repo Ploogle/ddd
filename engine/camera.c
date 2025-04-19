@@ -76,6 +76,8 @@ struct Matrix3x3 Camera_getRotationMatrix(struct Camera* camera, float xTheta, f
 }
 
 
+// TODO: Add 'tween' parameter to indicate whether we want to automatically tween or manually adjust the blend.
+//       Needs a new property should_tween on the LookTarget object so the tick function can be skipped.
 void LookTarget_setTarget(struct LookTarget* lt, struct Vector3* target)
 {
 	if (lt->current == NULL)

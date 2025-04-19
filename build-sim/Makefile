@@ -121,149 +121,221 @@ ddd\fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\build
 .PHONY : ddd\fast
 
-ddd\3dmath.obj: ddd\3dmath.c.obj
-.PHONY : ddd\3dmath.obj
+engine\3dmath.obj: engine\3dmath.c.obj
+.PHONY : engine\3dmath.obj
 
 # target to build an object file
-ddd\3dmath.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\ddd\3dmath.c.obj
-.PHONY : ddd\3dmath.c.obj
+engine\3dmath.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\engine\3dmath.c.obj
+.PHONY : engine\3dmath.c.obj
 
-ddd\3dmath.i: ddd\3dmath.c.i
-.PHONY : ddd\3dmath.i
+engine\3dmath.i: engine\3dmath.c.i
+.PHONY : engine\3dmath.i
 
 # target to preprocess a source file
-ddd\3dmath.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\ddd\3dmath.c.i
-.PHONY : ddd\3dmath.c.i
+engine\3dmath.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\engine\3dmath.c.i
+.PHONY : engine\3dmath.c.i
 
-ddd\3dmath.s: ddd\3dmath.c.s
-.PHONY : ddd\3dmath.s
+engine\3dmath.s: engine\3dmath.c.s
+.PHONY : engine\3dmath.s
 
 # target to generate assembly for a file
-ddd\3dmath.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\ddd\3dmath.c.s
-.PHONY : ddd\3dmath.c.s
+engine\3dmath.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\engine\3dmath.c.s
+.PHONY : engine\3dmath.c.s
 
-ddd\camera.obj: ddd\camera.c.obj
-.PHONY : ddd\camera.obj
+engine\actor.obj: engine\actor.c.obj
+.PHONY : engine\actor.obj
 
 # target to build an object file
-ddd\camera.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\ddd\camera.c.obj
-.PHONY : ddd\camera.c.obj
+engine\actor.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\engine\actor.c.obj
+.PHONY : engine\actor.c.obj
 
-ddd\camera.i: ddd\camera.c.i
-.PHONY : ddd\camera.i
+engine\actor.i: engine\actor.c.i
+.PHONY : engine\actor.i
 
 # target to preprocess a source file
-ddd\camera.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\ddd\camera.c.i
-.PHONY : ddd\camera.c.i
+engine\actor.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\engine\actor.c.i
+.PHONY : engine\actor.c.i
 
-ddd\camera.s: ddd\camera.c.s
-.PHONY : ddd\camera.s
+engine\actor.s: engine\actor.c.s
+.PHONY : engine\actor.s
 
 # target to generate assembly for a file
-ddd\camera.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\ddd\camera.c.s
-.PHONY : ddd\camera.c.s
+engine\actor.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\engine\actor.c.s
+.PHONY : engine\actor.c.s
 
-ddd\gameobject.obj: ddd\gameobject.c.obj
-.PHONY : ddd\gameobject.obj
+engine\camera.obj: engine\camera.c.obj
+.PHONY : engine\camera.obj
 
 # target to build an object file
-ddd\gameobject.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\ddd\gameobject.c.obj
-.PHONY : ddd\gameobject.c.obj
+engine\camera.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\engine\camera.c.obj
+.PHONY : engine\camera.c.obj
 
-ddd\gameobject.i: ddd\gameobject.c.i
-.PHONY : ddd\gameobject.i
+engine\camera.i: engine\camera.c.i
+.PHONY : engine\camera.i
 
 # target to preprocess a source file
-ddd\gameobject.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\ddd\gameobject.c.i
-.PHONY : ddd\gameobject.c.i
+engine\camera.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\engine\camera.c.i
+.PHONY : engine\camera.c.i
 
-ddd\gameobject.s: ddd\gameobject.c.s
-.PHONY : ddd\gameobject.s
+engine\camera.s: engine\camera.c.s
+.PHONY : engine\camera.s
 
 # target to generate assembly for a file
-ddd\gameobject.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\ddd\gameobject.c.s
-.PHONY : ddd\gameobject.c.s
+engine\camera.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\engine\camera.c.s
+.PHONY : engine\camera.c.s
 
-ddd\quaternion.obj: ddd\quaternion.c.obj
-.PHONY : ddd\quaternion.obj
+engine\fsm.obj: engine\fsm.c.obj
+.PHONY : engine\fsm.obj
 
 # target to build an object file
-ddd\quaternion.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\ddd\quaternion.c.obj
-.PHONY : ddd\quaternion.c.obj
+engine\fsm.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\engine\fsm.c.obj
+.PHONY : engine\fsm.c.obj
 
-ddd\quaternion.i: ddd\quaternion.c.i
-.PHONY : ddd\quaternion.i
+engine\fsm.i: engine\fsm.c.i
+.PHONY : engine\fsm.i
 
 # target to preprocess a source file
-ddd\quaternion.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\ddd\quaternion.c.i
-.PHONY : ddd\quaternion.c.i
+engine\fsm.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\engine\fsm.c.i
+.PHONY : engine\fsm.c.i
 
-ddd\quaternion.s: ddd\quaternion.c.s
-.PHONY : ddd\quaternion.s
+engine\fsm.s: engine\fsm.c.s
+.PHONY : engine\fsm.s
 
 # target to generate assembly for a file
-ddd\quaternion.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\ddd\quaternion.c.s
-.PHONY : ddd\quaternion.c.s
+engine\fsm.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\engine\fsm.c.s
+.PHONY : engine\fsm.c.s
 
-ddd\render.obj: ddd\render.c.obj
-.PHONY : ddd\render.obj
+engine\quaternion.obj: engine\quaternion.c.obj
+.PHONY : engine\quaternion.obj
 
 # target to build an object file
-ddd\render.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\ddd\render.c.obj
-.PHONY : ddd\render.c.obj
+engine\quaternion.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\engine\quaternion.c.obj
+.PHONY : engine\quaternion.c.obj
 
-ddd\render.i: ddd\render.c.i
-.PHONY : ddd\render.i
+engine\quaternion.i: engine\quaternion.c.i
+.PHONY : engine\quaternion.i
 
 # target to preprocess a source file
-ddd\render.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\ddd\render.c.i
-.PHONY : ddd\render.c.i
+engine\quaternion.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\engine\quaternion.c.i
+.PHONY : engine\quaternion.c.i
 
-ddd\render.s: ddd\render.c.s
-.PHONY : ddd\render.s
+engine\quaternion.s: engine\quaternion.c.s
+.PHONY : engine\quaternion.s
 
 # target to generate assembly for a file
-ddd\render.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\ddd\render.c.s
-.PHONY : ddd\render.c.s
+engine\quaternion.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\engine\quaternion.c.s
+.PHONY : engine\quaternion.c.s
 
-ddd\symbols.obj: ddd\symbols.c.obj
-.PHONY : ddd\symbols.obj
+engine\render.obj: engine\render.c.obj
+.PHONY : engine\render.obj
 
 # target to build an object file
-ddd\symbols.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\ddd\symbols.c.obj
-.PHONY : ddd\symbols.c.obj
+engine\render.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\engine\render.c.obj
+.PHONY : engine\render.c.obj
 
-ddd\symbols.i: ddd\symbols.c.i
-.PHONY : ddd\symbols.i
+engine\render.i: engine\render.c.i
+.PHONY : engine\render.i
 
 # target to preprocess a source file
-ddd\symbols.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\ddd\symbols.c.i
-.PHONY : ddd\symbols.c.i
+engine\render.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\engine\render.c.i
+.PHONY : engine\render.c.i
 
-ddd\symbols.s: ddd\symbols.c.s
-.PHONY : ddd\symbols.s
+engine\render.s: engine\render.c.s
+.PHONY : engine\render.s
 
 # target to generate assembly for a file
-ddd\symbols.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\ddd\symbols.c.s
-.PHONY : ddd\symbols.c.s
+engine\render.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\engine\render.c.s
+.PHONY : engine\render.c.s
+
+engine\scene.obj: engine\scene.c.obj
+.PHONY : engine\scene.obj
+
+# target to build an object file
+engine\scene.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\engine\scene.c.obj
+.PHONY : engine\scene.c.obj
+
+engine\scene.i: engine\scene.c.i
+.PHONY : engine\scene.i
+
+# target to preprocess a source file
+engine\scene.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\engine\scene.c.i
+.PHONY : engine\scene.c.i
+
+engine\scene.s: engine\scene.c.s
+.PHONY : engine\scene.s
+
+# target to generate assembly for a file
+engine\scene.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\engine\scene.c.s
+.PHONY : engine\scene.c.s
+
+engine\symbols.obj: engine\symbols.c.obj
+.PHONY : engine\symbols.obj
+
+# target to build an object file
+engine\symbols.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\engine\symbols.c.obj
+.PHONY : engine\symbols.c.obj
+
+engine\symbols.i: engine\symbols.c.i
+.PHONY : engine\symbols.i
+
+# target to preprocess a source file
+engine\symbols.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\engine\symbols.c.i
+.PHONY : engine\symbols.c.i
+
+engine\symbols.s: engine\symbols.c.s
+.PHONY : engine\symbols.s
+
+# target to generate assembly for a file
+engine\symbols.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\engine\symbols.c.s
+.PHONY : engine\symbols.c.s
+
+engine\wave_heightmap.obj: engine\wave_heightmap.c.obj
+.PHONY : engine\wave_heightmap.obj
+
+# target to build an object file
+engine\wave_heightmap.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\engine\wave_heightmap.c.obj
+.PHONY : engine\wave_heightmap.c.obj
+
+engine\wave_heightmap.i: engine\wave_heightmap.c.i
+.PHONY : engine\wave_heightmap.i
+
+# target to preprocess a source file
+engine\wave_heightmap.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\engine\wave_heightmap.c.i
+.PHONY : engine\wave_heightmap.c.i
+
+engine\wave_heightmap.s: engine\wave_heightmap.c.s
+.PHONY : engine\wave_heightmap.s
+
+# target to generate assembly for a file
+engine\wave_heightmap.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddd.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ddd.dir\engine\wave_heightmap.c.s
+.PHONY : engine\wave_heightmap.c.s
 
 src\main.obj: src\main.c.obj
 .PHONY : src\main.obj
@@ -298,24 +370,33 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... ddd
-	@echo ... ddd/3dmath.obj
-	@echo ... ddd/3dmath.i
-	@echo ... ddd/3dmath.s
-	@echo ... ddd/camera.obj
-	@echo ... ddd/camera.i
-	@echo ... ddd/camera.s
-	@echo ... ddd/gameobject.obj
-	@echo ... ddd/gameobject.i
-	@echo ... ddd/gameobject.s
-	@echo ... ddd/quaternion.obj
-	@echo ... ddd/quaternion.i
-	@echo ... ddd/quaternion.s
-	@echo ... ddd/render.obj
-	@echo ... ddd/render.i
-	@echo ... ddd/render.s
-	@echo ... ddd/symbols.obj
-	@echo ... ddd/symbols.i
-	@echo ... ddd/symbols.s
+	@echo ... engine/3dmath.obj
+	@echo ... engine/3dmath.i
+	@echo ... engine/3dmath.s
+	@echo ... engine/actor.obj
+	@echo ... engine/actor.i
+	@echo ... engine/actor.s
+	@echo ... engine/camera.obj
+	@echo ... engine/camera.i
+	@echo ... engine/camera.s
+	@echo ... engine/fsm.obj
+	@echo ... engine/fsm.i
+	@echo ... engine/fsm.s
+	@echo ... engine/quaternion.obj
+	@echo ... engine/quaternion.i
+	@echo ... engine/quaternion.s
+	@echo ... engine/render.obj
+	@echo ... engine/render.i
+	@echo ... engine/render.s
+	@echo ... engine/scene.obj
+	@echo ... engine/scene.i
+	@echo ... engine/scene.s
+	@echo ... engine/symbols.obj
+	@echo ... engine/symbols.i
+	@echo ... engine/symbols.s
+	@echo ... engine/wave_heightmap.obj
+	@echo ... engine/wave_heightmap.i
+	@echo ... engine/wave_heightmap.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s

@@ -29,7 +29,7 @@ void Gradient_tick(int t)
 
 float Gradient_sample(float p)
 {
-	int idx = (int)(p * (float)SINE_GRADIENT_LENGTH) + SINE_GRADIENT_OFFSET;
+	int idx = (int)(MAX(MIN(p, 1), 0) * (float)SINE_GRADIENT_LENGTH) + SINE_GRADIENT_OFFSET;
 	if (idx >= SINE_GRADIENT_LENGTH) {
 		idx -= SINE_GRADIENT_LENGTH;
 	}

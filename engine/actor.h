@@ -16,6 +16,9 @@ typedef struct Actor
 	struct Vector3 rotation; // euler
 	struct Vector3 scale;
 
+	// A "reference" point, i.e. a fish mouth or particle spawn point
+	struct Vector3 reference_point;
+
 	struct Vector3 forward;
 	struct LookTarget look_target;
 
@@ -24,15 +27,15 @@ typedef struct Actor
 	// the calculated value.
 	struct Matrix4x4 transform;
 
-	bool visible;
-	bool use_fog;
-	bool skip_black_triangles;
+	bool visible; // Will this actor be rendered?
+	bool use_fog; // Will we apply camera distance fog?
+	bool skip_black_triangles; // Should we render any triangles that are pitch black?
 
 	int num_children;
 	struct Actor** children;
 	struct Actor* parent;
 
-	int render_layer;
+	//int render_layer;
 
 	struct Scene* scene;
 	int index_in_scene;

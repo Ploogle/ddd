@@ -18,6 +18,10 @@
 extern PlaydateAPI* pd;
 extern double DELTA_TIME;
 
+#define NUM_PATTERNS 33
+typedef uint8_t Pattern[8];
+static Pattern patterns[NUM_PATTERNS];
+
 int compare_zdepth(struct Triangle* a, struct Triangle* b);
 void sortTri(struct Vector3** p1, struct Vector3** p2, struct Vector3** p3);
 

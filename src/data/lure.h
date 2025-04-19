@@ -69,7 +69,7 @@ void lure_update_descend(struct Lure* lure, struct Actor* actor)
 void lure_move_ascend(struct Lure* lure, struct Actor* actor, float distance)
 {
 	actor->position.z += DELTA_TIME * distance * lure->drag;
-	actor->position.y += DELTA_TIME * lure->density * distance * lure->drag;
+	actor->position.y += DELTA_TIME * distance * lure->drag / lure->density;
 }
 
 /*

@@ -13,7 +13,7 @@
 
 #define FOG_RADIUS 12.f
 
-typedef uint8_t Pattern[8];
+//typedef uint8_t Pattern[8];
 
 static Pattern patterns[] =
 {
@@ -143,7 +143,6 @@ void Actor_drawMesh(uint8_t* bitmap, struct Actor* act, struct Camera* camera)
 
 
 
-
 	struct Vector3 camera_light_dir = camera->light_dir;
 	struct Vector3 point[3] = { {0,0,0}, {0,0,0}, {0,0,0} };
 	int i = 0, p = 0;
@@ -157,7 +156,7 @@ void Actor_drawMesh(uint8_t* bitmap, struct Actor* act, struct Camera* camera)
 			point[ii] = projected_vertices[m->indices[i + ii]];
 
 			// If we're using fog, skip any geo that's definitely
-			// outside the fog radius on the x and y axes
+			// outside the fog radius on the x and z axes
 			if (act->use_fog)
 			{
 				if ((point[ii].x <= x_range || point[ii].x >= x_range + (FOG_RADIUS * 2)) ||
@@ -552,13 +551,15 @@ void fillLine(uint8_t* bitmap, struct Vector3* line_a, float width_a, char shade
 	struct Vector3 a2 = *line_a;
 
 	a1.y -= width_a;
-	//a2.y += width_a;
+	if (a1.y < 0) a1.y = 0;
+	if (a2.y < 0) a2.y = 0;
 
 	struct Vector3 b1 = *line_b;
 	struct Vector3 b2 = *line_b;
 
 	b1.y -= width_b;
-	//b2.y += width_b;
+	if (b1.y < 0) b1.y = 0;
+	if (b2.y < 0) b2.y = 0;
 
 	api_fillTriangle(bitmap, LCD_ROWSIZE, &a1, &b1, &a2, shade_a, shade_a);
 	api_fillTriangle(bitmap, LCD_ROWSIZE, &a2, &b1, &b2, shade_b, shade_b);

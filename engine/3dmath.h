@@ -22,8 +22,10 @@ float Vector3_dot(struct Vector3 a, struct Vector3 b);
 struct Vector3 pnormal(struct Vector3* p1, struct Vector3* p2, struct Vector3* p3);
 
 float Vector3_lengthSquared(struct Vector3* v);
-
 float Vector3_length(struct Vector3* v);
+
+float Vector3_getDistanceSquared(struct Vector3* a, struct Vector3* b);
+float Vector3_getDistance(struct Vector3* a, struct Vector3* b);
 
 struct Vector3 Vector3_add(struct Vector3* a, struct Vector3* b);
 struct Vector3 Vector3_subtract(struct Vector3* a, struct Vector3* b);

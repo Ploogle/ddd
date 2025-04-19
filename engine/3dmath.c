@@ -134,6 +134,20 @@ struct Vector3 Vector3_lerp(struct Vector3* a, struct Vector3* b, float w)
 	return out;
 }
 
+float Vector3_getDistanceSquared(struct Vector3* a, struct Vector3* b)
+{
+	return
+		(a->x - b->x) * (a->x - b->x) +
+		(a->y - b->y) * (a->y - b->y) +
+		(a->z - b->z) * (a->z - b->z);
+}
+
+float Vector3_getDistance(struct Vector3* a, struct Vector3* b)
+{
+	return sqrtf(Vector3_getDistanceSquared(a, b));
+}
+
+
 
 // -- Matrix --
 
