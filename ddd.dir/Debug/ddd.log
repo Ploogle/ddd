@@ -95,29 +95,30 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(576,3)
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(577,5): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(512,1): warning C4305: 'initializing': truncation from 'double' to 'float'
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(513,1): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(618,36): warning C4305: '+=': truncation from 'double' to 'float'
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(644,19): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(679,26): warning C4244: 'function': conversion from 'int' to 'float', possible loss of data
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(707,53): warning C4244: 'function': conversion from 'double' to 'float', possible loss of data
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(707,60): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(737,120): warning C4305: 'function': truncation from 'double' to 'float'
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(793,55): warning C4133: 'function': incompatible types - from 'SamplePlayer *' to 'SoundSource *'
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(819,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(871,60): warning C4133: 'function': incompatible types - from 'CrankPeriod [20]' to 'float *'
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(881,18): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(884,10): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(907,25): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(934,21): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(952,20): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(1053,18): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(1080,90): warning C4244: 'function': conversion from 'double' to 'float', possible loss of data
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(1149,49): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(616,36): warning C4305: '+=': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(630,19): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(663,26): warning C4244: 'function': conversion from 'int' to 'float', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(691,53): warning C4244: 'function': conversion from 'double' to 'float', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(691,60): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(721,120): warning C4305: 'function': truncation from 'double' to 'float'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(777,55): warning C4133: 'function': incompatible types - from 'SamplePlayer *' to 'SoundSource *'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(803,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(855,60): warning C4133: 'function': incompatible types - from 'CrankPeriod [20]' to 'float *'
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(865,18): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(868,10): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(891,25): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(918,21): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(936,20): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(993,17): warning C4101: 'fish_to_lure': unreferenced local variable
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(1052,18): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(1079,90): warning C4244: 'function': conversion from 'double' to 'float', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(1145,49): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(1148,49): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(1152,49): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(1156,49): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(1159,49): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(1168,48): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(1194,28): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(1197,54): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(1155,49): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(1164,48): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(1190,28): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(1193,54): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_debug.h(2,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_debug.h(3,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_debug.h(4,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
@@ -132,5 +133,5 @@ C:\Users\shrin\Documents\Playdate Projects\ddd\src\main.c(140,51): warning C4047
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\main.c(193,44): warning C4047: '<': 'int' differs in levels of indirection from 'View *'
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\main.c(193,51): warning C4047: '!=': 'int' differs in levels of indirection from 'void *'
 C:\Users\shrin\Documents\Playdate Projects\ddd\src\data\lure.h(140): warning C4716: 'pattern_fit_morse': must return a value
-C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(1140): warning C4716: 'get_fish_interest': must return a value
+C:\Users\shrin\Documents\Playdate Projects\ddd\src\scenes\scene_fishing.h(995): warning C4716: 'get_fish_interest': must return a value
   ddd.vcxproj -> C:\Users\shrin\Documents\Playdate Projects\ddd\Debug\ddd.dll

@@ -980,10 +980,18 @@ void fsm_main_update()
 }
 
 
-
-bool get_fish_interest(struct Actor* actor, struct Fish* fish, struct Lure* lure)
+#define FISH_INTEREST_IGNORE 0
+#define FISH_INTEREST_NOTICE 1
+#define FISH_INTEREST_THINK 5
+#define FISH_INTEREST_REJECT 10
+#define FISH_INTEREST_BITE 11
+int get_fish_interest(struct Actor* actor, struct Fish* fish, struct Lure* lure)
 {
+	float distance_to_fish = 0;
 
+	// Calculate dot product of the fish facing the lure
+	struct Vector3 fish_to_lure = Vector3_subtract(&object_lure.position, &object_fish.position);
+	float dot_fish_facing = 0;
 }
 
 struct Vector3 fish_station; // The spot the fish should swim around
@@ -1226,7 +1234,8 @@ void underwater_draw()
 
 void underwater_postdraw()
 {
-	if (fish state is biting or hooked)
+	if (fsm_fish.current_state == FSM_FISH_BITE ||
+		fsm_fish.current_state == FSM_FISH_HOOKED)
 		lure_line_render(&object_fish.position);
 	else
 		lure_line_render(&object_lure.position);
