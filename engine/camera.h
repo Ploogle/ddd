@@ -23,6 +23,7 @@ struct LookTarget
 	struct Vector3* next;
 
 	float blend;
+	float max_blend; // A blend limit that shouldn't be crossed.
 	float is_tweening;
 	float tween_speed;
 

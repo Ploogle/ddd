@@ -124,7 +124,8 @@ void Actor_drawMesh(uint8_t* bitmap, struct Actor* act, struct Camera* camera)
 		projected_vertices[i] = Vector3_subtract(&projected_vertices[i], &m_origin);
 
 		// Transform (translate -> scale -> rotate)
-		projected_vertices[i] = Matrix4_apply(&act_transform, &projected_vertices[i]);
+		PTR_Matrix4_apply(&act_transform, &projected_vertices[i]);
+		//projected_vertices[i] = Matrix4_apply(&act_transform, &projected_vertices[i]);
 
 		// Z limiting
 		// TODO: Actual clipping?
@@ -147,6 +148,9 @@ void Actor_drawMesh(uint8_t* bitmap, struct Actor* act, struct Camera* camera)
 	struct Vector3 point[3] = { {0,0,0}, {0,0,0}, {0,0,0} };
 	int i = 0, p = 0;
 	int t_idx = 0;
+	struct Vector3 normal;
+	struct Vector3 center;
+	struct Vector3 line_to_camera;
 	for (i = 0; i < m->numIndices; i += 3, t_idx++)
 	{
 		int triangle_idx = (float)i / 3.f;
@@ -170,9 +174,8 @@ void Actor_drawMesh(uint8_t* bitmap, struct Actor* act, struct Camera* camera)
 		}
 		if (break_early) continue;
 
-
-		struct Vector3 normal = pnormal(&point[0], &point[1], &point[2]);
-		struct Vector3 center = {
+		normal = pnormal(&point[0], &point[1], &point[2]);
+		center = (struct Vector3){
 			.x = (point[0].x + point[1].x + point[2].x) / 3.0f,
 			.y = (point[0].y + point[1].y + point[2].y) / 3.0f,
 			.z = (point[0].z + point[1].z + point[2].z) / 3.0f,
@@ -187,7 +190,7 @@ void Actor_drawMesh(uint8_t* bitmap, struct Actor* act, struct Camera* camera)
 			PTR_Camera_worldToScreenPos(camera, &point[ii + i]);
 		}*/
 
-		struct Vector3 line_to_camera = Vector3_subtract(&camera_actor_position, &center);
+		 line_to_camera = Vector3_subtract(&camera_actor_position, &center);
 		float c_dist = Vector3_length(&line_to_camera);
 		float backface = Vector3_dot(normal, line_to_camera);
 
@@ -233,7 +236,7 @@ void Actor_drawMesh(uint8_t* bitmap, struct Actor* act, struct Camera* camera)
 			)
 			continue;
 
-		projected_vertices[i] = Vector3_subtract(&projected_vertices[i], &camera->actor->position);
+		projected_vertices[i] = Vector3_subtract(&projected_vertices[i], &camera_actor_position);
 		projected_vertices[i] = Matrix3_apply(&camera->rotate_transform, &projected_vertices[i]);
 		PTR_Camera_worldToScreenPos(camera, &projected_vertices[i]);
 	}
@@ -519,7 +522,8 @@ void LakeWaves_renderWaterHeight(uint8_t* bitmap, struct Camera* camera)
 			// Rotation
 			PTR_Matrix3_apply(&camera->rotate_transform, &point);
 
-			point = Camera_worldToScreenPos(camera, &point);
+			PTR_Camera_worldToScreenPos(camera, &point);
+			//point = Camera_worldToScreenPos(camera, &point);
 			if (point.z < 0) // behind-camera cull
 			{
 				last_height = height_sample;

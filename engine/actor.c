@@ -41,3 +41,12 @@ void Actor_updateTransform(struct Actor* act)
 		);
 	}
 }
+
+struct Vector3 Actor_getFrontPointZ(struct Actor* act)
+{
+	struct Vector3 extent = { .z = -act->mesh->max_bounds.z + .75f };
+
+	extent = Matrix4_apply(&act->transform, &extent);
+
+	return extent;
+}

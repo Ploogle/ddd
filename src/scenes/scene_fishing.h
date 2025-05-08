@@ -37,6 +37,8 @@ struct View LakeView;
 
 struct Lure* ActiveLure = &DefaultLure;
 
+struct Vector3 object_lure_target_position = { 0 };
+
 SamplePlayer* reel_click_player;
 SamplePlayer* reel_long_player;
 
@@ -53,10 +55,14 @@ void fsm_main_init();
 void fsm_main_update();
 bool fsm_main_update_cast_to_reeling();
 bool fsm_main_update_reeling_to_cast();
+bool fsm_main_reeling_to_fishon();
 void fsm_fish_init();
 void fsm_fish_update();
 bool fsm_fish_idle_to_swim();
 bool fsm_fish_swim_to_idle();
+bool fsm_fish_approach_to_bite();
+bool fsm_fish_to_approach();
+bool fsm_fish_bite_to_hook();
 void underwater_camera_update();
 
 
@@ -87,13 +93,13 @@ struct FSM fsm_main = {
 	.update = &fsm_main_update
 };
 
-#define FSM_FISH_IDLE 0
-#define FSM_FISH_SWIM 1
-#define FSM_FISH_APPROACH 2
-#define FSM_FISH_BITE 3
-#define FSM_FISH_HOOKED 4
-#define FSM_FISH_ESCAPE 5
-#define FSM_FISH_CAUGHT 6
+#define FSM_FISH_IDLE 0 // Sitting, doing nothing
+#define FSM_FISH_SWIM 1 // Swim to random target
+#define FSM_FISH_APPROACH 2 // Noticed, moving towards lure
+#define FSM_FISH_BITE 3 // Bite lure, deciding whether to take bait
+#define FSM_FISH_HOOKED 4 // Fish On!
+#define FSM_FISH_ESCAPE 5 // Line broke, fish got away.
+#define FSM_FISH_CAUGHT 6 // Successful catch
 struct FSM fsm_fish = {
 	.init = &fsm_fish_init,
 	.update = &fsm_fish_update
@@ -174,7 +180,7 @@ struct Actor camera_default_object = {
 	.rotation = { 0, 0, 0},
 	.scale = { 1, 1, 1 },
 	.look_target = {
-		.tween_speed = 1.f,
+		.tween_speed = .1f,//1.f,
 	},
 	.update = &underwater_camera_update,
 };
@@ -387,8 +393,8 @@ void ui_fish_name()
 }
 
 float depth = 150;
-#define STANDARD_DEPTH_WIDTH 25
-float depth_width = 34;//STANDARD_DEPTH_WIDTH;
+#define STANDARD_DEPTH_WIDTH 34
+float depth_width = STANDARD_DEPTH_WIDTH;
 void ui_depth()
 {
 	float zoom = 15; //max(fabsf(depth), 2.f);
@@ -490,7 +496,10 @@ float tension_offset_x = TENSION_METER_WIDTH + TENSION_OFFSET_BUFFER;
 bool tension_meter_visible = false;
 
 float line_integrity = 1.f;
-float line_tension = 0.f;
+//float line_tension = 0.f;
+float line_fish_tension = 0.f;
+float line_reel_tension = 0.f;
+#define LINE_TENSION MIN(line_fish_tension+line_reel_tension, 1)
 void ui_tension()
 {
 	// Slide in / out as visibility changes
@@ -516,23 +525,23 @@ void ui_tension()
 	int buffer = 4;
 	int border = 2;
 
-	if (line_tension >= a) 
+	if (LINE_TENSION >= a)
 	{
 		h = aY;
 
-		if (line_tension >= b)
+		if (LINE_TENSION >= b)
 		{
 			h = bY;
 
 			// Add remaining % > b
-			h += ((line_tension - b) / (1 - b)) * (1 - bY);
+			h += ((LINE_TENSION - b) / (1 - b)) * (1 - bY);
 		}
 		else { // > a, < b
-			h += ((line_tension - a) / (b - a)) * (bY - aY);
+			h += ((LINE_TENSION - a) / (b - a)) * (bY - aY);
 		}
 	}
 	else { // < a
-		h = (line_tension / a) * aY;
+		h = (LINE_TENSION / a) * aY;
 	}
 
 	pd->graphics->fillRect(
@@ -567,7 +576,7 @@ void ui_tension()
 		kColorWhite
 	);
 
-	float adjMeterWidth = line_integrity * TENSION_METER_WIDTH;
+	float adjMeterWidth = MAX(line_integrity * TENSION_METER_WIDTH, 0);
 	if ((int)adjMeterWidth % 2 != 0) adjMeterWidth = (int)adjMeterWidth + 1;
 
 	pd->graphics->fillRect(
@@ -666,14 +675,11 @@ void lure_update()
 		//}
 	}
 
-
-
-
 	if (fsm_main.current_state == FSM_MAIN_REELING ||
 		fsm_main.current_state == FSM_MAIN_FISHON)
 	{
 		if (ActiveLure->update != 0x0) {
-			ActiveLure->update(ActiveLure, &object_lure);
+			ActiveLure->update(ActiveLure, &object_lure_target_position);
 		}
 
 		//float change = pd->system->getCrankChange();
@@ -683,7 +689,7 @@ void lure_update()
 			//object_lure.position.y -= change * .001f;
 
 			if (ActiveLure->move != 0x0) {
-				ActiveLure->move(ActiveLure, &object_lure, fabsf(crank_change));
+				ActiveLure->move(ActiveLure, &object_lure_target_position, fabsf(crank_change));
 
 				lure_wiggle_timer += crank_change;
 				if (lure_wiggle_timer > 1) lure_wiggle_timer -= 1;
@@ -710,6 +716,7 @@ void lure_update()
 		}
 	}
 
+	object_lure.position = Vector3_lerp(&object_lure.position, &object_lure_target_position, .25f);
 }
 
 struct Vector3 target_underwater_camera_position = { 0 };
@@ -756,6 +763,8 @@ void fishing_scene_init()
 	LookTarget_setTarget(&camera_default.actor->look_target, &object_lure.position);
 	LookTarget_setTarget(&camera_secondary.actor->look_target, &object_lure.position);
 	LookTarget_setTarget(&camera_lake.actor->look_target, &object_cast_selector.position);
+
+	object_lure_target_position = object_lure.position;
 
 	ticker_add_from(ticker_filler_table);
 	TICKER_FONT = FONT_MONTSERRAT_BOLD_14;
@@ -876,6 +885,16 @@ void music_update()
 	}
 }
 
+void on_line_break()
+{
+	// Change fish state
+	// Change gameplay state
+	// Play animation
+	// Play sound effect
+
+	pd->system->logToConsole("Line broke!");
+}
+
 float pullMod = 1;
 float test_timer = 0;
 int lake_length = 100;
@@ -917,6 +936,10 @@ void fishing_scene_update()
 		is_cranking = true;
 		crank_duration += DELTA_TIME;
 		crank_distance += change;
+
+		line_reel_tension = .7f * MIN(fabsf(change / 40.f), 1); // cap at 100% tension
+
+		pd->system->logToConsole("crank change %f, tension %f", change, line_reel_tension);
 	}
 	else 
 	{
@@ -942,13 +965,20 @@ void fishing_scene_update()
 		yards = MAP_RANGE(-30, 30, 100, 0, object_lure.position.z);
 	}
 
-	if (line_tension > .98f)
+
+	// If total line tension exceeds a threshold,
+	if (LINE_TENSION > .98f)
 	{
+		// reduce the line integrity.
 		line_integrity -= .025f;
 
+		// TODO: Play sound effect
+
+		// If the line integrity falls below a threshold,
 		if (line_integrity < .1f)
 		{
-			line_integrity = .1f;
+			// the line breaks.
+			on_line_break();
 		}
 	}
 
@@ -961,6 +991,7 @@ void fsm_main_init()
 {
 	fsm_main.on_change[FSM_MAIN_CASTING][FSM_MAIN_REELING] = &fsm_main_update_cast_to_reeling;
 	fsm_main.on_change[FSM_MAIN_REELING][FSM_MAIN_CASTING] = &fsm_main_update_reeling_to_cast;
+	fsm_main.on_change[FSM_MAIN_REELING][FSM_MAIN_FISHON] = &fsm_main_reeling_to_fishon;
 }
 
 void fsm_main_update()
@@ -980,19 +1011,15 @@ void fsm_main_update()
 }
 
 
-#define FISH_INTEREST_IGNORE 0
-#define FISH_INTEREST_NOTICE 1
-#define FISH_INTEREST_THINK 5
-#define FISH_INTEREST_REJECT 10
-#define FISH_INTEREST_BITE 11
-int get_fish_interest(struct Actor* actor, struct Fish* fish, struct Lure* lure)
-{
-	float distance_to_fish = 0;
-
-	// Calculate dot product of the fish facing the lure
-	struct Vector3 fish_to_lure = Vector3_subtract(&object_lure.position, &object_fish.position);
-	float dot_fish_facing = 0;
-}
+//#define FISH_INTEREST_IGNORE 0
+//#define FISH_INTEREST_NOTICE 1
+//#define FISH_INTEREST_THINK 5
+//#define FISH_INTEREST_REJECT 10
+//#define FISH_INTEREST_BITE 11
+//int get_fish_interest(struct Actor* actor, struct Fish* fish, struct Lure* lure)
+//{
+//
+//}
 
 struct Vector3 fish_station; // The spot the fish should swim around
 bool fsm_main_update_cast_to_reeling() {
@@ -1011,6 +1038,8 @@ bool fsm_main_update_cast_to_reeling() {
 	camera_default_object.position.z = object_lure.position.z + 5;
 	camera_default_object.position.y = object_lure.position.y - 3;
 	camera_default_object.position.x = object_lure.position.x;
+
+	object_lure_target_position = object_lure.position;
 
 	return true;
 }
@@ -1031,21 +1060,49 @@ bool fsm_main_update_reeling_to_cast() {
 	return true;
 }
 
+bool fsm_main_reeling_to_fishon() {
+	tension_meter_visible = true;
+	// TODO: Set to false on transitioning back to main
+
+	return true;
+}
+
 void fsm_fish_init()
 {
 	fsm_fish.on_change[FSM_FISH_IDLE][FSM_FISH_SWIM] = &fsm_fish_idle_to_swim;
 	fsm_fish.on_change[FSM_FISH_SWIM][FSM_FISH_IDLE] = &fsm_fish_swim_to_idle;
+	fsm_fish.on_change[FSM_FISH_IDLE][FSM_FISH_APPROACH] = &fsm_fish_to_approach;
+	fsm_fish.on_change[FSM_FISH_SWIM][FSM_FISH_APPROACH] = &fsm_fish_to_approach;
+	fsm_fish.on_change[FSM_FISH_APPROACH][FSM_FISH_BITE] = &fsm_fish_approach_to_bite;
+	fsm_fish.on_change[FSM_FISH_BITE][FSM_FISH_SWIM] = &fsm_fish_idle_to_swim;
+	fsm_fish.on_change[FSM_FISH_BITE][FSM_FISH_HOOKED] = &fsm_fish_bite_to_hook;
 }
 
 #define IDLE_TIMER_MAX 2
+#define FISH_NOTICE_COOLDOWN_MAX 5
+#define FISH_BITE_MAX 1
 float fish_speed = 3; // TODO: Move this to fish data?
 float fish_roam_radius = 4; // TODO: Move this to fish data?
 float idle_timer = 0;
+float fish_notice_cooldown = FISH_NOTICE_COOLDOWN_MAX;
+float fish_bite_timer = 0;
+
+#define FISH_ON_FIGHTING 1
+#define FISH_ON_RELAX 0
+#define FISH_ON_TIMER_MIN 1
+#define FISH_ON_TIMER_MAX 4
+int fish_on_state = FISH_ON_FIGHTING;
+float fish_on_state_timer = FISH_ON_TIMER_MAX;
+float look_at_fish_blend = 0.f;
+float fish_side_lure_offset = 0.f; // x axis offset from lure
 void fsm_fish_update()
 {
+	// Main behaviors
 	switch (fsm_fish.current_state)
 	{
 	case FSM_FISH_IDLE:
+		if (fish_notice_cooldown > 0) fish_notice_cooldown -= DELTA_TIME;
+		else fish_notice_cooldown = 0;
 		if (UnderwaterView.Visible)
 		{
 			// Decide if we should move randomly
@@ -1059,6 +1116,8 @@ void fsm_fish_update()
 		break;
 
 	case FSM_FISH_SWIM:
+		if (fish_notice_cooldown > 0) fish_notice_cooldown -= DELTA_TIME;
+		else fish_notice_cooldown = 0;
 		if (UnderwaterView.Visible)
 		{
 			// Go back to idle if we're done swimming
@@ -1078,10 +1137,10 @@ void fsm_fish_update()
 
 			struct Vector3 move_forward = Vector3_multiplyScalar(&object_fish.forward, DELTA_TIME * .5);
 			object_fish.position = Vector3_subtract(&object_fish.position, &move_forward);
-			float speed = Vector3_length(&move_forward);
+			//float speed = Vector3_length(&move_forward);
 			// TODO: Set this dynamically based on speed, once we're easing
 			//fish_wiggle_speed = (speed / .1f) * 20.f; 
-			pd->system->logToConsole("swim speed %f", speed);
+			//pd->system->logToConsole("swim speed %f", speed);
 			/*if (speed > STOP_SWIMMING_THRESHOLD)
 			{
 				float b = 2;
@@ -1092,6 +1151,177 @@ void fsm_fish_update()
 			//struct Vector3 trace_target = Vector3_subtract(&object_fish.position, &move_direction);
 		}
 		break;
+
+	case FSM_FISH_APPROACH:
+	{
+		struct Vector3 move_forward = Vector3_multiplyScalar(&object_fish.forward, DELTA_TIME * .5);
+		object_fish.position = Vector3_subtract(&object_fish.position, &move_forward);
+	}
+	break;
+
+	case FSM_FISH_HOOKED:
+	{
+		// Fish has committed to taking the bait, it's on the hook until the line breaks or we reel it in.
+		// Alternate between resisting (pulling away) and not.
+		float z_delta = 0.f;
+		switch (fish_on_state)
+		{
+		case FISH_ON_FIGHTING:
+			//pd->system->logToConsole("fish fighting");
+			// Reeling adds tension to the line.
+			// Increment line tension
+			// Increment yards
+#define fish_speed 2.f;
+			// TODO: Replace Fish Speed with an attribute from the fish
+			//yards += DELTA_TIME * fish_speed;
+			z_delta -= DELTA_TIME * fish_speed;
+
+#define FISH_MAX_TENSION .5f
+			if (line_fish_tension < FISH_MAX_TENSION)
+			{
+				line_fish_tension += DELTA_TIME;
+			}
+			if (line_fish_tension > FISH_MAX_TENSION) line_fish_tension = FISH_MAX_TENSION;
+
+			break;
+
+		case FISH_ON_RELAX:
+			//pd->system->logToConsole("fish relaxing");
+			z_delta += DELTA_TIME * .1f; // figure out natural towards-player drift
+			if (line_fish_tension > 0)
+			{
+				line_fish_tension -= DELTA_TIME;
+			}
+			if (line_fish_tension < 0) line_fish_tension = 0;
+			break;
+		}
+
+		// Move the lure forward or back
+		// TODO: Also juke left/right (x)
+		object_lure_target_position.z += z_delta;
+		struct Vector3 fish_target = object_lure_target_position;
+		fish_target = Vector3_subtract(&fish_target, &object_fish.position);
+		fish_target = Vector3_normalize(fish_target);
+		fish_target = Vector3_subtract(&object_lure_target_position, &fish_target);
+		/*fish_target.x += fish_side_lure_offset;
+		fish_target.z += fish_on_state == FISH_ON_FIGHTING ? 1 : -1;*/
+		object_fish.position = Vector3_lerp(&object_fish.position, &fish_target, .5f);
+		//object_fish.position.x += fish_side_lure_offset;
+
+		// Wait out the remaining time we have in this state
+		if (fish_on_state_timer > 0)
+		{
+			fish_on_state_timer -= DELTA_TIME;
+		}
+		else
+		{
+			// Flip the state
+			fish_on_state = fish_on_state == FISH_ON_FIGHTING ? FISH_ON_RELAX : FISH_ON_FIGHTING;
+
+			// Calculate the new time duration
+			float r = ((float)rand() / (float)RAND_MAX); // 0 - 1
+			fish_on_state_timer = FISH_ON_TIMER_MIN + r * (FISH_ON_TIMER_MAX - FISH_ON_TIMER_MIN);
+		}
+	}
+	break;
+	}
+
+	// == FISH INTEREST STATE CHANGES ==
+	switch (fsm_fish.current_state)
+	{
+	case FSM_FISH_IDLE:
+	case FSM_FISH_SWIM:
+	{
+		// If we've cooled down from the last approach
+		if (fish_notice_cooldown > 0) break;
+
+		// Calculate the approach interest
+		float distance_to_fish = Vector3_getDistanceSquared(&object_fish.position, &object_lure.position);
+		// TODO: Calculate this threshold based on fish and/or lure
+		float distance_notice_threshold = 3.5; // Threshold outside of which the lure isn't noticed
+
+
+		// Make sure we clear the "close enough" threshold before checking anything else
+		if (distance_to_fish >
+			distance_notice_threshold * distance_notice_threshold)
+		{
+			break;
+		}
+
+		/*if (look_at_fish_blend < .5)
+		{*/
+			if (camera_default_object.look_target.next == NULL)
+			{
+				LookTarget_setTarget(&camera_default_object.look_target, &object_fish.position);
+				camera_default_object.look_target.max_blend = .25f; // look partway
+			}
+			//camera_default_object.look_target. = &object_fish;
+
+			//look_at_fish_blend += DELTA_TIME;
+			//camera_default.look_blend = look_at_fish_blend;
+		//}
+
+		// Calculate dot product of the fish facing the lure
+		struct Vector3 fish_to_lure = Vector3_subtract(&object_lure.position, &object_fish.position);
+		fish_to_lure = Vector3_normalize(fish_to_lure);
+		float dot_fish_facing = Vector3_dot(object_fish.forward, fish_to_lure);
+
+		// If the fish is looking at the lure
+#define FISH_NOTICE_DOT_THRESHOLD .5
+		//pd->system->logToConsole("fish facing dot %f > %f?", dot_fish_facing, -FISH_NOTICE_DOT_THRESHOLD);
+		if (dot_fish_facing < -FISH_NOTICE_DOT_THRESHOLD
+			// or the lure_fitness is too tempting
+			// || (lure_fitness >= .75
+			&& is_cranking
+			) {
+
+			// Then we approach
+			fsm_set_state(&fsm_fish, FSM_FISH_APPROACH);
+			pd->system->logToConsole("fish noticed lure, approachingg");
+		}
+	}
+	break;
+
+	case FSM_FISH_APPROACH:
+	{
+		struct Vector3 fish_ref_point = Actor_getFrontPointZ(&object_fish);
+		float distance_to_fish = Vector3_getDistanceSquared(&fish_ref_point, &object_lure.position);
+
+		// Once we've reached the lure
+		if (distance_to_fish < .5) {
+			fsm_set_state(&fsm_fish, FSM_FISH_BITE);
+			pd->system->logToConsole("fish reached lure");
+		}
+	}
+	break;
+
+	case FSM_FISH_BITE:
+	{
+		// Decide if we should take the bait
+
+		// Wait a little
+		if (fish_bite_timer <= FISH_BITE_MAX)
+		{
+			fish_bite_timer += DELTA_TIME;
+		}
+		else { // and decide
+			// TODO: Base this on something besides random chance
+			float r = ((float)rand() / (float)RAND_MAX);
+			bool take_bait = r > 0; // > .5 is 50/50
+			if (take_bait) {
+				pd->system->logToConsole("FISH ON!");
+				fsm_set_state(&fsm_fish, FSM_FISH_HOOKED);
+				fsm_set_state(&fsm_main, FSM_MAIN_FISHON);
+			}
+			else {
+				// TODO: Add "swim away" rejection state instead?
+				pd->system->logToConsole("fish rejected bait");
+				fish_notice_cooldown = FISH_NOTICE_COOLDOWN_MAX;
+				fsm_set_state(&fsm_fish, FSM_FISH_SWIM);
+			}
+		}
+	}
+	break;
 	}
 }
 
@@ -1133,6 +1363,28 @@ bool fsm_fish_swim_to_idle()
 	return true;
 }
 
+bool fsm_fish_to_approach()
+{
+	pd->system->logToConsole("FISH APPROACH");
+
+	LookTarget_setTarget(&object_fish.look_target, &object_lure.position);
+	fish_wiggle_speed = 5.f;
+
+	return true;
+}
+
+bool fsm_fish_approach_to_bite()
+{
+	fish_bite_timer = 0;
+	return true;
+}
+
+bool fsm_fish_bite_to_hook()
+{
+	fish_side_lure_offset = object_fish.position.x - object_lure.position.x;
+
+	return true;
+}
 
 
 #define CAST_SELECTOR_SPEED 5
@@ -1226,19 +1478,74 @@ void lake_postdraw()
 
 void underwater_update()
 {
+	object_lure.visible =
+		fsm_fish.current_state != FSM_FISH_BITE &&
+		fsm_fish.current_state != FSM_FISH_HOOKED;
 }
 
 void underwater_draw()
 {
+
 }
 
 void underwater_postdraw()
 {
+	// Draw things relative to the fish reference points
+	struct Vector3 fish_ref_point = Actor_getFrontPointZ(&object_fish);// object_fish.position;
+	struct Vector3 fish_up_offset = { .y = -1.1, .z = .5 };
+	struct Vector3 fish_up = Vector3_subtract(&fish_ref_point, &fish_up_offset);
+
+	// Circle the reference point 
+	struct Vector3 fish_front = fish_ref_point;
+	fish_front = Vector3_subtract(&fish_front, &camera_default_object.position);
+	PTR_Matrix3_apply(&camera_default.rotate_transform, &fish_front);
+	fish_front = Camera_worldToScreenPos(&camera_default, &fish_front);
+
+	// Draw mouth reference point
+//#define FISH_FRONT_RADIUS 10
+//	pd->graphics->drawEllipse(
+//		fish_front.x - (FISH_FRONT_RADIUS / 2),
+//		fish_front.y - (FISH_FRONT_RADIUS / 2),
+//		FISH_FRONT_RADIUS, FISH_FRONT_RADIUS,
+//		1, 0, 360, kColorWhite);
+
+	// Circle a point above the reference point
+	// This is where we'll display the current state
+	fish_up = Vector3_subtract(&fish_up, &camera_default_object.position);
+	PTR_Matrix3_apply(&camera_default.rotate_transform, &fish_up);
+	fish_up = Camera_worldToScreenPos(&camera_default, &fish_up);
+
+	pd->graphics->setFont(FONT_MONTSERRAT_BLACK_24);
+	float text_off = pd->graphics->getTextWidth(FONT_MONTSERRAT_BLACK_24, "X", 1, kASCIIEncoding, 0) / 2;
+	switch (fsm_fish.current_state) {
+	case FSM_FISH_IDLE:
+		pd->graphics->drawText("...", 3, kASCIIEncoding, fish_up.x - text_off, fish_up.y);
+		break;
+	case FSM_FISH_APPROACH:
+		pd->graphics->drawText("?", 3, kASCIIEncoding, fish_up.x - text_off, fish_up.y);
+		break;
+	case FSM_FISH_HOOKED:
+		pd->graphics->drawText("!", 3, kASCIIEncoding, fish_up.x - text_off, fish_up.y);
+		break;
+	case FSM_FISH_SWIM:
+		if (fish_notice_cooldown > 0)
+			pd->graphics->drawText("X", 3, kASCIIEncoding, fish_up.x - text_off, fish_up.y);
+		break;
+	}
+	/*pd->graphics->drawEllipse(
+		fish_up.x - (FISH_FRONT_RADIUS / 2),
+		fish_up.y - (FISH_FRONT_RADIUS / 2),
+		FISH_FRONT_RADIUS / 2, FISH_FRONT_RADIUS / 2,
+		1, 0, 360, kColorWhite);*/
+
+
+	// Render lure line
 	if (fsm_fish.current_state == FSM_FISH_BITE ||
 		fsm_fish.current_state == FSM_FISH_HOOKED)
-		lure_line_render(&object_fish.position);
+		lure_line_render(&fish_ref_point);
 	else
 		lure_line_render(&object_lure.position);
+
 
 	// Replace with waves?
 	// YPlane_render(frame, &camera_default, WATER_SURFACE_Y, false); 
@@ -1250,6 +1557,8 @@ void underwater_postdraw()
 	//ui_fish_name();
 	//ui_radar();
 	ui_tension();
+
+
 }
 
 /* 

@@ -16,8 +16,6 @@ typedef struct Actor
 	struct Vector3 rotation; // euler
 	struct Vector3 scale;
 
-	// A "reference" point, i.e. a fish mouth or particle spawn point
-	struct Vector3 reference_point;
 
 	struct Vector3 forward;
 	struct LookTarget look_target;
@@ -57,5 +55,6 @@ typedef struct Actor
 //void Actor_setRotation(struct Actor* go, float xTheta, float yTheta, float zTheta);
 
 void Actor_updateTransform(struct Actor* act);
+struct Vector3 Actor_getFrontPointZ(struct Actor* act);
 
 #endif

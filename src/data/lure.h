@@ -55,21 +55,22 @@ typedef struct Lure
 
 	struct TimingComparison* timing_pattern;
 
-	void (*move)(struct Lure* lure, struct Actor* actor, float distance);
+	void (*move)(struct Lure* lure, struct Vector3* position, float distance);
 	float (*fit_score_pattern)(float times[TIMING_BUFFER_LENGTH], struct TimingComparison comps[]);
-	void (*update)(struct Lure* lure, struct Actor* actor);
+	void (*update)(struct Lure* lure, struct Vector3* position);
 };
 
-void lure_update_descend(struct Lure* lure, struct Actor* actor)
+void lure_update_descend(struct Lure* lure, struct Vector3* position)
 {
-	actor->position.y -= DELTA_TIME * lure->density;
-	if (actor->position.y < 0) actor->position.y = 0;
+	position->y -= DELTA_TIME * lure->density;
+	if (position->y < 0) position->y = 0;
 }
 
-void lure_move_ascend(struct Lure* lure, struct Actor* actor, float distance)
+/* Move `position` based on `lure` attributes, over `distance`. */
+void lure_move_ascend(struct Lure* lure, struct Vector3* position, float distance)
 {
-	actor->position.z += DELTA_TIME * distance * lure->drag;
-	actor->position.y += DELTA_TIME * distance * lure->drag / lure->density;
+	position->z += DELTA_TIME * distance * lure->drag;
+	position->y += DELTA_TIME * distance * lure->drag / lure->density;
 }
 
 /*

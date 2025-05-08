@@ -92,7 +92,7 @@ void LookTarget_setTarget(struct LookTarget* lt, struct Vector3* target)
 	lt->blend = 0;
 	lt->is_tweening = true;
 
-	lt->has_target = lt->current == NULL;
+	lt->has_target = lt->current != NULL;
 }
 
 void LookTarget_tick(struct LookTarget* lt)
@@ -110,6 +110,12 @@ void LookTarget_tick(struct LookTarget* lt)
 
 	// Currently tweening, lerp between current and next target
 	lt->blend += DELTA_TIME * lt->tween_speed;
+	//lt->blend = .5f;
+	
+	if (lt->max_blend > 0 && lt->blend > lt->max_blend) 
+	{
+		lt->blend = lt->max_blend;
+	}
 
 	if (lt->blend >= 1.f)
 	{
@@ -125,6 +131,9 @@ void LookTarget_tick(struct LookTarget* lt)
 
 		lt->value = *lt->current;
 	}
+	// `> max_blend` lets us cache the value once it its that threshold instead of 
+	// recalculating every tick
+	//else if (lt->blend > lt->max_blend)
 	else
 	{
 		lt->value = Vector3_lerp(lt->current, lt->next, lt->blend);

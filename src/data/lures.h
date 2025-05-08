@@ -4,8 +4,6 @@
 #include <float.h>
 #include "./lure.h";
 
-extern void lure_move_ascend(struct Lure* lure, struct Actor* actor, float distance);
-
 /*
 	Timing Patterns
 */
