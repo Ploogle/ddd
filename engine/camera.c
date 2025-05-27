@@ -6,7 +6,7 @@
 #define SCREEN_WIDTH_F 400.0f
 #define SCREEN_HEIGHT_F 240.0f
 
-extern double DELTA_TIME;
+extern float DELTA_TIME;
 
 struct Matrix4x4 Camera_getProjectionMatrix(struct Camera* camera)  {
 	struct Matrix4x4 projection = { 0 };

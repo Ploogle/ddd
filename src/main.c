@@ -30,16 +30,28 @@ __declspec(dllexport)
 /*
 	Values
 */
-LCDFont* font = NULL;
-LCDFont* FONT_MONTSERRAT_BLACK_24 = NULL;
-LCDFont* FONT_MONTSERRAT_BLACK_ITALIC_24 = NULL;
-LCDFont* FONT_MONTSERRAT_BOLD_14 = NULL;
+
+// PSA: Leave this line in here or it flips the hell out
+LCDFont* font = NULL; 
+
+//LCDFont* FONT_MONTSERRAT_BLACK_24 = NULL;
+//LCDFont* FONT_MONTSERRAT_BLACK_ITALIC_24 = NULL;
+//LCDFont* FONT_MONTSERRAT_BOLD_14 = NULL;
+LCDFont* FONT_IGNORE_17 = NULL;
+LCDFont* FONT_NOPE_8 = NULL;
+LCDFont* FONT_QUIT_12 = NULL;
+LCDFont* FONT_XERXES_10 = NULL;
+
 uint8_t* frame;
 
-const char* fontpath = "/System/Fonts/Asheville-Sans-14-Bold.pft";
-const char* fontpath2 = "/Assets/Fonts/Montserrat-Black.pft";
-const char* fontpath3 = "/Assets/Fonts/Montserrat-BlackItalic.pft";
-const char* fontpath4 = "/Assets/Fonts/Montserrat-Bold-14.pft";
+//const char* fontpath = "/System/Fonts/Asheville-Sans-14-Bold.pft";
+//const char* fontpath2 = "/Assets/Fonts/Montserrat-Black.pft";
+//const char* fontpath3 = "/Assets/Fonts/Montserrat-BlackItalic.pft";
+//const char* fontpath4 = "/Assets/Fonts/Montserrat-Bold-14.pft";
+const char* ignore_17_fontpath = "/Assets/Fonts/ignore-17.pft";
+const char* nope_8_fontpath = "/Assets/Fonts/nope-8.pft";
+const char* quit_12_fontpath = "/Assets/Fonts/quit-12.pft";
+const char* xerxes_10_fontpath = "/Assets/Fonts/xerxes-10.pft";
 
 #define TEXT_WIDTH 86
 #define TEXT_HEIGHT 16
@@ -73,21 +85,25 @@ int eventHandler(PlaydateAPI* _pd, PDSystemEvent event, uint32_t arg)
 	{
 		const char* err;
 
-		font = pd->graphics->loadFont(fontpath, &err);
-		if ( font == NULL )
-			pd->system->error("%s:%i Couldn't load font %s: %s", __FILE__, __LINE__, fontpath, err);
+		//font = pd->graphics->loadFont(fontpath, &err);
+		//if ( font == NULL )
+		//	pd->system->error("%s:%i Couldn't load font %s: %s", __FILE__, __LINE__, fontpath, err);
 
-		FONT_MONTSERRAT_BLACK_24 = pd->graphics->loadFont(fontpath2, &err);
-		if (FONT_MONTSERRAT_BLACK_24 == NULL)
-			pd->system->error("%s:%i Couldn't load font %s: %s", __FILE__, __LINE__, fontpath, err);
+		FONT_IGNORE_17 = pd->graphics->loadFont(ignore_17_fontpath, &err);
+		if (FONT_IGNORE_17 == NULL)
+			pd->system->error("%s:%i Couldn't load font %s: %s", __FILE__, __LINE__, ignore_17_fontpath, err);
 
-		FONT_MONTSERRAT_BLACK_ITALIC_24 = pd->graphics->loadFont(fontpath3, &err);
-		if (FONT_MONTSERRAT_BLACK_ITALIC_24 == NULL)
-			pd->system->error("%s:%i Couldn't load font %s: %s", __FILE__, __LINE__, fontpath, err);
+		FONT_NOPE_8 = pd->graphics->loadFont(nope_8_fontpath, &err);
+		if (FONT_NOPE_8 == NULL)
+			pd->system->error("%s:%i Couldn't load font %s: %s", __FILE__, __LINE__, nope_8_fontpath, err);
 
-		FONT_MONTSERRAT_BOLD_14 = pd->graphics->loadFont(fontpath4, &err);
-		if (FONT_MONTSERRAT_BOLD_14 == NULL)
-			pd->system->error("%s:%i Couldn't load font %s: %s", __FILE__, __LINE__, fontpath, err);
+		FONT_QUIT_12 = pd->graphics->loadFont(quit_12_fontpath, &err);
+		if (FONT_QUIT_12 == NULL)
+			pd->system->error("%s:%i Couldn't load font %s: %s", __FILE__, __LINE__, quit_12_fontpath, err);
+
+		FONT_XERXES_10 = pd->graphics->loadFont(xerxes_10_fontpath, &err);
+		if (FONT_XERXES_10 == NULL)
+			pd->system->error("%s:%i Couldn't load font %s: %s", __FILE__, __LINE__, xerxes_10_fontpath, err);
 
 		pd->system->setUpdateCallback(update, pd);
 		pd->display->setRefreshRate(50);
@@ -142,7 +158,8 @@ void camera_update()
 		if (!ActiveScene->views[v]->Enabled) continue;
 
 		ActiveCamera = ActiveScene->views[v]->cameras[
-			ActiveScene->views[v]->activeCameraIndex];
+			ActiveScene->views[v]->activeCameraIndex
+		];
 
 		// Calculate our look_target->value
 		LookTarget_tick(&ActiveCamera->actor->look_target);
@@ -181,7 +198,7 @@ static int update(void* userdata)
 	DELTA_TIME *= TIME_SCALE;
 	
 	pd->graphics->clear(kColorBlack);
-	pd->graphics->setFont(font);
+	//pd->graphics->setFont(font);
 	frame = pd->graphics->getFrame();
 
 	pd->system->getButtonState(&heldButtons, &pressedButtons, &releasedButtons);
@@ -212,7 +229,7 @@ static int update(void* userdata)
 			ActiveScene->views[v]->postdraw();
 	}
 
-	//pd->system->drawFPS(LCD_COLUMNS - 20, LCD_ROWS - 15);
+	pd->system->drawFPS(LCD_COLUMNS/2 - 10, 0);
 
 	return 1;
 }

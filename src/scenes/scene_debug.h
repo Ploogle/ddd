@@ -10,7 +10,7 @@
 */
 
 extern PlaydateAPI* pd;
-extern double DELTA_TIME;
+extern float DELTA_TIME;
 extern uint8_t* frame;
 extern PDButtons heldButtons, pressedButtons, releasedButtons;
 

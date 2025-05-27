@@ -21,12 +21,16 @@
 */
 
 extern PlaydateAPI* pd;
-extern double DELTA_TIME;
+extern float DELTA_TIME;
 extern uint8_t* frame;
 extern PDButtons heldButtons, pressedButtons, releasedButtons;
-extern LCDFont* FONT_MONTSERRAT_BLACK_ITALIC_24;
-extern LCDFont* FONT_MONTSERRAT_BLACK_24;
-extern LCDFont* FONT_MONTSERRAT_BOLD_14;
+//extern LCDFont* FONT_MONTSERRAT_BLACK_ITALIC_24;
+//extern LCDFont* FONT_MONTSERRAT_BLACK_24;
+//extern LCDFont* FONT_MONTSERRAT_BOLD_14;
+extern LCDFont* FONT_IGNORE_17;
+extern LCDFont* FONT_NOPE_8;
+extern LCDFont* FONT_QUIT_12;
+extern LCDFont* FONT_XERXES_10;
 
 /*
 	Definitions
@@ -56,6 +60,9 @@ void fsm_main_update();
 bool fsm_main_update_cast_to_reeling();
 bool fsm_main_update_reeling_to_cast();
 bool fsm_main_reeling_to_fishon();
+bool fsm_main_fishon_to_casting();
+bool fsm_main_fishon_to_success();
+bool fsm_main_fishon_to_failure();
 void fsm_fish_init();
 void fsm_fish_update();
 bool fsm_fish_idle_to_swim();
@@ -64,6 +71,12 @@ bool fsm_fish_approach_to_bite();
 bool fsm_fish_to_approach();
 bool fsm_fish_bite_to_hook();
 void underwater_camera_update();
+
+void lsm_fish_catch_sequence(bool reset);
+void lsm_line_break_sequence(bool reset);
+
+
+float crank_smoothed = 0;
 
 
 /*
@@ -87,10 +100,12 @@ AudioSample* audio_fish_on_loop;
 #define FSM_MAIN_CASTING 1
 #define FSM_MAIN_REELING 2
 #define FSM_MAIN_FISHON 3
-#define FSM_MAIN_RESULTS 4
+#define FSM_MAIN_SUCCESS 4
+#define FSM_MAIN_FAIL 5
 struct FSM fsm_main = {
 	.init = &fsm_main_init,
-	.update = &fsm_main_update
+	.update = &fsm_main_update,
+	.name = "fsm_main"
 };
 
 #define FSM_FISH_IDLE 0 // Sitting, doing nothing
@@ -100,9 +115,11 @@ struct FSM fsm_main = {
 #define FSM_FISH_HOOKED 4 // Fish On!
 #define FSM_FISH_ESCAPE 5 // Line broke, fish got away.
 #define FSM_FISH_CAUGHT 6 // Successful catch
+#define FSM_FISH_RUN 7 // Fish running away
 struct FSM fsm_fish = {
 	.init = &fsm_fish_init,
-	.update = &fsm_fish_update
+	.update = &fsm_fish_update,
+	.name = "fsm_fish"
 };
 
 /*
@@ -136,6 +153,22 @@ struct FSM fsm_fish = {
 	.scene = &FishingScene,
 	.use_fog = true,
 };
+
+ struct Actor object_results_fish = {
+   .name = "Lake Fish",
+   .visible = false,
+   .mesh = &blahaj_tri,
+   .position = { 1, -3, 2.0f },
+   .rotation = { (-3.14 / 2), 0, 0 },
+   .scale = { 1, 1, 1 },
+   .look_target = {
+	   .tween_speed = 1.f,
+   },
+   //.update = &fish_update,
+   .vertShader = &fish_vertShader,
+   .scene = &FishingScene,
+   .use_fog = false,
+ };
 
 struct Actor object_terrain = {
 	.name = "Terrain",
@@ -180,7 +213,7 @@ struct Actor camera_default_object = {
 	.rotation = { 0, 0, 0},
 	.scale = { 1, 1, 1 },
 	.look_target = {
-		.tween_speed = .1f,//1.f,
+		.tween_speed = .1f,
 	},
 	.update = &underwater_camera_update,
 };
@@ -248,29 +281,30 @@ struct Camera camera_lake = {
 #define WATER_SURFACE_Y 10
 
 
-float ticker_x = 420;
-const float TICKER_SPEED = 60.0f;
+float ticker_x = LCD_COLUMNS;
+const float TICKER_SPEED = 120;// 60.0f;
 char* ticker_queue[32];
 int ticker_queue_length;
 float next_clear_width = 0;
-char* ticker_buffer = "            ";
+char* ticker_buffer = "                      ";
+int ticker_buffer_width = 0;
 int ticker_filler_index = 0;
 LCDFont* TICKER_FONT;
 char* ticker_filler_table[] = {
-	//"Trying to sneak into the fish heaven? You'll need to complete all the lake rituals!",
-	"Here's my fish impression: glub glub glub glub glub glub glub glub glub glub",
-	"If you hold your breath for too long, you'll die.",
-	"Some fish have evolved the ability to have feelings about sports.",
-	//"Having trouble attracting a fish? Try changing the lure! There's someone out there for everybody, according to my ex. Monica, I still love you.",
-	"If you're a fish cop, you have to tell me, or it's entrapment.",
-	"The Fish Vatican is located somewhere in Italy, but I've never been there.",
-	//"Today's winning lottery numbers are: 2 94 84 2 65 8 19 297 4 3 27 3 7273 42 72 27",
-	//"Da early fish gets da worm.",
-	"Don't throw empty beer cans into the lake. The fish are trying to cut back.",
-	"If you teach a man to fish, he'll eat for a day. If you teach a fish to man, he will attain salvation, amen.",
+	"It's not enough to attract a fish, you need to keep it interested or it won't bite. Ask me how I know.",
+	"I've been to the Fish Heaven.          ...okay that's a lie. I've been to an aquarium though.",
+	"The average human can run faster than most fish.",
 	"Hint: Shake a fish. They love it!",
 	"You'll catch more flies with honey than vinegar. But we're catching fish, baby!",
-	"The average human can run faster than most fish.",
+	"I'm just saying, I've never seen Big Mouth Billy Bass and Lance Bass in the same room.",
+	"Fish: friend or foe?",
+	"Here's my fish impression: glub glub glub glub",
+	"If you hold your breath for too long, you'll die.",
+	"Some fish have evolved the ability to have feelings about sports.",
+	"If you're a fish cop, you have to tell me, or it's entrapment.",
+	"The Fish Vatican is located somewhere in Italy, but I've never been there.",
+	"Da early fish gets da worm.",
+	"If you teach a man to fish, he'll eat for a day. If you teach a fish to man, he will attain salvation, amen.",
 	NULL
 };
 char ticker_text[1024];
@@ -291,14 +325,7 @@ void ticker_add(char* item)
 			strlen(ticker_queue[0]),
 			kASCIIEncoding,
 			0
-		) +
-			pd->graphics->getTextWidth(
-				TICKER_FONT,
-				ticker_buffer,
-				strlen(ticker_buffer),
-				kASCIIEncoding,
-				0
-			);
+		);
 	}
 }
 
@@ -308,7 +335,7 @@ void ticker_add_from(char** table)
 	for(;;length++) if (table[length + 1] == NULL) break;
 
 	// TODO: Ensure that we don't get duplicates until we've shown them all.
-	//int idx = ((float)rand() / (float)RAND_MAX) * (length - 1);
+	//int idx = RAND_PERC * (length - 1);
 	int idx = ticker_filler_index++;
 	if (idx >= length) {
 		idx = 0; ticker_filler_index = 0;
@@ -318,38 +345,38 @@ void ticker_add_from(char** table)
 
 void ticker_clear_first()
 {
-	char* first = ticker_queue[0];
-	
-	ticker_x += next_clear_width - 4.67*2; // 1/3 of font size for both text, buffer
+	ticker_x += next_clear_width;
 
-	for (int i = 0; i < ticker_queue_length - 1; i++)
+	for (int i = 0; i < ticker_queue_length && i < 32; i++)
 	{
 		ticker_queue[i] = ticker_queue[i + 1];
 	}
 
-	next_clear_width = pd->graphics->getTextWidth(
-		TICKER_FONT,
-		ticker_queue[0],
-		strlen(ticker_queue[0]),
-		kASCIIEncoding,
-		0
-	) +
-		pd->graphics->getTextWidth(
-			TICKER_FONT,
-			ticker_buffer,
-			strlen(ticker_buffer),
-			kASCIIEncoding,
-			0
-		);
-
 	ticker_queue_length--;
 
-	//ticker_text = pd->system->realloc(ticker_text, sizeof(char) * 1024);
-	strcpy(ticker_text, ticker_buffer);
-	for (int i = 0; i < ticker_queue_length; i++)
+	if (ticker_queue_length > 0)
 	{
-		strcat(ticker_text, ticker_queue[ticker_queue_length - 1]);
-		strcat(ticker_text, ticker_buffer);
+		next_clear_width = pd->graphics->getTextWidth(
+			TICKER_FONT,
+			ticker_queue[0],
+			strlen(ticker_queue[0]),
+			kASCIIEncoding,
+			0
+		) +
+			pd->graphics->getTextWidth(
+				TICKER_FONT,
+				ticker_buffer,
+				strlen(ticker_buffer),
+				kASCIIEncoding,
+				0
+			);
+
+		strcpy(ticker_text, ticker_buffer); // Reset current text to the buffer
+		for (int i = 0; i < ticker_queue_length; i++)
+		{
+			strcat(ticker_text, ticker_queue[i]);
+			strcat(ticker_text, ticker_buffer);
+		}
 	}
 
 	if (ticker_queue_length == 0)
@@ -359,37 +386,59 @@ void ticker_clear_first()
 	}
 }
 
-// BUG: Repeats same "random" ticker item
 void ui_news_ticker()
 {
-	static const TICKER_HEIGHT = 18;
+	static const TICKER_HEIGHT = 24;
 	pd->graphics->fillRect(0, 240 - TICKER_HEIGHT, 400, TICKER_HEIGHT, kColorBlack);
 
-	if (ticker_x <= -next_clear_width)
+	//// -- Debug, draw ticker offset and next clear width
+	//char s_offset[6] = "";
+	//char s_nextclear[6] = "";
+	//itoa(ticker_x, s_offset, 10);
+	//itoa(-next_clear_width, s_nextclear, 10);
+
+	//pd->graphics->setFont(FONT_IGNORE_17);
+	//pd->graphics->drawText(s_offset, strlen(s_offset), kASCIIEncoding, 100, 70);
+	//pd->graphics->drawText(s_nextclear, strlen(s_nextclear), kASCIIEncoding, 150, 70);
+	//// -- End Debug
+
+	int ticker_width = pd->graphics->getTextWidth(TICKER_FONT, ticker_text, strlen(ticker_text), kASCIIEncoding, 0);
+	if (ticker_buffer_width == 0 && ticker_buffer != "")
+	{
+		ticker_buffer_width = pd->graphics->getTextWidth(TICKER_FONT, ticker_buffer, strlen(ticker_buffer), kASCIIEncoding, 0);
+	}
+
+	if (ticker_x < -next_clear_width)
 	{
 		ticker_clear_first();
 	}
 
-	if (ticker_x < 400 - next_clear_width && ticker_queue_length == 1)
+	//while (ticker_x < 400 + next_clear_width && ticker_queue_length <= 1)
+	// While we don't have enough in the ticker to cover the current item plus a screen width's worth...
+	while (ticker_width < 400 + next_clear_width)
 	{
+		// add another item
 		ticker_add_from(ticker_filler_table);
+
+		// and recalculate the length
+		ticker_width = pd->graphics->getTextWidth(TICKER_FONT, ticker_text, strlen(ticker_text), kASCIIEncoding, 0);
 	}
 
 	pd->graphics->setFont(TICKER_FONT);
 	pd->graphics->setDrawMode(kDrawModeFillWhite);
-	pd->graphics->drawText(ticker_text, strlen(ticker_text), kASCIIEncoding, ticker_x, 240 - TICKER_HEIGHT + 2);
+	pd->graphics->drawText(ticker_text, strlen(ticker_text), kASCIIEncoding, ticker_x, 240 - TICKER_HEIGHT - 4);
 }
 
 void ui_fish_name()
 {
 	char* name = "HATEFUL SALMON";
-	int s_width = pd->graphics->getTextWidth(FONT_MONTSERRAT_BOLD_14, name, strlen(name), kASCIIEncoding, 0);
+	int s_width = pd->graphics->getTextWidth(FONT_NOPE_8, name, strlen(name), kASCIIEncoding, 0);
 	static int padding = 4;
 
-	pd->graphics->setFont(FONT_MONTSERRAT_BOLD_14);
+	pd->graphics->setFont(FONT_NOPE_8);
 	pd->graphics->fillRect(400 - s_width - padding*2, 240 - 50, s_width + padding * 2, 16, kColorBlack);
 	pd->graphics->setDrawMode(kDrawModeFillWhite);
-	pd->graphics->drawText(name, strlen(name), kASCIIEncoding, 400 - s_width - padding, 240 - 50);
+	pd->graphics->drawText(name, strlen(name), kASCIIEncoding, 400 - s_width - padding, 240 - 56);
 }
 
 float depth = 150;
@@ -406,7 +455,7 @@ void ui_depth()
 	if (zoom < 4) mod_by = 10;
 	if (zoom < 2) mod_by = 25;
 
-	pd->graphics->setFont(FONT_MONTSERRAT_BOLD_14);
+	pd->graphics->setFont(FONT_NOPE_8);// FONT_MONTSERRAT_BOLD_14);
 	pd->graphics->setDrawMode(kDrawModeFillWhite);
 	pd->graphics->fillRect(0, 0, depth_width, 240, kColorBlack);
 
@@ -444,12 +493,16 @@ void ui_depth()
 		if (abs(i) > 9) line_width = 8;
 		if (abs(i) > 99) line_width = 4;
 
-		pd->graphics->drawLine(0, y, line_width, y, 1, kColorWhite);
 
 		if (i % mod_by == 0)
 		{
 			itoa(abs(i), s_text, 10);
-			pd->graphics->drawText(s_text, strlen(s_text), kASCIIEncoding, line_width + 2, y - 7);
+			pd->graphics->drawText(s_text, strlen(s_text), kASCIIEncoding, line_width + 8, y - 14);
+			pd->graphics->drawLine(0, y, line_width + 4, y, 2, kColorWhite);
+		}
+		else 
+		{
+			pd->graphics->drawLine(0, y, line_width, y, 1, kColorWhite);
 		}
 	}
 	pd->graphics->drawLine(0, 240 / 2, 15, 240 / 2, 3, kColorWhite);
@@ -461,23 +514,32 @@ void ui_depth()
 float yards = 40;
 void ui_yards()
 {
-	char s_yards[5] = "000";
+	char s_yards[5] = "0000";
 	itoa(yards, s_yards, 10);
-
-	float s_width = pd->graphics->getTextWidth(FONT_MONTSERRAT_BLACK_24, s_yards, strlen(s_yards), kASCIIEncoding, 0);
+	char* unit = "YDS"; // This might be "MTRS" depending on region
+	
+	float max_width = pd->graphics->getTextWidth(FONT_IGNORE_17, "0000", 4, kASCIIEncoding, 0);
+	float s_width = pd->graphics->getTextWidth(FONT_IGNORE_17, s_yards, strlen(s_yards), kASCIIEncoding, 0);
+	float unit_width = pd->graphics->getTextWidth(FONT_NOPE_8, unit, strlen(unit), kASCIIEncoding, 0);
 	
 	pd->graphics->setDrawMode(kDrawModeFillWhite);
 
-	pd->graphics->fillRect(0, 0, 80, 30, kColorBlack);
-	pd->graphics->drawLine(0, 0, 80, 0, 1, kColorWhite);
-	pd->graphics->drawLine(80, 0, 80, 30, 1, kColorWhite);
-	pd->graphics->drawLine(80, 30, 0, 30, 1, kColorWhite);
-	pd->graphics->drawLine(0, 30, 0, 0, 1, kColorWhite);
-	pd->graphics->setFont(FONT_MONTSERRAT_BLACK_24);
-	pd->graphics->drawText(s_yards, strlen(s_yards), kASCIIEncoding, (80 - s_width)/2, 4);
+	int BOX_PADDING = 4;
+	int BOX_WIDTH = max_width + BOX_PADDING + unit_width + (BOX_PADDING * 2);
+	int BOX_HEIGHT = 24 + BOX_PADDING;
 
-	pd->graphics->setFont(FONT_MONTSERRAT_BOLD_14);
-	pd->graphics->drawText("YDS", 3, kASCIIEncoding, 80-30, 32);
+	pd->graphics->fillRect(0, 0, BOX_WIDTH, BOX_HEIGHT, kColorBlack);
+	pd->graphics->drawLine(0, 0, BOX_WIDTH, 0, 1, kColorWhite);
+	pd->graphics->drawLine(BOX_WIDTH, 0, BOX_WIDTH, BOX_HEIGHT, 1, kColorWhite);
+	pd->graphics->drawLine(BOX_WIDTH, BOX_HEIGHT, 0, BOX_HEIGHT, 1, kColorWhite);
+	pd->graphics->drawLine(0, BOX_HEIGHT, 0, 0, 1, kColorWhite);
+
+	// TODO: 7-segment font for this?
+	pd->graphics->setFont(FONT_IGNORE_17);
+	pd->graphics->drawText(s_yards, strlen(s_yards), kASCIIEncoding, (BOX_WIDTH - unit_width - s_width - BOX_PADDING), 0);
+
+	pd->graphics->setFont(FONT_NOPE_8); 
+	pd->graphics->drawText(unit, strlen(unit), kASCIIEncoding, BOX_WIDTH - unit_width - 1, BOX_HEIGHT - 22);
 }
 
 void ui_radar()
@@ -495,6 +557,8 @@ void ui_radar()
 float tension_offset_x = TENSION_METER_WIDTH + TENSION_OFFSET_BUFFER;
 bool tension_meter_visible = false;
 
+float tension_shake = 0.f;
+
 float line_integrity = 1.f;
 //float line_tension = 0.f;
 float line_fish_tension = 0.f;
@@ -502,6 +566,9 @@ float line_reel_tension = 0.f;
 #define LINE_TENSION MIN(line_fish_tension+line_reel_tension, 1)
 void ui_tension()
 {
+	if (tension_shake > 0) tension_shake *= .8f;
+	if (tension_shake < .01) tension_shake = 0;
+
 	// Slide in / out as visibility changes
 	if (tension_meter_visible)
 	{
@@ -544,15 +611,17 @@ void ui_tension()
 		h = (LINE_TENSION / a) * aY;
 	}
 
+	float shake_x = -tension_shake + RAND_PERC * tension_shake * 2;
+
 	pd->graphics->fillRect(
-		400 - TENSION_METER_WIDTH - buffer - border * 2 + tension_offset_x,
+		400 - TENSION_METER_WIDTH - buffer - border * 2 + tension_offset_x + shake_x,
 		buffer + border,
 		TENSION_METER_WIDTH + border * 2,
 		TENSION_METER_HEIGHT + border * 2,
 		kColorBlack
 	);
 	pd->graphics->drawRect(
-		400 - TENSION_METER_WIDTH - buffer - border + tension_offset_x,
+		400 - TENSION_METER_WIDTH - buffer - border + tension_offset_x + shake_x,
 		buffer + border * 2,
 		TENSION_METER_WIDTH,
 		TENSION_METER_HEIGHT,
@@ -560,7 +629,7 @@ void ui_tension()
 	);
 
 	pd->graphics->drawLine(
-		400 - TENSION_METER_WIDTH - buffer - border + tension_offset_x,
+		400 - TENSION_METER_WIDTH - buffer - border + tension_offset_x + shake_x,
 		(TENSION_METER_HEIGHT + buffer + border) - TENSION_METER_HEIGHT * aY,
 		400 - buffer - border - 1 + tension_offset_x,
 		(TENSION_METER_HEIGHT + buffer + border) - TENSION_METER_HEIGHT * aY,
@@ -568,7 +637,7 @@ void ui_tension()
 		kColorWhite
 	);
 	pd->graphics->drawLine(
-		400 - TENSION_METER_WIDTH - buffer - border + tension_offset_x,
+		400 - TENSION_METER_WIDTH - buffer - border + tension_offset_x + shake_x,
 		(TENSION_METER_HEIGHT + buffer + border) - TENSION_METER_HEIGHT * bY,
 		400 - buffer - border - 1 + tension_offset_x,
 		(TENSION_METER_HEIGHT + buffer + border) - TENSION_METER_HEIGHT * bY,
@@ -579,13 +648,16 @@ void ui_tension()
 	float adjMeterWidth = MAX(line_integrity * TENSION_METER_WIDTH, 0);
 	if ((int)adjMeterWidth % 2 != 0) adjMeterWidth = (int)adjMeterWidth + 1;
 
-	pd->graphics->fillRect(
-		(400.f - TENSION_METER_WIDTH - buffer - border) + ((float)TENSION_METER_WIDTH - adjMeterWidth + 1) / 2.f + tension_offset_x,
-		(buffer + border + TENSION_METER_HEIGHT + 2) - TENSION_METER_HEIGHT * h,
-		adjMeterWidth,
-		h * TENSION_METER_HEIGHT,
-		kColorWhite
-	);
+	if (fsm_main.current_state != FSM_MAIN_FAIL)
+	{
+		pd->graphics->fillRect(
+			(400.f - TENSION_METER_WIDTH - buffer - border) + ((float)TENSION_METER_WIDTH - adjMeterWidth + 1) / 2.f + tension_offset_x + shake_x,
+			(buffer + border + TENSION_METER_HEIGHT + 2) - TENSION_METER_HEIGHT * h,
+			adjMeterWidth,
+			h * TENSION_METER_HEIGHT,
+			kColorWhite
+		);
+	}
 }
 
 void fish_update()
@@ -711,7 +783,7 @@ void lure_update()
 			else if (fsm_main.current_state == FSM_MAIN_FISHON)
 			{
 				// Caught a fish! Show results.
-				fsm_set_state(&fsm_main, FSM_MAIN_RESULTS);
+				fsm_set_state(&fsm_main, FSM_MAIN_SUCCESS);
 			}
 		}
 	}
@@ -766,8 +838,9 @@ void fishing_scene_init()
 
 	object_lure_target_position = object_lure.position;
 
+	TICKER_FONT = FONT_IGNORE_17;
 	ticker_add_from(ticker_filler_table);
-	TICKER_FONT = FONT_MONTSERRAT_BOLD_14;
+	//TICKER_FONT = FONT_MONTSERRAT_BOLD_14;
 
 	fsm_main.init();
 	fsm_fish.init();
@@ -814,13 +887,13 @@ void fishing_scene_init()
 		r = 0;
 		if (fabsf(Grid512Long.vertices[i].x) >= .25f)
 		{
-			r += ((float)rand() / (float)RAND_MAX) * fabsf(Grid512Long.vertices[i].x) * 1.f;
+			r += RAND_PERC * fabsf(Grid512Long.vertices[i].x) * 1.f;
 			r += (fabsf(Grid512Long.vertices[i].x * Grid512Long.vertices[i].x) / 1.f) * 2.f;
-			//r += ((float)rand() / (float)RAND_MAX) * 1.5f;
+			//r += RAND_PERC * 1.5f;
 		}
 		else
 		{
-			r += ((float)rand() / (float)RAND_MAX) * .05f;
+			r += RAND_PERC * .05f;
 		}
 		Grid512Long.vertices[i].y = r;
 	}
@@ -893,6 +966,14 @@ void on_line_break()
 	// Play sound effect
 
 	pd->system->logToConsole("Line broke!");
+
+	fsm_set_state(&fsm_main, FSM_MAIN_FAIL);
+	fsm_set_state(&fsm_fish, FSM_FISH_ESCAPE);
+	
+	// TODO: Something more dramatic to hide it?
+	tension_meter_visible = false;
+
+	line_integrity = 1.f; // reset line integrity for next time
 }
 
 float pullMod = 1;
@@ -905,13 +986,32 @@ float crank_distance = 0;
 #define IDLE_DEADZONE .2f
 bool is_cranking = false;
 
+float ticker_timer = 0;
+
 void fishing_scene_update()
 {
-	ticker_x -= DELTA_TIME * TICKER_SPEED;
+	// TODO: This is too choppy. Need to tween at regular timing intervals or something.
+	//ticker_x -= DELTA_TIME * TICKER_SPEED;
+	ticker_x -= 1.75f * TIME_SCALE;// TICKER_SPEED;
+	
+	// This more or less worked except for the initial news item.
+	// (Once that calculation is fixed, this will be a smoother option.)
+	// (Would need to pre-load with a buffer item equal to the screen width.)
+	/*ticker_timer += DELTA_TIME;
+#define TICKER_TIME 10
+	if (ticker_timer > TICKER_TIME)
+	{
+		ticker_timer -= TICKER_TIME;
+	}
+	ticker_x = lerp(0, -400, ticker_timer / TICKER_TIME);*/
 
 	music_update();
 
 	float change = pd->system->getCrankChange();
+
+	// Smooth out the crank delta over two frames, rolling
+	crank_smoothed = crank_smoothed + change;
+	if (crank_smoothed != change) crank_smoothed /= 2;
 
 	if (change != 0) {
 		if (!is_cranking) // First frame cranking, previously idle
@@ -937,9 +1037,9 @@ void fishing_scene_update()
 		crank_duration += DELTA_TIME;
 		crank_distance += change;
 
-		line_reel_tension = .7f * MIN(fabsf(change / 40.f), 1); // cap at 100% tension
+		line_reel_tension = .7f * MIN(fabsf(crank_smoothed / 40.f), 1); // cap at 100% tension
 
-		pd->system->logToConsole("crank change %f, tension %f", change, line_reel_tension);
+		//pd->system->logToConsole("crank change %f, tension %f", change, line_reel_tension);
 	}
 	else 
 	{
@@ -967,10 +1067,13 @@ void fishing_scene_update()
 
 
 	// If total line tension exceeds a threshold,
-	if (LINE_TENSION > .98f)
+	if (LINE_TENSION > .98f && tension_meter_visible)
 	{
 		// reduce the line integrity.
 		line_integrity -= .025f;
+
+		// shake a little
+		tension_shake = 3.f;
 
 		// TODO: Play sound effect
 
@@ -983,7 +1086,8 @@ void fishing_scene_update()
 	}
 
 	fsm_main.update();
-	fsm_fish.update();
+	if (UnderwaterView.Enabled)
+		fsm_fish.update();
 }
 
 
@@ -992,6 +1096,10 @@ void fsm_main_init()
 	fsm_main.on_change[FSM_MAIN_CASTING][FSM_MAIN_REELING] = &fsm_main_update_cast_to_reeling;
 	fsm_main.on_change[FSM_MAIN_REELING][FSM_MAIN_CASTING] = &fsm_main_update_reeling_to_cast;
 	fsm_main.on_change[FSM_MAIN_REELING][FSM_MAIN_FISHON] = &fsm_main_reeling_to_fishon;
+	fsm_main.on_change[FSM_MAIN_FISHON][FSM_MAIN_SUCCESS] = &fsm_main_fishon_to_success;
+	fsm_main.on_change[FSM_MAIN_FISHON][FSM_MAIN_CASTING] = &fsm_main_fishon_to_casting;
+	fsm_main.on_change[FSM_MAIN_FISHON][FSM_MAIN_FAIL] = &fsm_main_fishon_to_failure;
+	fsm_main.on_change[FSM_MAIN_FAIL][FSM_MAIN_CASTING] = &fsm_main_fishon_to_casting;
 }
 
 void fsm_main_update()
@@ -1007,25 +1115,192 @@ void fsm_main_update()
 	case FSM_MAIN_CASTING:
 		//pd->system->logToConsole("FSM_CASTING");
 		break;
+
+	case FSM_MAIN_SUCCESS:
+		// Do the catch sequence
+		lsm_fish_catch_sequence(false);
+		break;
+
+	case FSM_MAIN_FAIL:
+		// Do the line break sequence
+		lsm_line_break_sequence(false);
+		break;
 	}
 }
 
+void lsm_fish_catch_sequence(bool reset)
+{
+	static int state = 0;
+	static float timer = 0;
+	static bool first_run = true;
+	static bool ended = false;
 
-//#define FISH_INTEREST_IGNORE 0
-//#define FISH_INTEREST_NOTICE 1
-//#define FISH_INTEREST_THINK 5
-//#define FISH_INTEREST_REJECT 10
-//#define FISH_INTEREST_BITE 11
-//int get_fish_interest(struct Actor* actor, struct Fish* fish, struct Lure* lure)
-//{
-//
-//}
+	if (reset) {
+		state = 0;
+		timer = 0;
+		first_run = true;
+		ended = false;
+		return;
+	}
+
+	timer += DELTA_TIME;
+
+	if (ended) return;
+
+	if (first_run)
+	{
+		first_run = false;
+
+		// init
+		object_results_fish.visible = true;
+		LookTarget_setTarget(&camera_lake_object.look_target, &object_results_fish.position);
+	}
+
+	switch (state)
+	{
+	case 0:
+		//pd->system->logToConsole("state %d, timer %f", state, timer);
+		if (object_results_fish.position.y < 0)
+			object_results_fish.position.y += DELTA_TIME * 3;
+		else
+		{
+			state++;
+			timer = 0;
+		}
+		break;
+
+	case 1:
+	case 2:
+		// Show results
+		pd->graphics->setFont(FONT_IGNORE_17);
+		pd->graphics->drawText("Nice catch!", strlen("Nice catch!"), kASCIIEncoding, (400/2) + 30, 50);
+		if (state == 1 && timer > 2) {
+			state++;
+			timer = 0;
+		}
+		pd->system->logToConsole("state %d, timer %f", state, timer);
+		if (state > 1) {
+			pd->graphics->setFont(FONT_IGNORE_17);
+			pd->graphics->drawText("(Press A)", strlen("(Press A)"), kASCIIEncoding, (400 / 2) + 30, 50+24+4);
+			if (pressedButtons & kButtonA) {
+				state++;
+			}
+		}
+		break;
+
+	case 3:
+		// Fish fly up
+		
+		if (object_results_fish.position.y < 5)
+		{
+			//pd->system->logToConsole("y pos %f", object_results_fish.position.y);
+			object_results_fish.position.y += DELTA_TIME * 3;
+			object_results_fish.scale.x *= .96;
+			object_results_fish.scale.y *= .96;
+			object_results_fish.scale.z *= .96;
+
+			object_results_fish.rotation.z += DELTA_TIME * 3;
+		}
+		else {
+			LookTarget_setTarget(&camera_lake_object.look_target, &object_cast_selector.position);
+			state++;
+			timer = 0;
+
+			object_cast_selector.visible = true;
+		}
+		break;
+
+	case 4:
+		// Wait 2 seconds
+		if (timer > 2) {
+			state++;
+		}
+		break;
+
+	case 5:
+		// Return to lake view
+		//LookTarget_setTarget(&camera_lake_object.look_target, &object_cast_selector.position);
+		object_results_fish.visible = false;
+		UnderwaterView.Enabled = true;
+		fsm_set_state(&fsm_main, FSM_MAIN_CASTING);
+		break;
+	}
+	//pd->system->logToConsole("..");
+
+	// Always behavior
+	object_results_fish.rotation.z += DELTA_TIME;
+}
+
+
+
+void lsm_line_break_sequence(bool reset)
+{
+	static int state = 0;
+	static float timer = 0;
+	static bool first_run = true;
+	static bool ended = false;
+
+	if (reset) {
+		state = 0;
+		timer = 0;
+		first_run = true;
+		ended = false;
+
+		pd->system->logToConsole("fsm_main state = %d", fsm_main.current_state);
+		return;
+	}
+
+	timer += DELTA_TIME;
+
+	if (ended) return;
+
+	if (first_run)
+	{
+		first_run = false;
+
+		// init
+		camera_default_object.look_target.max_blend = 1.f; // Allow camera to look all the way at the fish as it swims away
+		fish_swim_target.y = object_fish.position.y;
+		fish_swim_target.x = object_fish.position.x + 20;
+		fish_swim_target.z = object_fish.position.z + 100;
+		LookTarget_setTarget(&object_fish.look_target, &fish_swim_target);
+		fsm_set_state(&fsm_fish, FSM_FISH_RUN);
+	}
+
+	switch (state)
+	{
+	case 0:
+		// Show message
+		pd->graphics->setFont(FONT_IGNORE_17);
+		pd->graphics->drawText("LINE BREAK", strlen("LINE BREAK"), kASCIIEncoding, 50, 50);
+
+		// TODO: Make sure line dangles or sinks (decouple line from fish and + y target)
+		object_lure_target_position.y += DELTA_TIME * .5;
+
+		// Takes about 8 seconds for fish to disappear
+		if (timer > 8)
+		{
+			state++;
+		}
+		break;
+
+	case 1:
+		// Back to surface
+		//LookTarget_setTarget(&camera_default_object.look_target, &object_lure.position);
+		fsm_set_state(&fsm_main, FSM_MAIN_CASTING);
+		break;
+	}
+
+	// Always behavior
+}
+
 
 struct Vector3 fish_station; // The spot the fish should swim around
 bool fsm_main_update_cast_to_reeling() {
 	pd->system->logToConsole("CAST -> REELING");
 
 	// Randomly place fish
+	// TODO: Tie this to some spawn conditions
 	fish_station = (struct Vector3){3, 2, -3},
 
 	object_lure.position.x = MAP_RANGE(-5, 5, -10, 10, object_cast_selector.position.x);
@@ -1035,9 +1310,22 @@ bool fsm_main_update_cast_to_reeling() {
 	LakeView.Visible = false;
 	UnderwaterView.Visible = true;
 
+	object_cast_selector.scale = (struct Vector3){ 0,0,0 };
+
 	camera_default_object.position.z = object_lure.position.z + 5;
 	camera_default_object.position.y = object_lure.position.y - 3;
 	camera_default_object.position.x = object_lure.position.x;
+
+	// Instantly reset camera look target.
+	// TODO: Create a function to reset everything instead of a hack.
+	LookTarget_setTarget(&camera_default_object.look_target, &object_lure.position);
+	camera_default_object.look_target.blend = 1.f;
+	float tween_speed = camera_default_object.look_target.tween_speed;
+	camera_default_object.look_target.tween_speed = 0;
+	LookTarget_tick(&camera_default_object.look_target);
+	camera_default_object.look_target.tween_speed = tween_speed;
+	camera_default_object.look_target.next = NULL;
+
 
 	object_lure_target_position = object_lure.position;
 
@@ -1063,6 +1351,60 @@ bool fsm_main_update_reeling_to_cast() {
 bool fsm_main_reeling_to_fishon() {
 	tension_meter_visible = true;
 	// TODO: Set to false on transitioning back to main
+
+	return true;
+}
+
+void reset_underwater() {
+	pd->system->logToConsole("Resetting underwater state");
+	// Reset underwater
+	//LakeView.Visible = true;
+	UnderwaterView.Visible = false;
+	object_lure.visible = true;
+
+	tension_meter_visible = false;
+	tension_offset_x = 0;
+
+	// Reset to default start position.
+	// TODO: instead, replace with proper spawn logic elsewhere
+	object_fish.position = (struct Vector3){3, 2, -3};
+
+	fsm_set_state(&fsm_fish, FSM_FISH_IDLE);
+
+	// Reset lake
+	object_cast_selector.scale = (struct Vector3){1,1,1};
+}
+
+bool fsm_main_fishon_to_success() {
+pd->system->logToConsole("fishon_to_success");
+	reset_underwater();
+	lsm_fish_catch_sequence(true); // reset the lsm
+
+	UnderwaterView.Enabled = false;
+	object_cast_selector.visible = false;
+	LakeView.Visible = true;
+
+	object_results_fish.position = (struct Vector3){ 1, -3, 2.0f };
+	object_results_fish.scale = (struct Vector3){ 1,1,1 };
+
+	return true;
+}
+
+bool fsm_main_fishon_to_failure() {
+	pd->system->logToConsole("fishon_to_failure");
+	//reset_underwater();
+	lsm_line_break_sequence(true); // reset the lsm
+
+	//UnderwaterView.Enabled = false;
+
+	return true;
+}
+
+bool fsm_main_fishon_to_casting() {
+	pd->system->logToConsole("fishon_to_casting");
+	reset_underwater();
+
+	LakeView.Visible = true;
 
 	return true;
 }
@@ -1121,7 +1463,7 @@ void fsm_fish_update()
 		if (UnderwaterView.Visible)
 		{
 			// Go back to idle if we're done swimming
-			float distance = Vector3_getDistanceSquared(&object_fish.position, &fish_swim_target);
+ 			float distance = Vector3_getDistanceSquared(&object_fish.position, &fish_swim_target);
 #define STOP_SWIMMING_THRESHOLD .5
 			if (distance < STOP_SWIMMING_THRESHOLD) {
 				fsm_set_state(&fsm_fish, FSM_FISH_IDLE);
@@ -1135,6 +1477,7 @@ void fsm_fish_update()
 			//move_direction = Vector3_multiplyScalar(&move_direction, DELTA_TIME);
 			//object_fish.position = Vector3_subtract(&object_fish.position, &move_direction);
 
+			// TODO: Use fish speed.
 			struct Vector3 move_forward = Vector3_multiplyScalar(&object_fish.forward, DELTA_TIME * .5);
 			object_fish.position = Vector3_subtract(&object_fish.position, &move_forward);
 			//float speed = Vector3_length(&move_forward);
@@ -1156,6 +1499,8 @@ void fsm_fish_update()
 	{
 		struct Vector3 move_forward = Vector3_multiplyScalar(&object_fish.forward, DELTA_TIME * .5);
 		object_fish.position = Vector3_subtract(&object_fish.position, &move_forward);
+
+		// TODO: Need to maintain fish interest on approach
 	}
 	break;
 
@@ -1219,9 +1564,15 @@ void fsm_fish_update()
 			fish_on_state = fish_on_state == FISH_ON_FIGHTING ? FISH_ON_RELAX : FISH_ON_FIGHTING;
 
 			// Calculate the new time duration
-			float r = ((float)rand() / (float)RAND_MAX); // 0 - 1
+			float r = RAND_PERC; // 0 - 1
 			fish_on_state_timer = FISH_ON_TIMER_MIN + r * (FISH_ON_TIMER_MAX - FISH_ON_TIMER_MIN);
 		}
+	}
+	break;
+	case FSM_FISH_RUN:
+	{
+		struct Vector3 move_forward = Vector3_multiplyScalar(&object_fish.forward, DELTA_TIME * 2);
+		object_fish.position = Vector3_subtract(&object_fish.position, &move_forward);
 	}
 	break;
 	}
@@ -1277,7 +1628,7 @@ void fsm_fish_update()
 
 			// Then we approach
 			fsm_set_state(&fsm_fish, FSM_FISH_APPROACH);
-			pd->system->logToConsole("fish noticed lure, approachingg");
+			//pd->system->logToConsole("fish noticed lure, approachingg");
 		}
 	}
 	break;
@@ -1290,13 +1641,14 @@ void fsm_fish_update()
 		// Once we've reached the lure
 		if (distance_to_fish < .5) {
 			fsm_set_state(&fsm_fish, FSM_FISH_BITE);
-			pd->system->logToConsole("fish reached lure");
+			//pd->system->logToConsole("fish reached lure");
 		}
 	}
 	break;
 
 	case FSM_FISH_BITE:
 	{
+		//pd->system->logToConsole("fish bite decide");
 		// Decide if we should take the bait
 
 		// Wait a little
@@ -1306,16 +1658,16 @@ void fsm_fish_update()
 		}
 		else { // and decide
 			// TODO: Base this on something besides random chance
-			float r = ((float)rand() / (float)RAND_MAX);
+			float r = RAND_PERC;
 			bool take_bait = r > 0; // > .5 is 50/50
 			if (take_bait) {
 				pd->system->logToConsole("FISH ON!");
+				ticker_add("Fish on!");
 				fsm_set_state(&fsm_fish, FSM_FISH_HOOKED);
 				fsm_set_state(&fsm_main, FSM_MAIN_FISHON);
 			}
 			else {
-				// TODO: Add "swim away" rejection state instead?
-				pd->system->logToConsole("fish rejected bait");
+				//pd->system->logToConsole("fish rejected bait");
 				fish_notice_cooldown = FISH_NOTICE_COOLDOWN_MAX;
 				fsm_set_state(&fsm_fish, FSM_FISH_SWIM);
 			}
@@ -1327,14 +1679,15 @@ void fsm_fish_update()
 
 bool fsm_fish_idle_to_swim()
 {
-	pd->system->logToConsole("FISH IDLE -> SWIM");
 	// Set new swim target
 	fish_swim_target = object_lure.position;//fish_station;
-	fish_swim_target.y = object_fish.position.y;
-	fish_swim_target.x += ((float)rand() / (float)RAND_MAX) * fish_roam_radius;
-	fish_swim_target.z += ((float)rand() / (float)RAND_MAX) * fish_roam_radius;
+	//fish_swim_target.y = object_fish.position.y;
+	fish_swim_target.y = .5;
+	fish_swim_target.x += RAND_PERC * fish_roam_radius;
+	fish_swim_target.z += RAND_PERC * fish_roam_radius;
+	pd->system->logToConsole("FISH IDLE -> SWIM (%f, %f, %f)", fish_swim_target.x, fish_swim_target.y, fish_swim_target.z);
 	// TODO: Handle y differently (more limited radius) 
-	//fish_swim_target.y += ((float)rand() / (float)RAND_MAX) * fish_roam_radius;
+	//fish_swim_target.y += RAND_PERC * fish_roam_radius;
 	//if (fish_swim_target.y < 0) fish_swim_target.y = 0;
 
 	/*object_fish.look_target.blend = 0;
@@ -1366,6 +1719,8 @@ bool fsm_fish_swim_to_idle()
 bool fsm_fish_to_approach()
 {
 	pd->system->logToConsole("FISH APPROACH");
+
+	ticker_add("Easy does it...");
 
 	LookTarget_setTarget(&object_fish.look_target, &object_lure.position);
 	fish_wiggle_speed = 5.f;
@@ -1515,17 +1870,21 @@ void underwater_postdraw()
 	PTR_Matrix3_apply(&camera_default.rotate_transform, &fish_up);
 	fish_up = Camera_worldToScreenPos(&camera_default, &fish_up);
 
-	pd->graphics->setFont(FONT_MONTSERRAT_BLACK_24);
-	float text_off = pd->graphics->getTextWidth(FONT_MONTSERRAT_BLACK_24, "X", 1, kASCIIEncoding, 0) / 2;
+
+	// TODO: Replace these with bitmaps
+	pd->graphics->setFont(FONT_IGNORE_17);
+	float text_off = pd->graphics->getTextWidth(FONT_XERXES_10, "X", 1, kASCIIEncoding, 0) / 2;
 	switch (fsm_fish.current_state) {
 	case FSM_FISH_IDLE:
+		text_off = pd->graphics->getTextWidth(FONT_XERXES_10, "...", 1, kASCIIEncoding, 0) / 2;
 		pd->graphics->drawText("...", 3, kASCIIEncoding, fish_up.x - text_off, fish_up.y);
 		break;
 	case FSM_FISH_APPROACH:
 		pd->graphics->drawText("?", 3, kASCIIEncoding, fish_up.x - text_off, fish_up.y);
 		break;
 	case FSM_FISH_HOOKED:
-		pd->graphics->drawText("!", 3, kASCIIEncoding, fish_up.x - text_off, fish_up.y);
+		if (fish_on_state == FISH_ON_FIGHTING)
+			pd->graphics->drawText("!", 3, kASCIIEncoding, fish_up.x - text_off, fish_up.y);
 		break;
 	case FSM_FISH_SWIM:
 		if (fish_notice_cooldown > 0)
@@ -1557,8 +1916,6 @@ void underwater_postdraw()
 	//ui_fish_name();
 	//ui_radar();
 	ui_tension();
-
-
 }
 
 /* 
@@ -1596,6 +1953,7 @@ struct View LakeView = {
 	.actors = (struct Actor* []){
 		&object_cast_selector,
 		&lake_terrain,
+		&object_results_fish,
 		NULL
 	},
 	.update = &lake_update,

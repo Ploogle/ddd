@@ -16,7 +16,7 @@
 #define RENDER_Y_END 240
 
 extern PlaydateAPI* pd;
-extern double DELTA_TIME;
+extern float DELTA_TIME;
 
 #define NUM_PATTERNS 33
 typedef uint8_t Pattern[8];

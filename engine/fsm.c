@@ -1,9 +1,15 @@
 #include "fsm.h"
+#include <pd_api.h>
+
+extern PlaydateAPI* pd;
 
 bool fsm_set_state(struct FSM* fsm, int state)
 {
 	int old_state = fsm->current_state;
 
+	pd->system->logToConsole(fsm->name);
+	pd->system->logToConsole("%d -> %d", old_state, state);
+	pd->system->logToConsole("*****");
 	// If there's an edge function for the state transition,
 	// call it first and only change if it doesn't return false.
 	if (fsm->on_change != 0x0 &&
