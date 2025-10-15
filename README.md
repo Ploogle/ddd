@@ -3,9 +3,11 @@ A 3D engine for the Playdate handheld. Work in progress in active development.
 
 ## Engine Features
 ![Features a robust camera system and OBJ model importer.](https://jordancarroll.com/assets/fish-camera-C_qyrxKe.gif)
+
 Features a robust camera system and OBJ model importer.
 
 ![Realtime wave rendering.](https://jordancarroll.com/assets/fish-lake-ClZCtMzS.gif)
+
 Realtime wave rendering.
 
 ## Acknowledgements
