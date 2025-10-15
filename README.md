@@ -1,7 +1,9 @@
 # DDD Engine
 A 3D engine for the Playdate handheld. Work in progress in active development.
 
-![Features a robust camera system and OBJ model importer.]https://jordancarroll.com/assets/fish-camera-C_qyrxKe.gif
+## Engine Features
+![Features a robust camera system and OBJ model importer.](https://jordancarroll.com/assets/fish-camera-C_qyrxKe.gif)
+![Realtime wave rendering.](https://jordancarroll.com/assets/fish-camera-C_qyrxKe.gif)
 
 ## Acknowledgements
 - Project structure based on the Playdate-C-Hello-World project.
